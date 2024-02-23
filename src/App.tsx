@@ -6,7 +6,7 @@ import RecipeSearch from './components/RecipeSearchProps';
 
 function App() {
   const [recipes, setRecipes] = useState<RecipeInterface[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>(''); // Lägg till searchTerm
+  const [searchTerm, setSearchTerm] = useState<string>(''); 
   const URL = 'https://pokeapi.co/api/v2/pokemon';
 
   useEffect(() => {
