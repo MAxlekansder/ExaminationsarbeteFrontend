@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import axios from 'axios';
+import './App.css';
+import { useState, useEffect } from 'react';
+import { RecipeInterface } from './types';
+import RecipeSearch from './components/RecipeSearchProps';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [recipes, setRecipes] = useState<RecipeInterface[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>(''); 
+  const URL = 'https://pokeapi.co/api/v2/pokemon';
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(URL);
+        const recipeData: RecipeInterface[] = response.data.results.map((get: any) => {
+          return { name: get.name };
+        });
+        setRecipes(recipeData);
+      } catch (error) {
+        console.log('Error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+  const handleSearchChange = (term: string) => {
+    setSearchTerm(term);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Recipes</h1>
+      <RecipeSearch 
+        recipesFromInterface={recipes} 
+        searchTerm={searchTerm} 
+        onSearchChange={handleSearchChange} 
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
