@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { RecipeInterface } from "../types";
 import axios from "axios";
+import useRecipeState from "./indexState";
 
+const globalState = useRecipeState
 const URL = "setnågotbrahär";
 
 function handleRequests() {
@@ -19,10 +21,22 @@ function handleRequests() {
         recipe: recipe,
         listId: "vårtId"
       });
+
+      // dont need to check for response as we do try catch 
+      addResponse.data
+
     } catch (error) {
       console.log("Error while adding new recipe to list: ", error);
     }
   };
+
+  return (
+    <div>
+        {/* adds name */}
+        <input type={name} onChange={(e) => setName(e.target.value)}/>
+    </div>
+
+  )
 }
 
 export default handleRequests();

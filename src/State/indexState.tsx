@@ -1,9 +1,9 @@
 import {create} from "zustand"
-import { RecipeInterface } from "../types"
+import { Recipe } from "../types"
 
 interface recipeState {
-    recipes: RecipeInterface[];
-
+    recipes: Recipe[];
+    addRecipe: (newRecipes: Recipe) => void;
 }
 
 
@@ -19,6 +19,12 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     // create a todoRecipe
     todo: String,
+
+    // add a recipe 
+    addRecipe: (newRecipes: Recipe) => set((state) =>({
+        recipes: [...state.recipes, newRecipes],
+    })),
+
 }));
 
 export default useRecipeState;
