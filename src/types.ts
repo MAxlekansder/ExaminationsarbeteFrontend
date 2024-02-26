@@ -8,7 +8,7 @@ export interface Ingredient {
     recipeId: string;
     title: string;
     description: string;
-    ratings?: number[]; // Ratings is now an optional array of numbers
+    ratings?: number; // Ratings is now an optional array of numbers
     imageUrl: string;
     timeInMins: number;
     categories: string[];
