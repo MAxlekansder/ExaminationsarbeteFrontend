@@ -5,6 +5,7 @@ export interface Ingredient {
   }
   
  export interface Recipe {
+    recipeId: string;
     title: string;
     description: string;
     ratings?: number[]; // Ratings is now an optional array of numbers
@@ -14,3 +15,4 @@ export interface Ingredient {
     instructions: string[];
     ingredients: Ingredient[];
   }
+

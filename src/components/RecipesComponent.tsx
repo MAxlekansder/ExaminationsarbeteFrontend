@@ -9,7 +9,7 @@ interface RecipeInterface {
 
 const RecipesComponent = () => {
     const [recipe, setRecipe] = useState<RecipeInterface[]>()
-
+    
   
   return (
     <div>
