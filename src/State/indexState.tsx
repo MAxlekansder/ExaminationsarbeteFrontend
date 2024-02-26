@@ -17,7 +17,8 @@ const useRecipeState = create<recipeState>()((set) => ({
     // for deleting
     deleteRecipes: (id: number, name: string) => set,
 
-    //
+    // create a todoRecipe
+    todo: String,
 }));
 
 export default useRecipeState;
