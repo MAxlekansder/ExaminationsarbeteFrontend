@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
 
@@ -8,10 +7,10 @@ interface DeleteRecipeProps {
 
 const URL = "https://sti-java-grupp2-afmbgd.reky.se/recipes";
 
-const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
 
+const DeleteRecipeComponent = ({ recipeId }: DeleteRecipeProps ) => {
 
-const deleteRecipeComponent = ({ recipeId }: DeleteRecipeProps ) => {
+    const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
 
     const handleDeleteRecipe = async () => {
         try {
@@ -31,4 +30,4 @@ const deleteRecipeComponent = ({ recipeId }: DeleteRecipeProps ) => {
 };
    
 
-export default deleteRecipeComponent;
+export default DeleteRecipeComponent;
