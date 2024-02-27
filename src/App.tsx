@@ -1,11 +1,11 @@
 import axios from 'axios';
 import './App.css';
 import { useState, useEffect } from 'react';
-import { RecipeInterface } from './types';
+import { Recipe } from './types';
 import RecipeSearch from './components/RecipeSearchProps';
 
 function App() {
-  const [recipes, setRecipes] = useState<RecipeInterface[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>(''); 
   const URL = 'https://pokeapi.co/api/v2/pokemon';
 
@@ -13,7 +13,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(URL);
-        const recipeData: RecipeInterface[] = response.data.results.map((get: any) => {
+        const recipeData: Recipe[] = response.data.results.map((get: any) => {
           return { name: get.name };
         });
         setRecipes(recipeData);

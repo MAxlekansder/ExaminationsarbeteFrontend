@@ -3,16 +3,18 @@ import { Recipe } from "../types";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
 
+
 interface RecipeComponentProps {
   recipeProps: Recipe;
 }
 
+
 const URL = "https://sti-java-grupp2-afmbgd.reky.se/recipes";
 
-const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
-const addRecipeState = useRecipeState((state) => state.addRecipe);
+function HandleRequests({ recipeProps }: RecipeComponentProps) {
+  const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
+  const addRecipeState = useRecipeState((state) => state.addRecipe);
 
-function handleRequests({ recipeProps }: RecipeComponentProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ratings, setRating] = useState(0); // alternative a array 
@@ -37,9 +39,13 @@ function handleRequests({ recipeProps }: RecipeComponentProps) {
     ingredients: [],
   }); */ 
 
-  const handleAddRecipe = async () => {
+  const addRecipe = async () => {
     try {
-      if (!title || !description) return;
+      if (!title || !description) {
+        alert("You need to add a title and description")
+        return;
+      }
+       
 
       const addResponse = await axios.post(`${URL}`, {
         title: title,
@@ -54,6 +60,7 @@ function handleRequests({ recipeProps }: RecipeComponentProps) {
 
       // dont need to check for response as we do try/catch
       addRecipeState(addResponse.data);
+      console.log(recipeProps.recipeId);
       clearForm();
 
     } catch (error) {
@@ -61,10 +68,14 @@ function handleRequests({ recipeProps }: RecipeComponentProps) {
     }
   };
 
+ 
+
+
+
   const clearForm = () => {
     setTitle("");
     setDescription("");
-    setRating("");
+    setRating(0);
     setImageUrl("");
     setTimeInMins(0);
     setCategories([]);
@@ -75,9 +86,10 @@ function handleRequests({ recipeProps }: RecipeComponentProps) {
 
   return (
     <div>
-      <p>label: </p>
+      <p>Title: </p>
       <input type={title} onChange={(e) => setTitle(e.target.value)} />
-    
+      <p>Description: </p>
+      <input type={description} onChange={(e) => setDescription(e.target.value)} />
       <p>rating: </p>
       <div>
         {[1,2,3,4,5].map((value) => (
@@ -93,10 +105,10 @@ function handleRequests({ recipeProps }: RecipeComponentProps) {
           </label>
         ))}
       </div>
+      <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
-
 
   );
 }
 
-export default handleRequests;
+export default HandleRequests;
