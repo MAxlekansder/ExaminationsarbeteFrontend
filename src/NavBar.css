@@ -1,0 +1,29 @@
+.navbar {
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.nav-list {
+    margin-left: 110px;
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-link {
+    margin-right: 40px;
+    text-decoration: none;
+    color: #050505;
+    transition: color 0.2s ease-in-out;
+    font-size: large;
+    font-weight: bold;
+
+
+}
+
+.nav-link:hover {
+    color: #86e30c;
+    cursor: pointer;
+}

@@ -22,11 +22,12 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
 
   return (
     <div>
-      <input 
-        type="text" 
-        value={searchTerm} 
-        onChange={(e) => onSearchChange(e.target.value)} 
-        placeholder="Search recipes" 
+      <input
+        className='searchBar'
+        type="text"
+        value={searchTerm}
+        onChange={(e) => onSearchChange(e.target.value)}
+        placeholder="Search recipes"
       />
       {renderRecipes}
     </div>

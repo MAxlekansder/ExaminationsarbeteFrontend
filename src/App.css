@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+}
+
+.food-header {
+    margin-top: 1rem;
+    padding: 120px;
+    background-image: url(./Images/food-header.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.logo {
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 30px;
+    background-image: url(./Images/logo1.png);
+}
+
+.searchBar {
+    width: 25rem;
+    padding: 10px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
