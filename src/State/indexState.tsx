@@ -4,6 +4,7 @@ import { Recipe } from "../types"
 interface recipeState {
     recipes: Recipe[];
     addRecipe: (newRecipes: Recipe) => void;
+    deleteRecipe: (id: string) => void;
 }
 
 
@@ -12,11 +13,14 @@ const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
 
     // for updating
-    updateRecipes: (id: number, name: string) => set,
+    updateRecipes: (recipeId: String) => set,
 
     // for deleting
-    deleteRecipes: (id: number, name: string) => set,
-
+    deleteRecipe: (id: string) =>
+    set((state) => ({
+      recipes: state.recipes.filter((recipe) => recipe.recipeId !== id), // Filter skapar en ny array som inte innehåller den todo med id som vi har i parametern.
+    })),
+    
     // create a todoRecipe
     todo: String,
 
