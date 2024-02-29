@@ -2,19 +2,20 @@ import { useState } from "react";
 import { Recipe } from "../types";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
+import HandleImageComponent from "./HandleImageComponent";
 
 
 interface RecipeComponentProps {
-  recipeProps: Recipe;
+  recipeProps?: Recipe;
 }
 
 
 const URL = "https://sti-java-grupp2-afmbgd.reky.se/recipes";
 
 function HandleRequests({ recipeProps }: RecipeComponentProps) {
+
   const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
   const addRecipeState = useRecipeState((state) => state.addRecipe);
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ratings, setRating] = useState(0); // alternative a array 
@@ -24,20 +25,6 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const [instructions, setInstructions] = useState([]);
   const [ingredients, setIngredients] = useState([]);
 
-
-  // might be a better alternative
-  /*
-  const [recipe, setRecipe] = useState<Recipe>({
-    recipeId: '',
-    title: '',
-    description: '',
-    ratings: [],
-    imageUrl: '',
-    timeInMins: 0,
-    categories: [],
-    instructions: [],
-    ingredients: [],
-  }); */ 
 
   const addRecipe = async () => {
     try {
@@ -60,16 +47,16 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
 
       // dont need to check for response as we do try/catch
       addRecipeState(addResponse.data);
-      console.log(recipeProps.recipeId);
+   
+      const checkIfValueIsParsed: string | undefined = (recipeProps?.recipeId !== null && recipeProps?.recipeId !== "") ? recipeProps?.recipeId : undefined;
+      
+      console.log(checkIfValueIsParsed)
       clearForm();
 
     } catch (error) {
       console.log("Error while adding new recipe to list: ", error);
     }
   };
-
- 
-
 
 
   const clearForm = () => {
@@ -105,6 +92,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
           </label>
         ))}
       </div>
+      <HandleImageComponent setImageURL={setImageUrl} />
       <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
 
