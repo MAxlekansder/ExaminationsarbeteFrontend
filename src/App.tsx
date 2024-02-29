@@ -1,12 +1,16 @@
 import axios from 'axios';
 import './App.css';
+import './NavBar.css'
 import { useState, useEffect } from 'react';
 import { Recipe } from './types';
 import RecipeSearch from './components/RecipeSearchProps';
+import NavBar from './components/NavBarComponent';
 
 function App() {
+
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>(''); 
+
   const URL = 'https://pokeapi.co/api/v2/pokemon';
 
   useEffect(() => {
@@ -32,11 +36,16 @@ function App() {
 
   return (
     <div>
-      <h1>Recipes</h1>
-      <RecipeSearch 
-        recipesFromInterface={recipes} 
-        searchTerm={searchTerm} 
-        onSearchChange={handleSearchChange} 
+      <div className='header'>
+        <NavBar />
+      </div>
+      <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
+      <div className='food-header'>
+      </div>
+      <RecipeSearch
+        recipesFromInterface={recipes}
+        searchTerm={searchTerm}
+        onSearchChange={handleSearchChange}
       />
     </div>
   );
