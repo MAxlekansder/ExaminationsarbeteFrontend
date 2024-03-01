@@ -14,17 +14,12 @@ function App() {
 
   const URL = 'https://sti-java-grupp2-afmbgd.reky.se/recipes';
   
-
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(URL);
-        const recipeData: Recipe[] = response.data.results.map((get: any) => {
-          return { name: get.name };
-        });
-        setRecipes(recipeData);
+        setRecipes(response.data);
+        console.log(response.data); //bara för debugging ska tasbort inför produktion
       } catch (error) {
         console.log('Error fetching data', error);
       }
@@ -32,6 +27,7 @@ function App() {
 
     fetchData();
   }, []);
+
 
 
   const handleSearchChange = (term: string) => {
