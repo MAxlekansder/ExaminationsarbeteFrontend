@@ -15,9 +15,12 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   //Tillfällig styling direkt i img taggen
   const renderRecipes = searchTerm !== '' ? (
     <ul>
-      {filteredRecipes.map((recipe, index) => (
-        <li key={index}>{recipe.title}
-        <img style={{width: '1.5vw'}} src={recipe.imageUrl} alt="maträtt" />
+        {filteredRecipes.map((recipe,recipeId) => (
+          <li key={recipeId}>
+           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+             {recipe.title}
+          <img style={{width: '2vw'}} src={recipe.imageUrl} alt="" />
+         </a>
         </li>
       ))}
     </ul>

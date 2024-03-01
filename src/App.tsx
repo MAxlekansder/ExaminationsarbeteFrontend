@@ -48,8 +48,7 @@ function App() {
         recipesFromInterface={recipes}
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
-
-      />
+        />
      </div>
   );
 }
