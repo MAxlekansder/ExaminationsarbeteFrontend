@@ -21,10 +21,8 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(URL);
-        const recipeData: Recipe[] = response.data.results.map((get: any) => {
-          return { name: get.name };
-        });
-        setRecipes(recipeData);
+        setRecipes(response.data);
+        console.log(response.data); //bara för debugging ska tasbort inför produktion
       } catch (error) {
         console.log('Error fetching data', error);
       }

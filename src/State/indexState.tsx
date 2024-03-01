@@ -8,13 +8,11 @@ interface recipeState {
     getApiKey: () => string;
 }
 
-
 const useRecipeState = create<recipeState>()((set) => ({
 
     recipes: [],
 
-   
-    updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => set((state) => ({  // for updating all or just one prop of the recipe, if nothing gets added -> returns same recipe
+   updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => set((state) => ({  // for updating all or just one prop of the recipe, if nothing gets added -> returns same recipe
         recipes: state.recipes.map((recipe) => recipe.recipeId === recipe.recipeId ? 
         {...recipe, ...updatedProperties} : recipe
         ),
@@ -26,13 +24,11 @@ const useRecipeState = create<recipeState>()((set) => ({
     })),
     
 
-
     addRecipe: (newRecipes: Recipe) => set((state) =>({ // add a recipe, used in handleRequestComp 
         recipes: [...state.recipes, newRecipes],
     })),
 
-  
-   getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
+    getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
 
 }));
