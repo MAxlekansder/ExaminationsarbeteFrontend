@@ -11,7 +11,9 @@ function App() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>(''); 
 
+  
   const URL = 'https://pokeapi.co/api/v2/pokemon';
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,14 +41,16 @@ function App() {
       <div className='header'>
         <NavBar />
       </div>
+  
       <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
       <div className='food-header'>
       </div>
+           
       <RecipeSearch
         recipesFromInterface={recipes}
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
-      />
+      /> 
     </div>
   );
 }
