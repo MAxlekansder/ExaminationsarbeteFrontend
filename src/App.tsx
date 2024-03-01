@@ -11,7 +11,7 @@ function App() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>(''); 
 
-  const URL = 'https://pokeapi.co/api/v2/pokemon';
+  const URL = 'https://sti-java-grupp2-afmbgd.reky.se/recipes';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,6 +47,7 @@ function App() {
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
       />
+      
     </div>
   );
 }
