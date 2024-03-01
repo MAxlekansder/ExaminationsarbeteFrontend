@@ -9,7 +9,7 @@ import NavBar from './components/NavBarComponent';
 function App() {
 
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>(''); 
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const URL = 'https://pokeapi.co/api/v2/pokemon';
 
