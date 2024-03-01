@@ -2,22 +2,23 @@ import { useState } from "react";
 import { Recipe } from "../types";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
+import HandleImageComponent from "./HandleImageComponent";
 
 
 interface RecipeComponentProps {
-  recipeProps: Recipe;
+  recipeProps?: Recipe;
 }
 
-
-const URL = "https://sti-java-grupp2-afmbgd.reky.se/recipes";
 
 function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
   const addRecipeState = useRecipeState((state) => state.addRecipe);
+  const apiKey = useRecipeState((state) => state.getApiKey);
+  
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [ratings, setRating] = useState(0); // alternative a array 
+  const [ratings, setRating] = useState(0); // alternative a array,  no need for now
   const [imageUrl, setImageUrl] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
   const [categories, setCategories] = useState([]);
@@ -25,21 +26,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const [ingredients, setIngredients] = useState([]);
 
 
-  // might be a better alternative
-  /*
-  const [recipe, setRecipe] = useState<Recipe>({
-    recipeId: '',
-    title: '',
-    description: '',
-    ratings: [],
-    imageUrl: '',
-    timeInMins: 0,
-    categories: [],
-    instructions: [],
-    ingredients: [],
-  }); */ 
-
-  const addRecipe = async () => {
+  const addRecipe = async () => { // title nor desc can't be empty
     try {
       if (!title || !description) {
         alert("You need to add a title and description")
@@ -47,7 +34,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
       }
        
 
-      const addResponse = await axios.post(`${URL}`, {
+      const addResponse = await axios.post(`${apiKey}`, { // for posting with apiKey
         title: title,
         ratings: ratings,
         description: description,
@@ -58,9 +45,12 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
         ingredients: ingredients,
       });
 
-      // dont need to check for response as we do try/catch
-      addRecipeState(addResponse.data);
-      console.log(recipeProps.recipeId);
+
+      addRecipeState(addResponse.data); // dont need to check for response as we do try/catch
+   
+      const checkIfValueIsParsed: string | undefined = (recipeProps?.recipeId !== null && recipeProps?.recipeId !== "") ? recipeProps?.recipeId : "not returning"; // sick oneliner
+      
+      console.log(checkIfValueIsParsed) // for testing ID, whole oneliner will do nothing when in done product
       clearForm();
 
     } catch (error) {
@@ -68,11 +58,8 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
     }
   };
 
- 
 
-
-
-  const clearForm = () => {
+  const clearForm = () => { // resets the formula after commiting
     setTitle("");
     setDescription("");
     setRating(0);
@@ -105,6 +92,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
           </label>
         ))}
       </div>
+      <HandleImageComponent setImageURL={setImageUrl} />
       <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
 
