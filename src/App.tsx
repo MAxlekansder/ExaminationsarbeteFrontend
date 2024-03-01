@@ -18,7 +18,9 @@ function App() {
       try {
         const response = await axios.get(URL);
         const recipeData: Recipe[] = response.data.results.map((get: any) => {
-          return { name: get.name };
+          console.log(recipeData)
+          return { title: get.title };
+          
         });
         setRecipes(recipeData);
       } catch (error) {
