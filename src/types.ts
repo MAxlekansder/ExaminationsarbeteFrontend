@@ -9,6 +9,7 @@ export interface Ingredient {
     title: string;
     description: string;
     ratings?: number; 
+    // imageUrl: ({file: File, url: String}[])
     imageUrl: string;
     timeInMins: number;
     categories: string[];
