@@ -2,7 +2,7 @@ import axios from 'axios';
 import './App.css';
 import './NavBar.css'
 import { useState, useEffect } from 'react';
-import { Recipe } from './types';
+import { Recipe } from './data/Recipes';
 import RecipeSearch from './components/RecipeSearchProps';
 import NavBar from './components/NavBarComponent';
 

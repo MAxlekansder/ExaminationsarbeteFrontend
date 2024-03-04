@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Recipe } from "../types";
+import { Recipe } from "../data/Recipes";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
-// import HandleImageComponent from "./HandleImageComponent";
+import CategorySelected from "./CategorySelectComponent";
 
 
 interface RecipeComponentProps {
@@ -81,9 +81,9 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
       alert("please separate the categories with a comma: ','"); return;
     }
 
-    
+    setCategories(trimmedArray);
 
-  } 
+  };
 
 
   const clearForm = () => { // resets the formula after commiting
@@ -104,7 +104,8 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
       <p>Description: </p>
       <input type={description} onChange={(e) => setDescription(e.target.value)} />
       <p>Categories: </p>
-           <input type="text" value={categories.join(', ')} onChange={(e) => transformCategories(e.target.value)} />
+           {/* <input type="text" value={categories.join(', ')} onChange={(e) => transformCategories(e.target.value)} /> */}
+      <CategorySelected selectedCategories={categories} onChange={setCategories}/>
       <p>rating: </p>
       <div>
         {[1,2,3,4,5].map((value) => (
