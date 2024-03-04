@@ -19,15 +19,13 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ratings, setRating] = useState(0); // alternative a array,  no need for now
-  // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);
+  // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);  let this be for now
   const [imageURL, setImageURL] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<string[]>([]);
   const [instructions, setInstructions] = useState([]);
   const [ingredients, setIngredients] = useState([]);
 
-
-  // const URL = "https://sti-java-grupp2-afmbgd.reky.se/recipes";
 
   const addRecipe = async () => { // title nor desc can't be empty
     try {
@@ -42,7 +40,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
         title: title,
         ratings: ratings,
         description: description,
-        // imageURL: imageURL?.map(({ file, url}) => ({ file: file ,url: url})),
+        // imageURL: imageURL?.map(({ file, url}) => ({ file: file ,url: url})), let this be for now 
         imageURL: imageURL,
         timeInMins: timeInMins,
         categories: categories,
@@ -70,6 +68,24 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   };
 
 
+  const transformCategories = (inputValue: string) => {
+    const trimmedValues = inputValue.trim();
+
+    if (!trimmedValues) {
+      alert("Please enter a category"); return;
+    }
+
+    const trimmedArray = trimmedValues.split(',').map(category => category.trim());
+
+    if (trimmedArray.length < 2) {
+      alert("please separate the categories with a comma: ','"); return;
+    }
+
+    
+
+  } 
+
+
   const clearForm = () => { // resets the formula after commiting
     setTitle("");
     setDescription("");
@@ -81,13 +97,14 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
     setIngredients([]);
   };
 
-
   return (
     <div>
       <p>Title: </p>
       <input type={title} onChange={(e) => setTitle(e.target.value)} />
       <p>Description: </p>
       <input type={description} onChange={(e) => setDescription(e.target.value)} />
+      <p>Categories: </p>
+           <input type="text" value={categories.join(', ')} onChange={(e) => transformCategories(e.target.value)} />
       <p>rating: </p>
       <div>
         {[1,2,3,4,5].map((value) => (

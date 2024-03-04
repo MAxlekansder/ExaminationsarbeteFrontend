@@ -21,7 +21,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Route path='/recipe1' element={<Recipe title={"Köttbullar"} description={"Gör så här..."}/>} />
     <Route path='/recipe2' element={<Recipe title={"Pizza"} description={"Gör så här..."}/>} />
     <Route path='/recipe3' element={<Recipe title={"Kebab"} description={"Gör så här..."}/>} />
-
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,

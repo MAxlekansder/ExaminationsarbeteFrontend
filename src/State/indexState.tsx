@@ -18,7 +18,7 @@ const useRecipeState = create<recipeState>()((set) => ({
         ),
     })),
 
-   
+    
     deleteRecipe: (id: string) =>  set((state) => ({  // for deleting
       recipes: state.recipes.filter((recipe) => recipe.recipeId !== id), // sorting out everything we're not looking for
     })),
