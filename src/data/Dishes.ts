@@ -18,7 +18,7 @@ interface Dish {
       recipe: 'Länk till recept',
       ingredients: ['sallad', 'kyckling', 'krutonger', 'Caesardressing']
     },
-    // Lägg till fler maträtter här
+    // Lägg till fler maträtter här:
   ];
   
   export default dishes;

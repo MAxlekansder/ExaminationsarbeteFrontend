@@ -3,7 +3,7 @@ import React from 'react';
 interface DishProps {
   name: string;
   image: string;
-  recipe?: string;  //Gör recipe-egenskapen valfri
+  recipe?: string;  //Gör recipe-egenskapen valfri.
   onClick: () => void;
 }
 

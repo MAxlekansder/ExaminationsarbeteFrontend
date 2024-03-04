@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
             key={index}
             name={dish.name}
             image={require(`../images/${dish.image}`).default}
-            onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet
+            onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet.
           />
         ))}
       </div>
