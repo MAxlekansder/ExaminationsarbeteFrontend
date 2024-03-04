@@ -1,3 +1,5 @@
+// this file is for now irrelavent, it's "working" but not fully. 
+
 import React, { ChangeEvent, useState } from "react";
 
 interface HandleImageComponentProps {
