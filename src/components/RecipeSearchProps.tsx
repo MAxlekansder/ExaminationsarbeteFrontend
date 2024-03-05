@@ -12,10 +12,13 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
     return getRecipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+  //Tillfällig styling direkt i img taggen
   const renderRecipes = searchTerm !== '' ? (
     <ul>
       {filteredRecipes.map((recipe, index) => (
-        <li key={index}>{recipe.title}</li>
+        <li key={index}>{recipe.title}
+        <img style={{width: '1.5vw'}} src={recipe.imageUrl} alt="maträtt" />
+        </li>
       ))}
     </ul>
   ) : null;
