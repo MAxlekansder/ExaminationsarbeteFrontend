@@ -1,51 +1,66 @@
+// this file is for now irrelavent, it's "working" but not fully. 
+
 import React, { ChangeEvent, useState } from "react";
 
 interface HandleImageComponentProps {
-  setImageURL: React.Dispatch<React.SetStateAction<string>>;
+  setImageURL: React.Dispatch<
+    React.SetStateAction<{ file: File | null; url: string }[]>
+  >;
 }
 
-function HandleImageComponent({ setImageURL }: HandleImageComponentProps): JSX.Element {
-  const [inputValue, setInputValue] = useState("");
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+function HandleImageComponent({ setImageURL,}: HandleImageComponentProps): JSX.Element {
+  const [imageFiles, setImageFiles] = useState<File[]>([]);
 
   const handleImage = (e: ChangeEvent<HTMLInputElement>) => {
-    const imageFiles = e.target.files; // no need to restrict arrays here, as we might want to save multiple photos
+    const files = e.target.files;
 
+    if (files && files.length > 0) {
+      const newImageFiles = [...imageFiles];
 
-    if (imageFiles && imageFiles.length > 0) {
-      for (const file of imageFiles) { // saving each picture, might need to restructure interface
+      for (const file of files) {
+        const url = URL.createObjectURL(file);
+        newImageFiles.push(file);
 
-        const imageURL = URL.createObjectURL(file); // when we dont log, this can just be a call-function
-        console.log("testing for saving picture as URL: ", imageURL); // removing const imageURL...
-        
-        setImageURL(imageURL);
-      };
-    };
+        newImageFiles.push(file);
+        setImageURL((prevImageURL) => [...prevImageURL, { file, url }]);
+      }
+      setImageFiles(newImageFiles);
+    }
   };
 
-
-  const handleURL = (e: ChangeEvent<HTMLInputElement>) => { // handler for saving and setting the given URL
-    const imageURL = e.target.value;
-    setInputValue(imageURL);
-    setImageURL(imageURL);
+  const handleURL = (e: ChangeEvent<HTMLInputElement>) => {
+    // handler for saving and setting the given URL
+    const url = e.target.value;
+    setImageURL((prevImageURL) => [...prevImageURL, { file: null, url }]);
   };
 
-
-  const handleRemoveFile =() => {
-    setSelectedFile(null);
-    setImageURL("");
-  }
+  const handleRemoveFile = () => {
+    setImageURL([]);
+  };
 
   return (
     <div>
       <p>Add a file</p>
-      <input type="file" onChange={handleImage} />  {/* adding files */}
-      <button onClick={handleRemoveFile}>Remove file</button>
+      <input
+        type="file"
+        capture="environment"
+        accept="image/*"
+        onChange={handleImage}
+      />{" "}
+      {/* adding files */}
+      <button onClick={handleRemoveFile}>Remove file</button>{" "}
+      {/* removing the file */}
       <p>Add a URL</p>
-      <input type="text" value={inputValue} onChange={handleURL} /> {/* adding URL */}
-     
+      <input type="text" onChange={handleURL} /> {/* adding URL */}
+      {imageFiles.map((file, index) => (
+        <div key={index}>
+          <img
+            src={URL.createObjectURL(file)}
+          />
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default HandleImageComponent;

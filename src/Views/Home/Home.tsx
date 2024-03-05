@@ -6,10 +6,13 @@ import {NavLink} from "react-router-dom";
 const Home = () => {
     return (
         <div>
+
             <div style={{ backgroundColor: 'grey'}}>
 
            <br/><br/><form action="/action_page.pgp">
             <label htmlFor="fname"> First name: Sertan</label>
+
+              
             <input type="text" id="fname" name="fname"/><br/><br/>
             <label htmlFor="lname">Last name:</label>
             <input type="text" id="lname" name="lname"/><br/><br/>

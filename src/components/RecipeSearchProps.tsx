@@ -1,6 +1,6 @@
 import React from 'react';
-import { Recipe } from "../types";
-import {NavLink} from "react-router-dom";
+import { Recipe } from "../data/Recipes";
+
 
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];

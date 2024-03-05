@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Recipe } from "../types";
+import { Recipe } from "../data/Recipes";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
-import HandleImageComponent from "./HandleImageComponent";
+import CategorySelected from "./CategorySelectComponent";
+import InstructionList from "./HandleInstructionsComponent";
 
 
 interface RecipeComponentProps {
@@ -13,16 +14,17 @@ interface RecipeComponentProps {
 function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
   const addRecipeState = useRecipeState((state) => state.addRecipe);
-  const apiKey = useRecipeState((state) => state.getApiKey);
+  const getApiKey = useRecipeState((state) => state.getApiKey);
   
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ratings, setRating] = useState(0); // alternative a array,  no need for now
-  const [imageUrl, setImageUrl] = useState("");
+  // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);  let this be for now
+  const [imageURL, setImageURL] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
-  const [categories, setCategories] = useState([]);
-  const [instructions, setInstructions] = useState([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [instructions, setInstructions] = useState<string[]>([]);
   const [ingredients, setIngredients] = useState([]);
 
 
@@ -33,12 +35,14 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
         return;
       }
        
+      const apiKey = getApiKey();
 
       const addResponse = await axios.post(`${apiKey}`, { // for posting with apiKey
         title: title,
         ratings: ratings,
         description: description,
-        imageUrl: imageUrl,
+        // imageURL: imageURL?.map(({ file, url}) => ({ file: file ,url: url})), let this be for now 
+        imageURL: imageURL,
         timeInMins: timeInMins,
         categories: categories,
         instructions: instructions,
@@ -47,10 +51,16 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
 
 
       addRecipeState(addResponse.data); // dont need to check for response as we do try/catch
-   
+      
+      console.log(addResponse.data) // for logging while developing
+
+      {/* 
+    
       const checkIfValueIsParsed: string | undefined = (recipeProps?.recipeId !== null && recipeProps?.recipeId !== "") ? recipeProps?.recipeId : "not returning"; // sick oneliner
       
       console.log(checkIfValueIsParsed) // for testing ID, whole oneliner will do nothing when in done product
+    
+    */}
       clearForm();
 
     } catch (error) {
@@ -63,20 +73,23 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
     setTitle("");
     setDescription("");
     setRating(0);
-    setImageUrl("");
+    setImageURL("");
     setTimeInMins(0);
     setCategories([]);
     setInstructions([]);
     setIngredients([]);
   };
 
-
   return (
     <div>
+      <div>
       <p>Title: </p>
       <input type={title} onChange={(e) => setTitle(e.target.value)} />
       <p>Description: </p>
       <input type={description} onChange={(e) => setDescription(e.target.value)} />
+      <p>Categories: </p>
+           {/* <input type="text" value={categories.join(', ')} onChange={(e) => transformCategories(e.target.value)} /> */}
+      <CategorySelected selectedCategories={categories} onChange={setCategories}/>
       <p>rating: </p>
       <div>
         {[1,2,3,4,5].map((value) => (
@@ -92,7 +105,22 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
           </label>
         ))}
       </div>
-      <HandleImageComponent setImageURL={setImageUrl} />
+      {/* <HandleImageComponent setImageURL={setImageURL} />  we're not using this for now*/}
+      <p>Add a URL: </p>
+      <input type={imageURL} onChange={(e) => setImageURL(e.target.value)} />
+      {imageURL && <img src={imageURL} alt = "Image preview"/>}
+      <br />
+   
+      </div>
+      
+      <div>
+          <p>Tid: </p>
+          <input type="number" value={timeInMins} onChange={(e) => setTimeInMins(Number(e.target.value))} />
+          
+          
+          <p>Instruktioner: </p>
+          <InstructionList instructions={instructions} setInstructions={setInstructions} />
+      </div>
       <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
 
