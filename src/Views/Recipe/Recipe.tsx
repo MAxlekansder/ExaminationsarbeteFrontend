@@ -1,10 +1,10 @@
 // @ts-ignore
 import React from 'react'
-import {Link, Route, Routes} from "react-router-dom";
+import {Link, } from "react-router-dom";
 import Title from "./Components/Title/Title.tsx";
 import Description from "./Components/Description/Description.tsx";
-
-
+// @ts-ignore
+import NavBarComponent from "../src/components/NavBarComponent.tsx";
 
 interface Props {
     title: String;
@@ -12,7 +12,7 @@ interface Props {
 
 }
 
-const Recipe = (props: Props) => {
+const Recipe: NavBarComponent = (props: Props) => {
     const {title, description} = props;
 
     const getRecipe = () => { getRecipe()
@@ -23,11 +23,15 @@ const Recipe = (props: Props) => {
 
         <div>
             <Title title={title}/>
-            <Link to="/home">Back to meny</Link>
 
-                       <Description description={description}/>
+            <Link style={{backgroundColor: "navajowhite"}} to="/home">Back to meny</Link><br/><br/>
+            <Link style={{backgroundColor: "navajowhite"}} to="/">==Meny==</Link><br/><br/>
 
-            <img src="https://tse4.mm.bing.net/th?id=OIP.DMUuFtUpJRfQOKrgzOSdqQHaFn&pid=Api&P=0&h=180"/><br/>
+
+            <img src="https://tse4.mm.bing.net/th?id=OIP.DMUuFtUpJRfQOKrgzOSdqQHaFn&pid=Api&P=0&h=180" alt={"hi"}/><br/>
+
+            <Description description={description}/>
+
 
         </div>
     )

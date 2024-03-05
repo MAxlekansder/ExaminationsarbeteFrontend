@@ -9,12 +9,14 @@ import SubPage from "./Views/SubPage/SubPage.tsx";
 import Recipe from './Views/Recipe/Recipe.tsx';
 
 
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<App />} />
-    <Route path='/main-page' element="" />
+    <Route path='/main-page' element="null" />
     <Route path='/add' element={<HandleRequests />} />
     <Route path='/home' element={<Home/>} />
     <Route path='/subpage' element={<SubPage/>} />
