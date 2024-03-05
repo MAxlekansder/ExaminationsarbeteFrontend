@@ -1,4 +1,6 @@
+// @ts-ignore
 import React from 'react'
+
 
 
 
@@ -10,38 +12,25 @@ const Description = (props: Props) => {
     return (
         <div>
           <p>{description}</p>
-
-                <h4> Ingredienser (4 port)<br/><br/>
-                    900 g
-                    potatis<br/>
-                    50 g
-                    rödlök<br/>
-                    2 dl
-                    vispgrädde<br/>
-                    0.5 dl
-                    ströbröd<br/>
-                    500 g
-                    blandfärs<br/>
-                    4 msk
-                    smör<br/>
-                    0.5 st
-                    gurka<br/>
-                    250 g
-                    broccoli<br/>
-                    1 st
-                    kålrabbi<br/>
-                    1 msk
-                    olivolja<br/>
-                    0.5 msk
-                    vitvinsvinäger<br/>
-                    1 msk
-                    majsstärkelse<br/>
-                    0.5 msk
-                    kinesisk soja<br/>
-                    1.5 dl
-                    mjölk<br/>
-                    2 krm
-                    vitpeppar </h4>
+                <h4> Ingredienser (4 port)<br/>
+                    <ul>
+                        <li>900 g potatis</li>
+                        <li>50 g rödlök</li>
+                        <li>2 dl vispgrädde</li>
+                        <li>0.5 dl ströbröd</li>
+                        <li>500 g blandfärs</li>
+                        <li>4 msk smör</li>
+                        <li>0.5 st gurka</li>
+                        <li>250 g broccoli</li>
+                        <li>1 st kålrabbi</li>
+                        <li>1 msk olivolja</li>
+                        <li>0.5 msk vitvinsvinäger</li>
+                        <li>1 msk majsstärkelse</li>
+                        <li>0.5 msk kinesisk soja</li>
+                        <li>1.5 dl mjölk</li>
+                        <li>2 krm vitpeppar</li>
+                    </ul>
+                     </h4>
             <div style={{backgroundColor: "Green", padding: 1, borderRightStyle: "solid", borderRightWidth: 2}}>
         <p> 1. Sätt ugnen på 75°.<br/>
             2. Koka upp vatten med salt i kastrullen. Skala och skär potatisen i 2 cm stora bitar och koka mjuk, 10-15 min. Häll av vattnet.<br/>
@@ -50,13 +39,17 @@ const Description = (props: Props) => {
             5. Tärna gurkan. Skär broccolin i små bitar och buketter. Skala och grovriv kålrabbi. Blanda grönsakerna i skålen med olivolja, vitvinsvinäger, salt och svartpeppar.<br/>
             6. Strö majsstärkelse i en panna och vispa ner vispgrädde, vatten, kinesisk soja och svartpeppar. Låt puttra ca 4 min på medelvärme.<br/>
             7. Mosa ihop den kokta potatisen med en potatisstöt. Tillsätt smör, mjölk, salt och vitpeppar.<br/>
-            8. Servera köttbullarna med potatismoset, såsen och salladen.
-
-            Tips! Du kan även använda en elvisp för att göra potatismoset. Vispa inte mer än nödvändigt då moset annars kan bli klistrigt.
+            8. Servera köttbullarna med potatismoset, såsen och salladen.<br/></p></div>
+        <p>
+        Tips! Du kan även använda en elvisp för att göra potatismoset. Vispa inte mer än nödvändigt då moset annars kan bli klistrigt.
         </p>
+            <a
+               style={{backgroundColor:"yellow"}} href="https://www.youtube.com/watch?v=MrG0iAYipQM&pp=ygUea8O2dHRidWxsYXIgbWVkIHBvdGF0aXNtb3MgaWNh">Så gör du perfekta köttbullar</a><br/><br/>
+            <a style={{backgroundColor:"yellow"}} href="https://www.youtube.com/watch?v=t8iggLCDJY0&pp=ygUea8O2dHRidWxsYXIgbWVkIHBvdGF0aXNtb3MgaWNh">Så gör du den perfekta potatismosen</a><br/><br/><br/>
 
-            </div>
         </div>
+
+
 
     )
 }
