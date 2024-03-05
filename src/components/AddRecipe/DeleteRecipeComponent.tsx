@@ -1,20 +1,25 @@
+// Alexander
+
 import axios from "axios";
-import useRecipeState from "../State/indexState";
+import useRecipeState from "../../State/indexState";
 
 interface DeleteRecipeProps {
   recipeId: string;
 }
 
-const URL = "https://sti-java-grupp2-afmbgd.reky.se/recipes";
-
+const getApiKey = useRecipeState((state) => state.getApiKey);
 
 const DeleteRecipeComponent = ({ recipeId }: DeleteRecipeProps ) => {
 
     const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
 
+
     const handleDeleteRecipe = async () => {
         try {
-          await axios.delete(`${URL}/${recipeId}`); // we can add const response = if we want to log status
+
+          const apiKey = getApiKey();
+          
+          await axios.delete(`${apiKey}/${recipeId}`); // we can add const response = if we want to log status
           deleteRecipeState(recipeId);
         } catch (error) {
           console.log("Error while deleting recipe: ", error);
