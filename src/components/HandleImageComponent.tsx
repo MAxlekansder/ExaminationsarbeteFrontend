@@ -8,9 +8,7 @@ interface HandleImageComponentProps {
   >;
 }
 
-function HandleImageComponent({
-  setImageURL,
-}: HandleImageComponentProps): JSX.Element {
+function HandleImageComponent({ setImageURL,}: HandleImageComponentProps): JSX.Element {
   const [imageFiles, setImageFiles] = useState<File[]>([]);
 
   const handleImage = (e: ChangeEvent<HTMLInputElement>) => {
