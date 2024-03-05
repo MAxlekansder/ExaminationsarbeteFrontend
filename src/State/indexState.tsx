@@ -1,5 +1,5 @@
 import {create} from "zustand"
-import { Recipe } from "../types"
+import { Recipe } from "../data/Recipes"
 
 interface recipeState {
     recipes: Recipe[];

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Recipe } from "../types";
+import { Recipe } from "../data/Recipes";
 
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];

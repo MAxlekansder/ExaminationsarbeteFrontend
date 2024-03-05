@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Recipe } from "../types";
+import { Recipe } from "../data/Recipes";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
-// import HandleImageComponent from "./HandleImageComponent";
+import CategorySelected from "./CategorySelectComponent";
+import InstructionList from "./HandleInstructionsComponent";
 
 
 interface RecipeComponentProps {
@@ -23,7 +24,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const [imageURL, setImageURL] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
   const [categories, setCategories] = useState<string[]>([]);
-  const [instructions, setInstructions] = useState([]);
+  const [instructions, setInstructions] = useState<string[]>([]);
   const [ingredients, setIngredients] = useState([]);
 
 
@@ -68,24 +69,6 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   };
 
 
-  const transformCategories = (inputValue: string) => {
-    const trimmedValues = inputValue.trim();
-
-    if (!trimmedValues) {
-      alert("Please enter a category"); return;
-    }
-
-    const trimmedArray = trimmedValues.split(',').map(category => category.trim());
-
-    if (trimmedArray.length < 2) {
-      alert("please separate the categories with a comma: ','"); return;
-    }
-
-    
-
-  } 
-
-
   const clearForm = () => { // resets the formula after commiting
     setTitle("");
     setDescription("");
@@ -99,12 +82,14 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
 
   return (
     <div>
+      <div>
       <p>Title: </p>
       <input type={title} onChange={(e) => setTitle(e.target.value)} />
       <p>Description: </p>
       <input type={description} onChange={(e) => setDescription(e.target.value)} />
       <p>Categories: </p>
-           <input type="text" value={categories.join(', ')} onChange={(e) => transformCategories(e.target.value)} />
+           {/* <input type="text" value={categories.join(', ')} onChange={(e) => transformCategories(e.target.value)} /> */}
+      <CategorySelected selectedCategories={categories} onChange={setCategories}/>
       <p>rating: </p>
       <div>
         {[1,2,3,4,5].map((value) => (
@@ -125,6 +110,17 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
       <input type={imageURL} onChange={(e) => setImageURL(e.target.value)} />
       {imageURL && <img src={imageURL} alt = "Image preview"/>}
       <br />
+   
+      </div>
+      
+      <div>
+          <p>Tid: </p>
+          <input type="number" value={timeInMins} onChange={(e) => setTimeInMins(Number(e.target.value))} />
+          
+          
+          <p>Instruktioner: </p>
+          <InstructionList instructions={instructions} setInstructions={setInstructions} />
+      </div>
       <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
 
