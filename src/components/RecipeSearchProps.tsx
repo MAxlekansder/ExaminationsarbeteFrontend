@@ -18,7 +18,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
     <ul>
       {filteredRecipes.map((recipe, index) => (
         <li key={index}>{recipe.title}
-        <img style={{width: '1.5vw'}} src={recipe.imageUrl} alt="maträtt" />
+          <img style={{ width: '1.5vw' }} src={recipe.imageUrl} alt="maträtt" />
         </li>
       ))}
     </ul>
@@ -34,7 +34,6 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         placeholder="Search recipes"
       />
       {renderRecipes}
-     <NavLink to="/recipe1"><li>Köttbullar</li></NavLink>
     </div>
   );
 };

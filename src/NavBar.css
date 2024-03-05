@@ -19,8 +19,16 @@
     transition: color 0.2s ease-in-out;
     font-size: large;
     font-weight: bold;
+}
 
-
+.nav-profile {
+    position: absolute;
+    left: 90%;
+    text-decoration: none;
+    color: #050505;
+    transition: color 0.2s ease-in-out;
+    font-size: large;
+    font-weight: bold;
 }
 
 .nav-link:hover {

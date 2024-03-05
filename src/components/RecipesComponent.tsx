@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 
 interface RecipeInterface {
-    id: number,
-    name: string  
+  id: number,
+  name: string
 }
 
 const RecipesComponent = () => {
-    const [recipe, setRecipe] = useState<RecipeInterface[]>()
-    
-  
+  const [recipe, setRecipe] = useState<RecipeInterface[]>()
+
+
   return (
     <div>
 
