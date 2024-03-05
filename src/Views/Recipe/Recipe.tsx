@@ -1,10 +1,8 @@
-// @ts-ignore
+
 import React from 'react'
-import {Link, } from "react-router-dom";
+import {Link } from "react-router-dom";
 import Title from "./Components/Title/Title.tsx";
 import Description from "./Components/Description/Description.tsx";
-// @ts-ignore
-import NavBarComponent from "../src/components/NavBarComponent.tsx";
 
 interface Props {
     title: String;
@@ -12,7 +10,7 @@ interface Props {
 
 }
 
-const Recipe: NavBarComponent = (props: Props) => {
+const Recipe = (props: Props) => {
     const {title, description} = props;
 
     const getRecipe = () => { getRecipe()

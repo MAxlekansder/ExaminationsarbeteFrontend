@@ -1,4 +1,3 @@
-// @ts-ignore
 import React from 'react'
 import {NavLink} from "react-router-dom";
 
@@ -7,12 +6,9 @@ const Home = () => {
     return (
         <div>
 
-            <div style={{ backgroundColor: 'grey'}}>
 
            <br/><br/><form action="/action_page.pgp">
-            <label htmlFor="fname"> First name: Sertan</label>
-
-              
+            <label htmlFor="fname"> First name: </label>
             <input type="text" id="fname" name="fname"/><br/><br/>
             <label htmlFor="lname">Last name:</label>
             <input type="text" id="lname" name="lname"/><br/><br/>
@@ -27,8 +23,6 @@ const Home = () => {
             <br/><NavLink style={{backgroundColor: "yellow", fontWeight: "bold", fontStyle: "italic", padding: 5, borderRightStyle: "solid", borderRightWidth: 2}}
                      to="/recipe3">Kebab</NavLink><br/><br/>
         </div>
-
-            </div>
 )
 }
 export default Home

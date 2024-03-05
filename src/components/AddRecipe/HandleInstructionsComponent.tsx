@@ -23,7 +23,6 @@ function InstructionList ({instructions, setInstructions }: InstructionListProps
 
     return (
         <div>
-          <p>Instruktioner:</p>
           <ul>
             {instructions.map((instruction, index) => (
               <li key={index}>
