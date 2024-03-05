@@ -14,7 +14,7 @@ const Description = (props: Props) => {
           <p>{description}</p>
                 <h4> Ingredienser (4 port)<br/>
                     <ul>
-                        <li>900 g potatis</li>
+                        <li></li>
                         <li>50 g rödlök</li>
                         <li>2 dl vispgrädde</li>
                         <li>0.5 dl ströbröd</li>
@@ -32,6 +32,7 @@ const Description = (props: Props) => {
                     </ul>
                      </h4>
             <div style={{backgroundColor: "Green", padding: 1, borderRightStyle: "solid", borderRightWidth: 2}}>
+     
         <p> 1. Sätt ugnen på 75°.<br/>
             2. Koka upp vatten med salt i kastrullen. Skala och skär potatisen i 2 cm stora bitar och koka mjuk, 10-15 min. Häll av vattnet.<br/>
             3. Finhacka rödlöken. Blanda vispgrädde med ströbröd i en bunke. Lägg sedan ner löken med blandfärs, salt och svartpeppar i bunken.<br/>

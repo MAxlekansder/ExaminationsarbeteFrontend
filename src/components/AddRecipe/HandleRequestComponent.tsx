@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Recipe } from "../data/Recipes";
+import { Recipe, Ingredient } from "../../data/Recipes";
 import axios from "axios";
-import useRecipeState from "../State/indexState";
+import useRecipeState from "../../State/indexState";
 import CategorySelected from "./CategorySelectComponent";
 import InstructionList from "./HandleInstructionsComponent";
+import IngredientsList from "./HandleIngredientsComponent";
 
 
 interface RecipeComponentProps {
@@ -11,7 +12,7 @@ interface RecipeComponentProps {
 }
 
 
-function HandleRequests({ recipeProps }: RecipeComponentProps) {
+function HandleRequests() {
   const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
   const addRecipeState = useRecipeState((state) => state.addRecipe);
   const getApiKey = useRecipeState((state) => state.getApiKey);
@@ -25,7 +26,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const [timeInMins, setTimeInMins] = useState(0);
   const [categories, setCategories] = useState<string[]>([]);
   const [instructions, setInstructions] = useState<string[]>([]);
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
 
 
   const addRecipe = async () => { // title nor desc can't be empty
@@ -120,6 +121,8 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
           
           <p>Instruktioner: </p>
           <InstructionList instructions={instructions} setInstructions={setInstructions} />
+          <p>Ingredienser: </p>
+          <IngredientsList ingredient={ingredients} setIngredient={setIngredients} />
       </div>
       <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
