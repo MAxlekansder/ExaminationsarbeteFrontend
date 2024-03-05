@@ -2,9 +2,10 @@ import axios from 'axios';
 import './App.css';
 import './NavBar.css'
 import { useState, useEffect } from 'react';
-import { Recipe } from './types';
+import { Recipe } from './data/Recipes';
 import RecipeSearch from './components/RecipeSearchProps';
 import NavBar from './components/NavBarComponent';
+
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
   return (
     <div>
       <div className='header'>
-        <NavBar />
+          <NavBar />
       </div>
   
       <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>

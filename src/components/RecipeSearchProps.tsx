@@ -1,5 +1,6 @@
 import React from 'react';
-import { Recipe } from "../types";
+import { Recipe } from "../data/Recipes";
+import { NavLink } from 'react-router-dom';
 
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];
@@ -33,6 +34,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         placeholder="Search recipes"
       />
       {renderRecipes}
+     <NavLink to="/recipe1"><li>Köttbullar</li></NavLink>
     </div>
   );
 };

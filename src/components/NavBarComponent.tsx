@@ -1,6 +1,6 @@
 
 
-const NavBar = () => {
+const NavBarComponent = () => {
     return (
         <nav className="navbar">
             <ul className="nav-list">
@@ -12,7 +12,8 @@ const NavBar = () => {
 
             </ul>
         </nav>
+
     )
 }
 
-export default NavBar;
+export default NavBarComponent;
