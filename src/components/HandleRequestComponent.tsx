@@ -3,6 +3,7 @@ import { Recipe } from "../data/Recipes";
 import axios from "axios";
 import useRecipeState from "../State/indexState";
 import CategorySelected from "./CategorySelectComponent";
+import InstructionList from "./HandleInstructionsComponent";
 
 
 interface RecipeComponentProps {
@@ -23,7 +24,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   const [imageURL, setImageURL] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
   const [categories, setCategories] = useState<string[]>([]);
-  const [instructions, setInstructions] = useState([]);
+  const [instructions, setInstructions] = useState<string[]>([]);
   const [ingredients, setIngredients] = useState([]);
 
 
@@ -68,24 +69,6 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
   };
 
 
-  const transformCategories = (inputValue: string) => {
-    const trimmedValues = inputValue.trim();
-
-    if (!trimmedValues) {
-      alert("Please enter a category"); return;
-    }
-
-    const trimmedArray = trimmedValues.split(',').map(category => category.trim());
-
-    if (trimmedArray.length < 2) {
-      alert("please separate the categories with a comma: ','"); return;
-    }
-
-    setCategories(trimmedArray);
-
-  };
-
-
   const clearForm = () => { // resets the formula after commiting
     setTitle("");
     setDescription("");
@@ -99,6 +82,7 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
 
   return (
     <div>
+      <div>
       <p>Title: </p>
       <input type={title} onChange={(e) => setTitle(e.target.value)} />
       <p>Description: </p>
@@ -126,6 +110,17 @@ function HandleRequests({ recipeProps }: RecipeComponentProps) {
       <input type={imageURL} onChange={(e) => setImageURL(e.target.value)} />
       {imageURL && <img src={imageURL} alt = "Image preview"/>}
       <br />
+   
+      </div>
+      
+      <div>
+          <p>Tid: </p>
+          <input type="number" value={timeInMins} onChange={(e) => setTimeInMins(Number(e.target.value))} />
+          
+          
+          <p>Instruktioner: </p>
+          <InstructionList instructions={instructions} setInstructions={setInstructions} />
+      </div>
       <button onClick={addRecipe}>Lägg till ditt recept</button>
     </div>
 
