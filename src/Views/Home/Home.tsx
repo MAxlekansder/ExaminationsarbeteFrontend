@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <form action="/action_page.pgp">
-            <label htmlFor="fname"> First name:</label>
+            <label htmlFor="fname"> First name: alexander tjennaaaaa</label>
             <input type="text" id="fname" name="fname"/><br/><br/>
             <label htmlFor="lname">Last name:</label>
             <input type="text" id="lname" name="lname"/><br/><br/>

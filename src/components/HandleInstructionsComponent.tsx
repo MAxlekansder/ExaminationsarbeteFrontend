@@ -14,6 +14,7 @@ function InstructionList ({instructions, setInstructions }: InstructionListProps
             setInstructions([...instructions, newInstruction]);
             setNewInstruction("");
         }
+        // alert("Instructions can't be empty")
     }
 
 
