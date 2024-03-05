@@ -31,7 +31,7 @@ function HandleImageComponent({
   };
 
   const handleURL = (e: ChangeEvent<HTMLInputElement>) => {
-    // handler for saving and setting the given URL
+    // handler for saving and setting the given URL OK
     const url = e.target.value;
     setImageURL((prevImageURL) => [...prevImageURL, { file: null, url }]);
   };
