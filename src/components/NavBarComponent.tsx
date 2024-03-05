@@ -1,10 +1,9 @@
 
 
-const NavBar = () => {
+const NavBarComponent = () => {
     return (
         <nav className="navbar">
             <ul className="nav-list">
-                <NavBar />
                 <li><a href="/" className="nav-link">Hem</a></li>
                 <li><a href="/" className="nav-link">Kategorier</a></li>
                 <li><a href="/" className="nav-link">Recept</a></li>
@@ -15,4 +14,4 @@ const NavBar = () => {
     )
 }
 
-export default NavBar;
+export default NavBarComponent;
