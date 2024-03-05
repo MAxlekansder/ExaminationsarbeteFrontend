@@ -12,9 +12,7 @@ function ingredientsList({ ingredientProps }: IngredientsListProps) {
    const [unit, setUnit] = useState("");
 
     const handleAddIngredients = () => {
-        if (newIngredients.trim() !== "") {
-            setIngredients([...ingredients, newIngredients]);
-        }
+
     }
 
 }
