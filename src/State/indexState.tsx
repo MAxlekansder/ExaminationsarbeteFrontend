@@ -8,6 +8,7 @@ interface recipeState {
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
+    
 }
 
 const useRecipeState = create<recipeState>()((set) => ({
