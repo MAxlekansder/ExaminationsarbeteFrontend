@@ -1,39 +1,21 @@
-import axios from 'axios';
+//Gustav
 import './App.css';
 import './NavBar.css'
 import { useState, useEffect } from 'react';
-import { Recipe } from './data/Recipes';
 import RecipeSearch from './components/RecipeSearchProps';
 import NavBar from './components/NavBarComponent';
-
+import useRecipeState from './State/indexState';
 
 function App() {
-
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
-
-
-  const URL = 'https://sti-java-grupp2-afmbgd.reky.se/recipes';
-  
-
-
+  const {recipes, fetchRecipe} = useRecipeState();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(URL);
-        setRecipes(response.data);
-        console.log(response.data); //bara för debugging ska tasbort inför produktion
-      } catch (error) {
-        console.log('Error fetching data', error);
-      }
-    };
+    fetchRecipe();
+  
+  },[fetchRecipe])
 
-    fetchData();
-  }, []);
-
-
-  const handleSearchChange = (term: string) => {
+const handleSearchChange = (term: string) => {
     setSearchTerm(term);
   };
 
@@ -42,12 +24,10 @@ function App() {
       <div className='header'>
           <NavBar />
       </div>
-  
-      <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
+    <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
       <div className='food-header'>
       </div>
-           
-      <RecipeSearch
+    <RecipeSearch
         recipesFromInterface={recipes}
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}

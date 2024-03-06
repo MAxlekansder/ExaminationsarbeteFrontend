@@ -1,6 +1,8 @@
+//Gustav
 import React from 'react';
 import { Recipe } from "../data/Recipes";
 import { NavLink } from 'react-router-dom';
+
 
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];
@@ -25,7 +27,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   ) : null;
 
   return (
-    <div>
+    <div >
       <input
         className='searchBar'
         type="text"
