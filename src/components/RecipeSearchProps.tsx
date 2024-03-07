@@ -1,7 +1,5 @@
-//Gustav
 import React from 'react';
 import { Recipe } from "../data/Recipes";
-import { NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import '../App.css';
 
@@ -15,7 +13,7 @@ interface RecipeSearchProps {
 
 const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searchTerm, onSearchChange }) => {
   const filteredRecipes = recipesFromInterface.filter(getRecipe => {
-    return getRecipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+    return getRecipe.title;
   });
 
   //Tillfällig styling direkt i img taggen
@@ -41,7 +39,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         <div className="search-recipes">{renderRecipes}</div>
       </div>
     </>
->>>>>>> master
+
   );
 };
 
