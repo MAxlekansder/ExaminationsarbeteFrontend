@@ -3,13 +3,15 @@ import './App.css';
 import './NavBar.css'
 import { useState, useEffect } from 'react';
 import RecipeSearch from './components/RecipeSearchProps';
-import NavBar from './components/NavBarComponent';
+import NavBarComponent from './components/NavBarComponent'
 import useRecipeState from './State/indexState';
+
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const {recipes, fetchRecipe} = useRecipeState();
-
+   
   useEffect(() => {
     fetchRecipe();
   
@@ -21,19 +23,17 @@ const handleSearchChange = (term: string) => {
 
   return (
     <div>
-      <div className='header'>
-          <NavBar />
-      </div>
-    <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
+      <NavBarComponent />
       <div className='food-header'>
       </div>
-    <RecipeSearch
-        recipesFromInterface={recipes}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
+      <div className="search-bar-container">
+        <RecipeSearch
+          recipesFromInterface={recipes}
+          searchTerm={searchTerm}
+          onSearchChange={handleSearchChange} />
+      </div>
 
-      />
-     </div>
+    </div>
   );
 }
 

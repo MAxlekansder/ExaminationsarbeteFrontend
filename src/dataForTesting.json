@@ -1,0 +1,121 @@
+[
+    {
+        "title": "Ärtsoppa",
+        "description": "Traditionell ärtsoppa",
+        "ratings": 4,
+        "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/de4270d3-101a-42e9-bc66-a04a91768747?fit=crop&h=1137&w=1800&s=129692d79aca75d67396f7300faeaf7d3092d8b1",
+        "timeInMins": 60,
+        "categories": ["Huvudrätt", "Förrätt", "Skandenaviskt"],
+        "instructions": ["Blötlägg ärtor över natten", "Koka med grönsaker", "Servera med senap och skinka"],
+        "ingredients": [
+            { "name": "Gula ärtor", "amount": 250, "unit": "g" },
+            { "name": "Morötter", "amount": 2, "unit": "st" },
+            { "name": "Lök", "amount": 1, "unit": "st" },
+            { "name": "Fläsklägg", "amount": 1, "unit": "st" }
+        ]
+    },
+    {
+        "title": "Smörgåstårta",
+        "description": "Lager på lager med smörgåstårta och olika fyllningar",
+        "ratings": 5,
+        "imageUrl": "https://cdn.hemtrevligt.se/icakuriren/app/uploads/2023/05/media-smorgastarta-lax-rakor.png",
+        "timeInMins": 90,
+        "categories": ["Förrätt, Skandenaviskt"],
+        "instructions": ["Förbered smörgåslager", "Lägg till fyllningar", "Dekorera tårtan"],
+        "ingredients": [
+            { "name": "Vita brödskivor", "amount": 16, "unit": "skivor" },
+            { "name": "Rökt lax", "amount": 200, "unit": "g" },
+            { "name": "Färskost", "amount": 150, "unit": "g" },
+            { "name": "Gurka", "amount": 1, "unit": "st" }
+        ]
+    },
+    {
+        "title": "Kanelbullar",
+        "description": "Söta och aromatiska kanelbullar",
+        "ratings": 5,
+        "imageUrl": "https://img.koket.se/standard-mega/saftigaste-kanelbullarna.jpg.webp",
+        "timeInMins": 120,
+        "categories": ["Efterrätt, Skandenaviskt, Amerikanskt"],
+        "instructions": ["Förbered deg", "Rulla med kanelsocker", "Grädda tills gyllene"],
+        "ingredients": [
+            { "name": "Vetemjöl", "amount": 500, "unit": "g" },
+            { "name": "Mjölk", "amount": 300, "unit": "ml" },
+            { "name": "Kanel", "amount": 2, "unit": "msk" },
+            { "name": "Socker", "amount": 150, "unit": "g" }
+        ]
+    },
+    {
+        "title": "Raggmunk",
+        "description": "Krispiga raggmunkar serverade med lingonsås",
+        "ratings": 4,
+        "imageUrl": "https://static.cdn-expressen.se/images/6d/e9/6de9080386b74412b7564098c48e241f/16x9/1000@40.jpg",
+        "timeInMins": 45,
+        "categories": ["Huvudrätt, Lunch, Skandenaviskt"],
+        "instructions": ["Riv potatis", "Stek tills gyllene", "Servera med lingonsås"],
+        "ingredients": [
+            { "name": "Potatis", "amount": 4, "unit": "st" },
+            { "name": "Mjöl", "amount": 2, "unit": "msk" },
+            { "name": "Lök", "amount": 1, "unit": "st" },
+            { "name": "Lingonsås", "amount": 150, "unit": "g" }
+        ]
+    },
+    {
+        "title": "Blåbärssoppa",
+        "description": "Söt och uppfriskande blåbärssoppa",
+        "ratings": 4,
+        "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_155149/cf_259/hemgjord_blabarssoppa.jpg",
+        "timeInMins": 30,
+        "categories": ["Efterrätt, Skandenaviskt"],
+        "instructions": ["Koka blåbär med socker", "Servera kyld", "Lägg till en kula vaniljglass"],
+        "ingredients": [
+            { "name": "Blåbär", "amount": 300, "unit": "g" },
+            { "name": "Socker", "amount": 100, "unit": "g" },
+            { "name": "Vatten", "amount": 500, "unit": "ml" },
+            { "name": "Vaniljglass", "amount": 4, "unit": "kulor" }
+        ]
+    },
+    {
+        "title": "Spaghetti Bolognese",
+        "description": "En klassisk italiensk huvudrätt med köttfärssås",
+        "ratings": 5,
+        "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d22c924a-1b57-41f8-b325-2499c029e76f?fit=crop&h=613&w=1000&s=32cae29106972a1038ec31745de85554c1dd5e5a",
+        "timeInMins": 45,
+        "categories": ["Huvudrätt", "Italienskt"],
+        "instructions": ["Stek lök och vitlök", "Tillsätt köttfärs och tomatsås", "Koka spaghetti separat"],
+        "ingredients": [
+            { "name": "Köttfärs", "amount": 500, "unit": "g" },
+            { "name": "Lök", "amount": 1, "unit": "st" },
+            { "name": "Vitlök", "amount": 2, "unit": "klyftor" },
+            { "name": "Tomatsås", "amount": 400, "unit": "g" }
+        ]
+    },
+    {
+        "title": "Croissant",
+        "description": "Luftiga franska croissanter",
+        "ratings": 4,
+        "imageUrl": "https://vivavinomat.se/wp-content/uploads/recept_croissant_skagen.jpg",
+        "timeInMins": 180,
+        "categories": ["Efterrätt", "Frukost","Franskt"],
+        "instructions": ["Blanda deg", "Skär och forma croissanter", "Grädda tills gyllene"],
+        "ingredients": [
+            { "name": "Vetemjöl", "amount": 500, "unit": "g" },
+            { "name": "Smör", "amount": 250, "unit": "g" },
+            { "name": "Jäst", "amount": 25, "unit": "g" }
+        ]
+    },
+    {
+        "title": "Paella",
+        "description": "En spanskt inspirerad risrätt med skaldjur och kyckling",
+        "ratings": 5,
+        "imageUrl": "https://www.zeta.nu/app/uploads/2016/03/Paella_med_musslor_och_r%C3%A4kor_li-2048x1365.jpg",
+        "timeInMins": 60,
+        "categories": ["Huvudrätt", "Spanskt"],
+        "instructions": ["Stek kyckling och skaldjur", "Tillsätt ris och buljong", "Låt sjuda tills riset är kokt"],
+        "ingredients": [
+            { "name": "Kycklinglår", "amount": 4, "unit": "st" },
+            { "name": "Skaldjur (räkor, musslor)", "amount": 300, "unit": "g" },
+            { "name": "Ris", "amount": 300, "unit": "g" },
+            { "name": "Kycklingbuljong", "amount": 700, "unit": "ml" }
+        ]
+    }
+]

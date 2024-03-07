@@ -1,19 +1,20 @@
-.navbar {
+/* Kristian made this file */
 
+.navbar {
     padding: 10px;
     border-radius: 10px;
 }
 
 .nav-list {
-    margin-left: 110px;
     display: flex;
-    justify-content: flex-start;
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    align-items: center;
 }
 
 .nav-link {
-    margin-right: 40px;
+    padding: 20px;
     text-decoration: none;
     color: #050505;
     transition: color 0.2s ease-in-out;
@@ -22,8 +23,6 @@
 }
 
 .nav-profile {
-    position: absolute;
-    left: 90%;
     text-decoration: none;
     color: #050505;
     transition: color 0.2s ease-in-out;
@@ -31,7 +30,20 @@
     font-weight: bold;
 }
 
+.login-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    color: #050505;
+
+}
+
 .nav-link:hover {
+    color: #86e30c;
+    cursor: pointer;
+}
+
+.nav-profile:hover {
     color: #86e30c;
     cursor: pointer;
 }

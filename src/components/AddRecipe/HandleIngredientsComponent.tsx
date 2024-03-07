@@ -8,7 +8,7 @@ interface IngredientsListProps {
   setIngredient: React.Dispatch<React.SetStateAction<Ingredient[]>>;
 }
 
-const typesOfMeasure = ["gram", "kg", "tsk", "msk", "dl", "l", "krm", "st"];
+const typesOfMeasure = ["gram", "kg", "tsk", "msk", "dl", "l", "krm", "st", "klyftor"];
 
 function IngredientsList({ ingredient, setIngredient,}: IngredientsListProps): JSX.Element {
   const [name, setName] = useState("");
