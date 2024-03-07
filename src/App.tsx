@@ -4,7 +4,8 @@ import './NavBar.css'
 import { useState, useEffect } from 'react';
 import { Recipe } from './data/Recipes';
 import RecipeSearch from './components/RecipeSearchProps';
-import NavBar from './components/NavBarComponent';
+import NavBarComponent from './components/NavBarComponent';
+import { SearchResultsList } from './components/SearchResultsList';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
 
 
   const URL = 'https://sti-java-grupp2-afmbgd.reky.se/recipes';
-  
+
 
 
 
@@ -39,21 +40,17 @@ function App() {
 
   return (
     <div>
-      <div className='header'>
-          <NavBar />
-      </div>
-  
-      <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
+      <NavBarComponent />
       <div className='food-header'>
       </div>
-           
-      <RecipeSearch
-        recipesFromInterface={recipes}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
+      <div className="search-bar-container">
+        <RecipeSearch
+          recipesFromInterface={recipes}
+          searchTerm={searchTerm}
+          onSearchChange={handleSearchChange} />
+      </div>
 
-      />
-     </div>
+    </div>
   );
 }
 
