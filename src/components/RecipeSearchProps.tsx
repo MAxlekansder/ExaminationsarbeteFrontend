@@ -1,8 +1,10 @@
+//Gustav
 import React from 'react';
 import { Recipe } from "../data/Recipes";
 import { NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import '../App.css';
+
 
 
 interface RecipeSearchProps {
@@ -26,6 +28,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   ) : null;
 
   return (
+
     <>
       <div className='input-wrapper'>
         <FaSearch id='search-icon' />
@@ -38,6 +41,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         <div className="search-recipes">{renderRecipes}</div>
       </div>
     </>
+>>>>>>> master
   );
 };
 

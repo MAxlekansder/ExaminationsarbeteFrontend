@@ -1,13 +1,19 @@
-// Alexander
+// Alexander & Gustav
+//La till fetchRecipe här och flyttade ut koden från App.tsx
 
 import {create} from "zustand"
 import { Recipe } from "../data/Recipes"
+import axios from "axios";
+
+
 
 interface recipeState {
     recipes: Recipe[];
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
+    fetchRecipe: () => void;
+    
 }
 
 const useRecipeState = create<recipeState>()((set) => ({
@@ -32,6 +38,16 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
+    fetchRecipe: async () => {
+        try {
+            const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes")
+            set({recipes: response.data});
+            console.log(response.data)
+        }
+        catch(error){
+            console.log('Error fetching api/data', error);
+        }
+    }
 
 }));
 
