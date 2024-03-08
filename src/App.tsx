@@ -1,73 +1,38 @@
-import axios from 'axios';
+//Gustav
 import './App.css';
-import './NavBar.css';
+import './NavBar.css'
 import { useState, useEffect } from 'react';
-import { Recipe } from './data/Recipes';
 import RecipeSearch from './components/RecipeSearchProps';
-import NavBar from './components/NavBarComponent';
-import HomePage from './pages/HomePage';
-import DishComponent from './components/DishComponent'; // Lägg till import av DishComponent
-import dishes from './data/Dishes';
-import { Route, Routes } from 'react-router-dom';
-import DishDetailsPage from './pages/DishDetailsPage';
+import NavBarComponent from './components/NavBarComponent'
+import useRecipeState from './State/indexState';
 
 
 
 function App() {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
-
-  const URL = 'https://sti-java-grupp2-afmbgd.reky.se/recipes';
-
+  const {recipes, fetchRecipe} = useRecipeState();
+   
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(URL);
-        setRecipes(response.data);
-        console.log(response.data); // bara för debugging, ta bort vid produktion
-      } catch (error) {
-        console.log('Error fetching data', error);
-      }
-    };
+    fetchRecipe();
+  
+  },[fetchRecipe])
 
-    fetchData();
-  }, []);
-
-  const handleSearchChange = (term: string) => {
+const handleSearchChange = (term: string) => {
     setSearchTerm(term);
   };
 
   return (
     <div>
-      <div className='header'>
-        <NavBar />
+      <NavBarComponent />
+      <div className='food-header'>
       </div>
-      <a className="logo" href="/"><img src="./Images/logo1" alt="" /></a>
-      <div className='food-header'></div>
-      <Routes>
-      <Route path="/dishes/:id" element={<DishDetailsPage />} />
-        <Route path='/' element={<HomePage />} />
-        <Route path='/dishes' element={(
-          <div>
-            {dishes.map((dish, index) => (
-              <DishComponent
-                id={dish.id}
-                key={index}
-                name={dish.name}
-                image={dish.image}
-                recipe={dish.recipe}
-                ingredients={dish.ingredients}
-                onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet.
-              />
-            ))}
-          </div>
-        )} />
-      </Routes>
-      <RecipeSearch
-        recipesFromInterface={recipes}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
-      />
+      <div className="search-bar-container">
+        <RecipeSearch
+          recipesFromInterface={recipes}
+          searchTerm={searchTerm}
+          onSearchChange={handleSearchChange} />
+      </div>
+
     </div>
   );
 }
