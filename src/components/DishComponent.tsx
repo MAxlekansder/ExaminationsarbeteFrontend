@@ -1,29 +1,17 @@
 import React from 'react';
-import '../data/Dishes.css';
-import { Link } from 'react-router-dom';
 
 interface DishProps {
-  id: string;
   name: string;
   image: string;
-  recipe?: string;  // Gör recipe-egenskapen valfri.
-  ingredients: string[]; // Lägg till ingredients här
+  recipe?: string;  //Gör recipe-egenskapen valfri.
   onClick: () => void;
 }
 
-const DishComponent: React.FC<DishProps> = ({ name, image, ingredients}) => {
+const DishComponent: React.FC<DishProps> = ({ name, image, onClick }) => {
   return (
-    <div className="dish">
-    <Link to={`/dishes/${name}`}>
-    <p className="lunch-label">Dagens lunch</p>
+    <div className="dish" onClick={onClick}>
       <img src={image} alt={name} />
-      <p className="dish-name">{name}</p>
-    </Link>
-      <ul>
-        {ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
+      <p>{name}</p>
     </div>
   );
 }
