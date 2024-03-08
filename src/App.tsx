@@ -6,8 +6,6 @@ import RecipeSearch from './components/RecipeSearchProps';
 import NavBarComponent from './components/NavBarComponent'
 import useRecipeState from './State/indexState';
 
-
-
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const {recipes, fetchRecipe} = useRecipeState();
