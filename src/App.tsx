@@ -1,4 +1,3 @@
-//Gustav
 import './App.css';
 import './NavBar.css'
 import { useState, useEffect } from 'react';
@@ -11,11 +10,12 @@ function App() {
   const {recipes, fetchRecipe} = useRecipeState();
    
   useEffect(() => {
+    console.log('before')
     fetchRecipe();
-  
-  },[fetchRecipe])
+    console.log('after')
+  }, []);
 
-const handleSearchChange = (term: string) => {
+  const handleSearchChange = (term: string) => {
     setSearchTerm(term);
   };
 
@@ -30,7 +30,6 @@ const handleSearchChange = (term: string) => {
           searchTerm={searchTerm}
           onSearchChange={handleSearchChange} />
       </div>
-
     </div>
   );
 }

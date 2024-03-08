@@ -41,7 +41,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         <div className="search-recipes">{renderRecipes}</div>
       </div>
     </>
->>>>>>> master
+
   );
 };
 
