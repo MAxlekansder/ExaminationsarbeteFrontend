@@ -10,9 +10,9 @@ function App() {
   const {recipes, fetchRecipe} = useRecipeState();
    
   useEffect(() => {
-    console.log('before')
+    
     fetchRecipe();
-    console.log('after')
+    
   }, []);
 
   const handleSearchChange = (term: string) => {

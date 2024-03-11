@@ -14,13 +14,14 @@ interface RecipeSearchProps {
 }
 
 const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searchTerm, onSearchChange }) => {
-  const filteredRecipes = recipesFromInterface.filter(getRecipe => {
-    return getRecipe.title;
+  const filteredRecipes = recipesFromInterface.filter(recipe => {
+    return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
+  
 
   //Tillfällig styling direkt i img taggen
   const renderRecipes = searchTerm !== '' ? (
-    <ul>
+    <ul className=''>
       {filteredRecipes.map((recipe, index) => (
         <li key={index}>{recipe.title}</li>
       ))}
@@ -38,6 +39,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Sök recept"
         />
+       
         <div className="search-recipes">{renderRecipes}</div>
       </div>
     </>
