@@ -15,7 +15,7 @@ interface RecipeSearchProps {
 
 const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searchTerm, onSearchChange }) => {
   const filteredRecipes = recipesFromInterface.filter(getRecipe => {
-    return getRecipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+    return getRecipe.title;
   });
 
   //Tillfällig styling direkt i img taggen
@@ -41,7 +41,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         <div className="search-recipes">{renderRecipes}</div>
       </div>
     </>
->>>>>>> master
+
   );
 };
 
