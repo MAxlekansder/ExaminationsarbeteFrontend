@@ -54,6 +54,7 @@ function App() {
           </div>
         )} />
       </Routes>
+      <div><h1 className='text-8xl text-red-400 '>HEJ</h1></div>
       </div>
     </div>
   );
