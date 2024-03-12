@@ -47,7 +47,7 @@ header {
     display: flex;
     align-items: center;
 }
-/* 
+
 input {
     background-color: transparent;
     border: none;
@@ -65,7 +65,7 @@ input:focus {
     width: 35px;
     height: 35px;
     color: black;
-} */
+}
 
 .search-recipes {
     width: 100%;
