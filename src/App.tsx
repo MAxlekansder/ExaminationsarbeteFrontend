@@ -31,11 +31,12 @@ function App() {
       <div className='food-header'>
       </div>
       <div className="search-bar-container">
-        <RecipeSearch
+    <RecipeSearch
           recipesFromInterface={recipes}
           searchTerm={searchTerm}
-          onSearchChange={handleSearchChange} />
-           <Routes>
+          onSearchChange={handleSearchChange} 
+          />
+        <Routes>
       <Route path="/dishes/:id" element={<DishDetailsPage />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/dishes' element={(
@@ -54,7 +55,6 @@ function App() {
           </div>
         )} />
       </Routes>
-      <div><h1 className='text-8xl text-red-400 '>HEJ</h1></div>
       </div>
     </div>
   );
