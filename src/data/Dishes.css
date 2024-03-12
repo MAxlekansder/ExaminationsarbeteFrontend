@@ -1,4 +1,6 @@
 .dish {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     width: 8cm;  
     height: 8cm;  
@@ -10,6 +12,8 @@
     object-fit: cover;  
   } 
   
+  
+
   .dish-name {
     position: absolute;
     bottom: 0;
@@ -37,12 +41,6 @@
     justify-content: space-between; 
    
   }
-  
-.dish {
-    margin-right: 700px; 
-  
-  margin-left: 700px;
-  }
-  
+
 
   

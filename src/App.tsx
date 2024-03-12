@@ -14,6 +14,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const { recipes, fetchRecipe } = useRecipeState();
 
+  
   useEffect(() => {
     console.log("before");
     fetchRecipe();
