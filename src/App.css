@@ -48,10 +48,8 @@ header {
     display: flex;
     align-items: center;
     top: 10vw;
-    border-color: green;
-    border-style: solid;
     font-size: 1vw;
-    
+    z-index: 100;
     
     
     
@@ -62,26 +60,6 @@ input {
     
     
 }
-
-/* 
-input {
-    background{-color: transparent;
-    border: none;
-    height: 100%;
-    font-size: 1, 25rem;
-    width: 100%;
-    margin-left: 5px;
-}
-
-input:focus {
-    outline: none;
-}
-
-#search-icon {
-    width: 1vw;
-    height: 1vw;
-    color: black;
-} */
 
 .search-recipes {
     position: absolute;
@@ -91,14 +69,27 @@ input:focus {
     color:black;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 1vw;
-    top: 11.5vw;
+    top: 12vw;
     background-color: white;
     padding-left: 3.4vw;
-    border-radius:0.5vw;
+    z-index: 100;
+    margin-top: 0.5vw;
+    
 }
 .search-icon{
-    margin-right: 1vw;
-
+   margin-right: 1vw;
+   z-index: 100;
+   opacity: 0.5;
+ 
+}
+.search-icon-background{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.264);
+    padding-left: 0.1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    margin-left: 1.5vw;
+    
 }
 .search-recipes:hover{
     cursor: pointer;
@@ -112,9 +103,6 @@ input:focus {
     color: lightgray;
     text-decoration: underline;
 }
-
-
-
 
 .search-container {
     display: flex;
