@@ -15,6 +15,7 @@ interface recipeState {
     getApiKey: () => string;
     fetchRecipe: () => void;
     fetchDrink: () => void;
+    updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
     
 }
 
