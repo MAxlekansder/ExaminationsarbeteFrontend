@@ -188,7 +188,7 @@
         "instructions": ["Skiva biff och marinera", "Stir-fry biff och grönsaker i en wok", "Servera över ris"],
         "ingredients": [
             { "name": "Biff entrecôte", "amount": 400, "unit": "g" },
-            { "name": "Broccoli", "amount": 1, "unit": "huvud" },
+            { "name": "Broccoli", "amount": 1, "unit": "kg" },
             { "name": "Sojasås", "amount": 50, "unit": "ml" },
             { "name": "Ingefära", "amount": 1, "unit": "msk" }
         ]
