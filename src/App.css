@@ -50,12 +50,15 @@ header {
     top: 10vw;
     border-color: green;
     border-style: solid;
+    font-size: 1vw;
+    
     
     
     
 }
 input {
     width: 30vw;
+    
     
     
 }
@@ -90,7 +93,7 @@ input:focus {
     margin-top: 1vw;
     top: 11.5vw;
     background-color: white;
-    padding-left: 1vw;
+    padding-left: 3.4vw;
     border-radius:0.5vw;
 }
 .search-icon{
@@ -101,6 +104,9 @@ input:focus {
     cursor: pointer;
     opacity: 1;
    
+}
+.recipe-text-on-search{
+  font-size: 1vw;
 }
 .recipe-text-on-search:hover{
     color: lightgray;
@@ -115,13 +121,7 @@ input:focus {
     align-items: center;
 }
 
-.searchBar {
-    position: absolute;
-    top: 0vw;
-    left: 0vw;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-} 
+
 input:focus {
     outline: none;
 }
