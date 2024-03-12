@@ -36,7 +36,7 @@ function InstructionList ({instructions, setInstructions }: InstructionListProps
           <input
             type="text"
             value={newInstruction}
-            onChange={(e) => setNewInstruction(e.target.value)}
+            onChange={(e) => setNewInstruction(e.target.value.trim())}
           />
           <button onClick={handleAddInstructions}>Add Instruction</button>
         </div>

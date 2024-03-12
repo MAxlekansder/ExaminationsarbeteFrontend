@@ -1,10 +1,10 @@
+// Alexander
+
 import { useState } from "react";
 import { Recipe, Ingredient } from "../../data/Recipes";
 import axios from "axios";
 import useRecipeState from "../../State/indexState";
 import CategorySelected from "./CategorySelectComponent";
-// Alexander
-
 import InstructionList from "./HandleInstructionsComponent";
 import IngredientsList from "./HandleIngredientsComponent";
 
@@ -118,7 +118,7 @@ function HandleRequests() {
       
       <div>
           <p>Tid: </p>
-          <input type="number" value={timeInMins} onChange={(e) => setTimeInMins(Number(e.target.value))} />
+          <input type="number" value={timeInMins == 0 ? "" : timeInMins} onChange={(e) => setTimeInMins(e.target.value === "" ? 0 : (Number(e.target.value)))} />
           
           
           <p>Instruktioner: </p>

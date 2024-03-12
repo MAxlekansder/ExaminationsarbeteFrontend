@@ -50,7 +50,7 @@
         "ratings": 4,
         "imageUrl": "https://static.cdn-expressen.se/images/6d/e9/6de9080386b74412b7564098c48e241f/16x9/1000@40.jpg",
         "timeInMins": 45,
-        "categories": ["Huvudrätt, Lunch, Skandenaviskt"],
+        "categories": ["Huvudrätt", "Lunch", "Skandenaviskt"],
         "instructions": ["Riv potatis", "Stek tills gyllene", "Servera med lingonsås"],
         "ingredients": [
             { "name": "Potatis", "amount": 4, "unit": "st" },
