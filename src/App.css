@@ -62,8 +62,8 @@ input:focus {
 }
 
 #search-icon {
-    width: 35px;
-    height: 35px;
+    width: 1vw;
+    height: 1vw;
     color: black;
 }
 
