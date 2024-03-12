@@ -1,4 +1,4 @@
-/* Kristian made this file */
+Kristian made this file
 
 .App {
     height: 100vh;
@@ -47,7 +47,7 @@ header {
     display: flex;
     align-items: center;
 }
-
+/* 
 input {
     background-color: transparent;
     border: none;
@@ -65,7 +65,7 @@ input:focus {
     width: 1vw;
     height: 1vw;
     color: black;
-}
+} */
 
 .search-recipes {
    
@@ -83,7 +83,8 @@ input:focus {
 }
 
 
-/* 
+
+
 .search-container {
     display: flex;
     align-items: center;
@@ -103,4 +104,4 @@ input:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
-} */
+} 
