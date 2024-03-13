@@ -13,12 +13,12 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const {recipes, fetchRecipe} = useRecipeState();
-   
+  const { recipes, fetchRecipe } = useRecipeState();
+
   useEffect(() => {
-    console.log('before')
+
     fetchRecipe();
-    console.log('after')
+
   }, []);
 
   const handleSearchChange = (term: string) => {
@@ -34,28 +34,30 @@ function App() {
         <RecipeSearch
           recipesFromInterface={recipes}
           searchTerm={searchTerm}
-          onSearchChange={handleSearchChange} />
-        
-           <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/dishes' element={(
-              <div>
-                {dishes.map((dish, index) => (
-                  <DishComponent
-                    id={dish.id}
-                    key={index}
-                    name={dish.name}
-                    image={dish.image}
-                    recipe={dish.recipe}
-                    ingredients={dish.ingredients}
-                    onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet.
-                  />
-                ))}
-              </div>
-            )} />
-          </Routes>
+          onSearchChange={handleSearchChange}
+        />
+        <Routes>
+          <Route path="/dishes/:id" element={<DishDetailsPage />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/dishes' element={(
+            <div>
+              {dishes.map((dish, index) => (
+                <DishComponent
+                  id={dish.id}
+                  key={index}
+                  name={dish.name}
+                  image={dish.image}
+                  recipe={dish.recipe}
+                  ingredients={dish.ingredients}
+                  onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet.
+                />
+              ))}
+            </div>
+          )} />
+        </Routes>
       </div>
     </div>
+
   );
 }
 
