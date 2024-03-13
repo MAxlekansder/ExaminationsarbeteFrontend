@@ -62,7 +62,7 @@ input {
     position: absolute;
     overflow-y: hidden;
     max-height: 10vw;
-    width: 30vw;
+    width: 28vw;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 2vw;
@@ -71,6 +71,7 @@ input {
     padding-left: 1.4vw;
     border-radius: 0.5vw;
 }
+
 
 .search-icon {
     margin-right: 1vw;
@@ -86,14 +87,13 @@ input {
 .recipe-text-on-search {
     font-size: 15px;
     background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid rgb(233, 233, 233);
     padding-bottom: 0.3vw;
     transition: background-color 0.2s, color 0.2s;
     color: #333;
 }
 
 .recipe-text-on-search:hover {
-    background-color: #f2f2f2;
+    background-color: #dcf7d2;
     color: rgb(0, 0, 0);
 }
 

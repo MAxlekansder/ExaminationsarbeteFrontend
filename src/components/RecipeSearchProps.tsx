@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import '../App.css'
 
-
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];
   searchTerm: string;
@@ -39,7 +38,8 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
         />
 
       </div>
-      <div className='search-recipes underline'>{renderRecipes}</div>
+      <div className='search-recipes underline'>
+        {renderRecipes}</div>
     </>
   );
 };
