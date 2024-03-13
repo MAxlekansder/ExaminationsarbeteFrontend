@@ -46,20 +46,16 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     fetchRecipe: async () => {
         try {
-            const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes")
-            set({recipes: response.data});
-            console.log(response.data)
-      
-        } catch(error){ console.log('Error fetching api/data', error); }
-    },
-
-
-    fetchDrink: async () => {
-        try {
-            const drinkResponse = await axios.get("www.thecocktaildb.com/api/json/v1/1/search.php?f=a");
-            set({drinks: drinkResponse.data});
-     
-        } catch (error) { console.log('Error when fetching cocktails', error); }
+        const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes")
+            
+        if(response.status>=200){
+                set({recipes: response.data});
+                console.log(response.data)
+            }
+        }
+        catch(error){
+            console.log('Error fetching api/data', error);
+        }
     }
 
 }));
