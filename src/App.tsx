@@ -11,6 +11,7 @@ import dishes from './data/Dishes';
 import { Route, Routes } from 'react-router-dom';
 
 
+
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
@@ -37,7 +38,7 @@ function App() {
           onSearchChange={handleSearchChange}
         />
         <Routes>
-          <Route path="/dishes/:id" element={<DishDetailsPage />} />
+          {/* <Route path="/dishes/:id" element={<DishDetailsPage />} /> */}
           <Route path='/' element={<HomePage />} />
           <Route path='/dishes' element={(
             <div>
