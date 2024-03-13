@@ -14,9 +14,7 @@ interface recipeState {
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
     fetchRecipe: () => void;
-    fetchDrink: () => void;
     updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
-    
 }
 
 const useRecipeState = create<recipeState>()((set) => ({
@@ -46,14 +44,10 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     fetchRecipe: async () => {
         try {
-        const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes")
-            
-        if(response.status>=200){
-                set({recipes: response.data});
-                console.log(response.data)
-            }
-        }
-        catch(error){
+            const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
+            set({ recipes: response.data });
+            console.log(response.data);
+        } catch (error) {
             console.log('Error fetching api/data', error);
         }
     }
