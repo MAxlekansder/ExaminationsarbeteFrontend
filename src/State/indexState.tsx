@@ -68,7 +68,6 @@ const useRecipeState = create<recipeState>()((set) => ({
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
             const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
-            const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
             const drinksData = await drinkResponse.data.drinks;
             set ({ drinks: drinksData });
             console.log(drinksData);
@@ -113,8 +112,6 @@ const useRecipeState = create<recipeState>()((set) => ({
             console.log(detailedDrinkData)
         } catch (error) {console.log("error while fetching specific drink", error)}
     }
-
-    
 
 }));
 
