@@ -23,11 +23,11 @@ function App() {
     setSearchTerm(term);
   };
 
+  
   return (
     <div>
       <NavBarComponent />
-      <div className='food-header'>
-      </div>
+      <div className="food-header"></div>
       <div className="search-bar-container">
         <RecipeSearch
           recipesFromInterface={recipes}
