@@ -21,11 +21,11 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   const renderRecipes = searchTerm !== '' ? (
     <ul>
       {filteredRecipes.map((recipe, index) => (
-      <li key={index} className='recipe-text-on-search'>{recipe.title},
-          &nbsp;
-        <span style={{fontStyle: 'italic'}}>
-          {recipe.description}
-        </span>
+      <li key={index} className='recipe-text-on-search'>
+        <a href="" className=''>{recipe.title},&nbsp;
+          <span className='italic'>{recipe.description}
+          </span>
+        </a>
       </li>
 
       ))}
@@ -43,7 +43,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
           placeholder="Sök recept"
         />
       </div>
-    <div className='search-recipes underline'>
+    <div className='search-recipes'>
         {renderRecipes}
     </div>
 
