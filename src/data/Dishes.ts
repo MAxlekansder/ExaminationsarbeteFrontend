@@ -21,6 +21,14 @@ interface Dish {
       recipe: 'Länk till recept',
       ingredients: []
     },
+    {
+      id: 'lamspett med ris', 
+      name: 'lamspett med ris',
+      image: 'https://images.deliveryhero.io/image/fd-op/LH/v2rz-hero.jpg?width=512&height=384&quality=45',
+      recipe: 'Länk till recept',
+      ingredients: []
+    },
+    
     // Lägg till fler maträtter här:
   ];
   
