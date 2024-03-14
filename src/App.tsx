@@ -10,17 +10,14 @@ import DishComponent from './components/DishComponent';
 import dishes from './data/Dishes';
 import { Route, Routes } from 'react-router-dom';
 
-
-
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
 
   useEffect(() => {
-
     fetchRecipe();
-
-  }, []);
+    
+  },[]);
 
   const handleSearchChange = (term: string) => {
     setSearchTerm(term);

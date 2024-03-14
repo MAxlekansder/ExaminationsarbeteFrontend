@@ -49,6 +49,7 @@ header {
     border-color: green;
     border-style: solid;
     font-size: 1.1vw;
+
 }
 
 input {
@@ -90,6 +91,7 @@ input {
     padding-bottom: 0.3vw;
     transition: background-color 0.2s, color 0.2s;
     color: #333;
+    text-decoration: none;
 }
 
 .recipe-text-on-search:hover {
