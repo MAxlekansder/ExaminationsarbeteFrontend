@@ -11,7 +11,18 @@ interface IngredientsListProps {
 }
 
 
-const typesOfMeasure = ["gram", "kg", "tsk", "msk", "dl", "l", "krm", "st", "klyftor"];
+const typesOfMeasure = [
+  "gram", 
+  "kg", 
+  "tsk", 
+  "msk", 
+  "dl", 
+  "l", 
+  "krm", 
+  "st",  
+  "klyftor", 
+  "kruka"
+];
 
 
 function IngredientsList({ ingredient, setIngredient,}: IngredientsListProps): JSX.Element {
