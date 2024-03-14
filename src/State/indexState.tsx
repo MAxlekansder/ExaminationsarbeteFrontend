@@ -14,8 +14,10 @@ interface recipeState {
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
     fetchRecipe: () => void;
+    fetchDrinks: () => Promise<void>;
     updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
 }
+
 
 const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
@@ -50,7 +52,17 @@ const useRecipeState = create<recipeState>()((set) => ({
         } catch (error) {
             console.log('Error fetching api/data', error);
         }
-    }
+    },
+
+
+    fetchDrinks: async () => {
+        try {
+            const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a");
+            const drinksData = await drinkResponse.data.drinks;
+            set ({ drinks: drinksData });
+            console.log(drinksData);
+        } catch (error) { console.log("error while fetching drinks ", error) }
+    } 
 
 }));
 
