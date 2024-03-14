@@ -6,7 +6,7 @@ import NavBarComponent from "../NavBarComponent";
 import { resolve } from "path";
 
 function PresentCocktails() {
-  const getDrinks = useRecipeState((state) => state.fetchDrinks);
+  const getDrinks = useRecipeState((state) => state.fetchAlcoholicDrinks);
   const drinks = useRecipeState((state) => state.drinks);
   const [loading, setLoading] = useState(true);
 
