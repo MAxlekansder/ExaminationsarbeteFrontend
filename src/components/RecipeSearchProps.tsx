@@ -35,8 +35,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   return (
     <>
       <div className='input-wrapper'>
-      <div className='search-icon-background'></div>
-        <FaSearch id='searchIcon' className='search-icon' />
+      <FaSearch id='searchIcon' className='search-icon' />
         <input
           type="text"
           value={searchTerm}
