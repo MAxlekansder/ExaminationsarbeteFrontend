@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import '../App.css'
 
-
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];
   searchTerm: string;
@@ -16,18 +15,14 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   const filteredRecipes = recipesFromInterface.filter(recipe => {
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
-  
+
 
   //Tillfällig styling direkt i img taggen
   const renderRecipes = searchTerm !== '' ? (
     <ul>
       {filteredRecipes.map((recipe, index) => (
-        <li key={index} className='recipe-text-on-search'>
-            {recipe.title}&nbsp;
-              <span style={{fontStyle: 'italic'}}>
-            {recipe.description}
-          </span>
-        </li>
+      <li key={index} className='recipe-text-on-search'>{recipe.title},&nbsp;<span style={{fontStyle: 'italic'}}>{recipe.description}</span></li>
+
       ))}
     </ul>
   ) : null;
@@ -42,11 +37,12 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Sök recept"
         />
-        
-        
+
+
       </div>
-      <div className='search-recipes underline'>{renderRecipes}</div>
-      
+      <div className='search-recipes underline'>
+        {renderRecipes}</div>
+
     </>
   );
 };
