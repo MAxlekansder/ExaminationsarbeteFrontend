@@ -10,11 +10,13 @@ import axios from "axios";
 interface recipeState {
     recipes: Recipe[];
     drinks: any[];
+    nonDrinks: any[];
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
     fetchRecipe: () => void;
-    fetchDrinks: () => Promise<void>;
+    fetchAlcoholicDrinks: () => Promise<void>;
+    fetchNonAlcoholicDrinks: () => Promise<void>;
     updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
 }
 
@@ -22,6 +24,7 @@ interface recipeState {
 const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
     drinks: [],
+    nonDrinks: [],
 
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
@@ -44,7 +47,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
    
 
-    fetchRecipe: async () => {
+    fetchRecipe: async () => { // for fetching 
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             set({ recipes: response.data });
@@ -55,14 +58,25 @@ const useRecipeState = create<recipeState>()((set) => ({
     },
 
 
-    fetchDrinks: async () => {
+    fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
-            const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a");
+            const drinkResponse = await axios.get("www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
             const drinksData = await drinkResponse.data.drinks;
             set ({ drinks: drinksData });
             console.log(drinksData);
         } catch (error) { console.log("error while fetching drinks ", error) }
-    } 
+    },
+
+    fetchNonAlcoholicDrinks: async () => { // for fetching non-alcoholic drinks
+        try {
+            const nonDrinkResponse = await axios.get("www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
+            const nonDrinksData = nonDrinkResponse.data.drinks; 
+            set({ nonDrinks: nonDrinksData }); 
+            console.log(nonDrinksData);
+        } catch (error) {
+            console.log("error while fetching non alcoholic drinks", error);
+        }
+    }
 
 }));
 
