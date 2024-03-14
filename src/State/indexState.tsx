@@ -11,20 +11,27 @@ interface recipeState {
     recipes: Recipe[];
     drinks: any[];
     nonDrinks: any[];
+    allDrinks: any[];
+    detailedDrink: any[];
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
     fetchRecipe: () => void;
     fetchAlcoholicDrinks: () => Promise<void>;
     fetchNonAlcoholicDrinks: () => Promise<void>;
+    fetchAllDrinks: () => Promise<void>;
+    fetchSpecificDrink: (id: string) => Promise<void>;
     updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
 }
 
 
 const useRecipeState = create<recipeState>()((set) => ({
+    
     recipes: [],
     drinks: [],
     nonDrinks: [],
+    allDrinks: [],
+    detailedDrink: [],
 
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
@@ -60,7 +67,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
-            const drinkResponse = await axios.get("www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
+            const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
             const drinksData = await drinkResponse.data.drinks;
             set ({ drinks: drinksData });
             console.log(drinksData);
@@ -69,14 +76,44 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     fetchNonAlcoholicDrinks: async () => { // for fetching non-alcoholic drinks
         try {
-            const nonDrinkResponse = await axios.get("www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
-            const nonDrinksData = nonDrinkResponse.data.drinks; 
+            const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
+            const nonDrinksData = await nonDrinkResponse.data.drinks; 
             set({ nonDrinks: nonDrinksData }); 
             console.log(nonDrinksData);
         } catch (error) {
             console.log("error while fetching non alcoholic drinks", error);
         }
+    },
+
+    fetchAllDrinks: async () => {
+        try {
+            const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
+            const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
+            
+            const nonDrinksData =  nonDrinkResponse.data.drinks; 
+            const drinksData =  drinkResponse.data.drinks;
+
+            const newAllDrinks = [...nonDrinksData, ...drinksData]
+            
+            set({allDrinks: newAllDrinks})
+            console.log(newAllDrinks)
+            
+
+        } catch (error) { console.log("error while fetching all drinks", error) }
+      
+    },
+
+
+    fetchSpecificDrink: async (id: string) => {
+        try {
+            const detailedDrink = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+            const detailedDrinkData = detailedDrink.data.drinks;
+            set ({detailedDrink: detailedDrinkData})
+            console.log(detailedDrinkData)
+        } catch (error) {console.log("error while fetching specific drink", error)}
     }
+
+    
 
 }));
 
