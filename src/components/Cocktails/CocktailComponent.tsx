@@ -10,6 +10,7 @@ function PresentCocktails() {
   const getDrinks = useRecipeState((state) => state.fetchAllDrinks);
   const drinks = useRecipeState((state) => state.allDrinks);
   const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate(); // Hook for navigation
 
 
