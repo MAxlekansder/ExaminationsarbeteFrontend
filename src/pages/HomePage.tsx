@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const HomePage: React.FC = () => {
   return (
     <div className="home-page">
-      <div className="dish-container">
+      <div className="dish-container m-12">
         {dishes.map((dish, index) => (
           <Link to={`/dishes/${dish.id}`} key={index}>
             <DishComponent
@@ -19,7 +19,8 @@ const HomePage: React.FC = () => {
               image={dish.image}
               recipe={dish.recipe}
               ingredients={dish.ingredients}
-              onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet.
+              onClick={() => console.log(dish.recipe)}
+             // Eller annan logik för att visa receptet.
             />
           </Link>
 

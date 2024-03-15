@@ -24,7 +24,6 @@ interface recipeState {
 
 
 const useRecipeState = create<recipeState>()((set) => ({
-    
     recipes: [],
     drinks: [],
     nonDrinks: [],
@@ -57,6 +56,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             set({ recipes: response.data });
             console.log(response.data);
+        
         } catch (error) {console.log('Error fetching api/data', error);}
     },
 
@@ -67,6 +67,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             const drinksData = await drinkResponse.data.drinks;
             set ({ drinks: drinksData });
             console.log(drinksData);
+        
         } catch (error) { console.log("error while fetching drinks ", error) }
     },
 
@@ -76,6 +77,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             const nonDrinksData = await nonDrinkResponse.data.drinks; 
             set({ nonDrinks: nonDrinksData }); 
             console.log(nonDrinksData);
+        
         } catch (error) {
             console.log("error while fetching non alcoholic drinks", error);
         }
@@ -106,6 +108,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             const detailedDrinkData = detailedDrink.data.drinks;
             set ({detailedDrink: detailedDrinkData})
             console.log(detailedDrinkData)
+        
         } catch (error) {console.log("error while fetching specific drink", error)}
     }
 

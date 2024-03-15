@@ -19,7 +19,7 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients }) =>
   // You may need to modify it to fit the structure of DishComponent
   if (id === dishId) { // If the current dish matches the selected dish
     return (
-      <div>
+      <div >
         <h2>{name}</h2>
         <img src={image} alt={name} />
         <ul>
@@ -35,11 +35,13 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients }) =>
   // Here is the existing code of DishComponent
   // It handles displaying the list of dishes
   return (
-    <div className="dish">
+    <div className="dish  ">
       <Link to={`/dishes/${id}`}>
-        <p className="lunch-label">Dagens lunch</p>
+        <div className='pl-4 pr-4'>
+        <p className="lunch-label pl-4 pr-4 ">Dagens lunch</p>
         <img src={image} alt={name} />
         <p className="dish-name">{name}</p>
+        </div>
       </Link>
     </div>
   );
