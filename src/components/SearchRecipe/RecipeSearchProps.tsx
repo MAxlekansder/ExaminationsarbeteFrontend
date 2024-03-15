@@ -1,9 +1,9 @@
 //Gustav
 import React from 'react';
-import { Recipe } from "../data/Recipes";
+import { Recipe } from "../../data/Recipes";
 import { NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
-import '../App.css'
+import '../../Styling/App.css'
 
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];
@@ -21,12 +21,12 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   const renderRecipes = searchTerm !== '' ? (
     <ul>
       {filteredRecipes.map((recipe, index) => (
-      <li key={index} className='recipe-text-on-search'>
-        <a href="" className=''>{recipe.title},&nbsp;
-          <span className='italic'>{recipe.description}
-          </span>
-        </a>
-      </li>
+        <li key={index} className='recipe-text-on-search'>
+          <a href="" className=''>{recipe.title},&nbsp;
+            <span className='italic'>{recipe.description}
+            </span>
+          </a>
+        </li>
 
       ))}
     </ul>
@@ -35,7 +35,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   return (
     <>
       <div className='input-wrapper'>
-      <FaSearch id='searchIcon' className='search-icon' />
+        <FaSearch id='searchIcon' className='search-icon' />
         <input
           type="text"
           value={searchTerm}
@@ -43,9 +43,9 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
           placeholder="Sök recept"
         />
       </div>
-    <div className='search-recipes'>
+      <div className='search-recipes'>
         {renderRecipes}
-    </div>
+      </div>
 
     </>
   );

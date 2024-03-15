@@ -12,7 +12,7 @@ header {
     align-items: center;
 }
 
-.welcome-text-header{
+.welcome-text-header {
     font-family: Pacifico;
     opacity: 0.7;
 }
@@ -20,11 +20,11 @@ header {
 .food-header {
     margin-top: 1vw;
     padding: 13vw;
-    background-image: url(./Images/food-header.jpg);
+    background-image: url(../Images/food-header.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.9;
-    
+
 }
 
 
@@ -32,7 +32,7 @@ header {
     margin-right: 10px;
     width: 60px;
     height: 80px;
-    background-image: url(./Images/logo1.png);
+    background-image: url(../Images/logo1.png);
 }
 
 .search-bar-container {

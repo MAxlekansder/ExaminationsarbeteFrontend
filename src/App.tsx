@@ -1,8 +1,8 @@
-import './App.css';
-import './NavBar.css';
-import './Dishes.css';
+import './Styling/App.css';
+import './Styling/NavBar.css';
+import './Styling/Dishes.css';
 import { useState, useEffect } from 'react';
-import RecipeSearch from './components/RecipeSearchProps';
+import RecipeSearch from './components/SearchRecipe/RecipeSearchProps';
 import NavBarComponent from './components/NavBarComponent'
 import useRecipeState from './State/indexState';
 import HomePage from './pages/HomePage';
@@ -16,20 +16,20 @@ function App() {
 
   useEffect(() => {
     fetchRecipe();
-    
-  },[]);
+
+  }, []);
 
   const handleSearchChange = (term: string) => {
     setSearchTerm(term);
   };
 
-  
+
   return (
     <div>
       <NavBarComponent />
       <div className="food-header">
         <h1 className='welcome-text-header text-center font-bold text-7xl text-white'>
-        Welcome!
+          Welcome!
         </h1></div>
       <div className="search-bar-container">
         <RecipeSearch
