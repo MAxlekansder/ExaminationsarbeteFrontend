@@ -14,6 +14,7 @@ const NavBarComponent = () => {
                     <li><a href="/" className="nav-link">Kategorier</a></li>
                     <li><a href="/" className="nav-link">Veckans tips</a></li>
                     <li><a href="/" className="nav-link">Om oss</a></li>
+                    <li><a href="/" className="nav-link">Cocktails</a></li>
                 </ul>
             </nav>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">

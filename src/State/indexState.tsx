@@ -5,8 +5,6 @@ import {create} from "zustand"
 import { Recipe } from "../data/Recipes"
 import axios from "axios";
 
-
-
 interface recipeState {
     recipes: Recipe[];
     drinks: any[];
@@ -52,9 +50,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             set({ recipes: response.data });
             console.log(response.data);
-        } catch (error) {
-            console.log('Error fetching api/data', error);
-        }
+        } catch (error) {console.log('Error fetching api/data', error);}
     },
 
 

@@ -11,9 +11,7 @@ function PresentCocktails() {
   const [loading, setLoading] = useState(true);
 
 
-
-
-  const shuffleResult = (array: any[]) => { // to generate different results for cocktails and not only the first 9 ( yates sorting alogrithm )
+const shuffleResult = (array: any[]) => { // to generate different results for cocktails and not only the first 9 ( yates sorting alogrithm )
 
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
