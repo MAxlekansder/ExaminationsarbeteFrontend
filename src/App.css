@@ -87,10 +87,12 @@ input {
 
 .recipe-text-on-search {
     font-size: 15px;
+    padding-left: 13px;
     background-color: rgb(255, 255, 255);
     padding-bottom: 0.3vw;
     transition: background-color 0.2s, color 0.2s;
     color: #333;
+    text-decoration: none;
 }
 
 .recipe-text-on-search:hover {
