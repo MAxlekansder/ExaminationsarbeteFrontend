@@ -27,7 +27,10 @@ function App() {
   return (
     <div>
       <NavBarComponent />
-      <div className="food-header"></div>
+      <div className="food-header">
+        <h1 className='welcome-text-header text-center font-bold text-7xl text-white'>
+        Welcome!
+        </h1></div>
       <div className="search-bar-container">
         <RecipeSearch
           recipesFromInterface={recipes}

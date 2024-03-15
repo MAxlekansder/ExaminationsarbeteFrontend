@@ -24,7 +24,6 @@ interface recipeState {
 
 
 const useRecipeState = create<recipeState>()((set) => ({
-    
     recipes: [],
     drinks: [],
     nonDrinks: [],
