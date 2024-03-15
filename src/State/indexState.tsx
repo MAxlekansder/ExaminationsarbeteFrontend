@@ -54,9 +54,12 @@ const useRecipeState = create<recipeState>()((set) => ({
     fetchRecipe: async () => { // for fetching 
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
-            set({ recipes: response.data });
-            console.log(response.data);
-        
+            
+            if (response.status === 200) {
+                set({ recipes: response.data });
+                console.log(response.data);
+            } else { console.log("Response error while fetching recipes: ", response.status) }
+
         } catch (error) {console.log('Error fetching api/data', error);}
     },
 
@@ -64,20 +67,26 @@ const useRecipeState = create<recipeState>()((set) => ({
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
             const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
-            const drinksData = await drinkResponse.data.drinks;
-            set ({ drinks: drinksData });
-            console.log(drinksData);
-        
+            
+            if (drinkResponse.status === 200) {
+                const drinksData = await drinkResponse.data.drinks;
+                set ({ drinks: drinksData });
+                console.log(drinksData);
+            } else { console.log("Response error while fetcinh alcoholic: ", drinkResponse.status) }
+           
         } catch (error) { console.log("error while fetching drinks ", error) }
     },
 
     fetchNonAlcoholicDrinks: async () => { // for fetching non-alcoholic drinks
         try {
             const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
-            const nonDrinksData = await nonDrinkResponse.data.drinks; 
-            set({ nonDrinks: nonDrinksData }); 
-            console.log(nonDrinksData);
-        
+            
+            if (nonDrinkResponse.status === 200) {
+                const nonDrinksData = await nonDrinkResponse.data.drinks; 
+                set({ nonDrinks: nonDrinksData }); 
+                console.log(nonDrinksData);
+            } else { console.log("Response error while fetching non alcoholic: ", nonDrinkResponse.status) }
+            
         } catch (error) {
             console.log("error while fetching non alcoholic drinks", error);
         }
@@ -88,14 +97,16 @@ const useRecipeState = create<recipeState>()((set) => ({
             const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
             const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
             
-            const nonDrinksData =  nonDrinkResponse.data.drinks; 
-            const drinksData =  drinkResponse.data.drinks;
-
-            const newAllDrinks = [...nonDrinksData, ...drinksData]
-            
-            set({allDrinks: newAllDrinks})
-            console.log(newAllDrinks)
-            
+            if (drinkResponse.status === 200 && nonDrinkResponse.status === 200) {
+                const nonDrinksData =  nonDrinkResponse.data.drinks; 
+                const drinksData =  drinkResponse.data.drinks;
+    
+                const newAllDrinks = [...nonDrinksData, ...drinksData]
+                
+                set({allDrinks: newAllDrinks})
+                console.log(newAllDrinks)
+            } else {console.log ("Response error, while fetching all drinks: ", nonDrinkResponse.status, drinkResponse.status)}
+           
 
         } catch (error) { console.log("error while fetching all drinks", error) }
       
@@ -105,10 +116,13 @@ const useRecipeState = create<recipeState>()((set) => ({
     fetchSpecificDrink: async (id: string) => {
         try {
             const detailedDrink = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
-            const detailedDrinkData = detailedDrink.data.drinks;
-            set ({detailedDrink: detailedDrinkData})
-            console.log(detailedDrinkData)
-        
+            
+            if ( detailedDrink.status === 200) {
+                const detailedDrinkData = detailedDrink.data.drinks;
+                set ({detailedDrink: detailedDrinkData})
+                console.log(detailedDrinkData)
+            } else { console.log ("Response error: ", detailedDrink.status)}
+ 
         } catch (error) {console.log("error while fetching specific drink", error)}
     }
 

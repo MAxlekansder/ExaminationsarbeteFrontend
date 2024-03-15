@@ -35,7 +35,7 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients }) =>
   // Here is the existing code of DishComponent
   // It handles displaying the list of dishes
   return (
-    <div className="dish  ">
+    <div className="dish">
       <Link to={`/dishes/${id}`}>
         <div className='pl-4 pr-4'>
         <p className="lunch-label pl-4 pr-4 ">Dagens lunch</p>

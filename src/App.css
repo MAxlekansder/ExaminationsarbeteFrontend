@@ -12,13 +12,21 @@ header {
     align-items: center;
 }
 
+.welcome-text-header{
+    font-family: Pacifico;
+    opacity: 0.7;
+}
+
 .food-header {
     margin-top: 1vw;
-    padding: 15vw;
+    padding: 13vw;
     background-image: url(./Images/food-header.jpg);
     background-size: cover;
     background-position: center;
+    opacity: 0.9;
+    
 }
+
 
 .logo {
     margin-right: 10px;
@@ -54,8 +62,6 @@ header {
 
 input {
     width: 30vw;
-
-
 
 }
 
