@@ -3,19 +3,16 @@ import {Link, } from "react-router-dom";
 import Title from "./Components/Title/Title.tsx";
 import Description from "./Components/Description/Description.tsx";
 
-
 interface Props {
     title: String;
     description: String;
 }
-
 const Recipe = (props: Props) => {
     const {title, description} = props;
     const Recipe = () => {
         Recipe();
 
     };
-
     const getRecipe = () => { getRecipe()
         //Rest-api (Open-API/Swagger)
         //slå upp recept och returnera ingredienser
@@ -24,7 +21,7 @@ const Recipe = (props: Props) => {
 
         <div>
             <h1>Recipe</h1>
-            <div className="Recipe-container">
+            <div className="Recipe-link">
 
                 <div className="Recipe" key="index">
                     <img src="recipe.image" alt="recipe.name"/>
@@ -42,6 +39,5 @@ const Recipe = (props: Props) => {
             <Description description={description}/>
         </div>
     )}
-
 
 export default Recipe

@@ -1,13 +1,12 @@
 import React from 'react'
 
-
 interface Props {
     description: String;
 }
 const Description = (props: Props) => {
     const {description} = props;
     return (
-        <div>
+        <div className="Home-container">
             <p>{description}</p>
             <div className="Recipe"/>
 
