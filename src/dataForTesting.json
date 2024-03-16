@@ -117,5 +117,301 @@
             { "name": "Ris", "amount": 300, "unit": "g" },
             { "name": "Kycklingbuljong", "amount": 700, "unit": "ml" }
         ]
+    },
+    {
+        "title": "Chicken Alfredo Pasta",
+        "description": "Creamy Alfredo pasta with grilled chicken",
+        "ratings": 4,
+        "imageUrl": "https://www.cookingclassy.com/wp-content/uploads/2019/09/fettuccine-alfredo-6.jpg",
+        "timeInMins": 30,
+        "categories": ["Huvudrätt", "Italienskt"],
+        "instructions": ["Cook fettuccine pasta", "Grill chicken and slice", "Prepare creamy Alfredo sauce", "Combine and serve"],
+        "ingredients": [
+            { "name": "Fettuccine pasta", "amount": 300, "unit": "g" },
+            { "name": "Chicken breast", "amount": 2, "unit": "st" },
+            { "name": "Heavy cream", "amount": 200, "unit": "ml" },
+            { "name": "Parmesan cheese", "amount": 100, "unit": "g" }
+        ]
+    }, 
+    {
+        "title": "Sushi Rolls",
+        "description": "Assorted sushi rolls with fresh seafood",
+        "ratings": 5,
+        "imageUrl": "https://images.arla.com/recordid/6CCC0216-F0D5-4B04-A711D1C83CFBC48B/california-rolls.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,59,0,-89)",
+        "timeInMins": 45,
+        "categories": ["Huvudrätt", "Japansk"],
+        "instructions": ["Förbered sushiriset", "haka ingredienserna fint, fisk och även skaldjur", "lägg riset i sjögräset, tillsätt resterande ingredienser och rulla ihop till en rulle", "skär fina bitar av rullen", "servera på fina fat"],
+        "ingredients": [
+            { "name": "Sushi rice", "amount": 2, "unit": "cups" },
+            { "name": "Fresh seafood", "amount": 200, "unit": "g" },
+            { "name": "Nori (seaweed)", "amount": 10, "unit": "sheets" },
+            { "name": "Soy sauce", "amount": 50, "unit": "ml" }
+        ]
+    },
+    {
+        "title": "Kyckling Caesar Sallad",
+        "description": "Klassisk Caesar sallad med grillad kyckling",
+        "ratings": 4,
+        "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/f4e01807-a003-457e-8b9f-2cde324c2c88?fit=crop&h=750&w=1000&s=7821a62375d2b58a8c192911cec4bde62f3fe057",
+        "timeInMins": 25,
+        "categories": ["Förrätt", "Amerikanskt"],
+        "instructions": ["Grilla kyckling och skiva", "Blanda romansallad med Caesar dressing", "Toppa med grillad kyckling, krutonger och parmesan"],
+        "ingredients": [
+            { "name": "Kycklingbröst", "amount": 2, "unit": "st" },
+            { "name": "Romansallad", "amount": 1, "unit": "huvud" },
+            { "name": "Krutonger", "amount": 1, "unit": "cup" },
+            { "name": "Caesar dressing", "amount": 100, "unit": "ml" }
+        ]
+    },
+    {
+        "title": "Mango Sticky Rice",
+        "description": "Söt thailändsk efterrätt med mango och kokosris",
+        "ratings": 5,
+        "imageUrl": "https://i0.wp.com/beyondsweetandsavory.com/wp-content/uploads/2021/05/Instant-Pot-mango-sticky-rice-Vy-Tran-5-of-6-853x1280-1.jpg?w=853&ssl=1",
+        "timeInMins": 60,
+        "categories": ["Efterrätt", "Thailändskt"],
+        "instructions": ["Koka sticky rice med kokosmjölk", "Skiva mogen mango", "Servera mango över sticky rice, ringla över kokossås"],
+        "ingredients": [
+            { "name": "Sticky rice", "amount": 1, "unit": "cup" },
+            { "name": "Kokosmjölk", "amount": 400, "unit": "ml" },
+            { "name": "Mogen mango", "amount": 2, "unit": "st" },
+            { "name": "Palmsocker", "amount": 50, "unit": "g" }
+        ]
+    },
+    {
+        "title": "Biff Stir-Fry",
+        "description": "Snabb och smakfull biff stir-fry med grönsaker",
+        "ratings": 4,
+        "imageUrl": "https://www.vinia.se/blogg/vin-och-vanner/wp-content/uploads/sites/2/2020/09/BiffochBroccoliWok.jpg",
+        "timeInMins": 30,
+        "categories": ["Huvudrätt", "Kinesiskt"],
+        "instructions": ["Skiva biff och marinera", "Stir-fry biff och grönsaker i en wok", "Servera över ris"],
+        "ingredients": [
+            { "name": "Biff entrecôte", "amount": 400, "unit": "g" },
+            { "name": "Broccoli", "amount": 1, "unit": "kg" },
+            { "name": "Sojasås", "amount": 50, "unit": "ml" },
+            { "name": "Ingefära", "amount": 1, "unit": "msk" }
+        ]
+    },
+    {
+        "title": "Caprese Sallad",
+        "description": "Fräsch italiensk sallad med mozzarella, tomater och basilika",
+        "ratings": 5,
+        "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2019/08/Caprese-Salad-6.jpg",
+        "timeInMins": 15,
+        "categories": ["Förrätt", "Italienskt"],
+        "instructions": ["Skiva mozzarella och tomater", "Varva mozzarella, tomater och basilika på ett fat", "Ringla över olivolja och balsamvinäger"],
+        "ingredients": [
+            { "name": "Buffelmozzarella", "amount": 1, "unit": "boll" },
+            { "name": "Tomater", "amount": 4, "unit": "st" },
+            { "name": "Färsk basilika", "amount": 1, "unit": "kruka" },
+            { "name": "Olivolja", "amount": 2, "unit": "msk" }
+        ]
+    },
+    {
+        "title": "Chokladmousse",
+        "description": "Krämig och ljuvlig chokladmousse",
+        "ratings": 5,
+        "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/32205408-c5c2-49d4-a1ed-8dce5ac8dea5?fit=crop&h=750&w=1000&s=f31dc38dc19d2cf69f6778f77001c8b1e9531b19",
+        "timeInMins": 120,
+        "categories": ["Efterrätt"],
+        "instructions": ["Smält choklad och låt svalna", "Vispa grädde och blanda med choklad", "Kyl före servering"],
+        "ingredients": [
+            { "name": "Mörk choklad", "amount": 200, "unit": "g" },
+            { "name": "Grädde", "amount": 300, "unit": "ml" },
+            { "name": "Vaniljsocker", "amount": 1, "unit": "tsk" },
+            { "name": "Äggula", "amount": 2, "unit": "st" }
+        ]
+    },
+    {
+        "title": "Guacamole",
+        "description": "Krämig och läcker avokadoröra",
+        "ratings": 4,
+        "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_243403/cf_259/guacamole_med_apple.jpg",
+        "timeInMins": 15,
+        "categories": ["Förrätt", "Mexikansk"],
+        "instructions": ["Mosa avokado", "Tillsätt tomat, lök, limejuice och koriander", "Salta och peppra efter smak"],
+        "ingredients": [
+            { "name": "Avokado", "amount": 3, "unit": "st" },
+            { "name": "Tomat", "amount": 1, "unit": "st" },
+            { "name": "Lök", "amount": 1, "unit": "st" },
+            { "name": "Limejuice", "amount": 1, "unit": "msk" }
+        ]
+    },
+    {
+        "title": "Enchiladas",
+        "description": "Ugnsgratinerade tortillarullar fyllda med kött och sås",
+        "ratings": 4,
+        "imageUrl": "https://images.arla.com/recordid/C22D75B0-BFB8-4FE3-B4E54ED6CCE2841E/enchiladas-med-biff.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,257,0,-437)",
+        "timeInMins": 45,
+        "categories": ["Huvudrätt", "Mexikansk"],
+        "instructions": ["Stek färs och lök", "Fyll tortillas med köttblandningen", "Gratinera med enchiladasås och ost"],
+        "ingredients": [
+            { "name": "Köttfärs", "amount": 400, "unit": "g" },
+            { "name": "Lök", "amount": 1, "unit": "st" },
+            { "name": "Tortillas", "amount": 8, "unit": "st" },
+            { "name": "Enchiladasås", "amount": 2, "unit": "dl" },
+            { "name": "Ost", "amount": 200, "unit": "g" }
+        ]
+    },
+    {
+        "title": "Carbonara",
+        "description": "En klassisk italiensk pasta med krämig äggsås, pancetta och riven parmesan.",
+        "ratings": 5,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Espaguetis_carbonara.jpg",
+        "timeInMins": 30,
+        "categories": ["Huvudrätt", "Italiensk"],
+        "instructions": [
+            "Koka pastan enligt anvisningarna på förpackningen.",
+            "Stek pancetta eller bacon knaprigt i en stekpanna.",
+            "Blanda ägg, riven parmesan och svartpeppar i en skål.",
+            "Häll av pastavattnet och blanda pastan med äggblandningen.",
+            "Tillsätt stekt pancetta eller bacon och rör om väl.",
+            "Servera genast och toppa med mer riven parmesan och svartpeppar efter smak."
+        ],
+        "ingredients": [
+            { "name": "Spaghetti", "amount": 300, "unit": "g" },
+            { "name": "Ägg", "amount": 2, "unit": "st" },
+            { "name": "Parmesan", "amount": 100, "unit": "g" },
+            { "name": "Pancetta eller bacon", "amount": 150, "unit": "g" },
+            { "name": "Svartpeppar", "amount": "efter smak", "unit": "" }
+        ]
+    },
+    {
+        "title": "Margherita Pizza",
+        "description": "En enkel och klassisk italiensk pizza med tomatsås, mozzarella och basilika.",
+        "ratings": 4.5,
+        "imageUrl": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
+        "timeInMins": 20,
+        "categories": ["Huvudrätt", "Italiensk"],
+        "instructions": [
+            "Rulla ut pizzadegen på en plåt och bred ut tomatsås jämnt över degen.",
+            "Tärna mozzarellan och fördela över tomatsåsen.",
+            "Strö över färsk basilika och lite salt.",
+            "Grädda i ugnen på högsta temperatur tills pizzan är gyllenbrun och bubblande, cirka 10-12 minuter.",
+            "Servera genast och njut av den italienska klassikern!"
+        ],
+        "ingredients": [
+            { "name": "Färdig pizzadeg", "amount": 1, "unit": "förpackning" },
+            { "name": "Tomatsås", "amount": 200, "unit": "g" },
+            { "name": "Mozzarella", "amount": 200, "unit": "g" },
+            { "name": "Färsk basilika", "amount": "efter smak", "unit": "" },
+            { "name": "Salt", "amount": "efter smak", "unit": "" }
+        ]
+    },
+    {
+        "title": "Tiramisu",
+        "description": "En läcker italiensk efterrätt med lager av kaffeindränkta ladyfingers, mascarponekräm och kakao.",
+        "ratings": 4.8,
+        "imageUrl": "https://www.flavoursholidays.co.uk/wp-content/uploads/2020/07/Tiramisu.jpg.webp",
+        "timeInMins": 60,
+        "categories": ["Efterrätt", "Italiensk"],
+        "instructions": [
+            "Blanda kaffe och marsalavin i en skål.",
+            "Doppa ladyfingers i kaffeblandningen och lägg i botten på en form.",
+            "Vispa mascarpone, socker och vaniljextrakt i en annan skål.",
+            "Bred ett lager av mascarponekräm över ladyfingers.",
+            "Upprepa med ytterligare ett lager av doppade ladyfingers och mascarponekräm.",
+            "Sätt tiramisun i kylen och låt stelna i minst 4 timmar, eller över natten.",
+            "Strö över kakao precis innan servering.",
+            "Skär upp och servera den ljuvliga italienska desserten till dina gäster!"
+        ],
+        "ingredients": [
+            { "name": "Ladyfingers", "amount": 24, "unit": "st" },
+            { "name": "Kaffe", "amount": 1, "unit": "dl" },
+            { "name": "Marsalavin", "amount": 2, "unit": "msk" },
+            { "name": "Mascarpone", "amount": 500, "unit": "g" },
+            { "name": "Strösocker", "amount": 100, "unit": "g" },
+            { "name": "Vaniljextrakt", "amount": 1, "unit": "tsk" },
+            { "name": "Kakao", "amount": "efter smak", "unit": "" }
+        ]
+    },
+    {
+        "title": "Grekisk Sallad",
+        "description": "En fräsch och hälsosam sallad med grönsaker, oliver, fetaost och en enkel dressing.",
+        "ratings": 4.7,
+        "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/1776727224/0ec3cb10-58e6-4a3f-99de-193e9c1e5bb9.jpg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
+        "timeInMins": 15,
+        "categories": ["Förrätt", "Medelhavet"],
+        "instructions": [
+            "Skär tomater, gurka, paprika och lök i tärningar eller skivor.",
+            "Kärna ur och skär oliver och fetaost i bitar.",
+            "Blanda grönsakerna, oliver och fetaost i en stor skål.",
+            "Ringla över olivolja och pressa över citronsaft.",
+            "Strö över färsk oregano, salt och svartpeppar efter smak.",
+            "Blanda väl och servera genast som en frisk och läcker förrätt eller sidorätt."
+        ],
+        "ingredients": [
+            { "name": "Tomater", "amount": 4, "unit": "st" },
+            { "name": "Gurka", "amount": 1, "unit": "st" },
+            { "name": "Paprika", "amount": 1, "unit": "st" },
+            { "name": "Rödlök", "amount": 1, "unit": "st" },
+            { "name": "Oliver", "amount": 100, "unit": "g" },
+            { "name": "Fetaost", "amount": 150, "unit": "g" },
+            { "name": "Olivolja", "amount": 2, "unit": "msk" },
+            { "name": "Citronsaft", "amount": 1, "unit": "msk" },
+            { "name": "Färsk oregano", "amount": "efter smak", "unit": "" },
+            { "name": "Salt", "amount": "efter smak", "unit": "" },
+            { "name": "Svartpeppar", "amount": "efter smak", "unit": "" }
+        ]
+    },
+    {
+        "title": "Hummus",
+        "description": "En krämig och smakrik kikärtsröra med vitlök, tahini och citron.",
+        "ratings": 4.6,
+        "imageUrl": "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/10/Hummus-8.jpg",
+        "timeInMins": 15,
+        "categories": ["Förrätt", "Medelhavet"],
+        "instructions": [
+            "Skölj kikärtorna och blanda dem i en matberedare tills de är släta.",
+            "Tillsätt tahini, pressad vitlök, citronsaft, olivolja, spiskummin och salt.",
+            "Blanda till en jämn och krämig röra, justera smaken med mer citronsaft eller salt om det behövs.",
+            "Servera hummusen i en skål och ringla över lite extra olivolja innan servering.",
+            "Garnera med färsk persilja, paprikapulver eller rostade pinjenötter om önskas."
+        ],
+        "ingredients": [
+            { "name": "Kikärtor", "amount": 400, "unit": "g" },
+            { "name": "Tahini", "amount": 4, "unit": "msk" },
+            { "name": "Vitlök", "amount": 2, "unit": "klyftor" },
+            { "name": "Citronsaft", "amount": 3, "unit": "msk" },
+            { "name": "Olivolja", "amount": 2, "unit": "msk" },
+            { "name": "Spiskummin", "amount": 1, "unit": "tsk" },
+            { "name": "Salt", "amount": "efter smak", "unit": "" },
+            { "name": "Färsk persilja", "amount": "till garnering", "unit": "" },
+            { "name": "Paprikapulver", "amount": "efter smak", "unit": "" },
+            { "name": "Rostade pinjenötter", "amount": "efter smak", "unit": "" }
+        ]
+    },
+    {
+        "title": "Dim Sum",
+        "description": "Ett brett utbud av små kinesiska rätter, vanligtvis serverade i små korgar eller tallrikar.",
+        "ratings": 4.5,
+        "imageUrl": "https://axwwgrkdco.cloudimg.io/v7/__gmpics__/2f58d646832c45eaa9c721d366c2dc6a?width=1000",
+        "timeInMins": 45,
+        "categories": ["Förrätt", "Kinesisk"],
+        "instructions": [
+            "Förbered en mängd olika fyllningar som kan inkludera kött, räkor, grönsaker eller tofu.",
+            "Förbered en tunn deg av vetemjöl och vatten.",
+            "Forma små degbitar och fyll dem sedan med önskad fyllning.",
+            "Ångkoka Dim Sum i bambukorgar i cirka 10-15 minuter tills de är genomkokta.",
+            "Servera Dim Sum varma tillsammans med sojasås, ingefära och chilisås."
+        ],
+        "ingredients": [
+            { "name": "Köttfärs", "amount": 200, "unit": "g" },
+            { "name": "Räkor", "amount": 150, "unit": "g" },
+            { "name": "Grönsaker", "amount": "efter smak", "unit": "" },
+            { "name": "Tofu", "amount": 200, "unit": "g" },
+            { "name": "Vetemjöl", "amount": 300, "unit": "g" },
+            { "name": "Vatten", "amount": 150, "unit": "ml" },
+            { "name": "Sojasås", "amount": "för servering", "unit": "" },
+            { "name": "Ingefära", "amount": "för servering", "unit": "" },
+            { "name": "Chilisås", "amount": "för servering", "unit": "" }
+        ]
     }
+    
+
+    
+    
+    
+    
 ]

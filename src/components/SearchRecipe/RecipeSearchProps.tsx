@@ -1,11 +1,9 @@
 //Gustav
 import React from 'react';
-import { Recipe } from "../data/Recipes";
+import { Recipe } from "../../data/Recipes";
 import { NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
-import '../App.css';
-
-
+import '../../Styling/App.css'
 
 interface RecipeSearchProps {
   recipesFromInterface: Recipe[];
@@ -17,33 +15,39 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
   const filteredRecipes = recipesFromInterface.filter(recipe => {
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
-  
+
 
   //Tillfällig styling direkt i img taggen
   const renderRecipes = searchTerm !== '' ? (
-    <ul className=''>
+    <ul>
       {filteredRecipes.map((recipe, index) => (
-        <li key={index}>{recipe.title}</li>
+        <li key={index} className='recipe-text-on-search'>
+          <a href="" className=''>{recipe.title},&nbsp;
+            <span className='italic'>{recipe.description}
+            </span>
+          </a>
+        </li>
+
       ))}
     </ul>
   ) : null;
 
   return (
-
     <>
       <div className='input-wrapper'>
-        <FaSearch id='search-icon' />
+        <FaSearch id='searchIcon' className='search-icon' />
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Sök recept"
         />
-       
-        <div className="search-recipes">{renderRecipes}</div>
       </div>
-    </>
+      <div className='search-recipes'>
+        {renderRecipes}
+      </div>
 
+    </>
   );
 };
 
