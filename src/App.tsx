@@ -1,5 +1,4 @@
 import './Styling/App.css';
-import './Styling/NavBar.css';
 import './Styling/Dishes.css';
 import { useState, useEffect } from 'react';
 import RecipeSearch from './components/SearchRecipe/RecipeSearchProps';
