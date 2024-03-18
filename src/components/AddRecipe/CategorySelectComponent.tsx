@@ -30,7 +30,7 @@ interface CategorySelectProps {
 const customStyle: StylesConfig = {
   control: (provided) => ({
     ...provided,
-    width: "20%", 
+    width: "100%", 
     fontFamily: "monospace",
   }),
 
@@ -56,6 +56,8 @@ function CategorySelected({ selectedCategories, onChange }: CategorySelectProps)
 
   return (
     <Select
+      id ="category-select"
+      placeholder ="välj..."
       styles={customStyle}
       isMulti
       options={groupedOptions}

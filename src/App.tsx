@@ -12,6 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
+  console.log(dishes)
 
   useEffect(() => {
     fetchRecipe();
@@ -24,39 +25,51 @@ function App() {
 
 
   return (
+    <>
     <div>
       <NavBarComponent />
       <div className="food-header">
         <h1 className='welcome-text-header text-center font-bold text-7xl text-white'>
-          Welcome!
-        </h1></div>
-      <div className="search-bar-container">
+          Välkommen!
+        </h1>
+      </div>
+    <div className="m-5 flex justify-center">
         <RecipeSearch
           recipesFromInterface={recipes}
           searchTerm={searchTerm}
           onSearchChange={handleSearchChange}
         />
-        <Routes>
+        </div>
+         
+    </div>
+    <div className='testa-laga-text bg-green-200'>
+      <h1 className='text-center m-5 text-4xl'>Testa att laga dagens lunch!</h1>
+      </div>
+    <div className='flex justify-center'>
+      <Routes>
           {/* <Route path="/dishes/:id" element={<DishDetailsPage />} /> */}
           <Route path='/' element={<HomePage />} />
           <Route path='/dishes' element={(
             <div>
               {dishes.map((dish, index) => (
+                
                 <DishComponent
                   id={dish.id}
                   key={index}
                   name={dish.name}
                   image={dish.image}
                   recipe={dish.recipe}
+                  description={dish.description}
                   ingredients={dish.ingredients}
-                  onClick={() => console.log(dish.recipe)} // Eller annan logik för att visa receptet.
+                  onClick={() => console.log(dish.description)} // Eller annan logik för att visa receptet.
                 />
               ))}
             </div>
           )} />
         </Routes>
-      </div>
-    </div>
+        </div>
+     
+    </>
 
   );
 }

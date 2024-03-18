@@ -8,9 +8,8 @@ import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="home-page">
-      <div className="dish-container m-12">
-        {dishes.map((dish, index) => (
+    <div className="">
+      {dishes.map((dish, index) => (
           <Link to={`/dishes/${dish.id}`} key={index}>
             <DishComponent
               key={index}
@@ -26,7 +25,7 @@ const HomePage: React.FC = () => {
 
         ))}
       </div>
-    </div>
+    
   );
 }
 export default HomePage;
