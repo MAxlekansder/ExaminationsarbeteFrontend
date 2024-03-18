@@ -3,6 +3,8 @@
 .navbar {
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-list {
@@ -18,23 +20,18 @@
     text-decoration: none;
     color: #050505;
     transition: color 0.2s ease-in-out;
-    font-size: large;
-    font-weight: bold;
-}
-
-.nav-profile {
-    text-decoration: none;
-    color: #050505;
-    transition: color 0.2s ease-in-out;
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
 }
 
 .login-icon {
     width: 25px;
     height: 25px;
-    margin-left: auto;
     color: #050505;
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
+    transform: translateY(-50%);
 
 }
 
