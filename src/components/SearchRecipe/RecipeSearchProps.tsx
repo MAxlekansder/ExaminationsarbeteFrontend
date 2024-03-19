@@ -16,8 +16,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searc
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-
-  //Tillfällig styling direkt i img taggen
+//Tillfällig styling direkt i img taggen
   const renderRecipes = searchTerm !== '' ? (
     <ul>
       {filteredRecipes.map((recipe, index) => (
