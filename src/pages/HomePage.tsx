@@ -1,25 +1,28 @@
 import DishComponent from '../components/DishComponent';
-
 import { Link } from 'react-router-dom';
 import useRecipeState from '../State/indexState';
 import { useEffect, useState } from 'react';
 
 
 function HomePage() {
-  const {recipes, fetchRecipe} = useRecipeState();
+  const {recipes} = useRecipeState();
   const [randomLunch, setRandomLunch] = useState<any[]>([]);
   const [randomDinner, setRandomDinner] = useState<any[]>([]);
   
-  useEffect(()=>{
-    fetchRecipe();
-  }, [])
+
 
   useEffect(() => {
     
     if (recipes.length > 0) {
       const randomIndexes = getRandomIndexes(recipes.length, 3);
       const selectedRecipes = randomIndexes.map(index => recipes[index]);
+      
       setRandomLunch(selectedRecipes);
+    }
+    if (recipes.length > 0) {
+      const randomIndexes = getRandomIndexes(recipes.length, 3);
+      const selectedRecipes = randomIndexes.map(index => recipes[index]);
+     
       setRandomDinner(selectedRecipes);
     }
   }, [recipes]);

@@ -44,9 +44,11 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
             className="w-40 h-40 object-cover border shadow-lg"
           />
           <p className="text-center mt-2 font-semibold">{name}</p>
-          <p className="text-center text-xs">{description}</p>
+          <p className="text-center sm:text-xs">{description}</p>
+          
         </Link>
       </div>
+      
     </div>
   );
 }
