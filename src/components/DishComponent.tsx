@@ -42,7 +42,7 @@ return (
           className="w-40 h-40 object-cover border shadow-lg"
            />
           <p className="text-center mt-2 font-semibold">{name}</p>
-          <p className="text-center">{description}</p>
+          <p className="text-center text-xs">{description}</p>
     
       </Link>
     </div>
