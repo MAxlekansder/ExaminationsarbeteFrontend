@@ -1,14 +1,14 @@
 //simon
 
 
-
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NavBarComponent from '../components/NavBarComponent';
+
 
 const About: React.FC = () => {
     return (
       <div>
+          <NavBarComponent />
             <h2>Our Values</h2>
             <p>At our company, we prioritize certain values:</p>
             <ul>
