@@ -12,8 +12,8 @@ interface DishProps {
   onClick: () => void;
 }
 
-const DishComponent: React.FC<DishProps> = ({id, name, image, ingredients,description}) => {
-  const { dishId } = useParams<{ dishId: string }>(); // Fetching dishId from URL
+const DishComponent: React.FC<DishProps> = ({id, name, image, ingredients, description}) => {
+  const { dishId } = useParams<{ dishId: string }>(); //Fetching dishId from URL
 
 
   // This part is responsible for displaying the details of the selected dish

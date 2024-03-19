@@ -44,7 +44,7 @@ function App() {
          
     </div>
     <div className='testa-laga-text bg-green-200'>
-      <h1 className='text-center m-5 text-4xl'>Testa att laga dagens lunch!</h1>
+      <h1 className='text-center m-5 text-4xl p-12'>Testa att laga dagens lunch!</h1>
       </div>
     <div className='flex justify-center'>
       <Routes>
@@ -53,7 +53,6 @@ function App() {
           <Route path='/dishes' element={(
             <div>
               {dishes.map((dish, index) => (
-                
                 <DishComponent
                   id={dish.id}
                   key={index}
