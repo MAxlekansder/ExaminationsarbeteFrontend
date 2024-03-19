@@ -1,6 +1,7 @@
 // Kristian made this file
 
 import { VscAccount } from "react-icons/vsc";
+import WeeklyTips from "./WeeklyTips";
 
 
 const NavBarComponent = () => {
@@ -15,10 +16,10 @@ const NavBarComponent = () => {
                 <ul className="flex w-full list-none p-0 m-0 items-center">
                     <li><a href="/" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Hem</a></li>
                     <li><a href="/" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Kategorier</a></li>
-                    <li><a href="/" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Veckans tips</a></li>
+                    <WeeklyTips />
                     <li><a href="/" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Om oss</a></li>
                     <li><a href="/cocktails" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Cocktails</a></li>
-                    <li className="ml-auto"><a href="/" className="block relative"><VscAccount className="w-6 h-6 text-black" /></a></li>
+                    <li className="ml-auto"><a href="/add" className="px-5 py-2 bg-green-400 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:bg-green-600 rounded-lg shadow">Lägg till recept</a></li>
                 </ul>
             </nav>
         </header>
