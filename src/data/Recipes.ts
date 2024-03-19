@@ -11,11 +11,11 @@ export interface Recipe {
   title: string;
   description: string;
   ratings?: number; 
-  // imageUrl: ({file: File, url: String}[])  let this be for now 
   imageUrl: string;
   timeInMins: number;
   categories: string[];
   instructions: string[];
   ingredients: Ingredient[];
+  // imageUrl: ({file: File, url: String}[])  let this be for now 
 }
 

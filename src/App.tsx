@@ -52,9 +52,9 @@ return (
           <Route path='/' element={<HomePage />} />
           <Route path='/dishes' element={(
             <div>
-              {dishes.map((dish, index) => (
+              {recipes.map((dish, index) => (
               <DishComponent
-                  id={dish.id}
+                  id={dish._id}
                   key={index}
                   name={dish.name}
                   image={dish.image}

@@ -69,6 +69,24 @@ const useRecipeState = create<recipeState>()((set) => ({
         } catch (error) {console.log('Error fetching api/data', error);}
     },
 
+    fetchDinnerDish : async () => {
+        try{
+
+        }
+        catch{
+
+        }
+    },
+
+    fetchLunchDish: async () => {
+        try{
+
+        }
+        catch {
+
+        }
+    },
+
 
 
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks

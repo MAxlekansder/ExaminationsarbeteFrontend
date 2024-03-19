@@ -7,8 +7,8 @@ interface DishProps {
   name: string;
   image: string;
   recipe?: string;
-  ingredients: string[];
-  description: string;
+  ingredients?: string[];
+  description?: string;
   onClick: () => void;
 }
 

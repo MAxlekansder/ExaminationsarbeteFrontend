@@ -1,17 +1,42 @@
-import React from 'react';
 import DishComponent from '../components/DishComponent';
-import dishes from '../data/Dishes';
+
 import { Link } from 'react-router-dom';
-import {Recipe} from '../Views/Recipe/Recipe';
-import useRecipeState from './State/indexState';
+import useRecipeState from '../State/indexState';
+import { useEffect, useState } from 'react';
 
-interface DishProps{
-  getRecipe: Recipe[]
 
-}
 function HomePage() {
-  const lunchDishes = dishes.filter(dish => ['pastaCarbonara', 'caesarSallad', 'lamspett'].includes(dish.id));
-  const dinnerDishes = dishes.filter(dish => ['fisk', 'vego', 'kött'].includes(dish.id));
+  const {recipes, fetchRecipe} = useRecipeState();
+  const [randomLunch, setRandomLunch] = useState<any[]>([]);
+  const [randomDinner, setRandomDinner] = useState<any[]>([]);
+  
+  useEffect(()=>{
+    fetchRecipe();
+  }, [])
+
+  useEffect(() => {
+    
+    if (recipes.length > 0) {
+      const randomIndexes = getRandomIndexes(recipes.length, 3);
+      const selectedRecipes = randomIndexes.map(index => recipes[index]);
+      setRandomLunch(selectedRecipes);
+      setRandomDinner(selectedRecipes);
+    }
+  }, [recipes]);
+
+  // Funktion för att generera slumpmässiga rätter
+  const getRandomIndexes = (max: number, count: number) => {
+    const indexes: number[] = [];
+    while (indexes.length < count) {
+      const randomIndex = Math.floor(Math.random() * max);
+      if (!indexes.includes(randomIndex)) {
+        indexes.push(randomIndex);
+      }
+    }
+    return indexes;
+  };
+
+ 
   
   
   return (
@@ -25,17 +50,15 @@ function HomePage() {
     <div className='flex justify-center'>
     <div className='bg-green-700 ml-10 mr-10 text-green-700'>.
     </div>
-      {lunchDishes.map((dish, index) => (
-          <Link to={`/dishes/${dish.id}`} key={index}>
+      {randomLunch.map((dish, index) => (
+          <Link to={`/dishes/${dish._id}`} key={index}>
             <DishComponent
               key={index}
-              id={dish.id}
-              name={dish.name}
-              image={dish.image}
-              recipe={dish.recipe}
-              ingredients={dish.ingredients}
+              id={dish._id}
+              name={dish.title}
+              image={dish.imageUrl}
               description={dish.description}
-              onClick={() => console.log(dish.recipe)}
+              onClick={() => console.log('hej')}
              />
           </Link>
         ))}
@@ -56,15 +79,14 @@ function HomePage() {
     <div className='flex justify-center'>
     <div className='bg-green-200 ml-10 mr-10 text-green-200'>.
     </div>
-      {dinnerDishes.map((dish, index) => (
-          <Link to={`/dishes/${dish.id}`} key={index}>
+      {randomDinner.map((dish, index) => (
+          <Link to={`/dishes/${dish._id}`} key={index}>
             <DishComponent
               key={index}
-              id={dish.id}
-              name={dish.name}
-              image={dish.image}
-              recipe={dish.recipe}
-              ingredients={dish.ingredients}
+              id={dish._id}
+              name={dish.title}
+              image={dish.imageUrl}
+              
               description={dish.description}
               onClick={() => console.log(dish.recipe)}
              
