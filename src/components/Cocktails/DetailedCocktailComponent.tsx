@@ -1,3 +1,4 @@
+// Alexander
 
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -10,7 +11,7 @@ interface Drink {
     strDrinkThumb: string;
     strInstructions: string;
     strGlass: string;
-    // Add more properties as needed
+
   }
 
 function DetailedCocktailComponent() {
@@ -40,7 +41,9 @@ function DetailedCocktailComponent() {
                     <img src={drink.strDrinkThumb} alt="" />
                 </p>
             </div>
+            
         ))}
+           
     </div>
     </div>
   )
