@@ -2,17 +2,24 @@ import React from 'react';
 import DishComponent from '../components/DishComponent';
 import dishes from '../data/Dishes';
 import { Link } from 'react-router-dom';
+import {Recipe} from '../Views/Recipe/Recipe';
+import useRecipeState from './State/indexState';
 
-const HomePage: React.FC = () => {
+interface DishProps{
+  getRecipe: Recipe[]
+
+}
+function HomePage() {
   const lunchDishes = dishes.filter(dish => ['pastaCarbonara', 'caesarSallad', 'lamspett'].includes(dish.id));
   const dinnerDishes = dishes.filter(dish => ['fisk', 'vego', 'kött'].includes(dish.id));
+  
   
   return (
     <div>
 
        <div className='testa-laga-text bg-green-200 m-20 mt-0 mb-0'>
       <h1 className='text-center m-5 text-4xl p-12'>
-        Testa att laga dagens lunch!
+        Lunch tips
         </h1>
       </div>
     <div className='flex justify-center'>
@@ -44,7 +51,7 @@ const HomePage: React.FC = () => {
          </div>
 
     <div className='testa-laga-text bg-green-700 m-20 mt-0 mb-0'>
-      <h1 className='text-center m-5 text-4xl p-12'>Testa att laga dagens middag!</h1>
+      <h1 className='text-center m-5 text-4xl p-12'>Middags tips!</h1>
       </div>
     <div className='flex justify-center'>
     <div className='bg-green-200 ml-10 mr-10 text-green-200'>.
