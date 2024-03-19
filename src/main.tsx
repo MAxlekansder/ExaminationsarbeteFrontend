@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/add' element={<HandleRequests />} />
         <Route path='/home' element={<Home />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
-        <Route path='/cocktails/:id' element=<DetailedCocktailComponent /> />
+        <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/subpage' element={<SubPage />} />
         <Route path='/recipe1' element={<Recipe title={"Köttbullar"} description={"Gör så här..."} />} />
         <Route path='/recipe2' element={<Recipe title={"Pizza"} description={"Gör så här..."} />} />
