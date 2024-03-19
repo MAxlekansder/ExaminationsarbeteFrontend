@@ -12,7 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
-  console.log(dishes)
+ 
 
   useEffect(() => {
     fetchRecipe();
@@ -24,12 +24,17 @@ function App() {
   };
 
 
-  return (
+return (
     <>
     <div>
       <NavBarComponent />
       <div className="food-header">
-        <h1 className='welcome-text-header text-center font-bold text-7xl text-white'>
+        <h1 className='
+        welcome-text-header 
+        text-center 
+        font-bold text-7xl
+        text-white
+        opacity-90'>
           Välkommen!
         </h1>
       </div>
@@ -39,21 +44,16 @@ function App() {
           searchTerm={searchTerm}
           onSearchChange={handleSearchChange}
         />
-        </div>
-         
-    </div>
-    <div className='testa-laga-text bg-green-200'>
-      <h1 className='text-center m-5 text-4xl'>Testa att laga dagens lunch!</h1>
       </div>
-    <div className='flex justify-center'>
+    </div>
+   <div >
       <Routes>
           {/* <Route path="/dishes/:id" element={<DishDetailsPage />} /> */}
           <Route path='/' element={<HomePage />} />
           <Route path='/dishes' element={(
             <div>
               {dishes.map((dish, index) => (
-                
-                <DishComponent
+              <DishComponent
                   id={dish.id}
                   key={index}
                   name={dish.name}
@@ -67,8 +67,18 @@ function App() {
             </div>
           )} />
         </Routes>
+     </div>
+  
+  <div className='bg-green-900'>
+        <footer>
+          <p className='text-white text-center text-xs '>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore expedita non, aperiam ipsam pariatur ab, fugiat facilis mollitia assumenda similique beatae vel nulla! Culpa reiciendis quidem, voluptatem unde modi quia.
+            </p>
+         <h1 className='flex justify-start pt-20  text-white'>
+              Copyright © 2024 Recept.nu . All Rights Reserved
+              </h1>
+          </footer> 
         </div>
-     
     </>
 
   );
