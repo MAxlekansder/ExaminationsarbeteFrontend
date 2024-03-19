@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+//import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom'; // Add this import
+import { useParams } from 'react-router-dom'; 
 
 interface DishProps {
   id: string;
@@ -16,9 +16,6 @@ const DishComponent: React.FC<DishProps> = ({id, name, image, ingredients,descri
   const { dishId } = useParams<{ dishId: string }>(); // Fetching dishId from URL
 
 
-  // This part is responsible for displaying the details of the selected dish
-  // You may need to modify it to fit the structure of DishComponent
-  // If the current dish matches the selected dish
   if (id === dishId) { 
     return (
       <div>

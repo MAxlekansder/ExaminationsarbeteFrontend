@@ -30,7 +30,7 @@ interface Dish {
       image: 'https://images.deliveryhero.io/image/fd-op/LH/v2rz-hero.jpg?width=512&height=384&quality=45',
       recipe: 'Länk till recept',
       ingredients: [],
-      description: 'Kött rätt med gott aromatiskt ris'
+      description:'Saftig lamspett med gott aromatisk ris'
     },
     
     // Lägg till fler maträtter här:
