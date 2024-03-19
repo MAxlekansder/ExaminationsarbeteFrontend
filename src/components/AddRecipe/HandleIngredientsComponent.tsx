@@ -21,10 +21,7 @@ const typesOfMeasure = [
   "kruka",
 ];
 
-function IngredientsList({
-  ingredient,
-  setIngredient,
-}: IngredientsListProps): JSX.Element {
+function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JSX.Element {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(0);
   const [selectedMeasure, setSelectedMeasure] = useState(typesOfMeasure[0]);
@@ -87,7 +84,6 @@ function IngredientsList({
                 placeholder="Ingrediens"
               />
 
-              {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label
@@ -105,7 +101,6 @@ function IngredientsList({
                 placeholder="Ingrediens"
               />
 
-              {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
             <div className="w-full md:w-1/6 px-3 mb-6 md:mb-0">
               <label
@@ -129,7 +124,6 @@ function IngredientsList({
               </select>
              
               
-              {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
             <div className="w-full md:w-1/6 px-3 mb-6 md:mb-0">
               <label
@@ -143,7 +137,6 @@ function IngredientsList({
               
               </button>
 
-              {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
           </div>
           <div className="overflow-x-auto">

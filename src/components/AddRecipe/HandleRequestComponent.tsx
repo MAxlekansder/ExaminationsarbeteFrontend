@@ -8,6 +8,7 @@
   import InstructionList from "./HandleInstructionsComponent";
   import IngredientsList from "./HandleIngredientsComponent";
   import NavBarComponent from "../NavBarComponent";
+  import UpdateRecipe from "../CustomDialog/UpdateDialog";
 
 
   interface RecipeComponentProps {
@@ -28,7 +29,7 @@
     const [categories, setCategories] = useState<string[]>([]);
     const [instructions, setInstructions] = useState<string[]>([]);
     const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-    const [showModal, setShowModal] = useState(false);
+
 
     const addRecipe = async () => {
       // title nor desc can't be empty
@@ -58,13 +59,7 @@
         console.log(addResponse.data); // for logging while developing
 
         {
-          /* 
-      
-        const checkIfValueIsParsed: string | undefined = (recipeProps?.recipeId !== null && recipeProps?.recipeId !== "") ? recipeProps?.recipeId : "not returning"; // sick oneliner
-        
-        console.log(checkIfValueIsParsed) // for testing ID, whole oneliner will do nothing when in done product
-      
-      */
+     
         }
         clearForm();
       } catch (error) {
@@ -196,8 +191,10 @@
              <button onClick={addRecipe} className="border px-1 py-1">
               Lägg till ditt recept</button>
             </div>
+            
           </div>
         </div>
+  
       </div>
     );
   }

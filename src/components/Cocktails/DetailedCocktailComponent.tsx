@@ -1,7 +1,10 @@
+// Alexander
+
 
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
+import UpdateRecipe from "../CustomDialog/UpdateDialog";
 
 
 interface Drink {
@@ -10,7 +13,7 @@ interface Drink {
     strDrinkThumb: string;
     strInstructions: string;
     strGlass: string;
-    // Add more properties as needed
+
   }
 
 function DetailedCocktailComponent() {
@@ -40,7 +43,9 @@ function DetailedCocktailComponent() {
                     <img src={drink.strDrinkThumb} alt="" />
                 </p>
             </div>
+            
         ))}
+           
     </div>
     </div>
   )

@@ -94,7 +94,7 @@ function InstructionList({
                             onClick={() => handleRemoveInstruction(index)}
                             className="bg-red-400 hover:bg-red-500 text-white font-bold py-1 px-2 border border-red-500 rounded text-sm"
                           >
-                            Remove
+                            Ta bort
                           </button>
                         </div>
                       </td>
