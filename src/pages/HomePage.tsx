@@ -18,6 +18,7 @@ const HomePage: React.FC = () => {
               image={dish.image}
               recipe={dish.recipe}
               ingredients={dish.ingredients}
+              description={dish.description}
               onClick={() => console.log(dish.recipe)}
              // Eller annan logik för att visa receptet.
             />
