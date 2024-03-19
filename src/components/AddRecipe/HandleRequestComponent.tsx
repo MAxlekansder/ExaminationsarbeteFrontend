@@ -8,7 +8,6 @@
   import InstructionList from "./HandleInstructionsComponent";
   import IngredientsList from "./HandleIngredientsComponent";
   import NavBarComponent from "../NavBarComponent";
-  import UpdateRecipe from "../CustomDialog/UpdateDialog";
 
 
   interface RecipeComponentProps {

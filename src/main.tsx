@@ -9,7 +9,9 @@ import SubPage from "./Views/SubPage/SubPage.tsx";
 import Recipe from './Views/Recipe/Recipe.tsx';
 import PresentCocktails from './components/Cocktails/CocktailComponent.tsx';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktailComponent.tsx';
-import Test from './components/CustomDialog/TestPage.tsx';
+import Test from './components/AddRecipe/Modal/TestPage.tsx';
+import About from './pages/AboutUs/About.tsx';
+import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail.tsx';
 
 
 
@@ -26,6 +28,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/subpage' element={<SubPage />} />
         <Route path='/test' element={<Test /> } />
+        <Route path='/test/:id' element={<DetailedTestComponent />} />
+        <Route path='/aboutUs' element={<About/> } />
         <Route path='/recipe1' element={<Recipe title={"Köttbullar"} description={"Gör så här..."} />} />
         <Route path='/recipe2' element={<Recipe title={"Pizza"} description={"Gör så här..."} />} />
         <Route path='/recipe3' element={<Recipe title={"Kebab"} description={"Gör så här..."} />} />
