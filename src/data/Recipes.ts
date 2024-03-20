@@ -2,7 +2,7 @@
 export interface Ingredient {
   name: string;
   amount: string | number;
-  unit?: string;
+  unit: string;
   // ingredientId: string;
 }
 

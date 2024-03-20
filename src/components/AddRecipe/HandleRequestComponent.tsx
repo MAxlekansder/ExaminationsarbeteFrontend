@@ -10,6 +10,8 @@
   import NavBarComponent from "../NavBarComponent";
 
 
+
+
   interface RecipeComponentProps {
     recipeProps: Recipe;
   }
@@ -24,7 +26,7 @@
     const [ratings, setRating] = useState(0); // alternative a array,  no need for now
     
     // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);  let this be for now
-    const [imageURL, setImageURL] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
     const [timeInMins, setTimeInMins] = useState(0);
     const [categories, setCategories] = useState<string[]>([]);
     const [instructions, setInstructions] = useState<string[]>([]);
@@ -34,8 +36,10 @@
     const addRecipe = async () => {
       // title, desc nor url can't be empty
       try {
-        if (!title || !description || !imageURL) {
-          alert("You need to add a title, description and a image url");
+
+        if (!title || !description || !imageUrl) { // maybe create a modal here instead
+          alert("You need to add a Title, Description and a image Url");
+
           return;
         }
 
@@ -47,20 +51,18 @@
           ratings: ratings,
           description: description,
           // imageURL: imageURL?.map(({ file, url}) => ({ file: file ,url: url})), let this be for now
-          imageURL: imageURL,
+          imageUrl: imageUrl,
           timeInMins: timeInMins,
           categories: categories,
           instructions: instructions,
           ingredients: ingredients,
-        });
 
+          
+        });
+        console.log(imageUrl);
         addRecipeState(addResponse.data); // dont need to check for response as we do try/catch
 
         console.log(addResponse.data); // for logging while developing
-
-        {
-     
-        }
         clearForm();
       } catch (error) {
         console.log("Error while adding new recipe to list: ", error);
@@ -72,7 +74,7 @@
       setTitle("");
       setDescription("");
       setRating(0);
-      setImageURL("");
+      setImageUrl("");
       setTimeInMins(0);
       setCategories([]);
       setInstructions([]);
@@ -167,8 +169,9 @@
                   </label>
                   <input
                     id="url-add"
-                    type={imageURL}
-                    onChange={(e) => setImageURL(e.target.value)}
+                    type="text"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     placeholder="https://..."
                   />
