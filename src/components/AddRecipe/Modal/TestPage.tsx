@@ -21,9 +21,9 @@ function Test() {
 
 
 
-  const navigateToRecipeId = (id: string) => {
-    navigate(`/test/${id}`);
-  };
+  // const navigateToRecipeId = (id: string) => {
+  //   navigate(`/test/${id}`);
+  // };
 
   return (
     <div>
@@ -31,7 +31,7 @@ function Test() {
       <div>
       </div>
       {recipe.map((recipe) => (
-        <div key={recipe._id} onClick={() => navigateToRecipeId(recipe._id)}>
+        <div key={recipe._id} onClick={() => navigate(`/test/${recipe._id}`)}>
           {recipe._id}
           {recipe.title}
           <img src={recipe.imageUrl} alt="" />

@@ -15,6 +15,7 @@ function DetailedTestComponent() {
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
 
+  
   useEffect(() => {
     if (id) {
         fetchSpecificRecipe(id); 
@@ -35,7 +36,8 @@ function DetailedTestComponent() {
   return (
     <div>
         <h1>hej</h1>
-        <button onClick={() => openModal(detailedRecipe._id)}>Testa öppna Modal</button>
+        <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
+            Ändra receptet</button>
         <Modal
           recipeId={selectRecipeId}
           isOpen={isModalOpen}

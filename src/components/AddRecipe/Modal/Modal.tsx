@@ -1,6 +1,6 @@
 // Alexander
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Recipe, Ingredient } from "../../../data/Recipes";
 import useRecipeState from "../../../State/indexState";
 
@@ -14,6 +14,7 @@ interface ModalProps {
 
 function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
   const fetchSpecificRecipeId = useRecipeState((state) => state.fetchSpecificDrink)
+  const [test, setTest] = useState("");
   
   
   useEffect(() => {
@@ -50,9 +51,24 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
        
             <div className="py-4 px-6 col-span-3 sm:col-span-2">
-              {recipe._id}
-              {recipe.description}
-              {recipe.ingredients.map((ingredient: Ingredient, index: number) => (
+            <input
+                    id="time-in-mins"
+                    type={test}
+                    placeholder={recipe.title}
+                    onChange={(e) => setTest(e.target.value)}
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+              {/* {recipe._id}
+              {recipe.description} */}
+              <input
+                    id="time-in-mins"
+                    type={test}
+                    placeholder={recipe.description}
+                    onChange={(e) => setTest(e.target.value)}
+                    
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+              {recipe.ingredients?.map((ingredient: Ingredient, index: number) => (
                 <li key={index}>{ingredient.name} {ingredient.amount}</li>
               ))}
             </div>
