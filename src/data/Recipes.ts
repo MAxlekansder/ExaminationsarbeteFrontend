@@ -13,9 +13,8 @@ export interface Recipe {
   ratings?: number; 
   imageUrl: string;
   timeInMins: number;
-  categories: string[];
-  instructions: string[];
-  ingredients: Ingredient[];
-  // imageUrl: ({file: File, url: String}[])  let this be for now 
+  categories?: string[];
+  instructions?: string[];
+  ingredients?: Ingredient[];
 }
 

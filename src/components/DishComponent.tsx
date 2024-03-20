@@ -36,7 +36,7 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
 
   // Annars, rendera en länk till rätten
   return (
-    <div className='card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
+    <div className=' relative card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
       <div className="m-12 border">
         <Link to={`/dishes/${id}`}>
           <img
@@ -45,11 +45,11 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
             className="w-40 h-40 object-cover border shadow-lg"
           />
           <p className="text-center mt-2 font-semibold">{name}</p>
-          <p className="des-text text-center sm:text-xs">{description}</p>
+          
           
         </Link>
       </div>
-      
+      <p className="sm:text-xs align-bottom des-text">{description}</p>
     </div>
   );
 }

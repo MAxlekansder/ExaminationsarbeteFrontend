@@ -44,6 +44,7 @@ function HomePage() {
         <h1 className='text-center m-5 text-4xl p-12'>Lunch tips</h1>
       </div>
       <div className='flex justify-center'>
+      <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
         {randomLunch.map((dish, index) => (
           <Link to={`/dishes/${dish._id}`} key={index}>
             <DishComponent
@@ -56,6 +57,7 @@ function HomePage() {
             />
           </Link>
         ))}
+        <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
       </div>
       <div className='flex'>
         <p className='text m-20 pl-10 pr-10 italic '>
@@ -63,11 +65,13 @@ function HomePage() {
         </p>
       </div>
 
-      {/* Dinner section */}
+      
       <div className='testa-laga-text bg-green-700 m-20 mt-0 mb-0'>
         <h1 className='text-center m-5 text-4xl p-12'>Middags tips!</h1>
       </div>
+      
       <div className='flex justify-center'>
+      <div className='bg-green-200 ml-10 mr-10 text-green-200'>.</div>
         {randomDinner.map((dish, index) => (
           <Link to={`/dishes/${dish._id}`} key={index}>
             <DishComponent
@@ -80,6 +84,7 @@ function HomePage() {
             />
           </Link>
         ))}
+        <div className='bg-green-200 ml-10 mr-10 text-green-200'>.</div>
       </div>
       <div className='flex'>
         <p className='text m-20 pl-10 pr-10 italic '>

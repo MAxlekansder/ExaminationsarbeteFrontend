@@ -4,19 +4,17 @@
 import {create} from "zustand"
 import { Recipe } from "../data/Recipes"
 import axios from "axios";
-import Categories from "../pages/Categories";
+
+
 
 interface recipeState {
     recipes: Recipe[];
     drinks: any[];
-    nonDrinks: any[];
     allDrinks: any[];
     detailedDrink: any[];
     detailedRecipe: object;
     categoryDishes: any[];
 
-
-    
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
@@ -34,7 +32,6 @@ const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
     categoryDishes:[],
     drinks: [],
-    nonDrinks: [],
     allDrinks: [],
     detailedDrink: [],
     detailedRecipe: {},
@@ -99,7 +96,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             if (nonDrinkResponse.status === 200) {
 
                 const nonDrinksData = await nonDrinkResponse.data.drinks; 
-                set({ nonDrinks: nonDrinksData }); 
+                set({ drinks: nonDrinksData }); 
 
                 console.log(nonDrinksData);
             } else { console.log("Response error while fetching non alcoholic: ", nonDrinkResponse.status) }
@@ -108,6 +105,8 @@ const useRecipeState = create<recipeState>()((set) => ({
             console.log("error while fetching non alcoholic drinks", error);
         }
     },
+
+
 
     fetchAllDrinks: async () => {
         try {
@@ -127,7 +126,6 @@ const useRecipeState = create<recipeState>()((set) => ({
            
 
         } catch (error) { console.log("error while fetching all drinks", error) }
-      
     },
 
 
@@ -160,6 +158,21 @@ const useRecipeState = create<recipeState>()((set) => ({
             } else { console.log ("Response error: ", detailedRecipe.status)}
  
         } catch (error) {console.log("error while fetching specific drink", error)}
+    },
+
+
+    fetchCategoriesRecipes: async (category: string) => {
+        try {
+            const categoriesRecipes = await axios.get(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${category}`);
+
+            if (categoriesRecipes.status === 200) {
+
+                set ({recipes: categoriesRecipes.data})
+                console.log(categoriesRecipes.data)
+            }
+             
+        } catch (error) {console.log("error while fetcing categories")}
+
     }
 
 }));
