@@ -3,6 +3,38 @@
 import Select from "react-select";
 import { StylesConfig } from "react-select";
 
+const proteinCategories = [  // need to revisit
+  {
+    label: "Kött",
+    options: [
+      { value: "Nötkött", label: "Nötkött" },
+      { value: "Fläskkött", label: "Fläskkött" },
+      { value: "Lamm", label: "Lamm" },
+      { value: "Viltkött", label: "Viltkött" }
+    ]
+  },
+  {
+    label: "Fågel",
+    options: [
+      { value: "Kyckling", label: "Kyckling" },
+      { value: "Anka", label: "Anka" },
+      { value: "Kalkon", label: "Kalkon" }
+    ]
+  },
+
+  {
+    label: "Mejeriprodukter",
+    options: [
+      { value: "Mjölk", label: "Mjölk" },
+      { value: "Ost", label: "Ost" },
+      { value: "Yoghurt", label: "Yoghurt" }
+    ]
+  }
+];
+
+
+
+
 const nationalitiesOption = [
   "Italiensk",
   "Kinesisk",
@@ -14,6 +46,7 @@ const nationalitiesOption = [
   "Amerikanskt",
 ];
 
+
 const mealOptions = [
   "Frukost",
   "Lunch",
@@ -21,6 +54,8 @@ const mealOptions = [
   "Mellanmål",
   "Efterrätt",
 ];
+
+
 
 interface CategorySelectProps {
   selectedCategories: string[];
@@ -30,7 +65,7 @@ interface CategorySelectProps {
 const customStyle: StylesConfig = {
   control: (provided) => ({
     ...provided,
-    width: "20%", 
+    width: "100%", 
     fontFamily: "monospace",
   }),
 
@@ -52,10 +87,13 @@ function CategorySelected({ selectedCategories, onChange }: CategorySelectProps)
   const groupedOptions = [
     { label: "Måltider", options: mealOptions.map((option) => ({ value: option, label: option, group: "mealtype" })) },
     { label: "Nationaliteter", options: nationalitiesOption.map((option) => ({ value: option, label: option, group: "nationality" })) },
+    { label: "Protein", options: proteinCategories.map(category => category.options) },
   ];
 
   return (
     <Select
+      id ="category-select"
+      placeholder ="välj..."
       styles={customStyle}
       isMulti
       options={groupedOptions}

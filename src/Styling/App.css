@@ -1,26 +1,17 @@
-Kristian made this file .App {
+.App {
     height: 100vh;
     width: 100vw;
     background-color: #ffffff;
 }
 
-header {
-    background-color: rgb(255, 255, 255);
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .welcome-text-header {
     font-family: Pacifico;
-    opacity: 0.7;
+
 }
 
 .food-header {
-    margin-top: 1vw;
     padding: 13vw;
-    background-image: url(../Images/food-header.jpg);
+    background-image: url(./Images/food-header.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.9;
@@ -28,19 +19,13 @@ header {
 }
 
 
-.logo {
-    margin-right: 10px;
-    width: 60px;
-    height: 80px;
-    background-image: url(../Images/logo1.png);
-}
-
 .search-bar-container {
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 200px;
+
 
 }
 
@@ -114,4 +99,9 @@ input {
 
 input:focus {
     outline: none;
+}
+
+.testa-laga-text h1 {
+    font-family: Pacifico;
+
 }

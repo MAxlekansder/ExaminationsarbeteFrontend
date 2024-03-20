@@ -1,3 +1,5 @@
+// Alexander
+
 import { useEffect, useState } from "react";
 import useRecipeState from "../../State/indexState";
 import NavBarComponent from "../NavBarComponent";
@@ -46,6 +48,7 @@ function PresentCocktails() {
   };
 
   const navigateCocktailId = (id: string) => { // Navigate to the cocktail ID
+    console.log(id)
     navigate(`/cocktails/${id}`); 
   };
 
