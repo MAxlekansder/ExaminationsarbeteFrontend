@@ -1,6 +1,7 @@
 //import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import '../Styling/Dishes.css'
 
 interface DishProps {
   id: string;
@@ -37,14 +38,14 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
   return (
     <div className='card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
       <div className="m-12 border">
-        <Link to={`/dishes/${id}`} className=''>
+        <Link to={`/dishes/${id}`}>
           <img
             src={image}
             alt={name}
             className="w-40 h-40 object-cover border shadow-lg"
           />
           <p className="text-center mt-2 font-semibold">{name}</p>
-          <p className="text-center sm:text-xs">{description}</p>
+          <p className="des-text text-center sm:text-xs">{description}</p>
           
         </Link>
       </div>

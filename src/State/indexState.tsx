@@ -4,6 +4,7 @@
 import {create} from "zustand"
 import { Recipe } from "../data/Recipes"
 import axios from "axios";
+import Categories from "../pages/Categories";
 
 interface recipeState {
     recipes: Recipe[];
@@ -12,7 +13,10 @@ interface recipeState {
     allDrinks: any[];
     detailedDrink: any[];
     detailedRecipe: object;
+    categoryDishes: any[];
 
+
+    
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
     getApiKey: () => string;
@@ -28,6 +32,7 @@ interface recipeState {
 
 const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
+    categoryDishes:[],
     drinks: [],
     nonDrinks: [],
     allDrinks: [],
@@ -55,7 +60,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
    
 
-    fetchRecipe: async () => { // for fetching 
+    fetchRecipe: async () => { // for fetching whole api
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             
@@ -68,26 +73,6 @@ const useRecipeState = create<recipeState>()((set) => ({
 
         } catch (error) {console.log('Error fetching api/data', error);}
     },
-
-    fetchDinnerDish : async () => {
-        try{
-
-        }
-        catch{
-
-        }
-    },
-
-    fetchLunchDish: async () => {
-        try{
-
-        }
-        catch {
-
-        }
-    },
-
-
 
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
