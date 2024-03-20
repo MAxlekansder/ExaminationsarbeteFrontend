@@ -5,10 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './Styling/index.css'
 import HandleRequests from './components/AddRecipe/HandleRequestComponent.tsx';
 import Home from "./Views/Home/Home.tsx";
-import SubPage from "./Views/SubPage/SubPage.tsx";
-import Recipe from './Views/Recipe/Recipe.tsx';
 import PresentCocktails from './components/Cocktails/CocktailComponent.tsx';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktailComponent.tsx';
+import DetailedRecipe from "./pages/DetailedRecipe/DetailedRecipe.tsx";
 
 
 
@@ -22,11 +21,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/add' element={<HandleRequests />} />
         <Route path='/home' element={<Home />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
-        <Route path='/cocktails/:id' element=<DetailedCocktailComponent /> />
-        <Route path='/subpage' element={<SubPage />} />
-        <Route path='/recipe1' element={<Recipe title={"Köttbullar"} description={"Gör så här..."} />} />
-        <Route path='/recipe2' element={<Recipe title={"Pizza"} description={"Gör så här..."} />} />
-        <Route path='/recipe3' element={<Recipe title={"Kebab"} description={"Gör så här..."} />} />
+        <Route path='/cocktails/:id' element=<DetailedCocktailComponent/> />
+        <Route path='/recipe/:id' element={<DetailedRecipe/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

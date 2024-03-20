@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import useRecipeState from "../../State/indexState";
 import NavBarComponent from "../NavBarComponent";
-import CocktailSidebarComponent from "./CocktailSidebarComponent";
 import { useNavigate } from "react-router-dom";
 
 

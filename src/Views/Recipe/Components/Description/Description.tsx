@@ -1,39 +1,41 @@
 import React from 'react'
 
 interface Props {
-    description: String;
+    description: string;
+    imageUrl: string;
+    timeInMins: string;
+    categories: string;
+    instructions: string;
+    ingredients: { name: string; amount: number; unit: string }[];
 }
-const Description = (props: Props) => {
-    const {description} = props;
+const Description: React.FC<Props> = (props: Props) => {
+    const {description,imageUrl,timeInMins,
+        categories, instructions,ingredients} = props;
+
     return (
         <div className="Home-container">
             <p>{description}</p>
-            <div className="Recipe"/>
-
-            <h4> Ingredienser (4 port)<br/>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.R-PtT7wyKUi4uPF0cRnbegHaEt&pid=Api&P=0&h=180" alt="Recipe"/>
+            <h4> Ingredienser (4 port)</h4><br/>
                 <ul>
-                    <li>900 g potatis</li>
+                    {ingredients.map((ingredients, index) => (
+                        <li key={index}>{`${ingredients.amount} ${ingredients.unit} ${ingredients.name}`}</li>
 
+                    ))}
                 </ul>
-            </h4>
             <div style={{backgroundColor: "Green", padding: 1, borderRightStyle: "solid", borderRightWidth: 2}}>
                 <p> Beskrivning <br/>
-                    <br/></p></div>
+                    <br/></p>
+            <ul>
+
+            </ul>
+            </div>
             <p>
-                Tips! Du kan även använda en elvisp för att göra potatismoset. Vispa inte mer än nödvändigt då moset
+                Tips! Du kan även använda en elvisp föör att göra potatismoset. Vispa inte mer än nödvändigt då moset
                 annars kan bli klistrigt.
             </p>
-            <a
-                style={{backgroundColor: "yellow"}}
-                href="https://www.youtube.com/watch?v=MrG0iAYipQM&pp=ygUea8O2dHRidWxsYXIgbWVkIHBvdGF0aXNtb3MgaWNh">Så
-                gör du perfekta köttbullar</a><br/><br/>
-            <a style={{backgroundColor: "yellow"}}
-               href="https://www.youtube.com/watch?v=t8iggLCDJY0&pp=ygUea8O2dHRidWxsYXIgbWVkIHBvdGF0aXNtb3MgaWNh">Så gör
-                du den perfekta potatismosen</a><br/><br/><br/>
-
-
         </div>
-    )
+    );
 }
 export default Description
 
