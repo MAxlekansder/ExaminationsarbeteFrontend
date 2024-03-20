@@ -11,17 +11,18 @@
 
 
   interface RecipeComponentProps {
-    recipeProps?: Recipe;
+    recipeProps: Recipe;
   }
 
   function HandleRequests() {
-    const deleteRecipeState = useRecipeState((state) => state.deleteRecipe);
+
     const addRecipeState = useRecipeState((state) => state.addRecipe);
     const getApiKey = useRecipeState((state) => state.getApiKey);
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [ratings, setRating] = useState(0); // alternative a array,  no need for now
+    
     // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);  let this be for now
     const [imageURL, setImageURL] = useState("");
     const [timeInMins, setTimeInMins] = useState(0);
@@ -31,10 +32,10 @@
 
 
     const addRecipe = async () => {
-      // title nor desc can't be empty
+      // title, desc nor url can't be empty
       try {
-        if (!title || !description) {
-          alert("You need to add a title and description");
+        if (!title || !description || !imageURL) {
+          alert("You need to add a title, description and a image url");
           return;
         }
 
