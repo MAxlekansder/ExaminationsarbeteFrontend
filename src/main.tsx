@@ -16,8 +16,6 @@ import Categories from './pages/Categories.tsx';
 import WeeklyTips from './pages/WeeklyTips.tsx';
 
 
-
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>

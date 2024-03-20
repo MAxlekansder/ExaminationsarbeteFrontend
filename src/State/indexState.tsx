@@ -6,12 +6,14 @@ import { Recipe } from "../data/Recipes"
 import axios from "axios";
 
 
+
 interface recipeState {
     recipes: Recipe[];
     drinks: any[];
     allDrinks: any[];
     detailedDrink: any[];
     detailedRecipe: object;
+    categoryDishes: any[];
 
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
@@ -28,6 +30,7 @@ interface recipeState {
 
 const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
+    categoryDishes:[],
     drinks: [],
     allDrinks: [],
     detailedDrink: [],
@@ -54,7 +57,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
    
 
-    fetchRecipe: async () => { // for fetching 
+    fetchRecipe: async () => { // for fetching whole api
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             
@@ -67,8 +70,6 @@ const useRecipeState = create<recipeState>()((set) => ({
 
         } catch (error) {console.log('Error fetching api/data', error);}
     },
-
-
 
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
