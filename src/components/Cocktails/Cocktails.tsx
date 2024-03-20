@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import useRecipeState from "../../State/indexState";
 import NavBarComponent from "../NavBarComponent";
-import CocktailSidebarComponent from "./CocktailSidebarComponent";
+import CocktailSidebarComponent from "./CocktailSidebar";
 import { useNavigate } from "react-router-dom";
 
 
@@ -56,22 +56,9 @@ function PresentCocktails() {
   return (
     <div>
       <NavBarComponent />
-      <div className="flex">
-        <div className="w-1/5">
-          {/* <CocktailSidebarComponent 
-          selectedCategory={selectedCategory}
-          onCategorySelect={handleCategorySelect}
-          /> */}
-        </div>
-        <div className="w-4/5">
-          <button
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
-            onClick={refreshDrinks}
-            disabled={loading}
-          >
-            Refresh
-          </button>
-          <p
+      <div>
+        test
+        <p
             className={`text-xl font-bold mb-4 ${
               loading ? "opacity-0" : "opacity-100 transition-opacity duration-500"
             }`}
@@ -79,6 +66,21 @@ function PresentCocktails() {
             {" "}
             tänkbara drinkar{" "}
           </p>
+        <button
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
+            onClick={refreshDrinks}
+            disabled={loading}
+          >
+            Refresh
+          </button>
+      </div>
+      <div className="flex">
+        <div className="w-1/5">
+        <CocktailSidebarComponent/>
+        </div>
+        <div className="w-4/5">
+  
+    
           <div
             className={`transition-opacity duration-500 ${
               loading ? "opacity-0" : "opacity-100"
