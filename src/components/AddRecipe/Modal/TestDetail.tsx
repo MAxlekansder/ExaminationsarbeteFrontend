@@ -33,6 +33,10 @@ function DetailedTestComponent() {
     setIsModalOpe(false);
   };
 
+  const isThisWorking = () => {
+    
+  }
+
   return (
     <div>
         <h1>hej</h1>

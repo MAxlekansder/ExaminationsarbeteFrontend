@@ -35,6 +35,8 @@ function CocktailSidebarComponent ()  {
       <div>
         hej
 
+        lägger till mer här för att se om det fungerar
+
         hej
       </div>
   );
