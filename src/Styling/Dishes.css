@@ -15,8 +15,9 @@
   }
 
   .card-fade-in:hover {
-    
     padding-left: 2vw;
     padding-right: 2vw;
     transition: padding 0.4s ease-in-out;
+    opacity: 0.7;
+    
   }

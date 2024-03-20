@@ -10,8 +10,10 @@ import Recipe from './Views/Recipe/Recipe.tsx';
 import PresentCocktails from './components/Cocktails/CocktailComponent.tsx';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktailComponent.tsx';
 import Test from './components/AddRecipe/Modal/TestPage.tsx';
-import About from './pages/AboutUs/About.tsx';
+import About from './pages/About.tsx';
 import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail.tsx';
+import Categories from './pages/Categories.tsx';
+import WeeklyTips from './pages/WeeklyTips.tsx';
 
 
 
@@ -29,7 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/subpage' element={<SubPage />} />
         <Route path='/test' element={<Test /> } />
         <Route path='/test/:id' element={<DetailedTestComponent />} />
-        <Route path='/aboutUs' element={<About/> } />
+        <Route path='/about' element={<About/> } />
+        <Route path='/categories' element={<Categories/> } />
+        <Route path='/weeklytips' element={<WeeklyTips/> } />
         <Route path='/recipe1' element={<Recipe title={"Köttbullar"} description={"Gör så här..."} />} />
         <Route path='/recipe2' element={<Recipe title={"Pizza"} description={"Gör så här..."} />} />
         <Route path='/recipe3' element={<Recipe title={"Kebab"} description={"Gör så här..."} />} />
