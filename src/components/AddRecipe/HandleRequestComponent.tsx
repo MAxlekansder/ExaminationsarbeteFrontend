@@ -36,8 +36,8 @@
     const addRecipe = async () => {
       // title, desc nor url can't be empty
       try {
-        if (!title || !description || !imageUrl) {
-          alert("You need to add a title, description and a image url");
+        if (!title || !description || !imageUrl) { // maybe create a modal here instead
+          alert("You need to add a Title, Description and a image Url");
           return;
         }
 
