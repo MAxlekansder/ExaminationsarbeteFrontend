@@ -24,15 +24,14 @@
 
   .des-text{
     position: absolute;
-    top: 22vw;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: small;
     text-align: center;
     font-style: italic;
     
-    
-    
-    
   }
+
+
   

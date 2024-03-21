@@ -1,5 +1,4 @@
 // Alexander & Gustav
-//La till fetchRecipe här och flyttade ut koden från App.tsx
 
 import {create} from "zustand"
 import { Recipe } from "../data/Recipes"
