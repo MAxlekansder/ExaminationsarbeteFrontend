@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 
 function PresentCocktails() {
+  const { fetchAllDrinks, fetchAlcoholicDrinks, fetchNonAlcoholicDrinks, fetchSpecificDrinkIngredient } = useRecipeState();
   const [selectedCategory, setSelectedCategory] = useState("Alcoholic");
-  const getDrinks = useRecipeState((state) => state.fetchAllDrinks);
   const drinks = useRecipeState((state) => state.allDrinks);
   const [loading, setLoading] = useState(true);
 
@@ -24,7 +24,9 @@ function PresentCocktails() {
     return array;
   };
 
+
   const randomDrinks = shuffleResult(drinks.slice()).slice(0, 9); // used to take out 9 drinks
+
 
   const refreshDrinks = async () => {
     // used with button and delay
@@ -32,7 +34,7 @@ function PresentCocktails() {
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     try {
-      await getDrinks(); // Fetch drinks
+      await fetchAllDrinks(); // Fetch drinks
     } catch (error) {
       console.error("Error fetching drinks:", error);
     } finally {
@@ -44,9 +46,17 @@ function PresentCocktails() {
     refreshDrinks();
   }, []);
 
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(category);
-  };
+
+  const handleCategoryFetch = async (category: string) => {
+      switch(category) {
+        case "alcoholic": return await fetchAlcoholicDrinks();
+        case "nonAlcoholic": return await fetchNonAlcoholicDrinks();
+        case "all": return await fetchAllDrinks();
+        default: fetchSpecificDrinkIngredient(category)
+      }
+  }
+
+
 
   const navigateCocktailId = (id: string) => { // Navigate to the cocktail ID
     console.log(id)

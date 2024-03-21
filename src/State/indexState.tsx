@@ -23,6 +23,7 @@ interface recipeState {
     fetchSpecificDrink: (id: string) => Promise<void>;
     fetchSpecificRecipe: (id: string) => Promise<void>;
     updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
+    fetchSpecificDrinkIngredient: (ingredient: string) => Promise<void>;
 }
 
 
@@ -144,11 +145,27 @@ const useRecipeState = create<recipeState>()((set) => ({
     },
 
 
+    fetchSpecificDrinkIngredient: async (ingredient: string) => {
+
+        try {
+            const detailedIngredint = await axios.get(`www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+            
+            if ( detailedIngredint.status === 200) {
+
+                set ({drinks: detailedIngredint.data})
+                console.log(detailedIngredint.data)
+            } else {console.log("error while ingredient GET 200")}
+        
+        } catch (error) {console.log("hehe")}
+    },
+
+
     fetchSpecificRecipe: async (id: string) => {
         try {
             const detailedRecipe = await axios.get(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${id}`);
             
             if ( detailedRecipe.status === 200) {
+
                 console.log("test in 200");
                 console.log(detailedRecipe.data);
                 set ({detailedRecipe: detailedRecipe.data});
