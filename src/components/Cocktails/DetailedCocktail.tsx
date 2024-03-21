@@ -1,4 +1,6 @@
 // Alexander
+//Design by Gustav
+//Fixa Idag 2024-03-21!!!!
 
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -36,9 +38,9 @@ function DetailedCocktailComponent() {
         {detailedDrink.map((drink) => (
             <div key={drink.idDrink}>
                 <p>
-                    {drink.idDrink}
-                    {drink.strDrink}
-                    <img src={drink.strDrinkThumb} alt="" />
+                  {drink.idDrink}
+                  {drink.strDrink}
+                <img src={drink.strDrinkThumb} alt="" />
                 </p>
             </div>
             
