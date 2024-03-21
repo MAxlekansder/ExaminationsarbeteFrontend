@@ -14,8 +14,7 @@ import About from './pages/About.tsx';
 import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail.tsx';
 import Categories from './pages/Categories.tsx';
 import WeeklyTips from './pages/WeeklyTips.tsx';
-
-
+import CocktailCategory from './components/Cocktails/CocktailCategory.tsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -28,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/home' element={<Home />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
+        <Route path='/cocktail:category' element={<CocktailCategory />} />
         <Route path='/subpage' element={<SubPage />} />
         <Route path='/test' element={<Test /> } />
         <Route path='/test/:id' element={<DetailedTestComponent />} />

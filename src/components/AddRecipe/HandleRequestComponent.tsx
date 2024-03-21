@@ -8,13 +8,8 @@
   import InstructionList from "./HandleInstructionsComponent";
   import IngredientsList from "./HandleIngredientsComponent";
   import NavBarComponent from "../NavBarComponent";
+  
 
-
-
-
-  interface RecipeComponentProps {
-    recipeProps: Recipe;
-  }
 
   function HandleRequests() {
 

@@ -6,12 +6,15 @@ import { Recipe } from "../data/Recipes"
 import axios from "axios";
 
 
+
 interface recipeState {
     recipes: Recipe[];
     drinks: any[];
     allDrinks: any[];
     detailedDrink: any[];
     detailedRecipe: object;
+    categoryDishes: any[];
+    categoryDrinks: any[];
 
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => void;
@@ -29,6 +32,8 @@ interface recipeState {
 
 const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
+    categoryDishes:[],
+    categoryDrinks: [],
     drinks: [],
     allDrinks: [],
     detailedDrink: [],
@@ -55,7 +60,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
    
 
-    fetchRecipe: async () => { // for fetching 
+    fetchRecipe: async () => { // for fetching whole api
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             
@@ -70,7 +75,7 @@ const useRecipeState = create<recipeState>()((set) => ({
     },
 
 
-
+    
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
             const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
@@ -148,15 +153,19 @@ const useRecipeState = create<recipeState>()((set) => ({
     fetchSpecificDrinkIngredient: async (ingredient: string) => {
 
         try {
-            const detailedIngredint = await axios.get(`www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+            const detailedIngredient = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
             
-            if ( detailedIngredint.status === 200) {
-
-                set ({drinks: detailedIngredint.data})
-                console.log(detailedIngredint.data)
+            if ( detailedIngredient.status === 200) {
+                
+                const categoryDrink = detailedIngredient.data.drinks;
+        
+                set ({categoryDrinks: categoryDrink});
+                console.log(categoryDrink, "test");
+     
             } else {console.log("error while ingredient GET 200")}
         
-        } catch (error) {console.log("hehe")}
+        } catch (error) {console.log("hehe") }
+        
     },
 
 

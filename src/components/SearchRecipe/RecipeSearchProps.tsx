@@ -11,7 +11,9 @@ interface RecipeSearchProps {
   onSearchChange: (term: string) => void;
 }
 
-const RecipeSearch: React.FC<RecipeSearchProps> = ({ recipesFromInterface, searchTerm, onSearchChange }) => {
+
+
+function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: RecipeSearchProps) {
   const filteredRecipes = recipesFromInterface.filter(recipe => {
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });

@@ -9,10 +9,12 @@ interface Drink {
     idDrink: string;
     strDrink: string;
     strDrinkThumb: string;
-    strInstructions: string;
+    strIngredient1: string;
     strGlass: string;
 
   }
+
+  
 
 function DetailedCocktailComponent() {
   const { id } = useParams<{ id: string }>(); 
@@ -37,7 +39,8 @@ function DetailedCocktailComponent() {
             <div key={drink.idDrink}>
                 <p>
                     {drink.idDrink}
-                    {drink.strDrink}
+                    {drink.strDrink} <br />
+                    {drink.strIngredient1}
                     <img src={drink.strDrinkThumb} alt="" />
                 </p>
             </div>
