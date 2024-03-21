@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import useRecipeState from "../../State/indexState";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import FooterComponent from "../Footer/FooterComponent";
+
 
 function CocktailSidebarComponent() {
   const getNonAlcoholicDrinks = useRecipeState((state) => state.fetchNonAlcoholicDrinks);
@@ -19,6 +21,7 @@ function CocktailSidebarComponent() {
   };
 
   return (
+    <>
     <div className="flex h-full bg-white text-black">
       <div className="w-64 bg-white">
         <div className="p-4">
@@ -84,6 +87,10 @@ function CocktailSidebarComponent() {
         </div>
       </div>
     </div>
+   
+    
+    
+    </>
   );
 }
 export default CocktailSidebarComponent;

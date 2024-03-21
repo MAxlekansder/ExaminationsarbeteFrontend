@@ -2,9 +2,12 @@
 
 import React from 'react';
 import NavBarComponent from '../components/NavBarComponent';
+import FooterComponent from '../components/Footer/FooterComponent';
+
 
 const About: React.FC = () => {
     return (
+        <>
         <div className="bg-white">
             <NavBarComponent />
             <div className="container mx-auto py-8">
@@ -55,6 +58,8 @@ const About: React.FC = () => {
                 </div>
             </div>
         </div>
+        <FooterComponent/>
+        </>
     );
 };
 

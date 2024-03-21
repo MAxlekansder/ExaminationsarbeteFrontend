@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
 import '../../Styling/Cocktail.css'
 import NavBarComponent from "../NavBarComponent";
+import FooterComponent from "../Footer/FooterComponent";
 
 
 
@@ -79,17 +80,10 @@ function DetailedCocktailComponent() {
           ))}
             <div className="bg-green-700 m-12 text-green-700">.</div>
         </div>
-        <div className="m-20 p-20"></div>
-    <div className='bg-green-900'>
-              <footer>
-                <p className='text-white text-center text-xs '>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore expedita non, aperiam ipsam pariatur ab, fugiat facilis mollitia assumenda similique beatae vel nulla! Culpa reiciendis quidem, voluptatem unde modi quia.
-                  </p>
-               <h1 className='flex justify-start pt-20  text-white'>
-                    Copyright © 2024 Recept.nu . All Rights Reserved
-                    </h1>
-                </footer> 
-              </div>
+        <div className="m-20 p-20">
+          
+        </div>
+    <FooterComponent />
   </>
 )
 }
