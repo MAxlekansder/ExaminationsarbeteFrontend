@@ -6,8 +6,8 @@ import NavBarComponent from './components/NavBarComponent'
 import useRecipeState from './State/indexState';
 import HomePage from './pages/HomePage';
 import DishComponent from './components/DishComponent';
-import dishes from './data/Dishes';
 import { Route, Routes } from 'react-router-dom';
+import FooterComponent from './components/Footer/FooterComponent';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -68,17 +68,7 @@ return (
           )} />
         </Routes>
      </div>
-  
-  <div className='bg-green-900'>
-        <footer>
-          <p className='text-white text-center text-xs '>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore expedita non, aperiam ipsam pariatur ab, fugiat facilis mollitia assumenda similique beatae vel nulla! Culpa reiciendis quidem, voluptatem unde modi quia.
-            </p>
-         <h1 className='flex justify-start pt-20  text-white'>
-              Copyright © 2024 Recept.nu . All Rights Reserved
-              </h1>
-          </footer> 
-        </div>
+     <FooterComponent/>
     </>
 
   );
