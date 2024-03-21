@@ -3,6 +3,7 @@ import useRecipeState from "../../State/indexState";
 import NavBarComponent from "../NavBarComponent";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import FooterComponent from "../Footer/FooterComponent";
 
 function PresentCocktails() {
   const getCategoryDrinks = useRecipeState((state) => state.fetchSpecificDrinkIngredient);
@@ -37,6 +38,7 @@ function PresentCocktails() {
   };
 
   return (
+    <>
     <div>
       <NavBarComponent />
       <div>
@@ -109,6 +111,9 @@ function PresentCocktails() {
         </div>
       </div>
     </div>
+    <FooterComponent/>
+    </>
+
   );
 }
 

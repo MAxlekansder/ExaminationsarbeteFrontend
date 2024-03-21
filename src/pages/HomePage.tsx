@@ -41,7 +41,7 @@ function HomePage() {
     <div>
       {/* Lunch section */}
       <div className='testa-laga-text bg-green-200 m-20 mt-0 mb-0'>
-        <h1 className='text-center m-5 text-4xl p-12'>Lunch tips</h1>
+        <h1 className='text-center m-5 text-4xl p-12'>Dagens lunch tips</h1>
       </div>
       <div className='flex justify-center'>
       <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
@@ -67,7 +67,7 @@ function HomePage() {
 
       
       <div className='testa-laga-text bg-green-700 m-20 mt-0 mb-0'>
-        <h1 className='text-center m-5 text-4xl p-12'>Middags tips!</h1>
+        <h1 className='text-center m-5 text-4xl p-12'>Dagens middags tips!</h1>
       </div>
       
       <div className='flex justify-center'>

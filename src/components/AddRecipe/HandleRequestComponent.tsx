@@ -8,7 +8,8 @@
   import InstructionList from "./HandleInstructionsComponent";
   import IngredientsList from "./HandleIngredientsComponent";
   import NavBarComponent from "../NavBarComponent";
-  
+  import '../../Styling/Dishes.css'
+
 
 
   function HandleRequests() {
@@ -81,7 +82,8 @@
         <div>
           <NavBarComponent />
         </div>
-        <div className="border border-gray-300 rounded p-6">
+        
+        <div className="border border-gray-300 rounded p-6 border-img">
           <div className="flex justify-center items-stretch h-screen">
             <div className="w-full max-w-3xl">
               <div className="flex flex-wrap -mx-3 mb-6">

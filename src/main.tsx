@@ -17,6 +17,7 @@ import WeeklyTips from './pages/WeeklyTips.tsx';
 import CocktailCategory from './components/Cocktails/CocktailCategory.tsx';
 
 
+//Simon flyttar ut koden i sprint 3!
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
