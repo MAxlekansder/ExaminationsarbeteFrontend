@@ -9,9 +9,6 @@ import '../../Styling/Cocktail.css'
 import NavBarComponent from "../NavBarComponent";
 import FooterComponent from "../Footer/FooterComponent";
 
-
-
-
 interface Drink {
     idDrink: string;
     strDrink: string;
@@ -20,8 +17,6 @@ interface Drink {
     strGlass: string;
 
   }
-
-  
 
 function DetailedCocktailComponent() {
   const { id } = useParams<{ id: string }>(); 

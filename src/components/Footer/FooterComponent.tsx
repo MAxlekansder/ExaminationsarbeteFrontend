@@ -1,4 +1,4 @@
-
+//Component by Gustavo
 
 const FooterComponent = () => {
   return (
