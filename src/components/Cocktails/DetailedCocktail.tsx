@@ -57,7 +57,7 @@ function DetailedCocktailComponent() {
                       italic
                       text-center
                       mt-10
-                      bg-green-500
+                      bg-blue-200
                       p-10
                       rounded-lg
                       titel-text
@@ -65,16 +65,18 @@ function DetailedCocktailComponent() {
                      ">
                         {drink.strDrink}
                   </h1>
-              <img 
+              <div className="flex justify-center align-middle">
+                <img 
                   src={drink.strDrinkThumb} 
                   alt="" 
-                  className="flex justify-center align-middle m-12 rounded-lg"
+                  className=" m-12 rounded-lg cocktail-img"
                   
                   
                 />
-                 <div className="instruction-text text-xl">
+                </div>
+                 <div className="flex alinge-middle justify-center">
                   <br />
-                  {drink.strInstructions}
+                 <p className="instruction-text text-xl m-12">{drink.strInstructions}</p>
                 </div>
             </div>
             

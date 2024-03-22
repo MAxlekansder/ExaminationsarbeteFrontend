@@ -1,10 +1,11 @@
 .instruction-text{
-    position: absolute;
-    top: 100%;
-    width: 40%;
-    text-align: center;
+ width: 50%;
+ 
 }
 .titel-text{
     font-family: Pacifico;
 }
 
+.cocktail-img {
+    width: 50%;
+}
