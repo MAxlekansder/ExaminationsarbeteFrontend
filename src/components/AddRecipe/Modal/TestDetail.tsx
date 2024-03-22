@@ -33,9 +33,7 @@ function DetailedTestComponent() {
     setIsModalOpe(false);
   };
 
-  const isThisWorking = () => {
-    
-  }
+
 
   return (
     <div>
@@ -52,6 +50,8 @@ function DetailedTestComponent() {
         <div>
             {detailedRecipe._id}
             <img src={detailedRecipe.imageUrl} alt="" />
+            {detailedRecipe.title}
+            {detailedRecipe.description}
         </div>
       
     </div>
