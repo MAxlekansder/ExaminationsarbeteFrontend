@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './Styling/index.css'
 import HandleRequests from './components/AddRecipe/HandleRequestComponent.tsx';
 import Home from "./Views/Home/Home.tsx";
-import SubPage from "./Views/SubPage/SubPage.tsx";
 import Recipe from './Views/Recipe/Recipe.tsx';
 import PresentCocktails from './components/Cocktails/Cocktails.tsx';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail.tsx';
@@ -28,10 +27,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/home/:id' element={<RecipeDetails />} />
 
-        <Route path='/cocktails/:id' element=<DetailedCocktailComponent /> />
+        <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/cocktail:category' element={<CocktailCategory />} />
-        <Route path='/subpage' element={<SubPage />} />
         <Route path='/test' element={<Test />} />
         <Route path='/test/:id' element={<DetailedTestComponent />} />
         <Route path='/about' element={<About />} />
