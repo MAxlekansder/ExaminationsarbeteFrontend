@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './Styling/index.css'
-import HandleRequests from './components/AddRecipe/HandleRequestComponent.tsx';
+import HandleRequests from './components/AddRecipe/HandleRequest.tsx';
 import Home from "./Views/Home/Home.tsx";
 import SubPage from "./Views/SubPage/SubPage.tsx";
 import Recipe from './Views/Recipe/Recipe.tsx';

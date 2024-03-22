@@ -38,6 +38,9 @@ const proteinCategories = [
   "Fisk",
   "Skaldjur", 
   "Godis",
+  "Fläsk",
+  "Soja",
+  "Tofu",
   ""
 ]
 

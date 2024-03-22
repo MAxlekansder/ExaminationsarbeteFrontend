@@ -4,9 +4,9 @@
   import { Recipe, Ingredient } from "../../data/Recipes";
   import axios from "axios";
   import useRecipeState from "../../State/indexState";
-  import CategorySelected from "./CategorySelectComponent";
-  import InstructionList from "./HandleInstructionsComponent";
-  import IngredientsList from "./HandleIngredientsComponent";
+  import CategorySelected from "./CategorySelect";
+  import InstructionList from "./HandleInstructions";
+  import IngredientsList from "./HandleIngredients";
   import NavBarComponent from "../NavBarComponent";
   import '../../Styling/Dishes.css'
 
