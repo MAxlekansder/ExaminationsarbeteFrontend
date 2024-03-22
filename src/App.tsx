@@ -13,7 +13,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
  
-
   useEffect(() => {
     fetchRecipe();
 
