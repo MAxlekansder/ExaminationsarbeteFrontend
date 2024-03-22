@@ -1,14 +1,15 @@
 //import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import '../Styling/Dishes.css'
 
 interface DishProps {
   id: string;
   name: string;
   image: string;
   recipe?: string;
-  ingredients: string[];
-  description: string;
+  ingredients?: string[];
+  description?: string;
   onClick: () => void;
 }
 
@@ -35,18 +36,20 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
 
   // Annars, rendera en länk till rätten
   return (
-    <div className='card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
-      <div className="m-12 border">
-        <Link to={`/dishes/${id}`} className=''>
+    <div className=' relative card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
+      <div className="m-12 ">
+        <Link to={`/dishes/${id}`}>
           <img
             src={image}
             alt={name}
-            className="w-40 h-40 object-cover border shadow-lg"
+            className="w-40 h-40 object-cover border shadow-lg'"
           />
           <p className="text-center mt-2 font-semibold">{name}</p>
-          <p className="text-center text-xs">{description}</p>
+          
+          
         </Link>
       </div>
+      <p className="align-bottom des-text">{description}</p>
     </div>
   );
 }

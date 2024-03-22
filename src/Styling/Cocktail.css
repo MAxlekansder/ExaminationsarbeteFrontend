@@ -1,0 +1,10 @@
+.instruction-text{
+    position: absolute;
+    top: 100%;
+    width: 40%;
+    text-align: center;
+}
+.titel-text{
+    font-family: Pacifico;
+}
+
