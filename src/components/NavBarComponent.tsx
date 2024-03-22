@@ -1,6 +1,6 @@
-// Kristian made this file
+// Kristian
 
-import WeeklyTips from "./WeeklyTips";
+import WeeklyTips from "./WeeklyTips/WeeklyTips";
 
 
 const NavBarComponent = () => {

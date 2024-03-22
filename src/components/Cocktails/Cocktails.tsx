@@ -51,68 +51,66 @@ function PresentCocktails() {
 
   const navigateCocktailId = (id: string) => { // Navigate to the cocktail ID
     console.log(id)
-    navigate(`/cocktails/${id}`); 
+    navigate(`/cocktails/${id}`);
   };
 
   return (
     <>
-    <div>
-      <NavBarComponent />
       <div>
-        test
-        <p
-            className={`text-xl font-bold mb-4 ${
-              loading ? "opacity-0" : "opacity-100 transition-opacity duration-500"
-            }`}
+        <NavBarComponent />
+        <div>
+          test
+          <p
+            className={`text-xl font-bold mb-4 ${loading ? "opacity-0" : "opacity-100 transition-opacity duration-500"
+              }`}
           >
             {" "}
             tänkbara drinkar{" "}
           </p>
-        <button
+          <button
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
             onClick={refreshDrinks}
             disabled={loading}
           >
             Refresh
           </button>
-      </div>
-      <div className="flex">
-        <div className="w-1/5">
-        <CocktailSidebarComponent/>
         </div>
-        <div className="w-4/5">
-  
-    
-          <div
-            className={`transition-opacity duration-500 ${
-              loading ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            {loading ? (
-              <p className="opacity-0">Loading...</p> // Fade out
-            ) : (
-              <div className="flex flex-wrap -mx-2">
-                {randomDrinks.map((drink) => (
-                  <div key={drink.idDrink} className="w-1/3 px-2 mb-4" onClick={() => navigateCocktailId(drink.idDrink)}>
-                    <div className="bg-white p-4 shadow-md">
-                      <p className="text-lg font-semibold">
-                        {drink.strDrink} {drink.idDrink}
-                      </p>
-                      <img
-                        src={drink.strDrinkThumb}
-                        alt={drink.strDrink}
-                        className="w-full h-auto mb-2"
-                      />
+        <div className="flex">
+          <div className="w-1/5">
+            <CocktailSidebarComponent />
+          </div>
+          <div className="w-4/5">
+
+
+            <div
+              className={`transition-opacity duration-500 ${loading ? "opacity-0" : "opacity-100"
+                }`}
+            >
+              {loading ? (
+                <p className="opacity-0">Loading...</p> // Fade out
+              ) : (
+                <div className="flex flex-wrap -mx-2">
+                  {randomDrinks.map((drink) => (
+                    <div key={drink.idDrink} className="w-1/3 px-2 mb-4" onClick={() => navigateCocktailId(drink.idDrink)}>
+                      <div className="bg-white p-4 shadow-md">
+                        <p className="text-lg font-semibold">
+                          {drink.strDrink} {drink.idDrink}
+                        </p>
+                        <img
+                          src={drink.strDrinkThumb}
+                          alt={drink.strDrink}
+                          className="w-full h-auto mb-2"
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            )}
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <FooterComponent/>
+      <FooterComponent />
     </>
 
   );
