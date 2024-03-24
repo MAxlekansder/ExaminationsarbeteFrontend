@@ -12,11 +12,6 @@
 
 
 
-
-  interface RecipeComponentProps {
-    recipeProps: Recipe;
-  }
-
   function HandleRequests() {
 
     const addRecipeState = useRecipeState((state) => state.addRecipe);

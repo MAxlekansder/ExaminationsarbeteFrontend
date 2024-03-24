@@ -12,15 +12,16 @@ import FooterComponent from "../Footer/FooterComponent";
 
 
 
-
 interface Drink {
     idDrink: string;
     strDrink: string;
     strDrinkThumb: string;
-    strInstructions: string;
+    strIngredient1: string;
     strGlass: string;
 
   }
+
+  
 
 function DetailedCocktailComponent() {
   const { id } = useParams<{ id: string }>(); 

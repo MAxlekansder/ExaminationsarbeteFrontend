@@ -1,18 +1,20 @@
 // Alexander
 
 import { useState, useEffect } from "react";
-import Modal from "./Modal";
-import Recipe from "../../../Views/Recipe/Recipe";
 import { useNavigate } from "react-router-dom";
 import useRecipeState from "../../../State/indexState";
+import NavBarComponent from "../../NavBarComponent";
+
+
+
 
 function Test() {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
   const recipe = useRecipeState((state) => state.recipes);
-  
 
 
   const navigate = useNavigate();
+
 
   useEffect(() => {
     getRecipe();
@@ -20,14 +22,10 @@ function Test() {
 
 
 
-
-  // const navigateToRecipeId = (id: string) => {
-  //   navigate(`/test/${id}`);
-  // };
-
   return (
     <div>
       hej
+      <NavBarComponent/>
       <div>
       </div>
       {recipe.map((recipe) => (
