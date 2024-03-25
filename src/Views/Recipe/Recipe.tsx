@@ -1,38 +1,53 @@
-
-import React from 'react'
-import {Link } from "react-router-dom";
+import React, {useEffect, } from 'react'
+import { useParams,} from "react-router-dom";
 import Title from "./Components/Title/Title.tsx";
-import Description from "./Components/Description/Description.tsx";
+import useRecipeState from "../../State/indexState.tsx";
+import {Recipe} from "../../data/Recipes";
 
-interface Props {
-    title: String;
-    description: String;
 
-}
 
-const Recipe = (props: Props) => {
-    const {title, description} = props;
+const RecipeDetails = () => {
+    const {id} = useParams<{ id: string }>()
+    const getRecipe = useRecipeState((state) => state.fetchSpecificRecipe)
+    const detailedRecipe = useRecipeState((state) => state.detailedRecipe as Recipe)
 
-    const getRecipe = () => { getRecipe()
-        //Rest-api (Open-API/Swagger)
-        //slå upp recept och returnera ingredienser
-    }
+    useEffect(() => {
+        if (id) {
+            getRecipe(id);
+            console.log(id);
+        }
+    }, [getRecipe, id]);
+
+
     return (
 
         <div>
-            <Title title={title}/>
 
-            <Link style={{backgroundColor: "navajowhite"}} to="/home">Back to meny</Link><br/><br/>
-            <Link style={{backgroundColor: "navajowhite"}} to="/">==Meny==</Link><br/><br/>
+            <h1>Recipe</h1>
+            <div className="Recipe-link">
 
+                <div className="Recipe" key="index">
+                    <img src={detailedRecipe.imageUrl}/>
+                    <button>View Recipe</button>
+                </div>
+            </div>
 
-            <img src="https://tse4.mm.bing.net/th?id=OIP.DMUuFtUpJRfQOKrgzOSdqQHaFn&pid=Api&P=0&h=180" alt={"hi"}/><br/>
-
-            <Description description={description}/>
-
+            <Title title={detailedRecipe.title}/>
+           <div>{detailedRecipe.title}</div>
+            <h6>Ingredienser</h6>
+            {detailedRecipe.ingredients?.map(ingredient => (
+                <p>{ingredient.name}</p>
+            ))}
+            <br/>
+            <h6>Gör så här</h6>
+            {detailedRecipe.instructions?.map(step => (
+                <p>{step}</p>
+            ))}
+            <br/>
+            <p>{detailedRecipe.ratings}</p>
 
         </div>
     )
 }
 
-export default Recipe
+export default RecipeDetails
