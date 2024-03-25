@@ -11,7 +11,7 @@ function HomePage() {
   useEffect(() => {
     if (recipes.length > 0) {
       const lunchRecipes = recipes.filter(recipe => recipe.categories.includes('Lunch'));
-      const dinnerRecipes = recipes.filter(recipe => recipe.categories.includes('Huvudrätt'));
+      const dinnerRecipes = recipes.filter(recipe => recipe.categories.includes('Dinner'));
 
       
       const randomIndexesLunch = getRandomIndexes(lunchRecipes.length, 3);
