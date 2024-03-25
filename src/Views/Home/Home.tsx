@@ -1,30 +1,40 @@
-import React from 'react'
-import {NavLink} from "react-router-dom";
+import React, {useEffect, } from "react";
+import './Home.css';
+import useRecipeState from "../../State/indexState.tsx";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
+    const getRecipe = useRecipeState((state)=>state.fetchRecipe)
+    const recipe = useRecipeState((state)=>state.recipes)
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        getRecipe();
+        console.log("Hej")
+    }, [getRecipe])
+
+
     return (
         <div>
 
+            <div style={{ backgroundColor: 'whitesmoke'}}>
+                <div className="Home-container">
+                    {/* Loopa igenom listan med recept och rendera en komponent för varje recept */}
+                    {recipe.map((recipe) => (
+                        <div key={recipe._id} onClick={()=>navigate(`/home/${recipe._id}`)}>
+                        <div className="Recipe">
+                            <h2>{recipe.title}</h2>
 
-           <br/><br/><form action="/action_page.pgp">
-            <label htmlFor="fname"> First name: </label>
-            <input type="text" id="fname" name="fname"/><br/><br/>
-            <label htmlFor="lname">Last name:</label>
-            <input type="text" id="lname" name="lname"/><br/><br/>
-            <input type="submit" value="Submit"/>
+                            <img src={recipe.imageUrl} alt={recipe.title} />
+                            <button onClick={() => console.log(recipe)}>View Recipe</button>
+                        </div>
+                        </div>
+                    ))}
 
-        </form>
-            <h1>Home</h1>
-            <br/><NavLink style={{backgroundColor: "yellow", fontWeight: "bold", fontStyle: "italic", padding: 5, borderRightStyle: "solid", borderRightWidth: 2}}
-                     to="/recipe1">Köttbullar</NavLink><br/><br/>
-            <br/><NavLink style={{backgroundColor: "yellow", fontWeight: "bold", fontStyle: "italic", padding: 5, borderRightStyle: "solid", borderRightWidth: 2}}
-                     to="/recipe2">Pizza</NavLink><br/><br/>
-            <br/><NavLink style={{backgroundColor: "yellow", fontWeight: "bold", fontStyle: "italic", padding: 5, borderRightStyle: "solid", borderRightWidth: 2}}
-                     to="/recipe3">Kebab</NavLink><br/><br/>
-        </div>
-)
-}
+                </div>
+            </div>
+        </div>    )
+};
 export default Home
-
 

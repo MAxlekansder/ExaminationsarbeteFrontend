@@ -13,7 +13,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
  
-
   useEffect(() => {
     fetchRecipe();
 
@@ -29,12 +28,7 @@ return (
     <div>
       <NavBarComponent />
       <div className="food-header">
-        <h1 className='
-        welcome-text-header 
-        text-center 
-        font-bold text-7xl
-        text-white
-        opacity-90'>
+        <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
           Välkommen!
         </h1>
       </div>
