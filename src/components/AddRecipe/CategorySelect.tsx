@@ -33,38 +33,39 @@ import { StylesConfig } from "react-select";
 // ];
 
 const proteinCategories = [
-  "kött",
-  "Fågel",
-  "Fisk",
-  "Skaldjur", 
-  "Godis",
-  "Fläsk",
-  "Soja",
+  "Meat",
+  "Poultry",
+  "Fish",
+  "Seafood",
+  "Candy",
+  "Pork",
+  "Soy",
   "Tofu",
-  ""
-]
-
-
+  "Vegetarian",
+  "Diary",
+];
 
 
 const nationalitiesOption = [
-  "Italiensk",
-  "Kinesisk",
-  "Indisk",
-  "Mexikansk",
-  "Japansk",
-  "Medelhavet",
-  "Skandenaviskt",
-  "Amerikanskt",
+  "Italian",
+  "Chinese",
+  "Indian",
+  "Mexican",
+  "Japanese",
+  "Mediterranean",
+  "Scandinavian",
+  "American",
+  "Thai",
 ];
 
 
 const mealOptions = [
-  "Frukost",
+  "Breakfast",
   "Lunch",
-  "Middag",
-  "Mellanmål",
-  "Efterrätt",
+  "Dinner",
+  "Snack",
+  "Dessert",
+  "Appetizer",
 ];
 
 
