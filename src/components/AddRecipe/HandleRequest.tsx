@@ -20,8 +20,6 @@
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [ratings, setRating] = useState(0); // alternative a array,  no need for now
-    
-    // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);  let this be for now
     const [imageUrl, setImageUrl] = useState("");
     const [timeInMins, setTimeInMins] = useState(0);
     const [categories, setCategories] = useState<string[]>([]);
