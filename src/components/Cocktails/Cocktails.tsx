@@ -4,6 +4,7 @@ import NavBarComponent from "../NavBarComponent";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import FooterComponent from "../Footer/FooterComponent";
+import '../../Styling/Cocktail.css'
 
 function PresentCocktails() {
   const getCategoryDrinks = useRecipeState((state) => state.fetchSpecificDrinkIngredient);
@@ -40,13 +41,13 @@ function PresentCocktails() {
   return (
     <>
       <div>
-        <p>tänkbara drinkar</p>
+        <p className="m-12 text-center text-4xl titel-text bg-cyan-50 p-10 rounded-lg">Try our fantastic bevreges!</p>
       </div>
-      <div className="flex flex-wrap -mx-2">
-        <div className="w-1/5">
-          <div className="w-64 bg-white">
+      <div className="flex flex-wrap">
+        <div className="w-1/4 pl-20">
+          <div className="w-64 bg-blue-50 rounded-lg">
             <div className="p-4">
-              <h2 className="text-lg font-bold">Drinkar</h2>
+              <h2 className="text-lg font-bold">Cocktails</h2>
             </div>
             <div>
               <ul>
@@ -55,7 +56,7 @@ function PresentCocktails() {
                     className="cursor-pointer flex items-center hover:underline"
                     onClick={() => handleCategory("alcoholic")}
                   >
-                    <span>Alkoholhaltiga drinkar</span>
+                    <span>Cocktails with alcohol</span>
                     {openCategories.includes("alcoholic") ? <FaAngleDown className="ml-2" /> : ""}
                   </button>
                   {openCategories.includes("alcoholic") && (
@@ -78,7 +79,7 @@ function PresentCocktails() {
                     className="cursor-pointer flex items-center hover:underline"
                     onClick={() => handleCategory("nonAlcoholic")}
                   >
-                    <span>Alkoholfria drinkar</span>
+                    <span>Cocktails without alcohol</span>
                     {openCategories.includes("nonAlcoholic") ? <FaAngleDown className="ml-2" /> : ""}
                   </button>
                   {openCategories.includes("nonAlcoholic") && (
@@ -95,10 +96,10 @@ function PresentCocktails() {
             </div>
           </div>
         </div>
-        <div className="w-4/5 flex flex-wrap">
+        <div className="w-4/6 flex flex-wrap pr-20 mb-10 ">
           {categoryDrinks && categoryDrinks.slice(0, 9).map((drink) => (
             <div key={drink.idDrink} className="w-1/3 px-2 mb-4" onClick={() => navigateCocktailId(drink.idDrink)}>
-              <div className="bg-white p-4 shadow-md">
+              <div className="bg-white p-5 shadow-md card-fade-in">
                 <p className="text-lg font-semibold">
                   {drink.strDrink} {drink.idDrink}
                 </p>
@@ -106,8 +107,10 @@ function PresentCocktails() {
               </div>
             </div>
           ))}
+
         </div>
       </div>
+    </div >
       <FooterComponent />
     </>
 

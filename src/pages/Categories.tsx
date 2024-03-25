@@ -9,10 +9,9 @@ const Categories: React.FC = () => {
       <>
       <div>
           <NavBarComponent />
-           
             <h2>blah blah KATEGORI SIDA blah blah</h2>
-
-      </div>´
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem maiores obcaecati magnam modi nemo temporibus at illo assumenda consectetur perspiciatis dolores eaque quaerat iste nihil optio eligendi rerum, accusamus quisquam!</p>
+      </div>
       <FooterComponent/>
       </>
     );
