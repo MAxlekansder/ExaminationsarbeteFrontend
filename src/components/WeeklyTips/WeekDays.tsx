@@ -7,13 +7,6 @@ function WeekDays() {
 
     const getRecipes = useRecipeState((state) => state.fetchRecipe);
 
-
-
-
-
-
-
-
     return (
         <div>WeekDays</div>
     )
