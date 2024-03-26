@@ -11,6 +11,7 @@ function DetailedTestComponent() {
   const { id } = useParams<{ id: string }>(); 
   const fetchSpecificRecipe = useRecipeState((state) => state.fetchSpecificRecipe);
   const detailedRecipe = useRecipeState((state) => state.detailedRecipe as Recipe)
+  const deleteRecipe = useRecipeState((state) => state.deleteRecipe)
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
@@ -39,7 +40,7 @@ function DetailedTestComponent() {
     <div>
         <h1>hej</h1>
         <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
-            Ändra receptet</button>
+            Change Recipe</button>
         <Modal
           recipeId={selectRecipeId}
           isOpen={isModalOpen}
@@ -47,10 +48,13 @@ function DetailedTestComponent() {
           imageUrl={detailedRecipe.imageUrl}
           recipe={detailedRecipe}
           />
+          <button onClick={()=>deleteRecipe(detailedRecipe._id)} className="border px-2">
+            Delete Recipe
+          </button>
         <div>
             {detailedRecipe._id}
             <img src={detailedRecipe.imageUrl} alt="" />
-            {detailedRecipe.title}
+            {detailedRecipe.title}  
             {detailedRecipe.description}
         </div>
       

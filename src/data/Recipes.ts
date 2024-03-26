@@ -13,7 +13,7 @@ export interface Recipe {
   ratings?: number[]; 
   imageUrl: string;
   timeInMins: number;
-  categories?: string[];
+  categories: string[];
   instructions?: string[];
   ingredients?: Ingredient[];
 }
