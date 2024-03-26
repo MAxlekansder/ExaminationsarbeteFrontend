@@ -1,7 +1,7 @@
 
 export interface Ingredient {
   name: string;
-  amount: string | number;
+  amount: number;
   unit: string;
   // ingredientId: string;
 }
@@ -10,7 +10,7 @@ export interface Recipe {
   _id: string;
   title: string;
   description: string;
-  ratings?: number; 
+  ratings?: number[]; 
   imageUrl: string;
   timeInMins: number;
   categories?: string[];
