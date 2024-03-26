@@ -46,8 +46,8 @@ function PresentCocktails() {
         <p className="m-12 text-center text-4xl titel-text bg-cyan-50 p-10 rounded-lg">Try our fantastic bevreges!</p>
       </div>
       <div className="flex flex-wrap">
-        <div className="w-1/4 pl-20">
-          <div className="w-64 bg-blue-50 rounded-lg">
+        <div className="w-1/4 pl-10">
+          <div className="w-64 bg-blue-50 rounded-lg ">
             <div className="p-4">
               <h2 className="text-lg font-bold">Cocktails</h2>
             </div>
@@ -98,12 +98,12 @@ function PresentCocktails() {
             </div>
           </div>
         </div>
-        <div className="w-4/6 flex flex-wrap pr-20 mb-10 ">
+        <div className="w-3/4 flex flex-wrap pr-10 mb-10  ">
           {categoryDrinks && categoryDrinks.slice(0, 9).map((drink) => (
             <div key={drink.idDrink} className="w-1/3 px-2 mb-4" onClick={() => navigateCocktailId(drink.idDrink)}>
               <div className="bg-white p-5 shadow-md card-fade-in">
                 <p className="text-lg font-semibold">
-                  {drink.strDrink} {drink.idDrink}
+                  {drink.strDrink}
                 </p>
                 <img src={drink.strDrinkThumb} alt={drink.strDrink} className="w-full h-auto mb-2" />
               </div>
