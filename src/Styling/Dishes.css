@@ -34,5 +34,13 @@
     
   }
 
+  .food-container img{
+    width: 35vw;
+    height: 30vw;
+  }
 
+.background-img {
+   background-image: url(./Images/food-header.jpg);
+    
+}
   

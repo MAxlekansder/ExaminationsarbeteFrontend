@@ -29,21 +29,26 @@ function Test() {
   return (
    <>
    <NavBarComponent/>
-   <div >
+   <div className="background-img" >
     {recipe.map((recipe) => (
         <div key={recipe._id} onClick={() => navigate(`/test/${recipe._id}`)}
-         className="flex align-middle items-center relative">
-          <div className="flex">
-            <h1 className="text-5xl titel-text text-center m-12 absolute top-0 text-white bg-black">{recipe.title}</h1>
-            </div>
-          <div className="w-2/5 inline-flex flex-row">
-          <img src={recipe.imageUrl} alt="" 
-          className="m-12"
-          />
-          </div>
+         className="flex align-middle items-center relative ">
+          <div className="absolute top-0 ">
+            <h1 className="text-3xl titel-text text-center m-12 p-3  text-white" 
+                style={{ backgroundColor: 'rgba(0, 130, 0, 0.5)'}}>{recipe.title}</h1>
+               </div>
+                  <div className="food-container inline-flex flex-row">
+                    <img src={recipe.imageUrl} alt="" className="m-12 border shadow-lg  p-12 bg-gray-200"/>
+                </div>
+            <div>
+              {recipe.description}
+              {recipe.ratings}
+
+              
         </div>
-      ))}
     </div>
+  ))}
+</div>
     <FooterComponent/>
     </>
   );
