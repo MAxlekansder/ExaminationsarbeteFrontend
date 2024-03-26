@@ -11,14 +11,14 @@ interface IngredientsListProps {
 const typesOfMeasure = [
   "gram",
   "kg",
-  "tsk",
-  "msk",
+  "tsp",
+  "tbsp",
   "dl",
   "l",
-  "krm",
-  "st",
-  "klyftor",
-  "kruka",
+  "pinch",
+  "piece",
+  "cloves",
+  "pot",
 ];
 
 function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JSX.Element {

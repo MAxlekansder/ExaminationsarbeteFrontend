@@ -6,3 +6,6 @@ React (Vite)
 Typescript 
 Axios
 Router DOM
+React Select
+React Icon
+Zustand

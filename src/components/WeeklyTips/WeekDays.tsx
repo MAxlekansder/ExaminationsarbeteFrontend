@@ -8,9 +8,9 @@ function WeekDays() {
     const recipes = useRecipeState((state) => state.recipes);
     const [dailyRecipe, setDailyRecipe] = useState(null);
 
-    const filterRecipesByCategory = (category) => {
+    const filterRecipesByCategory = (category: string[]) => {
         const filteredRecipes = recipes.filter((recipe) => recipe.categories === category);
-        // Detta antar att varje recept har en property 'category' som definierar dess kategori
+
         return filteredRecipes;
     };
 

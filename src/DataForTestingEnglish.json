@@ -1,0 +1,617 @@
+[
+  {
+    "title": "Pea Soup",
+    "description": "Traditional pea soup",
+    "ratings": 4,
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/de4270d3-101a-42e9-bc66-a04a91768747?fit=crop&h=1137&w=1800&s=129692d79aca75d67396f7300faeaf7d3092d8b1",
+    "timeInMins": 60,
+    "categories": ["dinner", "Appetizer", "Scandinavian", "Poultry"],
+    "instructions": [
+      "Soak peas overnight",
+      "Boil with vegetables",
+      "Serve with mustard and ham"
+    ],
+    "ingredients": [
+      { "name": "Yellow peas", "amount": 250, "unit": "g" },
+      { "name": "Carrots", "amount": 2, "unit": "pcs" },
+      { "name": "Onion", "amount": 1, "unit": "pcs" },
+      { "name": " Pork shank", "amount": 1, "unit": "pcs" }
+    ]
+  },
+  {
+    "title": "Smörgåstårta",
+    "description": "Layered sandwich cake with various fillings",
+    "ratings": 5,
+    "imageUrl": "https://cdn.hemtrevligt.se/icakuriren/app/uploads/2023/05/media-smorgastarta-lax-rakor.png",
+    "timeInMins": 90,
+    "categories": ["Appetizer", "Scandinavian", "Dessert", "Dinner"],
+    "instructions": [
+      "Prepare sandwich layers",
+      "Add fillings",
+      "Decorate the cake"
+    ],
+    "ingredients": [
+      { "name": "White bread slices", "amount": 16, "unit": "pcs" },
+      { "name": "Smoked salmon", "amount": 200, "unit": "g" },
+      { "name": "Cream cheese", "amount": 150, "unit": "g" },
+      { "name": "Cucumber", "amount": 1, "unit": "pcs" }
+    ]
+  },
+  {
+    "title": "Cinnamon Buns",
+    "description": "Sweet and aromatic cinnamon buns",
+    "ratings": 5,
+    "imageUrl": "https://img.koket.se/standard-mega/saftigaste-kanelbullarna.jpg.webp",
+    "timeInMins": 120,
+    "categories": ["Dessert", "Scandinavian", "American", "Snack"],
+    "instructions": [
+      "Prepare dough",
+      "Roll with cinnamon sugar",
+      "Bake until golden"
+    ],
+    "ingredients": [
+      { "name": "Wheat flour", "amount": 500, "unit": "g" },
+      { "name": "Milk", "amount": 300, "unit": "ml" },
+      { "name": "Cinnamon", "amount": 2, "unit": "tbsp" },
+      { "name": "Sugar", "amount": 150, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Raggmunk",
+    "description": "Crispy potato pancakes served with lingonberry sauce",
+    "ratings": 4,
+    "imageUrl": "https://static.cdn-expressen.se/images/6d/e9/6de9080386b74412b7564098c48e241f/16x9/1000@40.jpg",
+    "timeInMins": 45,
+    "categories": ["Dinner", "Lunch", "Scandinavian"],
+    "instructions": [
+      "Grate potatoes",
+      "Fry until golden brown",
+      "Serve with lingonberry sauce"
+    ],
+    "ingredients": [
+      { "name": "Potatoes", "amount": 4, "unit": "pcs" },
+      { "name": "Flour", "amount": 2, "unit": "tbsp" },
+      { "name": "Onion", "amount": 1, "unit": "pcs" },
+      { "name": "Lingonberry sauce", "amount": 150, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Blueberry Soup",
+    "description": "Sweet and refreshing blueberry soup",
+    "ratings": 4,
+    "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_155149/cf_259/hemgjord_blabarssoppa.jpg",
+    "timeInMins": 30,
+    "categories": ["Dessert", "Scandinavian"],
+    "instructions": [
+      "Boil blueberries with sugar",
+      "Serve chilled",
+      "Add a scoop of vanilla ice cream"
+    ],
+    "ingredients": [
+      { "name": "Blueberries", "amount": 300, "unit": "g" },
+      { "name": "Sugar", "amount": 100, "unit": "g" },
+      { "name": "Water", "amount": 500, "unit": "ml" },
+      { "name": "Vanilla ice cream", "amount": 4, "unit": "scoops" }
+    ]
+  },
+  {
+    "title": "Spaghetti Bolognese",
+    "description": "A classic Italian main course with meat sauce",
+    "ratings": 5,
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d22c924a-1b57-41f8-b325-2499c029e76f?fit=crop&h=613&w=1000&s=32cae29106972a1038ec31745de85554c1dd5e5a",
+    "timeInMins": 45,
+    "categories": ["Main Course", "Italian"],
+    "instructions": [
+      "Fry onion and garlic",
+      "Add minced meat and tomato sauce",
+      "Cook spaghetti separately"
+    ],
+    "ingredients": [
+      { "name": "Minced meat", "amount": 500, "unit": "g" },
+      { "name": "Onion", "amount": 1, "unit": "pcs" },
+      { "name": "Garlic", "amount": 2, "unit": "cloves" },
+      { "name": "Tomato sauce", "amount": 400, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Croissant",
+    "description": "Light and airy French croissants",
+    "ratings": 4,
+    "imageUrl": "https://vivavinomat.se/wp-content/uploads/recept_croissant_skagen.jpg",
+    "timeInMins": 180,
+    "categories": ["Dessert", "Breakfast", "French"],
+    "instructions": [
+      "Mix dough",
+      "Cut and shape croissants",
+      "Bake until golden brown"
+    ],
+    "ingredients": [
+      { "name": "Flour", "amount": 500, "unit": "g" },
+      { "name": "Butter", "amount": 250, "unit": "g" },
+      { "name": "Yeast", "amount": 25, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Paella",
+    "description": "A Spanish-inspired rice dish with seafood and chicken",
+    "ratings": 5,
+    "imageUrl": "https://www.zeta.nu/app/uploads/2016/03/Paella_med_musslor_och_r%C3%A4kor_li-2048x1365.jpg",
+    "timeInMins": 60,
+    "categories": ["Main Course", "Spanish"],
+    "instructions": [
+      "Sear chicken and seafood",
+      "Add rice and broth",
+      "Simmer until rice is cooked"
+    ],
+    "ingredients": [
+      { "name": "Chicken thighs", "amount": 4, "unit": "pcs" },
+      { "name": "Seafood (shrimp, mussels)", "amount": 300, "unit": "g" },
+      { "name": "Rice", "amount": 300, "unit": "g" },
+      { "name": "Chicken broth", "amount": 700, "unit": "ml" }
+    ]
+  },
+  {
+    "title": "Chicken Alfredo Pasta",
+    "description": "Creamy Alfredo pasta with grilled chicken",
+    "ratings": 4,
+    "imageUrl": "https://www.kitchensanctuary.com/wp-content/uploads/2020/01/Chicken-Parmesan-square-FS-38.jpg",
+    "timeInMins": 30,
+    "categories": ["Main Course", "Italian"],
+    "instructions": [
+      "Cook fettuccine pasta",
+      "Grill chicken and slice",
+      "Prepare creamy Alfredo sauce",
+      "Combine and serve"
+    ],
+    "ingredients": [
+      { "name": "Fettuccine pasta", "amount": 300, "unit": "g" },
+      { "name": "Chicken breast", "amount": 2, "unit": "pcs" },
+      { "name": "Heavy cream", "amount": 200, "unit": "ml" },
+      { "name": "Parmesan cheese", "amount": 100, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Sushi Rolls",
+    "description": "Assorted sushi rolls with fresh seafood",
+    "ratings": 5,
+    "imageUrl": "https://images.arla.com/recordid/6CCC0216-F0D5-4B04-A711D1C83CFBC48B/california-rolls.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,59,0,-89)",
+    "timeInMins": 45,
+    "categories": ["Main Course", "Japanese"],
+    "instructions": [
+      "Prepare sushi rice",
+      "Finely chop the ingredients, fish, and seafood",
+      "Place the rice on the seaweed, add the remaining ingredients and roll into a roll",
+      "Cut the roll into fine pieces",
+      "Serve on nice plates"
+    ],
+    "ingredients": [
+      { "name": "Sushi rice", "amount": 2, "unit": "cups" },
+      { "name": "Fresh seafood", "amount": 200, "unit": "g" },
+      { "name": "Nori (seaweed)", "amount": 10, "unit": "sheets" },
+      { "name": "Soy sauce", "amount": 50, "unit": "ml" }
+    ]
+  },
+  {
+    "title": "Chicken Caesar Salad",
+    "description": "Classic Caesar salad with grilled chicken",
+    "ratings": 4,
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/f4e01807-a003-457e-8b9f-2cde324c2c88?fit=crop&h=750&w=1000&s=7821a62375d2b58a8c192911cec4bde62f3fe057",
+    "timeInMins": 25,
+    "categories": ["Appetizer", "American"],
+    "instructions": [
+      "Grill chicken and slice",
+      "Toss romaine lettuce with Caesar dressing",
+      "Top with grilled chicken, croutons, and Parmesan"
+    ],
+    "ingredients": [
+      { "name": "Chicken breast", "amount": 2, "unit": "pcs" },
+      { "name": "Romaine lettuce", "amount": 1, "unit": "head" },
+      { "name": "Croutons", "amount": 1, "unit": "cup" },
+      { "name": "Caesar dressing", "amount": 100, "unit": "ml" }
+    ]
+  },
+  {
+    "title": "Mango Sticky Rice",
+    "description": "Sweet Thai dessert with mango and coconut rice",
+    "ratings": 5,
+    "imageUrl": "https://i0.wp.com/beyondsweetandsavory.com/wp-content/uploads/2021/05/Instant-Pot-mango-sticky-rice-Vy-Tran-5-of-6-853x1280-1.jpg?w=853&ssl=1",
+    "timeInMins": 60,
+    "categories": ["Dessert", "Thai"],
+    "instructions": [
+      "Cook sticky rice with coconut milk",
+      "Slice ripe mango",
+      "Serve mango over sticky rice, drizzle with coconut sauce"
+    ],
+    "ingredients": [
+      { "name": "Sticky rice", "amount": 1, "unit": "cup" },
+      { "name": "Coconut milk", "amount": 400, "unit": "ml" },
+      { "name": "Ripe mango", "amount": 2, "unit": "pcs" },
+      { "name": "Palm sugar", "amount": 50, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Beef Stir-Fry",
+    "description": "Quick and flavorful beef stir-fry with vegetables",
+    "ratings": 4,
+    "imageUrl": "https://www.vinia.se/blogg/vin-och-vanner/wp-content/uploads/sites/2/2020/09/BiffochBroccoliWok.jpg",
+    "timeInMins": 30,
+    "categories": ["Dinner", "Chinese, Meat"],
+    "instructions": [
+      "Slice beef and marinate",
+      "Stir-fry beef and vegetables in a wok",
+      "Serve over rice"
+    ],
+    "ingredients": [
+      { "name": "Beef sirloin", "amount": 400, "unit": "g" },
+      { "name": "Broccoli", "amount": 1, "unit": "kg" },
+      { "name": "Soy sauce", "amount": 50, "unit": "ml" },
+      { "name": "Ginger", "amount": 1, "unit": "tbsp" }
+    ]
+  },
+  {
+    "title": "Caprese Salad",
+    "description": "Fresh Italian salad with mozzarella, tomatoes, and basil",
+    "ratings": 5,
+    "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2019/08/Caprese-Salad-6.jpg",
+    "timeInMins": 15,
+    "categories": ["Appetizer", "Italian", "Lunch"],
+    "instructions": [
+      "Slice mozzarella and tomatoes",
+      "Layer mozzarella, tomatoes, and basil on a plate",
+      "Drizzle with olive oil and balsamic vinegar"
+    ],
+    "ingredients": [
+      { "name": "Buffalo mozzarella", "amount": 1, "unit": "ball" },
+      { "name": "Tomatoes", "amount": 4, "unit": "pcs" },
+      { "name": "Fresh basil", "amount": 1, "unit": "bunch" },
+      { "name": "Olive oil", "amount": 2, "unit": "tbsp" }
+    ]
+  },
+  {
+    "title": "Chocolate Mousse",
+    "description": "Creamy and delightful chocolate mousse",
+    "ratings": 5,
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/32205408-c5c2-49d4-a1ed-8dce5ac8dea5?fit=crop&h=750&w=1000&s=f31dc38dc19d2cf69f6778f77001c8b1e9531b19",
+    "timeInMins": 120,
+    "categories": ["Dessert", "Dairy"],
+    "instructions": [
+      "Melt chocolate and let cool",
+      "Whip cream and fold in chocolate",
+      "Chill before serving"
+    ],
+    "ingredients": [
+      { "name": "Dark chocolate", "amount": 200, "unit": "g" },
+      { "name": "Cream", "amount": 300, "unit": "ml" },
+      { "name": "Vanilla sugar", "amount": 1, "unit": "tsp" },
+      { "name": "Egg yolk", "amount": 2, "unit": "pcs" }
+    ]
+  },
+
+  {
+    "title": "Guacamole",
+    "description": "Creamy and delicious avocado dip",
+    "ratings": 4,
+    "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_243403/cf_259/guacamole_med_apple.jpg",
+    "timeInMins": 15,
+    "categories": ["Appetizer", "Mexican", "Vegetarian"],
+    "instructions": [
+      "Mash avocado",
+      "Add tomato, onion, lime juice, and cilantro",
+      "Season with salt and pepper to taste"
+    ],
+    "ingredients": [
+      { "name": "Avocado", "amount": 3, "unit": "pcs" },
+      { "name": "Tomato", "amount": 1, "unit": "pcs" },
+      { "name": "Onion", "amount": 1, "unit": "pcs" },
+      { "name": "Lime juice", "amount": 1, "unit": "tbsp" }
+    ]
+  },
+  {
+    "title": "Enchiladas",
+    "description": "Oven-baked tortilla rolls filled with meat and sauce",
+    "ratings": 4,
+    "imageUrl": "https://images.arla.com/recordid/C22D75B0-BFB8-4FE3-B4E54ED6CCE2841E/enchiladas-med-biff.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,257,0,-437)",
+    "timeInMins": 45,
+    "categories": ["Dinner", "Mexican", "Meat"],
+    "instructions": [
+      "Cook ground beef until browned and cooked through.",
+      "Chop the onion and add it to the ground beef. Cook until the onion is soft and translucent.",
+      "Lightly heat the tortillas in a dry skillet or microwave to make them more pliable.",
+      "Evenly distribute the beef mixture over the tortillas and roll them up into rolls.",
+      "Place the filled tortilla rolls in a baking dish.",
+      "Pour enchilada sauce over the tortilla rolls to cover completely.",
+      "Grate the cheese and sprinkle over the enchilada sauce.",
+      "Bake in the oven at 200°C for about 15-20 minutes, or until the cheese is melted and bubbly.",
+      "Serve the enchiladas hot and enjoy the Mexican flavor!"
+    ],
+    "ingredients": [
+      { "name": "Ground beef", "amount": 400, "unit": "g" },
+      { "name": "Onion", "amount": 1, "unit": "pcs" },
+      { "name": "Tortillas", "amount": 8, "unit": "pcs" },
+      { "name": "Enchilada sauce", "amount": 2, "unit": "dl" },
+      { "name": "Cheese", "amount": 200, "unit": "g" }
+    ]
+  },
+  {
+    "title": "Carbonara",
+    "description": "A classic Italian pasta with creamy egg sauce, pancetta, and grated Parmesan.",
+    "ratings": 5,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Espaguetis_carbonara.jpg",
+    "timeInMins": 30,
+    "categories": ["Dinner", "Italian, Poultry"],
+    "instructions": [
+      "Cook the pasta according to the package instructions.",
+      "Fry pancetta or bacon until crispy in a frying pan.",
+      "Mix eggs, grated Parmesan, and black pepper in a bowl.",
+      "Drain the pasta and mix with the egg mixture.",
+      "Add fried pancetta or bacon and mix well.",
+      "Serve immediately and top with more grated Parmesan and black pepper to taste."
+    ],
+    "ingredients": [
+      { "name": "Spaghetti", "amount": 300, "unit": "g" },
+      { "name": "Eggs", "amount": 2, "unit": "pcs" },
+      { "name": "Parmesan", "amount": 100, "unit": "g" },
+      { "name": "Pancetta or bacon", "amount": 150, "unit": "g" },
+      { "name": "Black pepper", "amount": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "title": "Margherita Pizza",
+    "description": "A simple and classic Italian pizza with tomato sauce, mozzarella, and basil.",
+    "ratings": 4,
+    "imageUrl": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
+    "timeInMins": 20,
+    "categories": ["Main Course", "Italian", "Vegetarian"],
+    "instructions": [
+      "Roll out pizza dough on a baking sheet and spread tomato sauce evenly over the dough.",
+      "Dice the mozzarella and distribute over the tomato sauce.",
+      "Sprinkle with fresh basil and a little salt.",
+      "Bake in the oven at the highest temperature until the pizza is golden brown and bubbling, about 10-12 minutes.",
+      "Serve immediately and enjoy the Italian classic!"
+    ],
+    "ingredients": [
+      { "name": "Pizza dough", "amount": 1, "unit": "package" },
+      { "name": "Tomato sauce", "amount": 200, "unit": "g" },
+      { "name": "Mozzarella", "amount": 200, "unit": "g" },
+      { "name": "salt", "amount": 1, "unti": "st" }
+    ]
+  },
+
+  {
+    "title": "Tiramisu",
+    "description": "A delicious Italian dessert with layers of coffee-soaked ladyfingers, mascarpone cream, and cocoa.",
+    "ratings": 4,
+    "imageUrl": "https://www.flavoursholidays.co.uk/wp-content/uploads/2020/07/Tiramisu.jpg.webp",
+    "timeInMins": 60,
+    "categories": ["Dessert", "Italian, Dairy"],
+    "instructions": [
+      "Mix coffee and marsala wine in a bowl.",
+      "Dip ladyfingers in the coffee mixture and layer at the bottom of a dish.",
+      "Whisk mascarpone, sugar, and vanilla extract in another bowl.",
+      "Spread a layer of mascarpone cream over the ladyfingers.",
+      "Repeat with another layer of dipped ladyfingers and mascarpone cream.",
+      "Chill tiramisu in the refrigerator and let set for at least 4 hours, or overnight.",
+      "Dust with cocoa just before serving.",
+      "Slice and serve the delightful Italian dessert to your guests!"
+    ],
+    "ingredients": [
+      { "name": "Ladyfingers", "amount": 24, "unit": "pcs" },
+      { "name": "Coffee", "amount": 1, "unit": "dl" },
+      { "name": "Marsala wine", "amount": 2, "unit": "tbsp" },
+      { "name": "Mascarpone", "amount": 500, "unit": "g" },
+      { "name": "Granulated sugar", "amount": 100, "unit": "g" },
+      { "name": "Vanilla extract", "amount": 1, "unit": "tsp" },
+      { "name": "Cocoa", "amount": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "title": "Greek Salad",
+    "description": "A fresh and healthy salad with vegetables, olives, feta cheese, and a simple dressing.",
+    "ratings": 4,
+    "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/1776727224/0ec3cb10-58e6-4a3f-99de-193e9c1e5bb9.jpg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
+    "timeInMins": 15,
+    "categories": ["Appetizer", "Mediterranean", "Vegetarian", "Lunch"],
+    "instructions": [
+      "Dice or slice tomatoes, cucumber, bell pepper, and onion.",
+      "Pit olives and cut feta cheese into chunks.",
+      "Combine vegetables, olives, and feta cheese in a large bowl.",
+      "Drizzle with olive oil and squeeze lemon juice over.",
+      "Sprinkle with fresh oregano, salt, and black pepper to taste.",
+      "Toss well and serve immediately as a refreshing and tasty appetizer or side dish."
+    ],
+    "ingredients": [
+      { "name": "Tomatoes", "amount": 4, "unit": "pcs" },
+      { "name": "Cucumber", "amount": 1, "unit": "pcs" },
+      { "name": "Bell pepper", "amount": 1, "unit": "pcs" },
+      { "name": "Red onion", "amount": 1, "unit": "pcs" },
+      { "name": "Olives", "amount": 100, "unit": "g" },
+      { "name": "Feta cheese", "amount": 150, "unit": "g" },
+      { "name": "Olive oil", "amount": 2, "unit": "tbsp" },
+      { "name": "Lemon juice", "amount": 1, "unit": "tbsp" },
+      { "name": "Fresh oregano", "amount": "to taste", "unit": "" },
+      { "name": "Salt", "amount": "to taste", "unit": "" },
+      { "name": "Black pepper", "amount": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "title": "Hummus",
+    "description": "A creamy and flavorful chickpea dip with garlic, tahini, and lemon.",
+    "ratings": 4,
+    "imageUrl": "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/10/Hummus-8.jpg",
+    "timeInMins": 15,
+    "categories": ["Appetizer", "Mediterranean", "Vegetarian", "lunch"],
+    "instructions": [
+      "Rinse chickpeas and blend in a food processor until smooth.",
+      "Add tahini, minced garlic, lemon juice, olive oil, cumin, and salt.",
+      "Blend until smooth and creamy, adjusting the taste with more lemon juice or salt if needed.",
+      "Serve hummus in a bowl and drizzle with extra olive oil before serving.",
+      "Garnish with fresh parsley, paprika, or roasted pine nuts if desired."
+    ],
+    "ingredients": [
+      { "name": "Chickpeas", "amount": 400, "unit": "g" },
+      { "name": "Tahini", "amount": 4, "unit": "tbsp" },
+      { "name": "Garlic", "amount": 2, "unit": "cloves" },
+      { "name": "Lemon juice", "amount": 3, "unit": "tbsp" },
+      { "name": "Olive oil", "amount": 2, "unit": "tbsp" },
+      { "name": "Cumin", "amount": 1, "unit": "tsp" },
+      { "name": "Salt", "amount": "to taste", "unit": "" },
+      { "name": "Fresh parsley", "amount": "for garnish", "unit": "" },
+      { "name": "Paprika", "amount": 1, "unit": "piece" }
+    ]
+  },
+  {
+    "title": "Dim Sum",
+    "description": "A wide range of small Chinese dishes",
+    "ratings": 4,
+    "imageUrl": "https://axwwgrkdco.cloudimg.io/v7/__gmpics__/2f58d646832c45eaa9c721d366c2dc6a?width=1000",
+    "timeInMins": 45,
+    "categories": ["Appetizer", "Chinese", "Meat", "Seafood", "Tofu"],
+    "instructions": [
+      "Prepare a variety of fillings which may include meat, shrimp, vegetables, or tofu.",
+      "Prepare a thin dough of wheat flour and water.",
+      "Shape small dough pieces and then fill them with desired filling.",
+      "Steam Dim Sum in bamboo baskets for about 10-15 minutes until cooked through.",
+      "Serve Dim Sum hot along with soy sauce, ginger, and chili sauce."
+    ],
+    "ingredients": [
+      { "name": "Minced meat", "amount": 200, "unit": "g" },
+      { "name": "Shrimp", "amount": 150, "unit": "g" },
+      { "name": "Vegetables", "amount": "to taste", "unit": "" },
+      { "name": "Tofu", "amount": 200, "unit": "g" },
+      { "name": "Wheat flour", "amount": 300, "unit": "g" },
+      { "name": "Water", "amount": 150, "unit": "ml" },
+      { "name": "Soy sauce", "amount": "", "unit": "" },
+      { "name": "Ginger", "amount": "", "unit": "" },
+      { "name": "Chili sauce", "amount": "", "unit": "" }
+    ]
+  },
+  {
+    "title": "Toast Skagen",
+    "description": "Classic Swedish sandwich recipe",
+    "ratings": 5,
+    "imageUrl": "https://static.cdn-expressen.se/images/af/b9/afb9b67d566d432db4bd632cdc2a44b6/16x9/1920@80.jpg",
+    "timeInMins": 20,
+    "categories": ["Appetizer", "Swedish", "Seafood", "Lunch"],
+    "instructions": [
+      "Peel and chop the shrimp",
+      "Mix shrimp with mayonnaise, sour cream, dill, and lemon juice",
+      "Season with salt and pepper",
+      "Lightly toast the bread slices",
+      "Spread the mixture on the toasted bread slices",
+      "Decorate with lemon slices and dill sprigs"
+    ],
+    "ingredients": [
+      { "name": "Shrimp", "amount": 200, "unit": "g" },
+      { "name": "Mayonnaise", "amount": 2, "unit": "tbsp" },
+      { "name": "Sour cream", "amount": 2, "unit": "tbsp" },
+      { "name": "Fresh dill", "amount": 1, "unit": "bunch" },
+      { "name": "Lemon juice", "amount": 1, "unit": "tbsp" },
+      { "name": "Salt", "amount": "to taste", "unit": "" },
+      { "name": "Black pepper", "amount": "to taste", "unit": "" },
+      { "name": "White bread", "amount": 4, "unit": "slices" },
+      { "name": "Lemon", "amount": 1, "unit": "piece" }
+    ]
+  },
+  {
+    "title": "Lamb Skewers with Rice",
+    "description": "Juicy lamb skewers served with spiced rice and tzatziki.",
+    "ratings": 4,
+    "imageUrl": "https://i0.wp.com/media.zeinaskitchen.se/2017/05/kabsa_1_Fotor.jpg?fit=3000%2C1907&ssl=1",
+    "timeInMins": 45,
+    "categories": ["Dinner", "Mediterranean", "Meat"],
+    "instructions": [
+      "Marinate the lamb in olive oil, garlic, rosemary, lemon juice, salt, and pepper for at least 2 hours.",
+      "Thread the lamb onto grill skewers and grill over open flame or in the oven until cooked through and nicely grilled.",
+      "Cook the rice according to package instructions and season with cumin, cinnamon, and a pinch of salt.",
+      "Serve the lamb skewers with the spiced rice and tzatziki. Garnish with fresh coriander or parsley."
+    ],
+    "ingredients": [
+      { "name": "Lamb meat", "amount": 500, "unit": "g" },
+      { "name": "Olive oil", "amount": 2, "unit": "tbsp" },
+      { "name": "Garlic", "amount": 2, "unit": "cloves" },
+      { "name": "Rosemary", "amount": 1, "unit": "tsp" },
+      { "name": "Lemon juice", "amount": 1, "unit": "tbsp" },
+      { "name": "Salt", "amount": "to taste", "unit": "" },
+      { "name": "Pepper", "amount": "to taste", "unit": "" },
+      { "name": "Rice", "amount": 250, "unit": "g" },
+      { "name": "Cumin", "amount": 1, "unit": "tsp" },
+      { "name": "Cinnamon", "amount": 0.5, "unit": "tsp" },
+      { "name": "Tzatziki", "amount": "for serving", "unit": "" },
+      {
+        "name": "Fresh coriander or parsley",
+        "amount": "for garnish",
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "title": "Pasta Carbonara",
+    "description": "A classic Italian pasta with creamy egg and bacon sauce.",
+    "ratings": 4,
+    "imageUrl": "https://res.cloudinary.com/coopsverige/image/upload/f_auto,fl_progressive,q_90,g_center,h_800,w_800/v1669883242/cloud/268064.jpg",
+    "timeInMins": 30,
+    "categories": ["Dinner", "Italian", "Pork"],
+    "instructions": [
+        "Cook the pasta al dente according to the package instructions.",
+        "Fry the bacon until crispy and golden brown. Drain on paper towels and then chop into pieces.",
+        "Whisk together egg yolks, grated parmesan cheese, salt, and pepper in a bowl.",
+        "Drain the pasta and toss the hot pasta with the egg and cheese mixture until evenly coated.",
+        "Add the fried bacon and gently toss. Serve immediately and garnish with freshly grated parmesan cheese and black pepper."
+    ],
+    "ingredients": [
+        { "name": "Spaghetti or linguine", "amount": 250, "unit": "g" },
+        { "name": "Bacon", "amount": 100, "unit": "g" },
+        { "name": "Egg yolks", "amount": 3, "unit": "pieces" },
+        { "name": "Parmesan cheese", "amount": 50, "unit": "g", "description": "plus extra for serving" },
+        { "name": "Salt", "amount": "to taste", "unit": "" },
+        { "name": "Black pepper", "amount": "to taste", "unit": "" }
+    ]
+},
+{
+    "title": "Vegetarian Omelette",
+    "description": "Delicious omelette filled with mushrooms, tomatoes, and cheese",
+    "ratings": 4,
+    "imageUrl": "https://www.simplyrecipes.com/thmb/LLhiA8KZ7JZ5ZI0g-1bF1eg-gGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__10__HT-Make-an-Omelet-LEAD-HORIZONTAL-17cd2e469c4a4ccbbd1273a7cae6425c.jpg",
+    "timeInMins": 20,
+    "categories": ["Breakfast", "Vegetarian", "American"],
+    "instructions": [
+      "Heat a non-stick pan over medium heat",
+      "Saute mushrooms and tomatoes until soft",
+      "Whisk eggs with a pinch of salt and pepper",
+      "Pour eggs into the pan and cook until set",
+      "Sprinkle cheese over half of the omelette",
+      "Fold the omelette in half and cook for another minute",
+      "Slide onto a plate and serve hot"
+    ],
+    "ingredients": [
+      { "name": "Eggs", "amount": 3, "unit": "pieces" },
+      { "name": "Mushrooms", "amount": 50, "unit": "g" },
+      { "name": "Tomatoes", "amount": 1, "unit": "piece" },
+      { "name": "Cheese", "amount": 50, "unit": "g" },
+      { "name": "Salt", "amount": 1, "unit": "pinch" },
+      { "name": "Pepper", "amount": 1, "unit": "pinch" },
+      { "name": "Oil", "amount": 1, "unit": "tbsp" }
+    ]
+  },
+  {
+    "title": "Greek Yogurt Parfait",
+    "description": "A healthy and delicious breakfast option featuring layers of Greek yogurt, granola, and fresh berries.",
+    "ratings": 5,
+    "imageUrl": "https://thewoodenskillet.com/wp-content/uploads/2023/05/greek-yogurt-parfait-recipe-1.jpg",
+    "timeInMins": 10,
+    "categories": ["Breakfast", "Diary", "Vegetarian", "Scandinavian"],
+    "instructions": [
+      "In a glass or bowl, layer Greek yogurt, granola, and fresh berries.",
+      "Repeat the layers until the glass or bowl is filled.",
+      "Top with a final layer of berries for garnish.",
+      "Serve immediately and enjoy!"
+    ],
+    "ingredients": [
+      { "name": "Greek yogurt", "amount": 1, "unit": "cup" },
+      { "name": "Granola", "amount": "1/2", "unit": "cup" },
+      { "name": "Fresh berries (strawberries, blueberries, raspberries)", "amount": "As desired", "unit": "" }
+    ]
+  }
+  
+  
+]
