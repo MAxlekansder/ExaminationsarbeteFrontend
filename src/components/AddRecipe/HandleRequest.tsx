@@ -150,7 +150,6 @@
                   <CategorySelected 
                     selectedCategories={categories}
                     onChange={setCategories}
-                    
                   />
                 </div>
               </div>
