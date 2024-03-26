@@ -34,18 +34,17 @@ function Test() {
         <div key={recipe._id} onClick={() => navigate(`/test/${recipe._id}`)}
          className="flex align-middle items-center relative ">
           <div className="absolute top-0 ">
-            <h1 className="text-3xl titel-text text-center m-12 p-3  text-white" 
-                style={{ backgroundColor: 'rgba(0, 130, 0, 0.5)'}}>{recipe.title}</h1>
+            <h1 className="text-3xl titel-text text-center m-12 p-3  text-white">
+              {recipe.title}
+              </h1>
                </div>
                   <div className="food-container inline-flex flex-row">
-                    <img src={recipe.imageUrl} alt="" className="m-12 border shadow-lg  p-12 bg-gray-100"/>
+                    <img src={recipe.imageUrl} alt="" className="m-12 border shadow-lg  p-12"
+                      style={{backgroundColor: 'rgba(0, 20, 0,0.2)'}}/>
                 </div>
-            <div>
-              {recipe.description}
-              {recipe.ratings}
-
-              
-        </div>
+            <div className="text-white text-2xl flex flex-1" style={{backgroundColor: 'rgba(0, 20, 0,0.2)'}}>
+              <p className="pl-12 pr-12">{recipe.description}&nbsp;</p>
+            </div>
     </div>
   ))}
 </div>
