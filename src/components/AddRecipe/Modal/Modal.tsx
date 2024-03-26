@@ -14,7 +14,6 @@ interface ModalProps {
 
 function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
   const fetchSpecificRecipeId = useRecipeState((state) => state.fetchSpecificDrink)
-  const deleteRecipe = useRecipeState((state) => state.deleteRecipe)
   const [test, setTest] = useState("");
   
   
@@ -96,18 +95,12 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
   </button>
   <button
     type="button"
-    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-500 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
     onClick={onCancel}
   >
     Close
   </button>
-  <button
-  type="button"
-  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-400 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-  onClick={deleteRecipe}
-  >
-    Delete
-  </button>
+
 </div>
 
         </div>

@@ -48,8 +48,8 @@ const useRecipeState = create<recipeState>()((set) => ({
     })),
 
     
-    deleteRecipe: (id: string) =>  set((state) => ({  // for deleting
-      recipes: state.recipes.filter((recipe) => recipe._id !== id), // sorting out everything we're not looking for
+    deleteRecipe: (_id: string) =>  set((state) => ({  // for deleting
+      recipes: state.recipes.filter((recipe) => recipe._id !== _id), // sorting out everything we're not looking for
     })),
     
 
