@@ -13,10 +13,20 @@ interface ModalProps {
 }
 
 function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
-  const fetchSpecificRecipeId = useRecipeState((state) => state.fetchSpecificDrink)
-  const [test, setTest] = useState("");
-  
-  
+  const fetchSpecificRecipeId = useRecipeState(
+    (state) => state.fetchSpecificDrink
+  );
+  // const [updateRecipe, setUpdateRecipe] = useState<Partial<Recipe>>({});
+  const getUpdate = useRecipeState((state) => state.updateRecipes);
+  const [newTitle, setNewTitle] = useState("");
+  const [newDescription, setNewDescription] = useState("");
+  const [newRatings, setNewRating] = useState(0); // alternative a array,  no need for now
+  const [newImageUrl, setNewImageUrl] = useState("");
+  const [newTimeInMins, setNewTimeInMins] = useState(0);
+  const [newCategories, setNewCategories] = useState<string[]>([]);
+  const [newInstructions, setNewInstructions] = useState<string[]>([]);
+  const [newIngredients, setNewIngredients] = useState<Ingredient[]>([]);
+
   useEffect(() => {
     const handleKeyEvent = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -30,6 +40,20 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
   }, [isOpen, onCancel]);
 
 
+    const handleRecipeUpdate = () => {
+    // Construct updated recipe object
+    const updatedRecipe: Recipe = {
+      ...recipe,
+      title: newTitle,
+      description: newDescription,
+      // Add other updated properties here...
+    };
+
+    console.log(newDescription);
+    getUpdate(recipe._id, updatedRecipe);
+    console.log(updatedRecipe);
+  }
+  
 
   if (!isOpen) return null;
 
@@ -49,36 +73,34 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
 
         <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full max-h-screen">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-       
             <div className="py-4 px-6 col-span-3 sm:col-span-2">
-            <input
-                    id="time-in-mins"
-                    type={test}
-                    placeholder={recipe.title}
-                    onChange={(e) => setTest(e.target.value)}
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  />
-              {/* {recipe._id}
-              {recipe.description} */}
               <input
-                    id="time-in-mins"
-                    type={test}
+                id="title"
+                type="text"
+                placeholder={recipe.title}
+                onChange={(e) => setNewTitle(e.target.value)} // if updated, else fall back to the last value
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              />
+               <input
+                    id="Description"
+                    type="text"
                     placeholder={recipe.description}
-                    onChange={(e) => setTest(e.target.value)}
-                    
+                    onChange={(e) => setNewDescription(e.target.value)} 
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   />
-              {recipe.ingredients?.map((ingredient: Ingredient, index: number) => (
-                <li key={index}>{ingredient.name} {ingredient.amount}</li>
-              ))}
+              {recipe.ingredients?.map(
+                (ingredient: Ingredient, index: number) => (
+                  <li key={index}>
+                    {ingredient.name} {ingredient.amount}
+                  </li>
+                )
+              )}
             </div>
 
-            
             <div className="py-2 px-2">
               <img src={imageUrl} alt="Preview" className="max-w-full h-auto" />
             </div>
 
-       
             <div className="py-4 px-6 col-span-3 sm:col-span-2">
               test test test 2
             </div>
@@ -86,23 +108,21 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
 
           {/* Buttons */}
           <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-  <button
-    type="button"
-    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-    onClick={onCancel}
-  >
-    OK
-  </button>
-  <button
-    type="button"
-    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-    onClick={onCancel}
-  >
-    Close
-  </button>
-
-</div>
-
+            <button
+              type="button"
+              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+              onClick={handleRecipeUpdate}
+            >
+              OK
+            </button>
+            <button
+              type="button"
+              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-400 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+              onClick={onCancel}
+            >
+              STÄNG
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -110,3 +130,4 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
 }
 
 export default Modal;
+

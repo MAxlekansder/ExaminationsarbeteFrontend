@@ -4,9 +4,9 @@
   import { Recipe, Ingredient } from "../../data/Recipes";
   import axios from "axios";
   import useRecipeState from "../../State/indexState";
-  import CategorySelected from "./CategorySelectComponent";
-  import InstructionList from "./HandleInstructionsComponent";
-  import IngredientsList from "./HandleIngredientsComponent";
+  import CategorySelected from "./CategorySelect";
+  import InstructionList from "./HandleInstructions";
+  import IngredientsList from "./HandleIngredients";
   import NavBarComponent from "../NavBarComponent";
   import '../../Styling/Dishes.css'
 
@@ -20,8 +20,6 @@
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [ratings, setRating] = useState(0); // alternative a array,  no need for now
-    
-    // const [imageURL, setImageURL] = useState<{file: File | null; url: string}[]>([]);  let this be for now
     const [imageUrl, setImageUrl] = useState("");
     const [timeInMins, setTimeInMins] = useState(0);
     const [categories, setCategories] = useState<string[]>([]);

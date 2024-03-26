@@ -41,12 +41,29 @@ const useRecipeState = create<recipeState>()((set) => ({
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
 
-   updateRecipes: (_id: String, updatedProperties: Partial<Recipe>) => set((state) => ({  // for updating all or just one prop of the recipe, if nothing gets added -> returns same recipe
-        recipes: state.recipes.map((recipe) => recipe._id === recipe._id ? 
-        {...recipe, ...updatedProperties} : recipe
-        ),
-    })),
-
+    updateRecipes: (_id: String, updatedProperties: Partial<Recipe>) => set((state) => {
+        // Log before updating the state
+        console.log("Updating recipe with ID:", _id);
+        console.log("Updated properties:", updatedProperties);
+    
+         const updateResponse = axios.patch(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${_id}`, updatedProperties)
+        // // Update the state
+        const updatedRecipes = state.recipes.map((recipe) => {
+            if (recipe._id === _id) {
+                // Merge the existing recipe properties with the updated ones
+                return { ...recipe, ...updatedProperties };
+            }
+            return recipe;
+           
+        });
+    
+        // Log after updating the state
+        console.log("Updated recipes:", updatedRecipes);
+    
+        // Return the new state
+        return { recipes: updatedRecipes };
+    }),
+    
     
     deleteRecipe: (_id: string) =>  set((state) => ({  // for deleting
       recipes: state.recipes.filter((recipe) => recipe._id !== _id), // sorting out everything we're not looking for
