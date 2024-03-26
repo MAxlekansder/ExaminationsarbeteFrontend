@@ -73,6 +73,7 @@ const mealOptions = [
 interface CategorySelectProps {
   selectedCategories: string[];
   onChange: (selectedCategories: string[]) => void;
+  // availalbeCategories: string [];
 }
 
 const customStyle: StylesConfig = {
@@ -96,6 +97,7 @@ const customStyle: StylesConfig = {
   })
 };
 
+
 function CategorySelected({ selectedCategories, onChange }: CategorySelectProps) {
   const groupedOptions = [
     { label: "Måltider", options: mealOptions.map((option) => ({ value: option, label: option, group: "mealtype" })) },
@@ -103,6 +105,7 @@ function CategorySelected({ selectedCategories, onChange }: CategorySelectProps)
     { label: "Protein", options: proteinCategories.map((option) => ({ value: option, label: option, group: "proteinCategories" })) },
   ];
 
+  
   return (
     <Select
       id ="category-select"

@@ -42,25 +42,26 @@ const useRecipeState = create<recipeState>()((set) => ({
 
 
     updateRecipes: (_id: String, updatedProperties: Partial<Recipe>) => set((state) => {
-        // Log before updating the state
+    
         console.log("Updating recipe with ID:", _id);
         console.log("Updated properties:", updatedProperties);
     
-         const updateResponse = axios.patch(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${_id}`, updatedProperties)
-        // // Update the state
+        
         const updatedRecipes = state.recipes.map((recipe) => {
             if (recipe._id === _id) {
-                // Merge the existing recipe properties with the updated ones
+                // Merging the recipes, old + new one
                 return { ...recipe, ...updatedProperties };
             }
             return recipe;
            
         });
     
-        // Log after updating the state
-        console.log("Updated recipes:", updatedRecipes);
+        axios.patch(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${_id}`, updatedProperties)
+        .then(updateResponse => {
+            console.log("update complete ", updateResponse.data)
+        }).catch(error => {console.log("error while updating", error)})
+        
     
-        // Return the new state
         return { recipes: updatedRecipes };
     }),
     
