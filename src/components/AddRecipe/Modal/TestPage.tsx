@@ -29,7 +29,7 @@ function Test() {
   return (
    <>
    <NavBarComponent/>
-   <div className="background-img" >
+   <div className="background-img bg-slate-50i" >
     {recipe.map((recipe) => (
         <div key={recipe._id} onClick={() => navigate(`/test/${recipe._id}`)}
          className="flex align-middle items-center relative ">
@@ -38,7 +38,7 @@ function Test() {
                 style={{ backgroundColor: 'rgba(0, 130, 0, 0.5)'}}>{recipe.title}</h1>
                </div>
                   <div className="food-container inline-flex flex-row">
-                    <img src={recipe.imageUrl} alt="" className="m-12 border shadow-lg  p-12 bg-gray-200"/>
+                    <img src={recipe.imageUrl} alt="" className="m-12 border shadow-lg  p-12 bg-gray-100"/>
                 </div>
             <div>
               {recipe.description}

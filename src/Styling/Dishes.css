@@ -39,8 +39,11 @@
     height: 30vw;
   }
 
-.background-img {
-   background-image: url(./Images/food-header.jpg);
+/*.background-img {
+    background-image: url(./Images/food-header.jpg);
+    background-size: cover;
+    background-position: center;
     
-}
+
+}*/
   
