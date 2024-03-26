@@ -41,77 +41,81 @@ function PresentCocktails() {
   return (
     <>
       <div>
-        <p className="m-12 text-center text-4xl titel-text bg-cyan-50 p-10 rounded-lg">Try our fantastic bevreges!</p>
-      </div>
-      <div className="flex flex-wrap">
-        <div className="w-1/4 pl-20">
-          <div className="w-64 bg-blue-50 rounded-lg">
-            <div className="p-4">
-              <h2 className="text-lg font-bold">Cocktails</h2>
-            </div>
-            <div>
-              <ul>
-                <li className="py-3 px-4">
-                  <button
-                    className="cursor-pointer flex items-center hover:underline"
-                    onClick={() => handleCategory("alcoholic")}
-                  >
-                    <span>Cocktails with alcohol</span>
-                    {openCategories.includes("alcoholic") ? <FaAngleDown className="ml-2" /> : ""}
-                  </button>
-                  {openCategories.includes("alcoholic") && (
-                    <ul className="ml-4">
-                      <li>
-                        <button className="hover:underline" onClick={() => handleCategory("Gin")}>
-                          Gin
-                        </button>
-                      </li>
-                      <li>
-                        <button className="hover:underline" onClick={() => handleCategory("Vodka")}>
-                          Vodka
-                        </button>
-                      </li>
-                    </ul>
-                  )}
-                </li>
-                <li className="py-3 px-4">
-                  <button
-                    className="cursor-pointer flex items-center hover:underline"
-                    onClick={() => handleCategory("nonAlcoholic")}
-                  >
-                    <span>Cocktails without alcohol</span>
-                    {openCategories.includes("nonAlcoholic") ? <FaAngleDown className="ml-2" /> : ""}
-                  </button>
-                  {openCategories.includes("nonAlcoholic") && (
-                    <ul className="ml-4">
-                      <li>
-                        <button className="hover:underline" onClick={() => handleCategory("Fresh")}>
-                          Fresh
-                        </button>
-                      </li>
-                    </ul>
-                  )}
-                </li>
-              </ul>
-            </div>
-          </div>
+        <NavBarComponent />
+        <div>
+          <p className="m-12 text-center text-4xl titel-text bg-cyan-50 p-10 rounded-lg">Try our fantastic bevreges!</p>
         </div>
-        <div className="w-4/6 flex flex-wrap pr-20 mb-10 ">
-          {categoryDrinks && categoryDrinks.slice(0, 9).map((drink) => (
-            <div key={drink.idDrink} className="w-1/3 px-2 mb-4" onClick={() => navigateCocktailId(drink.idDrink)}>
-              <div className="bg-white p-5 shadow-md card-fade-in">
-                <p className="text-lg font-semibold">
-                  {drink.strDrink} {drink.idDrink}
-                </p>
-                <img src={drink.strDrinkThumb} alt={drink.strDrink} className="w-full h-auto mb-2" />
+        <div className="flex flex-wrap">
+          <div className="w-1/4 pl-20">
+            <div className="w-64 bg-blue-50 rounded-lg">
+              <div className="p-4">
+                <h2 className="text-lg font-bold">Cocktails</h2>
+              </div>
+              <div>
+                <ul>
+                  <li className="py-3 px-4">
+                    <button
+                      className="cursor-pointer flex items-center hover:underline"
+                      onClick={() => handleCategory("alcoholic")}
+                    >
+                      <span>Cocktails with alcohol</span>
+                      {openCategories.includes("alcoholic") ? <FaAngleDown className="ml-2" /> : ""}
+                    </button>
+                    {openCategories.includes("alcoholic") && (
+                      <ul className="ml-4">
+                        <li>
+                          <button className="hover:underline" onClick={() => handleCategory("Gin")}>
+                            Gin
+                          </button>
+                        </li>
+                        <li>
+                          <button className="hover:underline" onClick={() => handleCategory("Vodka")}>
+                            Vodka
+                          </button>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                  <li className="py-3 px-4">
+                    <button
+                      className="cursor-pointer flex items-center hover:underline"
+                      onClick={() => handleCategory("nonAlcoholic")}
+                    >
+                      <span>Cocktails without alcohol</span>
+                      {openCategories.includes("nonAlcoholic") ? <FaAngleDown className="ml-2" /> : ""}
+                    </button>
+                    {openCategories.includes("nonAlcoholic") && (
+                      <ul className="ml-4">
+                        <li>
+                          <button className="hover:underline" onClick={() => handleCategory("Fresh")}>
+                            Fresh
+                          </button>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                </ul>
               </div>
             </div>
-          ))}
+          </div>
+          <div className="w-4/6 flex flex-wrap pr-20 mb-10 ">
+            {categoryDrinks && categoryDrinks.slice(0, 9).map((drink) => (
+              <div key={drink.idDrink} className="w-1/3 px-2 mb-4" onClick={() => navigateCocktailId(drink.idDrink)}>
+                <div className="bg-white p-5 shadow-md card-fade-in">
+                  <p className="text-lg font-semibold">
+                    {drink.strDrink} {drink.idDrink}
+                  </p>
+                  <img src={drink.strDrinkThumb} alt={drink.strDrink} className="w-full h-auto mb-2" />
+                </div>
+              </div>
+            ))}
 
+          </div>
         </div>
+
       </div>
-    </div >
       <FooterComponent />
+
     </>
 
   );
