@@ -74,12 +74,10 @@ const useRecipeState = create<recipeState>()((set) => ({
                     recipes: state.recipes.filter((recipe) => recipe._id !== _id),
                 }));
                 console.log('Recipe deleted')
-                }
-            } 
-            catch (error) {
-                console.log('Recipe was not deleted ', error)
-        
-        }
+                
+            }else{ console.log('Response error ',deleteResponse.status)}
+            
+        }catch (error) {console.log('Recipe was not deleted ', error)}
     },
 
     addRecipe: (newRecipes: Recipe) => set((state) =>({ // add a recipe, used in handleRequestComp 
