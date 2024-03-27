@@ -71,7 +71,20 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
   };
 
 
-  const handleRemoveIngredient = (ingredientId: string) => {};
+  const handleRemoveIngredient = (index: number, ingredient: Ingredient) => {};
+
+  const handleRemoveInstruction = (index: number, instruction: string) => {
+
+  const addNewIngredient = () => {
+
+  }
+
+  const addNewInstruction = () => {
+    
+  }
+
+
+  }
 
   if (!isOpen) return null;
 
@@ -90,7 +103,7 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
           &#8203;
         </span>
 
-        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full max-h-screen">
+        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full max-h-screen">
           <div className="flex justify-between">
             <div className="py-4 px-6 w-1/2">
               <input
@@ -110,26 +123,15 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
               <input
                 id="imageUrl"
                 type="text"
-                placeholder="Pace new URL here"
+                placeholder="Paste new URL here"
                 onChange={(e) => setNewImageUrl(e.target.value)}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
-              <input
-                id="time-in-mins"
-                type="number"
-                placeholder={recipe.timeInMins.toString()}
-                value={newTimeInMins == 0 ? "" : newTimeInMins}
-                onChange={(e) =>
-                  setNewTimeInMins(
-                    e.target.value === "" ? 0 : Number(e.target.value)
-                  )
-                }
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-              <CategorySelected
+             
+              {/* <CategorySelected
                 selectedCategories={newCategories}
                 onChange={setNewCategories}
-              />
+              /> */}
               <br />
               <input
                 id="time-in-mins"
@@ -144,11 +146,12 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
             </div>
-            <div className="py-2 px-2 w-1/2">
+            <div className="py-2 px-2 w-1/2 w-500 h-350">
               <img
                 src={newImageUrl || imageUrl}
                 alt="Preview"
-                className="max-w-full h-auto sm:max-w-lg"
+                style={{ width: '500px', height: '350px', objectFit: 'cover' }}
+                className="py-3 px-4"
               />
             </div>
           </div>
@@ -163,24 +166,24 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
                       type="text"
                       placeholder={ingredient.name}
                       onChange={(e) => handleIngredientUpdate(index ,"name", e.target.value)}
-                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                     />
                     <input
                       id="ingredientAmount"
                       type="text"
                       placeholder={ingredient.amount.toString()}
                       onChange={(e) => handleIngredientUpdate(index, "amount", e.target.value)}
-                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                     />
                     <input
                       id="ingredientUnit"
                       type="text"
                       placeholder={ingredient.unit}
                       onChange={(e) => handleIngredientUpdate(index, "Unit", e.target.value)}
-                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                     />
                     <button
-                      onClick={() => handleRemoveIngredient(ingredient._id)}
+                      onClick={() => handleRemoveIngredient(index, ingredient)}
                       className= " w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
                     >
                       Ta bort
@@ -201,6 +204,12 @@ function Modal({ recipe, recipeId, imageUrl, isOpen, onCancel }: ModalProps) {
                       onChange={(e) => handleInstructionUpdate(index ,e.target.value)}
                       className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                     />
+                     <button
+                      onClick={() => handleRemoveInstruction(index, instruction)}
+                      className= " w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
+                    >
+                      Ta bort
+                    </button>
                   </li>
                 ))}
             </div>
