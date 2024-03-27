@@ -7,7 +7,7 @@ const WeeklyTips: React.FC = () => {
       <div>
           <NavBarComponent />
            
-            <h2>blah blah VECKANS TIPS blah blah</h2>
+            <h2>Lorem, ipsum dolor</h2>
 
       </div>
     );
