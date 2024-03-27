@@ -41,7 +41,7 @@ function HomePage() {
     <div>
       {/* Lunch section */}
       <div className='testa-laga-text bg-green-200 m-20 mt-0 mb-0'>
-        <h1 className='text-center m-5 text-4xl p-12'>Dagens lunch tips</h1>
+        <h1 className='text-center m-5 text-4xl p-12'>Todays Lunch Suggestions!</h1>
       </div>
       <div className='flex justify-center'>
       <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
@@ -61,13 +61,13 @@ function HomePage() {
       </div>
       <div className='flex'>
         <p className='text m-20 pl-10 pr-10 italic '>
-          Vill du ge din lunch en uppfriskande twist? Testa dagens lunchtips och upptäck nya smaker som kommer att förgylla din dag! Vår samling av läckra recept är noggrant utvalda för att erbjuda dig både smakrik variation och enkelhet i vardagen.
+          Do you want to give your lunch a refreshing twist? Try today's lunch tips and discover new flavors that will brighten your day! Our collection of delicious recipes is carefully selected to offer you both tasty variety and simplicity in everyday life.
         </p>
       </div>
 
       
       <div className='testa-laga-text bg-green-700 m-20 mt-0 mb-0'>
-        <h1 className='text-center m-5 text-4xl p-12'>Dagens middags tips!</h1>
+        <h1 className='text-center m-5 text-4xl p-12'>Todays Dinner Suggestions!</h1>
       </div>
       
       <div className='flex justify-center'>
@@ -88,7 +88,7 @@ function HomePage() {
       </div>
       <div className='flex'>
         <p className='text m-20 pl-10 pr-10 italic '>
-          Är du redo att krydda upp din kvällsmåltid? Utforska dagens middagstips och låt dig inspireras av en värld av fantastiska smaker och enkelhet på tallriken! Vår samling av välsmakande recept är noga utvalda för att erbjuda dig en spännande resa till nya kulinariska höjder.
+        Are you ready to spice up your evening meal? Explore today's dinner tips and be inspired by a world of great flavors and simplicity on the plate! Our collection of tasty recipes are carefully selected to offer you an exciting journey to new culinary heights.
         </p>
       </div>
     </div>
