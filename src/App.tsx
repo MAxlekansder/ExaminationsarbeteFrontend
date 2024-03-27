@@ -1,6 +1,6 @@
 import './Styling/App.css';
 import './Styling/Dishes.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 import RecipeSearch from './components/SearchRecipe/RecipeSearchProps';
 import NavBarComponent from './components/NavBarComponent'
 import useRecipeState from './State/indexState';
@@ -8,11 +8,13 @@ import HomePage from './pages/HomePage';
 import DishComponent from './components/DishComponent';
 import { Route, Routes } from 'react-router-dom';
 import FooterComponent from './components/Footer/FooterComponent';
+import WeeklyTips from './pages/WeeklyTips';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
- 
+
+
   useEffect(() => {
     fetchRecipe();
 
@@ -23,31 +25,31 @@ function App() {
   };
 
 
-return (
+  return (
     <>
-    <div>
-      <NavBarComponent />
-      <div className="food-header">
-        <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
-          Välkommen!
-        </h1>
+      <div>
+        <NavBarComponent />
+        <div className="food-header">
+          <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
+            Välkommen!
+          </h1>
+        </div>
+        <div className="m-5 flex justify-center">
+          <RecipeSearch
+            recipesFromInterface={recipes}
+            searchTerm={searchTerm}
+            onSearchChange={handleSearchChange}
+          />
+        </div>
       </div>
-    <div className="m-5 flex justify-center">
-        <RecipeSearch
-          recipesFromInterface={recipes}
-          searchTerm={searchTerm}
-          onSearchChange={handleSearchChange}
-        />
-      </div>
-    </div>
-   <div >
-      <Routes>
+      <div >
+        <Routes>
           {/* <Route path="/dishes/:id" element={<DishDetailsPage />} /> */}
           <Route path='/' element={<HomePage />} />
           <Route path='/dishes' element={(
             <div>
               {recipes.map((dish, index) => (
-              <DishComponent
+                <DishComponent
                   id={dish._id}
                   key={index}
                   name={dish.name}
@@ -61,8 +63,8 @@ return (
             </div>
           )} />
         </Routes>
-     </div>
-     <FooterComponent/>
+      </div>
+      <FooterComponent />
     </>
 
   );
