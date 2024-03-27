@@ -1,6 +1,6 @@
 // Kristian
 
-import WeeklyTips from "./WeeklyTips/WeeklyTips";
+import WeeklyTips from "../pages/WeeklyTips";
 
 
 const NavBarComponent = () => {

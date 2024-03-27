@@ -29,7 +29,7 @@ const WeeklyTips: React.FC = () => {
 
     <div onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)} className='relative'>
       <a href="/" className='px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500'>
-        Veckans tips
+        Weekly Tips
       </a>
 
       {isDropdownOpen && (
