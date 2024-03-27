@@ -16,7 +16,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
 
   const getUpdate = useRecipeState((state) => state.updateRecipes);
   const [updatedRecipe, setUpdatedRecipe] = useState<Recipe>(recipe);
-  // const saveRecipe = useRecipeState((state) => state.fetchSpecificRecipe(recipe._id))
+  const [displayNewUrl, setDisplayNewUrl] = useState("");
 
   useEffect(() => {
     setUpdatedRecipe(recipe)
@@ -35,10 +35,16 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
 
   const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name , value} = e.target;
+    if (name === "imageUrl") {
+      setDisplayNewUrl(value)
+    }
     setUpdatedRecipe((updateRecipe) => ({
       ...updateRecipe,
       [name]: value,
+      
     }));
+
+   
   };
 
   const handleIngredientChange = (index: number, property: string, newValue: string) => {
@@ -137,7 +143,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
             </div>
             <div className="py-2 px-2 w-1/2 w-500 h-350">
               <img
-                src={imageUrl}
+                src={displayNewUrl || imageUrl}
                 alt="Preview"
                 style={{ width: "500px", height: "350px", objectFit: "cover" }}
                 className="py-3 px-4"
