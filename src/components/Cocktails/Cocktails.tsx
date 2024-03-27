@@ -40,14 +40,14 @@ function PresentCocktails() {
 
   return (
     <>
-    <div>
+    <div className="bg-img">
       <NavBarComponent />
-      <div>
-        <p className="m-12 text-center text-4xl titel-text bg-cyan-50 p-10 rounded-lg">Try our fantastic bevreges!</p>
+      <div className="">
+        <h1 className="m-12 text-center text-5xl titel-text p-10 rounded-lg">Try our fantastic bevreges!</h1>
       </div>
-      <div className="flex flex-wrap">
-        <div className="w-1/4 pl-10">
-          <div className="w-64 bg-blue-50 rounded-lg ">
+      <div className="flex flex-wrap ">
+        <div className="w-1/4 pl-10 ">
+          <div className="w-64 text-white rounded-lg ">
             <div className="p-4">
               <h2 className="text-lg font-bold">Cocktails</h2>
             </div>
