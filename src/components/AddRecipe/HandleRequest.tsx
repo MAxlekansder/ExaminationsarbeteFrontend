@@ -50,7 +50,6 @@
           categories: categories,
           instructions: instructions,
           ingredients: ingredients,
-
           
         });
         console.log(imageUrl);

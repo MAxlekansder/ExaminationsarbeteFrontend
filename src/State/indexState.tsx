@@ -25,7 +25,7 @@ interface recipeState {
     fetchAllDrinks: () => Promise<void>;
     fetchSpecificDrink: (id: string) => Promise<void>;
     fetchSpecificRecipe: (id: string) => Promise<void>;
-    updateRecipes: (recipeId: String, updatedProperties: Partial<Recipe>) => void;
+    updateRecipes: (recipeId: string, updatedProperties: Partial<Recipe>) => void;
     fetchSpecificDrinkIngredient: (ingredient: string) => Promise<void>;
 }
 
@@ -43,7 +43,7 @@ const useRecipeState = create<recipeState>()((set) => ({
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
 
-    updateRecipes: (_id: String, updatedProperties: Partial<Recipe>) => set((state) => {
+    updateRecipes: (_id: string, updatedProperties: Partial<Recipe>) => set((state) => {
     
         console.log("Updating recipe with ID:", _id);
         console.log("Updated properties:", updatedProperties);
