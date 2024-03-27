@@ -1,21 +1,28 @@
-//import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import '../Styling/Dishes.css'
+import RecipeRating from './SearchRecipe/RecipeRating';
+
 
 interface DishProps {
   id: string;
   name: string;
   image: string;
   recipe?: string;
-  ingredients?: string[];
+  ingredients: string[];
   description?: string;
   onClick: () => void;
 }
 
 const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, description }) => {
   const { dishId } = useParams<{ dishId: string }>(); //Fetching dishId from URL
+  
+  const [rating, setRating] = useState<number | null>(null);
 
+  useEffect(() => {
+    console.log('DishComponent har monterats');
+  }, []);
  
  // Om dishId matchar id, visa detaljer om rätten
   if (id === dishId) {
@@ -29,12 +36,13 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        {/* You can include more details about the dish here */}
+        <RecipeRating dishId={id} rating={rating} setRating={setRating} />
+        
       </div>
     );
   }
 
-  // Annars, rendera en länk till rätten
+ 
   return (
     <div className=' relative card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
       <div className="m-12 ">
