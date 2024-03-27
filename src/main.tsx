@@ -12,7 +12,7 @@ import Test from './components/AddRecipe/Modal/TestPage.tsx';
 import About from './pages/About.tsx';
 import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail.tsx';
 import Categories from './pages/Categories.tsx';
-import WeeklyTips from './components/WeeklyTips/WeeklyTips.tsx';
+import WeeklyTips from './pages/WeeklyTips.tsx';
 import CocktailCategory from './components/Cocktails/CocktailCategory.tsx';
 import RecipeDetails from "./Views/Recipe/Recipe.tsx";
 //Simon flyttar ut koden i sprint 3!

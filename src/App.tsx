@@ -8,7 +8,7 @@ import HomePage from './pages/HomePage';
 import DishComponent from './components/DishComponent';
 import { Route, Routes } from 'react-router-dom';
 import FooterComponent from './components/Footer/FooterComponent';
-import WeeklyTips from './components/WeeklyTips/WeeklyTips';
+import WeeklyTips from './pages/WeeklyTips';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
