@@ -21,6 +21,7 @@ interface recipeState {
     fetchRecipe: () => void;
     fetchAlcoholicDrinks: () => Promise<void>;
     fetchNonAlcoholicDrinks: () => Promise<void>;
+  
     fetchAllDrinks: () => Promise<void>;
     fetchSpecificDrink: (id: string) => Promise<void>;
     fetchSpecificRecipe: (id: string) => Promise<void>;
@@ -37,6 +38,7 @@ const useRecipeState = create<recipeState>()((set) => ({
     allDrinks: [],
     detailedDrink: [],
     detailedRecipe: {},
+    
 
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 

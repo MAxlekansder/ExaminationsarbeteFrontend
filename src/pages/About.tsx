@@ -5,7 +5,7 @@ import NavBarComponent from '../components/NavBarComponent';
 import FooterComponent from '../components/Footer/FooterComponent';
 
 
-const About: React.FC = () => {
+const About = () => {
     return (
         <>
         <div className="bg-white">
