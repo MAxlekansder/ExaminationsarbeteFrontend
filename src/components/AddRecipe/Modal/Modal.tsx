@@ -166,7 +166,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                     <input
                       id="ingredientAmount"
                       type="text"
-                      placeholder={ingredient.amount.toString()}
+                      placeholder={ ingredient.amount ? ingredient.amount.toString() : ""}
                       onChange={(e) => handleIngredientChange(index, "amount", e.target.value)}
                       className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                     />
