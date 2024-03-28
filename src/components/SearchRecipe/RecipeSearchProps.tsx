@@ -1,7 +1,7 @@
 //Gustav
-import React from 'react';
+
 import { Recipe } from "../../data/Recipes";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import '../../Styling/App.css'
 
@@ -18,12 +18,14 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-//Tillfällig styling direkt i img taggen
+  const navigateFromSearch = useNavigate();
+
+
   const renderRecipes = searchTerm !== '' ? (
     <ul>
       {filteredRecipes.map((recipe, index) => (
         <li key={index} className='recipe-text-on-search'>
-          <a href="" className=''>{recipe.title},&nbsp;
+          <a href="" className='' onClick={() => navigateFromSearch(`/test/${recipe._id}`)}>{recipe.title},&nbsp;
             <span className='italic'>{recipe.description}
             </span>
           </a>
