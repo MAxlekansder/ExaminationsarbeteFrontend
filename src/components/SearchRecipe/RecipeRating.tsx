@@ -23,7 +23,7 @@ interface RecipeRating {
     <div> 
       {[1, 2, 3, 4, 5].map((value) => (
         <button key={value} onClick={() => handleRatingChange(value)}>
-          {value} {rating === value && '★'} 
+            {value <= (rating || 0) ? '★' : '☆'}
         </button>
       ))}
       <textarea
@@ -32,7 +32,6 @@ interface RecipeRating {
         onChange={handleCommentChange}
         />
       <button onClick={() => console.log(`Comment for dish ${dishId}: ${comment}`)}>
-
       </button>
     </div>
   );
