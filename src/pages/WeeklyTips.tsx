@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import useRecipeState from '../State/indexState';
 import NavBarComponent from '../components/NavBarComponent';
-import { Recipe } from '../data/Recipes';
 
 const WeeklyTips: React.FC = () => {
   const { recipes } = useRecipeState();
