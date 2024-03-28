@@ -17,8 +17,8 @@ function HomePage() {
       const dinnerRecipes = recipes.filter(recipe => recipe.categories.includes('Dinner'));
 
       
-      const randomIndexesLunch = getRandomIndexes(lunchRecipes.length, 3);
-      const randomIndexesDinner = getRandomIndexes(dinnerRecipes.length, 3);
+      const randomIndexesLunch = getRandomIndexes(lunchRecipes.length, 4);
+      const randomIndexesDinner = getRandomIndexes(dinnerRecipes.length, 4);
 
       const selectedRecipesLunch = randomIndexesLunch.map(index => lunchRecipes[index]);
       const selectedRecipesDinner = randomIndexesDinner.map(index => dinnerRecipes[index]);
@@ -43,7 +43,9 @@ function HomePage() {
   return (
   <>
     <div className='flex w-2/5  ml-40 relative mt-20 mb-20'>
+  
       <div className='pl-10'>
+        
       <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl'>
           Do you want to give your lunch a refreshing twist? </h1>
           <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-sm '>
@@ -53,6 +55,7 @@ function HomePage() {
               in everyday life.
               </p>
               </div>
+                <div className='bg-green-700 2xl:ml-10 2xl:mr-10 text-green-700'>.</div>
             <div className=''>
           <img src="public/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
         </div>
@@ -85,12 +88,16 @@ function HomePage() {
       <div className='p-20'></div>{/*För att göra sidan lite luftig*/}
       
       <div className='flex justify-end'>
+      <div className='bg-green-200 mt-10 mb-10 text-green-200'>.</div>
+      
         <div className='relative w-2/5 mt-20 mb-20 mr-40'>
            <div className=''>
               <img src="public/Images/inteMathem.png" 
                 alt="" className='absolute object-cover secound-mainpage-img ' />
             </div> 
         <div className='pl-10 '>
+          
+        
       <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl '>
           Are you ready to spice up your evening meal? 
           </h1>
@@ -102,9 +109,11 @@ function HomePage() {
               </p>
            </div>
         </div>
+        
     </div>
   
     <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10'>
+   
         <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl'>
           Todays Dinner Suggestions!
           </h1>
