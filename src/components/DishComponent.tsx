@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+//import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import '../Styling/Dishes.css'
@@ -10,7 +11,7 @@ interface DishProps {
   name: string;
   image: string;
   recipe?: string;
-  ingredients?: string[];
+  ingredients: string[];
   description?: string;
   onClick: () => void;
 }
