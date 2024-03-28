@@ -19,6 +19,9 @@ const typesOfMeasure = [
   "piece",
   "cloves",
   "pot",
+  "tablespoon",
+  "teaspoon",
+  "cup"
 ];
 
 function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JSX.Element {

@@ -100,7 +100,7 @@
     "ratings": 5,
     "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d22c924a-1b57-41f8-b325-2499c029e76f?fit=crop&h=613&w=1000&s=32cae29106972a1038ec31745de85554c1dd5e5a",
     "timeInMins": 45,
-    "categories": ["Main Course", "Italian"],
+    "categories": ["Dinner", "Italian"],
     "instructions": [
       "Fry onion and garlic",
       "Add minced meat and tomato sauce",
@@ -137,7 +137,7 @@
     "ratings": 5,
     "imageUrl": "https://www.zeta.nu/app/uploads/2016/03/Paella_med_musslor_och_r%C3%A4kor_li-2048x1365.jpg",
     "timeInMins": 60,
-    "categories": ["Main Course", "Spanish"],
+    "categories": ["Diner", "Spanish"],
     "instructions": [
       "Sear chicken and seafood",
       "Add rice and broth",
@@ -156,7 +156,7 @@
     "ratings": 4,
     "imageUrl": "https://www.kitchensanctuary.com/wp-content/uploads/2020/01/Chicken-Parmesan-square-FS-38.jpg",
     "timeInMins": 30,
-    "categories": ["Main Course", "Italian"],
+    "categories": ["Diner", "Italian"],
     "instructions": [
       "Cook fettuccine pasta",
       "Grill chicken and slice",
@@ -176,7 +176,7 @@
     "ratings": 5,
     "imageUrl": "https://images.arla.com/recordid/6CCC0216-F0D5-4B04-A711D1C83CFBC48B/california-rolls.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,59,0,-89)",
     "timeInMins": 45,
-    "categories": ["Main Course", "Japanese"],
+    "categories": ["Dinner", "Japanese", "Lunch"],
     "instructions": [
       "Prepare sushi rice",
       "Finely chop the ingredients, fish, and seafood",
@@ -235,7 +235,7 @@
     "ratings": 4,
     "imageUrl": "https://www.vinia.se/blogg/vin-och-vanner/wp-content/uploads/sites/2/2020/09/BiffochBroccoliWok.jpg",
     "timeInMins": 30,
-    "categories": ["Dinner", "Chinese, Meat"],
+    "categories": ["Dinner", "Chinese", "Meat"],
     "instructions": [
       "Slice beef and marinate",
       "Stir-fry beef and vegetables in a wok",
@@ -338,7 +338,7 @@
     "ratings": 5,
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Espaguetis_carbonara.jpg",
     "timeInMins": 30,
-    "categories": ["Dinner", "Italian, Poultry"],
+    "categories": ["Dinner", "Italian", "Poultry"],
     "instructions": [
       "Cook the pasta according to the package instructions.",
       "Fry pancetta or bacon until crispy in a frying pan.",
@@ -361,7 +361,7 @@
     "ratings": 4,
     "imageUrl": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
     "timeInMins": 20,
-    "categories": ["Main Course", "Italian", "Vegetarian"],
+    "categories": ["Dinner", "Italian", "Vegetarian"],
     "instructions": [
       "Roll out pizza dough on a baking sheet and spread tomato sauce evenly over the dough.",
       "Dice the mozzarella and distribute over the tomato sauce.",
@@ -383,7 +383,7 @@
     "ratings": 4,
     "imageUrl": "https://www.flavoursholidays.co.uk/wp-content/uploads/2020/07/Tiramisu.jpg.webp",
     "timeInMins": 60,
-    "categories": ["Dessert", "Italian, Dairy"],
+    "categories": ["Dessert", "Italian", "Dairy"],
     "instructions": [
       "Mix coffee and marsala wine in a bowl.",
       "Dip ladyfingers in the coffee mixture and layer at the bottom of a dish.",
@@ -599,7 +599,7 @@
     "ratings": 5,
     "imageUrl": "https://thewoodenskillet.com/wp-content/uploads/2023/05/greek-yogurt-parfait-recipe-1.jpg",
     "timeInMins": 10,
-    "categories": ["Breakfast", "Diary", "Vegetarian", "Scandinavian"],
+    "categories": ["Breakfast", "Dairy", "Vegetarian", "Scandinavian"],
     "instructions": [
       "In a glass or bowl, layer Greek yogurt, granola, and fresh berries.",
       "Repeat the layers until the glass or bowl is filled.",
@@ -611,7 +611,243 @@
       { "name": "Granola", "amount": "1/2", "unit": "cup" },
       { "name": "Fresh berries (strawberries, blueberries, raspberries)", "amount": "As desired", "unit": "" }
     ]
+  },
+  {
+    "title": "French Beef Bourguignon",
+    "description": "A classic French stew made with tender beef, red wine, vegetables, and herbs.",
+    "ratings": 5,
+    "imageUrl": "https://www.lecreuset.se/on/demandware.static/-/Library-Sites-lc-sharedLibrary/default/dw36c1d3fc/images/recipe/HD_PNG_LC_20200430_DK_RC_CI_r0000000000561_DAN.png",
+    "timeInMins": 180,
+    "categories": ["Meat", "French", "Dinner"],
+    "instructions": [
+      "In a large pot, cook the chopped bacon until crisp. Remove and set aside.",
+      "In the same pot, brown the beef cubes in batches. Remove and set aside.",
+      "Add chopped onions, carrots, and garlic to the pot. Cook until softened.",
+      "Return the beef and bacon to the pot. Add red wine, beef broth, tomato paste, thyme, and bay leaves.",
+      "Simmer covered for 2 hours until beef is tender. Serve hot."
+    ],
+    "ingredients": [
+      { "name": "Beef chuck roast", "amount": 2, "unit": "pounds" },
+      { "name": "Red wine", "amount": 2, "unit": "cups" },
+      { "name": "Carrots", "amount": 4, "unit": "medium" },
+      { "name": "Onion", "amount": 1, "unit": "large" },
+      { "name": "Garlic cloves", "amount": 4, "unit": "cloves" },
+      { "name": "Bacon", "amount": 4, "unit": "slices" },
+      { "name": "Mushrooms", "amount": 8, "unit": "ounces" },
+      { "name": "Beef broth", "amount": 1, "unit": "cup" },
+      { "name": "Tomato paste", "amount": 2, "unit": "tablespoons" },
+      { "name": "Thyme", "amount": 1, "unit": "tablespoon" },
+      { "name": "Bay leaves", "amount": 2, "unit": "leaves" },
+      { "name": "Olive oil", "amount": 2, "unit": "tablespoons" }
+    ]
+  },
+  {
+    "title": "French Sole Meunière",
+    "description": "A classic French fish dish made with delicate sole fillets coated in flour and cooked in butter.",
+    "ratings": 5,
+    "imageUrl": "https://www.jocooks.com/wp-content/uploads/2011/06/sole-meuniere-1-640x750.jpg",
+    "timeInMins": 20,
+    "categories": ["Fish", "French", "Seafood", "Dinner", "Lunch"],
+    "instructions": [
+      "Season sole fillets with salt and pepper.",
+      "Dredge each fillet in flour, shaking off excess.",
+      "In a large skillet, melt butter over medium heat until foamy.",
+      "Add the sole fillets and cook until golden brown, about 2-3 minutes per side.",
+      "Drizzle with lemon juice and sprinkle with parsley before serving."
+    ],
+    "ingredients": [
+      { "name": "Sole fillets", "amount": 4, "unit": "fillets" },
+      { "name": "All-purpose flour", "amount": 0.5, "unit": "cup" },
+      { "name": "Butter", "amount": 4, "unit": "tablespoons" },
+      { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Pepper", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Lemon juice", "amount": 2, "unit": "tablespoons" },
+      { "name": "Fresh parsley", "amount": 2, "unit": "tablespoons", "preparation": "chopped" }
+    ]
+  },
+  {
+    "title": "French Ratatouille",
+    "description": "A classic French vegetable stew made with tomatoes, eggplant, zucchini, bell peppers, and herbs.",
+    "ratings": 5,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwDVmOpQJZmcF38Bg3XYLnBm069sKgI5UQBB2hziL1Q&s",
+    "timeInMins": 60,
+    "categories": ["Vegetarian", "French", "Stew"],
+    "instructions": [
+      "Heat olive oil in a large skillet over medium heat.",
+      "Add chopped onions, garlic, and bell peppers. Cook until softened.",
+      "Add diced tomatoes, eggplant, and zucchini to the skillet. Cook until vegetables are tender.",
+      "Season with salt, pepper, and herbs. Serve hot or cold."
+    ],
+    "ingredients": [
+      { "name": "Tomatoes", "amount": 4, "unit": "medium", "preparation": "diced" },
+      { "name": "Eggplant", "amount": 1, "unit": "large", "preparation": "diced" },
+      { "name": "Zucchini", "amount": 2, "unit": "medium", "preparation": "diced" },
+      { "name": "Bell peppers", "amount": 2, "unit": "medium", "preparation": "chopped" },
+      { "name": "Onion", "amount": 1, "unit": "large", "preparation": "chopped" },
+      { "name": "Garlic cloves", "amount": 2, "unit": "cloves", "preparation": "minced" },
+      { "name": "Olive oil", "amount": 2, "unit": "tablespoons" },
+      { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Pepper", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Herbs (such as thyme, basil, parsley)", "amount": "to taste", "preparation": "chopped" }
+    ]
+  },
+  {
+    "title": "Thai Fish Curry",
+    "description": "A flavorful Thai curry made with tender fish fillets, coconut milk, and aromatic Thai spices.",
+    "ratings": 5,
+    "imageUrl": "https://simply-delicious-food.com/wp-content/uploads/2021/08/Thai-red-curry-fish-4.jpg",
+    "timeInMins": 45,
+    "categories": ["Fish", "Thai", "Dinner"],
+    "instructions": [
+      "In a large pan, heat coconut milk over medium heat.",
+      "Add Thai curry paste and stir until fragrant.",
+      "Add fish fillets, vegetables, and fish sauce. Simmer until fish is cooked through.",
+      "Garnish with fresh herbs and serve hot with steamed rice."
+    ],
+    "ingredients": [
+      { "name": "White fish fillets", "amount": 4, "unit": "fillets" },
+      { "name": "Coconut milk", "amount": 1, "unit": "can" },
+      { "name": "Thai curry paste", "amount": "2", "unit": "tablespoon" },
+      { "name": "Mixed vegetables (such as bell peppers, zucchini, and carrots)", "amount": "2", "unit": "cups"},
+      { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
+      { "name": "Fresh herbs (such as cilantro and Thai basil)", "amount": 1, "unit": "pot"},
+      { "name": "Steamed rice", "amount": 2, "unit":"cups" }
+    ]
+  },
+  {
+    "title": "Scandinavian Grilled Salmon",
+    "description": "A simple and delicious Scandinavian dish featuring grilled salmon marinated in a tangy dill sauce.",
+    "ratings": 5,
+    "imageUrl": "https://www.thecookierookie.com/wp-content/uploads/2023/05/featured-grilled-salmon-recipe.jpg",
+    "timeInMins": 30,
+    "categories": ["Fish", "Scandinavian", "Dinner"],
+    "instructions": [
+      "In a bowl, mix together olive oil, lemon juice, dill, and garlic.",
+      "Marinate salmon fillets in the mixture for 15-30 minutes.",
+      "Preheat grill to medium-high heat. Grill salmon for 4-5 minutes on each side, or until cooked through.",
+      "Serve hot with a side of roasted vegetables or boiled potatoes."
+    ],
+    "ingredients": [
+      { "name": "Salmon fillets", "amount": 4, "unit": "fillets" },
+      { "name": "Olive oil", "amount": 0.5, "unit": "cup" },
+      { "name": "Lemon juice", "amount": 2, "unit": "tablespoons" },
+      { "name": "Fresh dill", "amount": 2, "unit": "tablespoons", "preparation": "chopped" },
+      { "name": "Garlic cloves", "amount": 2, "unit": "cloves", "preparation": "minced" },
+      { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Pepper", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Roasted vegetables or boiled potatoes", "amount": 1 , "unit": "kg" }
+    ]
+  },
+  {
+    "title": "Mexican Fish Tacos",
+    "description": "Delicious and zesty fish tacos made with crispy fried fish, fresh salsa, and tangy lime crema.",
+    "ratings": 5,
+    "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/fish-tacos-index-64ca974954d47.jpg?crop=0.7503703703703705xw:1xh;center,top&resize=1200:*",
+    "timeInMins": 40,
+    "categories": ["Fish", "Mexican", "Dinner"],
+    "instructions": [
+      "Prepare the fish by seasoning with spices and dredging in flour.",
+      "Fry the fish until golden and crispy.",
+      "Assemble tacos by filling tortillas with fried fish, salsa, shredded cabbage, and lime crema.",
+      "Serve hot with extra lime wedges and hot sauce on the side."
+    ],
+    "ingredients": [
+      { "name": "White fish fillets", "amount": 4, "unit": "fillets" },
+      { "name": "All-purpose flour", "amount": 1, "unit": "cup" },
+      { "name": "Mexican spices (such as chili powder, cumin, and paprika)", "amount": 0.5, "unit": "cups" },
+      { "name": "Corn tortillas", "amount": "8", "unit": "tortillas" },
+      { "name": "Shredded cabbage", "amount": "1", "unit": "cup" },
+      { "name": "Fresh salsa", "amount": "1", "unit": "cup" },
+      { "name": "Lime crema", "amount": 0.5, "unit": "cup" },
+      { "name": "Lime wedges", "amount": "", "unit": "" },
+      { "name": "Hot sauce", "amount": "", "unit": "" }
+    ]
+  },
+  {
+    "title": "Japanese Chicken Teriyaki",
+    "description": "Tender chicken thighs glazed with a sweet and savory teriyaki sauce, served with steamed rice and vegetables.",
+    "ratings": 5,
+    "imageUrl": "https://s23209.pcdn.co/wp-content/uploads/2023/05/230125_DD_Grilled-Teriyaki-Chicken_478.jpg",
+    "timeInMins": 45,
+    "categories": ["Japanese", "Chicken", "Dinner"],
+    "instructions": [
+      "In a bowl, mix soy sauce, mirin, brown sugar, minced garlic, and minced ginger to make the teriyaki sauce.",
+      "Heat vegetable oil in a skillet over medium-high heat.",
+      "Add chicken thighs to the skillet and cook until browned on both sides.",
+      "Pour the teriyaki sauce over the chicken and simmer until the sauce thickens and coats the chicken evenly.",
+      "Serve the chicken teriyaki hot with steamed rice and vegetables.",
+      "Garnish with sliced green onions and sesame seeds."
+    ],
+    "ingredients": [
+      { "name": "Chicken thighs", "amount": 4, "unit": "pieces" },
+      { "name": "Soy sauce", "amount": 0.5, "unit": "cup" },
+      { "name": "Mirin", "amount": 0.5, "unit": "cup" },
+      { "name": "Brown sugar", "amount": 2, "unit": "tablespoons" },
+      { "name": "Garlic", "amount": 2, "unit": "cloves", "preparation": "minced" },
+      { "name": "Ginger", "amount": 1, "unit": "teaspoon", "preparation": "minced" },
+      { "name": "Vegetable oil", "amount": 1, "unit": "tablespoons" },
+      { "name": "Steamed rice", "amount": 2, "unit": "cups" },
+      { "name": "Steamed vegetables", "amount": 1, "unit": "kg" },
+      { "name": "Green onions", "amount": "", "unit": "" },
+      { "name": "Sesame seeds", "amount": "", "unit": "" }
+    ]
+  },
+  {
+    "title": "Chicken Caesar Wrap",
+    "description": "A satisfying wrap filled with grilled chicken, crisp romaine lettuce, Parmesan cheese, and Caesar dressing.",
+    "ratings": 4,
+    "imageUrl": "https://www.simplejoy.com/wp-content/uploads/2020/07/Chicken-wrap.jpg",
+    "timeInMins": 20,
+    "categories": ["Chicken", "Lunch"],
+    "instructions": [
+      "Grill chicken breasts until fully cooked.",
+      "Slice grilled chicken into strips.",
+      "Lay a large tortilla flat and spread Caesar dressing over it.",
+      "Place sliced grilled chicken, romaine lettuce leaves, and shredded Parmesan cheese on top of the dressing.",
+      "Wrap the tortilla tightly around the filling ingredients.",
+      "Slice the wrap in half diagonally and serve immediately."
+    ],
+    "ingredients": [
+      { "name": "Chicken breasts", "amount": 2, "unit": "piece" },
+      { "name": "Romaine lettuce leaves", "amount": "4", "unit": "large" },
+      { "name": "Parmesan cheese", "amount": 0.2, "unit": "cup" },
+      { "name": "Caesar dressing", "amount": 2, "unit": "tablespoons" },
+      { "name": "Large tortillas", "amount": 4, "unit": "pieces" }
+    ]
+  },
+  {
+    "title": "Quinoa Salad with Chickpeas",
+    "description": "A nutritious and protein-packed salad featuring quinoa, chickpeas, colorful vegetables, and a zesty lemon dressing.",
+    "ratings": 5,
+    "imageUrl": "https://www.recipetineats.com/wp-content/uploads/2021/03/My-Favourite-Quinoa-Salad-5-SQ.jpg",
+    "timeInMins": 30,
+    "categories": ["Vegetarian", "Lunch"],
+    "instructions": [
+      "Cook quinoa according to package instructions and let it cool.",
+      "In a large bowl, combine cooked quinoa, drained and rinsed chickpeas, diced vegetables, and chopped parsley.",
+      "In a small bowl, whisk together olive oil, lemon juice, garlic, salt, and pepper to make the dressing.",
+      "Pour the dressing over the quinoa salad and toss to coat evenly.",
+      "Chill the salad in the refrigerator for at least 30 minutes before serving.",
+      "Garnish with additional parsley before serving, if desired."
+    ],
+    "ingredients": [
+      { "name": "Quinoa", "amount": 1, "unit": "cup" },
+      { "name": "Chickpeas", "amount": 1, "unit": "can" },
+      { "name": "Assorted vegetables", "amount": 1, "unit": "cup"},
+      { "name": "Fresh parsley", "amount": 0.5, "unit": "cup" },
+      { "name": "Olive oil", "amount": 2, "unit": "tablespoons" },
+      { "name": "Lemon juice", "amount": 1, "unit": "tablespoon" },
+      { "name": "Garlic", "amount": 1, "unit": "clove"},
+      { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Black pepper", "amount": 0.2, "unit": "teaspoon" }
+    ]
   }
+  
+  
+  
+  
+  
+  
   
   
 ]
