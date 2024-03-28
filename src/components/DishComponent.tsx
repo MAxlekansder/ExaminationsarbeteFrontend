@@ -44,20 +44,22 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
 
  
   return (
-    <div className=' relative card-fade-in inline-flex border shadow-lg p-3  bg-gray-50 m-6'>
-      <div className="m-12 ">
+    <div className='card-fade-in '>
+      <div className="">
+      
         <Link to={`/dishes/${id}`}>
           <img
             src={image}
             alt={name}
-            className="w-40 h-40 object-cover border shadow-lg'"
+            className="object-cover 2xl:h-96 2xl:w-96 xl:h-60 xl:w-60"
           />
-          <p className="text-center mt-2 font-semibold">{name}</p>
-          
-          
         </Link>
+       
       </div>
-      <p className="align-bottom des-text">{description}</p>
+      <p className="mt-2 xl:font-semibold 2xl:text-2xl xl:text-xm md:text-sm ">{name}</p>
+      <div className='flex '>
+        <p className="mt-2 w-40 2xl:text-xm xl:text-xs md:text-sm ">{description}</p>
+        </div>
     </div>
   );
 }

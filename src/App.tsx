@@ -31,7 +31,7 @@ function App() {
         <NavBarComponent />
         <div className="food-header">
           <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
-            Välkommen!
+            Welcome to Not-Mathem!
           </h1>
         </div>
         <div className="m-5 flex justify-center">
