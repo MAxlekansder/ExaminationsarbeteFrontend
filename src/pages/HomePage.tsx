@@ -2,12 +2,14 @@ import DishComponent from '../components/DishComponent';
 import { Link } from 'react-router-dom';
 import useRecipeState from '../State/indexState';
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 function HomePage() {
   const { recipes } = useRecipeState();
   const [randomLunch, setRandomLunch] = useState<any[]>([]);
   const [randomDinner, setRandomDinner] = useState<any[]>([]);
+  const navigateToDish = useNavigate();
 
   useEffect(() => {
     if (recipes.length > 0) {
@@ -43,29 +45,27 @@ function HomePage() {
     <div className='flex w-2/5  ml-40 relative mt-20 mb-20'>
       <div className='pl-10'>
       <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl'>
-        Do you want to give your lunch a refreshing twist? </h1>
-        <div className=''>
-
-        </div>
-        <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-sm '>
-        Try today's lunch tips and discover new flavors that will 
-        brighten your day! Our collection of delicious recipes is 
-        carefully selected to offer you both tasty variety and simplicity 
-        in everyday life.
-           </p>
-           </div>
+          Do you want to give your lunch a refreshing twist? </h1>
+          <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-sm '>
+              Try today's lunch tips and discover new flavors that will 
+              brighten your day! Our collection of delicious recipes is 
+              carefully selected to offer you both tasty variety and simplicity 
+              in everyday life.
+              </p>
+              </div>
             <div className=''>
-          <img src="public/Images/inteMathem.png" alt="" className='absolute object-cover mainpage-img' />
+          <img src="public/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
         </div>
     </div>
    
-      
-    <div className=''>
+    <div className='p-10'>
       
       <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10'>
-        <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl'>Todays Lunch Suggestions!</h1>
+        <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl'>
+          Todays Lunch Suggestions!
+          </h1>
       </div>
-      <div className='flex justify-center'>
+        <div className='flex justify-center'>
       <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
         {randomLunch.map((dish, index) => (
           <Link to={`/dishes/${dish._id}`} key={index}>
@@ -75,36 +75,41 @@ function HomePage() {
               name={dish.title}
               image={dish.imageUrl}
               description={dish.description}
-              onClick={() => console.log('hej')}
+              onClick={() => navigateToDish(`/test/${dish._id}`)}
             />
           </Link>
         ))}
         <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
       </div>
-      <br />
-          <br />
-        <br />
-      <div className='flex w-2/5  ml-40 relative mt-20 mb-20'>
-        <div className='pl-10'>
-      <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl'>Are you ready to spice up your evening meal? </h1>
-        <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-sm '>
-          Explore today's dinner tips and be inspired by a world of 
-          great flavors and simplicity on the plate! Our collection of 
-          tasty recipes are carefully selected to offer you an exciting journey 
-          to new culinary heights.
-           </p>
+
+      <div className='p-20'></div>{/*För att göra sidan lite luftig*/}
+      
+      <div className='flex justify-end'>
+        <div className='relative w-2/5 mt-20 mb-20 mr-40'>
+           <div className=''>
+              <img src="public/Images/inteMathem.png" 
+                alt="" className='absolute object-cover secound-mainpage-img ' />
+            </div> 
+        <div className='pl-10 '>
+      <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl '>
+          Are you ready to spice up your evening meal? 
+          </h1>
+            <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-sm '>
+                Explore today's dinner tips and be inspired by a world of 
+                great flavors and simplicity on the plate! Our collection of 
+                tasty recipes are carefully selected to offer you an exciting journey 
+                to new culinary heights.
+              </p>
            </div>
-            <div className=''>
-          <img src="public/Images/inteMathem.png" 
-            alt="" className='absolute object-cover mainpage-img' />
         </div>
     </div>
   
     <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10'>
-        <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl'>Todays Dinner Suggestions!</h1>
+        <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl'>
+          Todays Dinner Suggestions!
+          </h1>
       </div>
-      
-      <div className='flex justify-center'>
+    <div className='flex justify-center'>
       <div className='bg-green-200 ml-10 mr-10 text-green-200'>.</div>
         {randomDinner.map((dish, index) => (
           <Link to={`/dishes/${dish._id}`} key={index}>
@@ -114,19 +119,17 @@ function HomePage() {
               name={dish.title}
               image={dish.imageUrl}
               description={dish.description}
-              onClick={() => console.log(dish.recipe)}
+              onClick={() => navigateToDish(`/test/${dish._id}`)}
             />
           </Link>
         ))}
         <div className='bg-green-200 ml-10 mr-10 text-green-200'>.</div>
       </div>
-  
     </div>
-    <br />
-    <br />
-    <br />
-    </>
-  );
-}
+   <div className='mt-20 p-10'>
+</div>
+</>
+
+);}
 
 export default HomePage;

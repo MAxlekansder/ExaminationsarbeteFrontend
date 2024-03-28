@@ -10,12 +10,12 @@ interface DishProps {
   name: string;
   image: string;
   recipe?: string;
-  ingredients: string[];
+  ingredients?: string[];
   description?: string;
   onClick: () => void;
 }
 
-const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, description }) => {
+const DishComponent = ({ id, name, image, ingredients, description }: DishProps) => {
   const { dishId } = useParams<{ dishId: string }>(); //Fetching dishId from URL
   
   const [rating, setRating] = useState<number | null>(null);
@@ -47,7 +47,7 @@ const DishComponent: React.FC<DishProps> = ({ id, name, image, ingredients, desc
     <div className='card-fade-in '>
       <div className="">
       
-        <Link to={`/dishes/${id}`}>
+        <Link to={`/test/${id}`}>
           <img
             src={image}
             alt={name}
