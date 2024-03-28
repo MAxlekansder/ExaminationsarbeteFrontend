@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import useRecipeState from "../../../State/indexState";
 import { Recipe } from "../../../data/Recipes";
 import Modal from "./Modal";
+import RecipeRating from "../../SearchRecipe/RecipeRating.tsx";
 
 
 function DetailedTestComponent() {
@@ -39,6 +40,7 @@ function DetailedTestComponent() {
   return (
     <div>
         <h1>hej</h1>
+
         <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
             Change Recipe</button>
         <Modal
@@ -56,6 +58,9 @@ function DetailedTestComponent() {
             <img src={detailedRecipe.imageUrl} alt="" />
             {detailedRecipe.title}  
             {detailedRecipe.description}
+            <RecipeRating dishId={""} rating={null} setRating={function (rating: number): void {
+                throw new Error("Function not implemented.");
+            }} />
         </div>
       
     </div>
