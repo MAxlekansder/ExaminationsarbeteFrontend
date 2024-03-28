@@ -12,10 +12,9 @@ const WeeklyTips: React.FC = () => {
 
   const FilterRecipes = (category: string) => {
 
-    setFilteredRecipes(recipes.filter((recipe) => recipe.categories.includes(category)))
+    setFilteredRecipes(recipes.filter((recipe) => recipe.categories.includes(category)).slice(0, 3));
     return filteredRecipes;
   };
-
 
   useEffect(() => {
     if (recipes.length === 0) {
@@ -41,14 +40,14 @@ const WeeklyTips: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-4 p-4">
-        {filteredRecipes && filteredRecipes.map((recipe, index) => (
+        {filteredRecipes.map((recipe, index) => (
           <div key={index} className="w-60">
             <h2 className="text-lg font-bold">{recipe.title}</h2>
-            <div className="h-48 w-full overflow-hidden rounded-lg"> {/* Container with fixed height */}
+            <div className="h-48 w-full overflow-hidden rounded-lg">
               <img
                 src={recipe.imageUrl}
                 alt={recipe.title}
-                className="w-full h-full object-cover" // object-cover ensures the image covers the space, maintaining aspect ratio
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -58,6 +57,5 @@ const WeeklyTips: React.FC = () => {
     </div >
   );
 };
-{/* Lägg till mer information eller komponenter som du behöver */ }
 
 export default WeeklyTips;
