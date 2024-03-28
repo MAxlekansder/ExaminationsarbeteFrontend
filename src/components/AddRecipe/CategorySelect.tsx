@@ -73,7 +73,6 @@ const mealOptions = [
 interface CategorySelectProps {
   selectedCategories: string[];
   onChange: (selectedCategories: string[]) => void;
-  // availalbeCategories: string [];
 }
 
 const customStyle: StylesConfig = {

@@ -131,7 +131,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 onChange={handleUserInput}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
-              <br />
+            
               <input
                 id="timesInMins"
                 type="number"

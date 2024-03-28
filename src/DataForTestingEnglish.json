@@ -611,7 +611,29 @@
       { "name": "Granola", "amount": "1/2", "unit": "cup" },
       { "name": "Fresh berries (strawberries, blueberries, raspberries)", "amount": "As desired", "unit": "" }
     ]
+  },
+  {
+    "title": "Refreshing Berry Smoothie",
+    "description": "A delicious and nutritious berry smoothie packed with vitamins and antioxidants.",
+    "ratings": 5,
+    "imageUrl": "https://example.com/berry-smoothie.jpg",
+    "timeInMins": 10,
+    "categories": ["Smoothie", "Healthy", "Breakfast", "Snack"],
+    "instructions": [
+      "Add frozen mixed berries, banana, spinach, yogurt, and almond milk to a blender.",
+      "Blend until smooth and creamy.",
+      "Pour into glasses and serve immediately.",
+      "Enjoy your refreshing berry smoothie!"
+    ],
+    "ingredients": [
+      { "name": "Frozen mixed berries", "amount": 1, "unit": "cup" },
+      { "name": "Banana", "amount": 1, "unit": "medium" },
+      { "name": "Fresh spinach", "amount": 1, "unit": "cup" },
+      { "name": "Greek yogurt", "amount": 0.5, "unit": "cup" },
+      { "name": "Almond milk", "amount": 1, "unit": "cup" }
+    ]
   }
+  
   
   
 ]
