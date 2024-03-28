@@ -64,7 +64,7 @@ function InstructionList({
                 id="button"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 border border-blue-700 rounded"
               >
-                Lägg till
+                ADD
               </button>
 
               {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
@@ -76,7 +76,7 @@ function InstructionList({
                 <thead>
                   <tr>
                     <th className="border px-1 py-1 bg-slate-400 text-white">
-                      Instruction
+                      INSTRUCTIONS
                     </th>
                   </tr>
                 </thead>
@@ -94,7 +94,7 @@ function InstructionList({
                             onClick={() => handleRemoveInstruction(index)}
                             className="bg-red-400 hover:bg-red-500 text-white font-bold py-1 px-2 border border-red-500 rounded text-sm"
                           >
-                            Ta bort
+                            REMOVE
                           </button>
                         </div>
                       </td>

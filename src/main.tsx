@@ -4,7 +4,7 @@ import App from './App.tsx'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './Styling/index.css'
 import HandleRequests from './components/AddRecipe/HandleRequest.tsx';
-import Home from "./Views/Home/Home.tsx";
+import Home from "./components/HomeRecipes/Home.tsx";
 import PresentCocktails from './components/Cocktails/Cocktails.tsx';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail.tsx';
 import Test from './components/AddRecipe/Modal/TestPage.tsx';
