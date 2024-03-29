@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import NavBarComponent from "../NavBarComponent.tsx";
 import { StaticCategories } from "../../data/StaticCategories.ts";
 
-
 const Home = () => {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
   const recipe = useRecipeState((state) => state.recipes);
@@ -18,8 +17,6 @@ const Home = () => {
   const FilterHandler = (category: string) => {
     return recipe.filter((recipe) => recipe.categories.includes(category));
   };
-
- 
 
   return (
     <div>
@@ -39,7 +36,7 @@ const Home = () => {
           />
         </div>
       </div>
-      <h2 className="text-xl pl-10">
+      <h2 className="text-xl pl-20">
         Something spicy for <b>dinner</b>?
       </h2>
       <div
@@ -95,7 +92,7 @@ const Home = () => {
           <p className="pl-10">best rated on google 5, two years in a row</p>
         </div>
       </div>
-      <h2 className="text-xl pl-12 pt-10">
+      <h2 className="text-xl pl-20 pt-10 ">
         Something <b>sweet</b> while waiting for your clothes?
       </h2>
       <div
@@ -140,18 +137,41 @@ const Home = () => {
       <div className="flex justify-center">
         <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
       </div>
-      <h1 className="text-3xl font-bold pl-10">Categories</h1>
-      {/* <div>
+      <h1 className="text-3xl font-bold pl-10">
+        Explore our categories
+      </h1>
+      <div className="grid grid-cols-4 gap-2 p-10">
         {StaticCategories.map((category) => (
-          <div key={category.name}>
-            <div>
-              <img src={category.imageUrl} alt="" />
-              {category.name}
-              </div>
+          <div
+            key={category.name}
+            className="max-w-sm rounded overflow-hidden shadow-lg"
+          >
+            <img
+              className="w-full h-56 object-cover"
+              src={category.imageUrl}
+              alt={category.name}
+              onClick={() => console.log(category.name)}
+            />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">{category.name}</div>
+              <p className="text-gray-700 text-base">{category.description}</p>
+            </div>
           </div>
         ))}
-      </div> */}
-       <h2 className="text-xl pl-12 pt-10">
+      </div>
+      <div className="pl-12 pt-2 pb-5">
+        ... and so many{" "}
+        <b
+          className="cursor-pointer hover"
+          onClick={() => console.log("Clicked!")}
+        >
+          more
+        </b>
+      </div>
+      <div className="flex justify-center">
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
+      <h2 className="text-xl pl-12">
         <b>Vegetarian</b> dishes - a more green choice!
       </h2>
       <div
@@ -197,7 +217,6 @@ const Home = () => {
         <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
       </div>
     </div>
-
   );
 };
 export default Home;

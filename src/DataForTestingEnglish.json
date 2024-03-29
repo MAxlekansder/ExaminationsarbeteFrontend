@@ -100,7 +100,7 @@
     "ratings": 5,
     "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d22c924a-1b57-41f8-b325-2499c029e76f?fit=crop&h=613&w=1000&s=32cae29106972a1038ec31745de85554c1dd5e5a",
     "timeInMins": 45,
-    "categories": ["Dinner", "Italian"],
+    "categories": ["Dinner", "Italian", "Meat"],
     "instructions": [
       "Fry onion and garlic",
       "Add minced meat and tomato sauce",
@@ -552,22 +552,27 @@
     "timeInMins": 30,
     "categories": ["Dinner", "Italian", "Pork"],
     "instructions": [
-        "Cook the pasta al dente according to the package instructions.",
-        "Fry the bacon until crispy and golden brown. Drain on paper towels and then chop into pieces.",
-        "Whisk together egg yolks, grated parmesan cheese, salt, and pepper in a bowl.",
-        "Drain the pasta and toss the hot pasta with the egg and cheese mixture until evenly coated.",
-        "Add the fried bacon and gently toss. Serve immediately and garnish with freshly grated parmesan cheese and black pepper."
+      "Cook the pasta al dente according to the package instructions.",
+      "Fry the bacon until crispy and golden brown. Drain on paper towels and then chop into pieces.",
+      "Whisk together egg yolks, grated parmesan cheese, salt, and pepper in a bowl.",
+      "Drain the pasta and toss the hot pasta with the egg and cheese mixture until evenly coated.",
+      "Add the fried bacon and gently toss. Serve immediately and garnish with freshly grated parmesan cheese and black pepper."
     ],
     "ingredients": [
-        { "name": "Spaghetti or linguine", "amount": 250, "unit": "g" },
-        { "name": "Bacon", "amount": 100, "unit": "g" },
-        { "name": "Egg yolks", "amount": 3, "unit": "pieces" },
-        { "name": "Parmesan cheese", "amount": 50, "unit": "g", "description": "plus extra for serving" },
-        { "name": "Salt", "amount": "to taste", "unit": "" },
-        { "name": "Black pepper", "amount": "to taste", "unit": "" }
+      { "name": "Spaghetti or linguine", "amount": 250, "unit": "g" },
+      { "name": "Bacon", "amount": 100, "unit": "g" },
+      { "name": "Egg yolks", "amount": 3, "unit": "pieces" },
+      {
+        "name": "Parmesan cheese",
+        "amount": 50,
+        "unit": "g",
+        "description": "plus extra for serving"
+      },
+      { "name": "Salt", "amount": "to taste", "unit": "" },
+      { "name": "Black pepper", "amount": "to taste", "unit": "" }
     ]
-},
-{
+  },
+  {
     "title": "Vegetarian Omelette",
     "description": "Delicious omelette filled with mushrooms, tomatoes, and cheese",
     "ratings": 4,
@@ -609,7 +614,11 @@
     "ingredients": [
       { "name": "Greek yogurt", "amount": 1, "unit": "cup" },
       { "name": "Granola", "amount": "1/2", "unit": "cup" },
-      { "name": "Fresh berries (strawberries, blueberries, raspberries)", "amount": "As desired", "unit": "" }
+      {
+        "name": "Fresh berries (strawberries, blueberries, raspberries)",
+        "amount": "As desired",
+        "unit": ""
+      }
     ]
   },
   {
@@ -662,7 +671,12 @@
       { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Pepper", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Lemon juice", "amount": 2, "unit": "tablespoons" },
-      { "name": "Fresh parsley", "amount": 2, "unit": "tablespoons", "preparation": "chopped" }
+      {
+        "name": "Fresh parsley",
+        "amount": 2,
+        "unit": "tablespoons",
+        "preparation": "chopped"
+      }
     ]
   },
   {
@@ -679,16 +693,50 @@
       "Season with salt, pepper, and herbs. Serve hot or cold."
     ],
     "ingredients": [
-      { "name": "Tomatoes", "amount": 4, "unit": "medium", "preparation": "diced" },
-      { "name": "Eggplant", "amount": 1, "unit": "large", "preparation": "diced" },
-      { "name": "Zucchini", "amount": 2, "unit": "medium", "preparation": "diced" },
-      { "name": "Bell peppers", "amount": 2, "unit": "medium", "preparation": "chopped" },
-      { "name": "Onion", "amount": 1, "unit": "large", "preparation": "chopped" },
-      { "name": "Garlic cloves", "amount": 2, "unit": "cloves", "preparation": "minced" },
+      {
+        "name": "Tomatoes",
+        "amount": 4,
+        "unit": "medium",
+        "preparation": "diced"
+      },
+      {
+        "name": "Eggplant",
+        "amount": 1,
+        "unit": "large",
+        "preparation": "diced"
+      },
+      {
+        "name": "Zucchini",
+        "amount": 2,
+        "unit": "medium",
+        "preparation": "diced"
+      },
+      {
+        "name": "Bell peppers",
+        "amount": 2,
+        "unit": "medium",
+        "preparation": "chopped"
+      },
+      {
+        "name": "Onion",
+        "amount": 1,
+        "unit": "large",
+        "preparation": "chopped"
+      },
+      {
+        "name": "Garlic cloves",
+        "amount": 2,
+        "unit": "cloves",
+        "preparation": "minced"
+      },
       { "name": "Olive oil", "amount": 2, "unit": "tablespoons" },
       { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Pepper", "amount": 0.5, "unit": "teaspoon" },
-      { "name": "Herbs (such as thyme, basil, parsley)", "amount": "to taste", "preparation": "chopped" }
+      {
+        "name": "Herbs (such as thyme, basil, parsley)",
+        "amount": "to taste",
+        "preparation": "chopped"
+      }
     ]
   },
   {
@@ -708,10 +756,18 @@
       { "name": "White fish fillets", "amount": 4, "unit": "fillets" },
       { "name": "Coconut milk", "amount": 1, "unit": "can" },
       { "name": "Thai curry paste", "amount": "2", "unit": "tablespoon" },
-      { "name": "Mixed vegetables (such as bell peppers, zucchini, and carrots)", "amount": "2", "unit": "cups"},
+      {
+        "name": "Mixed vegetables (such as bell peppers, zucchini, and carrots)",
+        "amount": "2",
+        "unit": "cups"
+      },
       { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
-      { "name": "Fresh herbs (such as cilantro and Thai basil)", "amount": 1, "unit": "pot"},
-      { "name": "Steamed rice", "amount": 2, "unit":"cups" }
+      {
+        "name": "Fresh herbs (such as cilantro and Thai basil)",
+        "amount": 1,
+        "unit": "pot"
+      },
+      { "name": "Steamed rice", "amount": 2, "unit": "cups" }
     ]
   },
   {
@@ -731,11 +787,25 @@
       { "name": "Salmon fillets", "amount": 4, "unit": "fillets" },
       { "name": "Olive oil", "amount": 0.5, "unit": "cup" },
       { "name": "Lemon juice", "amount": 2, "unit": "tablespoons" },
-      { "name": "Fresh dill", "amount": 2, "unit": "tablespoons", "preparation": "chopped" },
-      { "name": "Garlic cloves", "amount": 2, "unit": "cloves", "preparation": "minced" },
+      {
+        "name": "Fresh dill",
+        "amount": 2,
+        "unit": "tablespoons",
+        "preparation": "chopped"
+      },
+      {
+        "name": "Garlic cloves",
+        "amount": 2,
+        "unit": "cloves",
+        "preparation": "minced"
+      },
       { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Pepper", "amount": 0.5, "unit": "teaspoon" },
-      { "name": "Roasted vegetables or boiled potatoes", "amount": 1 , "unit": "kg" }
+      {
+        "name": "Roasted vegetables or boiled potatoes",
+        "amount": 1,
+        "unit": "kg"
+      }
     ]
   },
   {
@@ -754,7 +824,11 @@
     "ingredients": [
       { "name": "White fish fillets", "amount": 4, "unit": "fillets" },
       { "name": "All-purpose flour", "amount": 1, "unit": "cup" },
-      { "name": "Mexican spices (such as chili powder, cumin, and paprika)", "amount": 0.5, "unit": "cups" },
+      {
+        "name": "Mexican spices (such as chili powder, cumin, and paprika)",
+        "amount": 0.5,
+        "unit": "cups"
+      },
       { "name": "Corn tortillas", "amount": "8", "unit": "tortillas" },
       { "name": "Shredded cabbage", "amount": "1", "unit": "cup" },
       { "name": "Fresh salsa", "amount": "1", "unit": "cup" },
@@ -783,8 +857,18 @@
       { "name": "Soy sauce", "amount": 0.5, "unit": "cup" },
       { "name": "Mirin", "amount": 0.5, "unit": "cup" },
       { "name": "Brown sugar", "amount": 2, "unit": "tablespoons" },
-      { "name": "Garlic", "amount": 2, "unit": "cloves", "preparation": "minced" },
-      { "name": "Ginger", "amount": 1, "unit": "teaspoon", "preparation": "minced" },
+      {
+        "name": "Garlic",
+        "amount": 2,
+        "unit": "cloves",
+        "preparation": "minced"
+      },
+      {
+        "name": "Ginger",
+        "amount": 1,
+        "unit": "teaspoon",
+        "preparation": "minced"
+      },
       { "name": "Vegetable oil", "amount": 1, "unit": "tablespoons" },
       { "name": "Steamed rice", "amount": 2, "unit": "cups" },
       { "name": "Steamed vegetables", "amount": 1, "unit": "kg" },
@@ -798,7 +882,7 @@
     "ratings": 4,
     "imageUrl": "https://www.simplejoy.com/wp-content/uploads/2020/07/Chicken-wrap.jpg",
     "timeInMins": 20,
-    "categories": ["Chicken", "Lunch"],
+    "categories": ["Poultry", "Lunch"],
     "instructions": [
       "Grill chicken breasts until fully cooked.",
       "Slice grilled chicken into strips.",
@@ -833,11 +917,11 @@
     "ingredients": [
       { "name": "Quinoa", "amount": 1, "unit": "cup" },
       { "name": "Chickpeas", "amount": 1, "unit": "can" },
-      { "name": "Assorted vegetables", "amount": 1, "unit": "cup"},
+      { "name": "Assorted vegetables", "amount": 1, "unit": "cup" },
       { "name": "Fresh parsley", "amount": 0.5, "unit": "cup" },
       { "name": "Olive oil", "amount": 2, "unit": "tablespoons" },
       { "name": "Lemon juice", "amount": 1, "unit": "tablespoon" },
-      { "name": "Garlic", "amount": 1, "unit": "clove"},
+      { "name": "Garlic", "amount": 1, "unit": "clove" },
       { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Black pepper", "amount": 0.2, "unit": "teaspoon" }
     ]
@@ -850,93 +934,209 @@
     "timeInMins": 30,
     "categories": ["Thai", "Dinner", "Meat", "Seafood", "Tofu"],
     "instructions": [
-        "Soak the rice noodles in warm water until they are pliable but still slightly firm. Drain and set aside.",
-        "Heat oil in a wok or large skillet over medium-high heat. Add minced garlic and diced tofu, stirring until tofu is golden brown.",
-        "Push the tofu to one side of the pan and crack eggs into the other side. Scramble the eggs until they are cooked, then mix them with the tofu.",
-        "Add the soaked rice noodles to the pan, along with",
-        "Add the prepared sauce to the pan, stirring well to coat the noodles and tofu evenly. Cook until the noodles are tender and the sauce has thickened.",
-        "Serve hot, garnished with crushed peanuts, lime wedges, and fresh herbs."
+      "Soak the rice noodles in warm water until they are pliable but still slightly firm. Drain and set aside.",
+      "Heat oil in a wok or large skillet over medium-high heat. Add minced garlic and diced tofu, stirring until tofu is golden brown.",
+      "Push the tofu to one side of the pan and crack eggs into the other side. Scramble the eggs until they are cooked, then mix them with the tofu.",
+      "Add the soaked rice noodles to the pan, along with",
+      "Add the prepared sauce to the pan, stirring well to coat the noodles and tofu evenly. Cook until the noodles are tender and the sauce has thickened.",
+      "Serve hot, garnished with crushed peanuts, lime wedges, and fresh herbs."
     ],
     "ingredients": [
-        { "name": "Rice noodles", "amount": 200, "unit": "grams" },
-        { "name": "Tofu", "amount": 200, "unit": "grams" },
-        { "name": "Garlic", "amount": 2, "unit": "cloves" },
-        { "name": "Eggs", "amount": 2, "unti": "piece" },
-        { "name": "Oil", "amount": 2, "unit": "tablespoons" },
-        { "name": "Tamarind paste", "amount": 2, "unit": "tablespoons" },
-        { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
-        { "name": "Sugar", "amount": 2, "unit": "tablespoons" },
-        { "name": "Crushed peanuts", "amount": 0.5, "unit": "cup" },
-        { "name": "Lime wedges", "amount": "2" },
-        { "name": "Fresh herbs (such as cilantro and Thai basil)", "amount": "1", "unit": "handful" }
+      { "name": "Rice noodles", "amount": 200, "unit": "grams" },
+      { "name": "Tofu", "amount": 200, "unit": "grams" },
+      { "name": "Garlic", "amount": 2, "unit": "cloves" },
+      { "name": "Eggs", "amount": 2, "unti": "piece" },
+      { "name": "Oil", "amount": 2, "unit": "tablespoons" },
+      { "name": "Tamarind paste", "amount": 2, "unit": "tablespoons" },
+      { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
+      { "name": "Sugar", "amount": 2, "unit": "tablespoons" },
+      { "name": "Crushed peanuts", "amount": 0.5, "unit": "cup" },
+      { "name": "Lime wedges", "amount": "2" },
+      {
+        "name": "Fresh herbs (such as cilantro and Thai basil)",
+        "amount": "1",
+        "unit": "handful"
+      }
     ]
-},
-{
-  "title": "Tom Yum Soup",
-  "description": "A spicy and sour Thai soup flavored with lemongrass, kaffir lime leaves, and galangal.",
-  "ratings": 5,
-  "imageUrl": "https://www.eatingthaifood.com/wp-content/uploads/2014/06/thai-food-pictures-1.jpg",
-  "timeInMins": 25,
-  "categories": ["Thai", "Soup"],
-  "instructions": [
-    "Bring chicken or vegetable broth to a boil in a pot.",
-    "Add lemongrass, galangal, and kaffir lime leaves to the broth and simmer for 5 minutes.",
-    "Add mushrooms, cherry tomatoes, and your choice of protein (shrimp, chicken, or tofu).",
-    "Season with fish sauce, lime juice, sugar, and chili paste, according to taste.",
-    "Garnish with fresh cilantro and serve hot."
-  ],
-  "ingredients": [
-    {"name": "Chicken or vegetable broth", "amount": 4, "unit": "cups"},
-    {"name": "Lemongrass stalks", "amount": 2, "unit": "stalks"},
-    {"name": "Galangal", "amount": "2", "unit": "slices"},
-    {"name": "Kaffir lime leaves", "amount": 4, "unit": "leaves"},
-    {"name": "Mushrooms", "amount": "1", "unit": "cup"},
-    {"name": "Cherry tomatoes", "amount": "1/2", "unit": "cup"},
-    {"name": "Protein (shrimp, chicken, or tofu)", "amount": "1/2", "unit": "cup"},
-    {"name": "Fish sauce", "amount": 2, "unit": "tablespoons"},
-    {"name": "Lime juice", "amount": "2", "unit": "tablespoons"},
-    {"name": "Sugar", "amount": "1", "unit": "teaspoon"},
-    {"name": "Chili paste", "amount": "1/2", "unit": "teaspoon"},
-    {"name": "Fresh cilantro", "amount": "1/4", "unit": "cup"}
-  ]
-},
-{
-  "title": "Green Curry Chicken",
-  "description": "A classic Thai curry made with green curry paste, coconut milk, and chicken.",
-  "ratings": 5,
-  "imageUrl": "https://i0.wp.com/www.valerieskeepers.com/wp-content/uploads/2017/01/green-curry-chicken-6-1-sur-1.jpg?resize=5184%2C3456&ssl=1",
-  "timeInMins": 40,
-  "categories": ["Thai", "Dinner", "Poultry", "Lunch"],
-  "instructions": [
-    "Heat green curry paste in a pan until fragrant.",
-    "Add coconut milk and bring to a simmer.",
-    "Add sliced chicken breast and simmer until cooked through.",
-    "Add sliced bamboo shoots, bell peppers, and Thai eggplant.",
-    "Season with fish sauce, sugar, and kaffir lime leaves.",
-    "Serve hot with steamed rice."
-  ],
-  "ingredients": [
-    {"name": "Green curry paste", "amount": 2, "unit": "tablespoons"},
-    {"name": "Coconut milk", "amount": 2, "unit": "cups"},
-    {"name": "Chicken breast", "amount": 2, "unit": "pieces"},
-    {"name": "Bamboo shoots", "amount": 0.5, "unit": "cup"},
-    {"name": "Bell peppers", "amount": 1, "unit": "piece"},
-    {"name": "Thai eggplant", "amount": 4, "unit": "pieces"},
-    {"name": "Fish sauce", "amount": 2, "unit": "tablespoons"},
-    {"name": "Sugar", "amount": 1, "unit": "teaspoon"},
-    {"name": "Kaffir lime leaves", "amount": 4, "unit": "leaves"},
-    {"name": "Steamed rice", "amount": 2, "unit": "cups"}
-  ]
-}
-
-
-
-  
-  
-  
-  
-  
-  
-  
+  },
+  {
+    "title": "Tom Yum Soup",
+    "description": "A spicy and sour Thai soup flavored with lemongrass, kaffir lime leaves, and galangal.",
+    "ratings": 5,
+    "imageUrl": "https://www.eatingthaifood.com/wp-content/uploads/2014/06/thai-food-pictures-1.jpg",
+    "timeInMins": 25,
+    "categories": ["Thai", "Soup", "Poultry", "Meat", "Seafood"],
+    "instructions": [
+      "Bring chicken or vegetable broth to a boil in a pot.",
+      "Add lemongrass, galangal, and kaffir lime leaves to the broth and simmer for 5 minutes.",
+      "Add mushrooms, cherry tomatoes, and your choice of protein (shrimp, chicken, or tofu).",
+      "Season with fish sauce, lime juice, sugar, and chili paste, according to taste.",
+      "Garnish with fresh cilantro and serve hot."
+    ],
+    "ingredients": [
+      { "name": "Chicken or vegetable broth", "amount": 4, "unit": "cups" },
+      { "name": "Lemongrass stalks", "amount": 2, "unit": "stalks" },
+      { "name": "Galangal", "amount": "2", "unit": "slices" },
+      { "name": "Kaffir lime leaves", "amount": 4, "unit": "leaves" },
+      { "name": "Mushrooms", "amount": "1", "unit": "cup" },
+      { "name": "Cherry tomatoes", "amount": "1/2", "unit": "cup" },
+      {
+        "name": "Protein (shrimp, chicken, or tofu)",
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
+      { "name": "Lime juice", "amount": "2", "unit": "tablespoons" },
+      { "name": "Sugar", "amount": "1", "unit": "teaspoon" },
+      { "name": "Chili paste", "amount": "1/2", "unit": "teaspoon" },
+      { "name": "Fresh cilantro", "amount": "1/4", "unit": "cup" }
+    ]
+  },
+  {
+    "title": "Green Curry Chicken",
+    "description": "A classic Thai curry made with green curry paste, coconut milk, and chicken.",
+    "ratings": 5,
+    "imageUrl": "https://i0.wp.com/www.valerieskeepers.com/wp-content/uploads/2017/01/green-curry-chicken-6-1-sur-1.jpg?resize=5184%2C3456&ssl=1",
+    "timeInMins": 40,
+    "categories": ["Thai", "Dinner", "Poultry", "Lunch"],
+    "instructions": [
+      "Heat green curry paste in a pan until fragrant.",
+      "Add coconut milk and bring to a simmer.",
+      "Add sliced chicken breast and simmer until cooked through.",
+      "Add sliced bamboo shoots, bell peppers, and Thai eggplant.",
+      "Season with fish sauce, sugar, and kaffir lime leaves.",
+      "Serve hot with steamed rice."
+    ],
+    "ingredients": [
+      { "name": "Green curry paste", "amount": 2, "unit": "tablespoons" },
+      { "name": "Coconut milk", "amount": 2, "unit": "cups" },
+      { "name": "Chicken breast", "amount": 2, "unit": "pieces" },
+      { "name": "Bamboo shoots", "amount": 0.5, "unit": "cup" },
+      { "name": "Bell peppers", "amount": 1, "unit": "piece" },
+      { "name": "Thai eggplant", "amount": 4, "unit": "pieces" },
+      { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
+      { "name": "Sugar", "amount": 1, "unit": "teaspoon" },
+      { "name": "Kaffir lime leaves", "amount": 4, "unit": "leaves" },
+      { "name": "Steamed rice", "amount": 2, "unit": "cups" }
+    ]
+  },
+  {
+    "title": "Grilled Salmon",
+    "description": "Juicy and tender grilled salmon fillets seasoned with herbs and spices, perfect for a healthy and flavorful dinner.",
+    "ratings": 4,
+    "imageUrl": "https://diethood.com/wp-content/uploads/2022/02/lemon-butter-grilled-salmon-8.jpg",
+    "timeInMins": 20,
+    "categories": ["Fish", "Dinner", "Scandinavian"],
+    "instructions": [
+      "Preheat the grill to medium-high heat.",
+      "Season salmon fillets with salt, pepper, and your choice of herbs or spices.",
+      "Grill salmon fillets skin-side down for 4-5 minutes.",
+      "Carefully flip the fillets and grill for an additional 4-5 minutes or until cooked through.",
+      "Serve grilled salmon with lemon wedges and your favorite side dishes."
+    ],
+    "ingredients": [
+      { "name": "Salmon fillets", "amount": 4, "unit": "pieces" },
+      { "name": "Salt", "amount": null, "unit": "to taste" },
+      { "name": "Black pepper", "amount": null, "unit": "to taste" },
+      { "name": "Herbs or spices", "amount": null, "unit": "to taste" },
+      { "name": "Lemon wedges", "amount": null, "unit": "for serving" }
+    ]
+  },
+    {
+      "title": "Thai Basil Chicken Stir-Fry",
+      "description": "A flavorful and aromatic stir-fry dish featuring tender chicken, fresh basil, and Thai spices.",
+      "ratings": 4,
+      "imageUrl": "https://thewoksoflife.com/wp-content/uploads/2016/06/thai-basil-chicken-8.jpg",
+      "timeInMins": 30,
+      "categories": ["Thai", "Dinner", "Poultry"],
+      "instructions": [
+        "Heat oil in a wok or large skillet over high heat.",
+        "Add minced garlic and sliced chicken breast, stir-frying until chicken is cooked through.",
+        "Add chopped bell peppers, onions, and Thai basil leaves to the wok, stirring constantly.",
+        "Pour in a mixture of soy sauce, fish sauce, oyster sauce, and sugar.",
+        "Continue stir-frying until the vegetables are tender and the sauce has thickened.",
+        "Serve hot with steamed rice."
+      ],
+      "ingredients": [
+        { "name": "Chicken breast", "amount": 2, "unit": "pieces" },
+        { "name": "Garlic", "amount": 3, "unit": "cloves", "preparation": "minced" },
+        { "name": "Bell peppers", "amount": 1, "unit": "piece", "preparation": "chopped" },
+        { "name": "Onion", "amount": 1, "unit": "medium", "preparation": "chopped" },
+        { "name": "Thai basil leaves", "amount": 1, "unit": "cup", "preparation": "chopped" },
+        { "name": "Soy sauce", "amount": 2, "unit": "tablespoons" },
+        { "name": "Fish sauce", "amount": 1, "unit": "tablespoon" },
+        { "name": "Oyster sauce", "amount": 1, "unit": "tablespoon" },
+        { "name": "Sugar", "amount": 1, "unit": "teaspoon" },
+        { "name": "Oil", "amount": 2, "unit": "tablespoons" },
+        { "name": "Steamed rice", "amount": 2, "unit": "cups" }
+      ]
+    },
+    {
+      "title": "Italian Beef Lasagna",
+      "description": "A classic Italian pasta dish made with layers of lasagna noodles, savory beef sauce, and creamy cheese filling.",
+      "ratings": 5,
+      "imageUrl": "https://thelemonapron.com/wp-content/uploads/2017/01/Photo-2017-01-15-1-37-16-PM-e1485442231918.jpg",
+      "timeInMins": 60,
+      "categories": ["Meat", "Italian", "Dinner"],
+      "instructions": [
+        "Preheat the oven to 375°F (190°C).",
+        "Cook lasagna noodles according to package instructions until al dente. Drain and set aside.",
+        "In a large skillet, cook ground beef with diced onions and minced garlic until browned.",
+        "Add crushed tomatoes, tomato paste, Italian seasoning, salt, and pepper to the skillet. Simmer for 10-15 minutes.",
+        "In a separate bowl, mix together ricotta cheese, egg, grated Parmesan cheese, and chopped parsley.",
+        "Spread a layer of meat sauce on the bottom of a baking dish. Arrange a layer of cooked lasagna noodles on top.",
+        "Spread a layer of ricotta cheese mixture over the noodles, then add another layer of meat sauce. Repeat the layers.",
+        "Top the lasagna with shredded mozzarella cheese.",
+        "Cover the baking dish with aluminum foil and bake for 30 minutes. Remove the foil and bake for an additional 15 minutes or until bubbly and golden brown.",
+        "Let the lasagna cool for a few minutes before serving."
+      ],
+      "ingredients": [
+        { "name": "Lasagna noodles", "amount": 4, "unit": "kg" },
+        { "name": "Ground beef", "amount": 1, "unit": "kg" },
+        { "name": "Onion", "amount": 1, "unit": "medium"},
+        { "name": "Garlic", "amount": 3, "unit": "cloves"},
+        { "name": "Crushed tomatoes", "amount": 2, "unit": "kg" },
+        { "name": "Tomato paste", "amount": 2, "unit": "tablespoons" },
+        { "name": "Italian seasoning", "amount": 2, "unit": "teaspoons" },
+        { "name": "Salt", "amount": 1, "unit": "teaspoon" },
+        { "name": "Black pepper", "amount": 0.5, "unit": "teaspoon" },
+        { "name": "Ricotta cheese", "amount": 1, "unit": "kg" },
+        { "name": "Egg", "amount": 1, "unit": "piece" },
+        { "name": "Parmesan cheese", "amount": 0.5, "unit": "cup" },
+        { "name": "Fresh parsley", "amount": 0.25, "unit": "cup" },
+        { "name": "Mozzarella cheese", "amount": 2, "unit": "cups" }
+      ]
+    },
+    {
+      "title": "Scandinavian Meatballs",
+      "description": "Tender and flavorful meatballs made with a blend of ground meats and served with creamy lingonberry sauce.",
+      "ratings": 4,
+      "imageUrl": "https://www.skinnytaste.com/wp-content/uploads/2011/05/Swedish-Meatballs-5.jpg",
+      "timeInMins": 45,
+      "categories": ["Meat", "Scandinavian", "Dinner"],
+      "instructions": [
+        "In a large bowl, mix together ground beef, ground pork, breadcrumbs, minced onion, egg, salt, pepper, and allspice until well combined.",
+        "Shape the meat mixture into small meatballs, about 1 inch in diameter.",
+        "Heat oil in a large skillet over medium-high heat. Add the meatballs and brown on all sides.",
+        "Reduce the heat to medium and continue cooking until the meatballs are cooked through.",
+        "In a separate saucepan, heat lingonberry jam or lingonberry sauce until warmed through.",
+        "Serve the meatballs hot with lingonberry sauce and mashed potatoes or lingonberry sauce.",
+        "Garnish with chopped parsley, if desired."
+      ],
+      "ingredients": [
+        { "name": "Ground beef", "amount": 0.5, "unit": "kg" },
+        { "name": "Ground pork", "amount": 0.5, "unit": "kg" },
+        { "name": "Breadcrumbs", "amount": 0.5, "unit": "cup" },
+        { "name": "Onion", "amount": 1, "unit": "small" },
+        { "name": "Egg", "amount": 1, "unit": "piece" },
+        { "name": "Salt", "amount": 1, "unit": "teaspoon" },
+        { "name": "Black pepper", "amount": 0.5, "unit": "teaspoon" },
+        { "name": "Allspice", "amount": 0.5, "unit": "teaspoon" },
+        { "name": "Oil", "amount": 2, "unit": "tablespoons" },
+        { "name": "Lingonberry jam or sauce", "amount": "1/2", "unit": "cup" },
+        { "name": "Mashed potatoes", "amount": null, "unit": "for serving" },
+        { "name": "Fresh parsley", "amount": "1", "unit": "tablespoon" }
+      ]
+    }
   
 ]
