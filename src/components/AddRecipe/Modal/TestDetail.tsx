@@ -8,22 +8,47 @@ import Modal from "./Modal";
 import RecipeRating from "../../SearchRecipe/RecipeRating.tsx";
 
 
+
+
 function DetailedTestComponent() {
-  const { id } = useParams<{ id: string }>(); 
+  const { id } = useParams<{ id: string }>();
+ 
+  
   const fetchSpecificRecipe = useRecipeState((state) => state.fetchSpecificRecipe);
   const detailedRecipe = useRecipeState((state) => state.detailedRecipe as Recipe)
   const deleteRecipe = useRecipeState((state) => state.deleteRecipe)
+  const fetchAllDrinks = useRecipeState((state) => state.fetchAllDrinks)
+  const allDrinks = useRecipeState((state) => state.allDrinks);
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
+  const [randomCocktail, setRandomCocktail] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  
   useEffect(() => {
     if (id) {
-        fetchSpecificRecipe(id); 
+        fetchSpecificRecipe(id);
         console.log(id);
     }
+  
   }, [fetchSpecificRecipe, id]);
+  
+  useEffect(()=>{
+    const getRandomCocktail = () =>{
+      if(allDrinks.length > 0){
+        const randomIndex = Math.floor(Math.random() * allDrinks.length)
+        const cocktail = allDrinks[randomIndex];
+
+        setRandomCocktail(cocktail);
+        setIsLoading(false);
+      }
+
+    }
+    fetchAllDrinks(); 
+    getRandomCocktail();
+
+  }, [fetchAllDrinks,allDrinks])
 
   const openModal = (recipeId: string) => {
     setselectedRecipeId(recipeId);
@@ -34,6 +59,10 @@ function DetailedTestComponent() {
   const closeModal = () => {
     setIsModalOpe(false);
   };
+
+
+
+
 
 
 
@@ -61,7 +90,22 @@ function DetailedTestComponent() {
             <RecipeRating dishId={""} rating={null} setRating={function (rating: number): void {
                 throw new Error("Function not implemented.");
             }} />
+            
         </div>
+
+        <div>
+        <h1>Cocktail We suggest</h1>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : randomCocktail ? (
+        <div>
+          <h2>{randomCocktail.strDrink}</h2>
+          <img src={randomCocktail.strDrinkThumb} alt={randomCocktail.strDrink} />
+          <p>ID: {randomCocktail.idDrink}</p>
+        </div>
+      ) : null}
+        </div>
+      
       
     </div>
   )
