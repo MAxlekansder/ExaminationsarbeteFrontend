@@ -841,7 +841,96 @@
       { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Black pepper", "amount": 0.2, "unit": "teaspoon" }
     ]
-  }
+  },
+  {
+    "title": "Pad Thai",
+    "description": "Pad Thai is a popular Thai stir-fried noodle dish made with rice noodles, tofu, eggs, and a flavorful sauce consisting of tamarind, fish sauce, and other seasonings. It's often garnished with crushed peanuts, lime wedges, and fresh herbs.",
+    "ratings": 5,
+    "imageUrl": "https://inquiringchef.com/wp-content/uploads/2023/02/Authentic-Pad-Thai_square-1908.jpg",
+    "timeInMins": 30,
+    "categories": ["Thai", "Dinner", "Meat", "Seafood", "Tofu"],
+    "instructions": [
+        "Soak the rice noodles in warm water until they are pliable but still slightly firm. Drain and set aside.",
+        "Heat oil in a wok or large skillet over medium-high heat. Add minced garlic and diced tofu, stirring until tofu is golden brown.",
+        "Push the tofu to one side of the pan and crack eggs into the other side. Scramble the eggs until they are cooked, then mix them with the tofu.",
+        "Add the soaked rice noodles to the pan, along with",
+        "Add the prepared sauce to the pan, stirring well to coat the noodles and tofu evenly. Cook until the noodles are tender and the sauce has thickened.",
+        "Serve hot, garnished with crushed peanuts, lime wedges, and fresh herbs."
+    ],
+    "ingredients": [
+        { "name": "Rice noodles", "amount": 200, "unit": "grams" },
+        { "name": "Tofu", "amount": 200, "unit": "grams" },
+        { "name": "Garlic", "amount": 2, "unit": "cloves" },
+        { "name": "Eggs", "amount": 2, "unti": "piece" },
+        { "name": "Oil", "amount": 2, "unit": "tablespoons" },
+        { "name": "Tamarind paste", "amount": 2, "unit": "tablespoons" },
+        { "name": "Fish sauce", "amount": 2, "unit": "tablespoons" },
+        { "name": "Sugar", "amount": 2, "unit": "tablespoons" },
+        { "name": "Crushed peanuts", "amount": 0.5, "unit": "cup" },
+        { "name": "Lime wedges", "amount": "2" },
+        { "name": "Fresh herbs (such as cilantro and Thai basil)", "amount": "1", "unit": "handful" }
+    ]
+},
+{
+  "title": "Tom Yum Soup",
+  "description": "A spicy and sour Thai soup flavored with lemongrass, kaffir lime leaves, and galangal.",
+  "ratings": 5,
+  "imageUrl": "https://www.eatingthaifood.com/wp-content/uploads/2014/06/thai-food-pictures-1.jpg",
+  "timeInMins": 25,
+  "categories": ["Thai", "Soup"],
+  "instructions": [
+    "Bring chicken or vegetable broth to a boil in a pot.",
+    "Add lemongrass, galangal, and kaffir lime leaves to the broth and simmer for 5 minutes.",
+    "Add mushrooms, cherry tomatoes, and your choice of protein (shrimp, chicken, or tofu).",
+    "Season with fish sauce, lime juice, sugar, and chili paste, according to taste.",
+    "Garnish with fresh cilantro and serve hot."
+  ],
+  "ingredients": [
+    {"name": "Chicken or vegetable broth", "amount": 4, "unit": "cups"},
+    {"name": "Lemongrass stalks", "amount": 2, "unit": "stalks"},
+    {"name": "Galangal", "amount": "2", "unit": "slices"},
+    {"name": "Kaffir lime leaves", "amount": 4, "unit": "leaves"},
+    {"name": "Mushrooms", "amount": "1", "unit": "cup"},
+    {"name": "Cherry tomatoes", "amount": "1/2", "unit": "cup"},
+    {"name": "Protein (shrimp, chicken, or tofu)", "amount": "1/2", "unit": "cup"},
+    {"name": "Fish sauce", "amount": 2, "unit": "tablespoons"},
+    {"name": "Lime juice", "amount": "2", "unit": "tablespoons"},
+    {"name": "Sugar", "amount": "1", "unit": "teaspoon"},
+    {"name": "Chili paste", "amount": "1/2", "unit": "teaspoon"},
+    {"name": "Fresh cilantro", "amount": "1/4", "unit": "cup"}
+  ]
+},
+{
+  "title": "Green Curry Chicken",
+  "description": "A classic Thai curry made with green curry paste, coconut milk, and chicken.",
+  "ratings": 5,
+  "imageUrl": "https://i0.wp.com/www.valerieskeepers.com/wp-content/uploads/2017/01/green-curry-chicken-6-1-sur-1.jpg?resize=5184%2C3456&ssl=1",
+  "timeInMins": 40,
+  "categories": ["Thai", "Dinner", "Poultry", "Lunch"],
+  "instructions": [
+    "Heat green curry paste in a pan until fragrant.",
+    "Add coconut milk and bring to a simmer.",
+    "Add sliced chicken breast and simmer until cooked through.",
+    "Add sliced bamboo shoots, bell peppers, and Thai eggplant.",
+    "Season with fish sauce, sugar, and kaffir lime leaves.",
+    "Serve hot with steamed rice."
+  ],
+  "ingredients": [
+    {"name": "Green curry paste", "amount": 2, "unit": "tablespoons"},
+    {"name": "Coconut milk", "amount": 2, "unit": "cups"},
+    {"name": "Chicken breast", "amount": 2, "unit": "pieces"},
+    {"name": "Bamboo shoots", "amount": 0.5, "unit": "cup"},
+    {"name": "Bell peppers", "amount": 1, "unit": "piece"},
+    {"name": "Thai eggplant", "amount": 4, "unit": "pieces"},
+    {"name": "Fish sauce", "amount": 2, "unit": "tablespoons"},
+    {"name": "Sugar", "amount": 1, "unit": "teaspoon"},
+    {"name": "Kaffir lime leaves", "amount": 4, "unit": "leaves"},
+    {"name": "Steamed rice", "amount": 2, "unit": "cups"}
+  ]
+}
+
+
+
   
   
   
