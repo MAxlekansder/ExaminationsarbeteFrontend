@@ -81,7 +81,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed z-10 inset-0 overflow-y-auto">
+    <div className="fixed z-10 inset-0 overflow-y-scroll">
       <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -119,7 +119,6 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 type="text"
                 name="imageUrl"
                 placeholder="Paste new URL here"
-                // value={updatedRecipe.imageUrl}
                 onChange={handleUserInput}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
@@ -151,7 +150,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
             </div>
           </div>
           <div className="flex py-4 px-6">
-            <div className="w-1/2">
+            <div className="w-1/2" style={{ overflowY: 'auto', maxHeight: '350px' }}>
               <div>INGREDIENTS</div>
               {recipe.ingredients?.map(
                 (ingredient: Ingredient, index: number) => (
@@ -187,7 +186,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 )
               )}
               </div>
-              <div className="w-1/2">
+              <div className="w-1/2" style={{ overflowY: 'auto', maxHeight: '350px' }}>
                 <div>INSTRUCTIONS</div>
                 {recipe.instructions?.map(
                   (instruction: string, index: number) => (
@@ -215,6 +214,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
               type="button"
               className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
               onClick={handleRecipeUpdate}
+              onKeyDown={handleRecipeUpdate}
             >
               OK
             </button>
