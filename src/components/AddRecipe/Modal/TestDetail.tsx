@@ -6,7 +6,7 @@ import useRecipeState from "../../../State/indexState";
 import { Recipe } from "../../../data/Recipes";
 import Modal from "./Modal";
 import RecipeRating from "../../SearchRecipe/RecipeRating.tsx";
-import SuggetsCocktail from "./SuggetsCocktail.tsx";
+import SuggetsCocktail from "../../Cocktails/SuggetsCocktail.tsx";
 
 
 

@@ -1,6 +1,6 @@
 //Gustav
 import { useEffect, useState } from 'react'
-import useRecipeState from '../../../State/indexState'
+import useRecipeState from '../../State/indexState'
 
 const SuggetsCocktail = () => {
     const fetchAllDrinks = useRecipeState((state) => state.fetchAllDrinks)
