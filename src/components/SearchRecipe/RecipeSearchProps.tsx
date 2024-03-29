@@ -12,7 +12,6 @@ interface RecipeSearchProps {
 }
 
 
-
 function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: RecipeSearchProps) {
   const filteredRecipes = recipesFromInterface.filter(recipe => {
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
