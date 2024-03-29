@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
 import NavBarComponent from "../NavBarComponent.tsx";
+import { StaticCategories } from "../../data/StaticCategories.ts";
+
 
 const Home = () => {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
@@ -12,6 +14,12 @@ const Home = () => {
     getRecipe();
     console.log("Hej");
   }, [getRecipe]);
+
+  const FilterHandler = (category: string) => {
+    return recipe.filter((recipe) => recipe.categories.includes(category));
+  };
+
+ 
 
   return (
     <div>
@@ -31,7 +39,9 @@ const Home = () => {
           />
         </div>
       </div>
-      <h2 className="pl-10">test</h2>
+      <h2 className="text-xl pl-10">
+        Something spicy for <b>dinner</b>?
+      </h2>
       <div
         className="flex overflow-auto p-10"
         style={{
@@ -41,7 +51,7 @@ const Home = () => {
           scrollbarWidth: "none",
         }}
       >
-        {recipe.map((recipe) => (
+        {FilterHandler("Dinner").map((recipe) => (
           <div
             key={recipe._id}
             onClick={() => navigate(`/home/${recipe._id}`)}
@@ -79,11 +89,15 @@ const Home = () => {
           />
         </div>
         <div className="w-1/2 ml-4">
-          <h1 className="text-3xl font-bold pl-10">You thought we where kidding?</h1>
-          <p className="p-10">best rated on google 5, two years in a row</p>
+          <h2 className="text-3xl font-bold pl-10">
+            You thought we where kidding?
+          </h2>
+          <p className="pl-10">best rated on google 5, two years in a row</p>
         </div>
       </div>
-      <h2 className="pl-12">test</h2>
+      <h2 className="text-xl pl-12 pt-10">
+        Something <b>sweet</b> while waiting for your clothes?
+      </h2>
       <div
         className="flex overflow-auto p-10"
         style={{
@@ -94,7 +108,7 @@ const Home = () => {
           scrollbarWidth: "none",
         }}
       >
-        {recipe.map((recipe) => (
+        {FilterHandler("Dessert").map((recipe) => (
           <div
             key={recipe._id}
             onClick={() => navigate(`/home/${recipe._id}`)}
@@ -123,7 +137,67 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <div className="flex justify-center">
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
+      <h1 className="text-3xl font-bold pl-10">Categories</h1>
+      {/* <div>
+        {StaticCategories.map((category) => (
+          <div key={category.name}>
+            <div>
+              <img src={category.imageUrl} alt="" />
+              {category.name}
+              </div>
+          </div>
+        ))}
+      </div> */}
+       <h2 className="text-xl pl-12 pt-10">
+        <b>Vegetarian</b> dishes - a more green choice!
+      </h2>
+      <div
+        className="flex overflow-auto p-10"
+        style={{
+          fontFamily: "Quattro Sans, sans-serif",
+
+          overflowX: "auto",
+          msOverflowStyle: "none",
+          scrollbarWidth: "none",
+        }}
+      >
+        {FilterHandler("Vegetarian").map((recipe) => (
+          <div
+            key={recipe._id}
+            onClick={() => navigate(`/home/${recipe._id}`)}
+            className="mx-0.5"
+          >
+            <div className="rounded overflow-hidden shadow-lg h-80">
+              <div className="max-w-3xl">
+                <div style={{ width: "280px" }}>
+                  <img
+                    src={recipe.imageUrl}
+                    alt=""
+                    style={{
+                      height: "170px",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    className="transition duration-200 hover:scale-110"
+                  />
+                </div>
+              </div>
+              <div className="px-6 py-4">
+                <div className="font-bold text-lg mb-2">{recipe.title}</div>
+                <p className="text-gray-600 text-sm">{recipe.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
     </div>
+
   );
 };
 export default Home;
