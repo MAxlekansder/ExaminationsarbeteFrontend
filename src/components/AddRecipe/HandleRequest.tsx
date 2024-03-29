@@ -98,15 +98,13 @@
                     id="title-input"
                     placeholder="title"
                   />
-
-                  {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="description"
                   >
-                    BESKRIVNING
+                    DESCRIPTION
                   </label>
                   <input
                     type={description}
@@ -123,7 +121,7 @@
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="time-in-mins"
                   >
-                    TID I MIUNTER
+                    TIME IN MINUTES
                   </label>
                   <input
                     id="time-in-mins"
@@ -136,15 +134,13 @@
                     }
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   />
-
-                  {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="category-select"
                   >
-                    KATEGORIER
+                    CATEGORIES
                   </label>
                   <CategorySelected 
                     selectedCategories={categories}
@@ -158,7 +154,7 @@
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="url-add"
                   >
-                    LÄGG TILL EN URL
+                    ADD AN URL
                   </label>
                   <input
                     id="url-add"
@@ -170,7 +166,7 @@
                   />
                 
                   <p className="text-gray-600 text-xs italic">
-                    Se till att bilden existerar
+                    Make sure the picture exists
                   </p>
                 </div>
               </div>
@@ -185,7 +181,7 @@
              </div>
              <br />
              <button onClick={addRecipe} className="border px-1 py-1">
-              Lägg till ditt recept</button>
+              Add your recipe</button>
             </div>
             
           </div>

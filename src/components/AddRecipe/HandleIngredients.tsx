@@ -93,7 +93,7 @@ function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JS
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="meassure"
               >
-                MÄNGD
+                AMOUNT
               </label>
               <input
                 type="number"
@@ -110,7 +110,7 @@ function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JS
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 htmlFor="meassure-unit"
               >
-                Enhet
+                UNIT 
               </label>
               <select
               id="meassure-unit"
@@ -136,7 +136,7 @@ function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JS
                <br /> 
               </label>
               <button onClick={handleAddIngredients} id="button" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 border border-blue-700 rounded">
-              Lägg till
+              ADD
               
               </button>
 
@@ -160,7 +160,7 @@ function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JS
                   <td className="border px-0.5 py-0.5 flex justify-end items-center">{ingredient.unit} 
                   <div className="ml-auto">
                   <button  onClick={(() => handleRemoveIngredient((index)))} className="bg-red-400 hover:bg-red-500 text-white font-bold py-1 px-2 border border-red-500 rounded text-sm">
-                     Ta bort</button>
+                     REMOVE</button>
                   </div>
               
                   </td>
