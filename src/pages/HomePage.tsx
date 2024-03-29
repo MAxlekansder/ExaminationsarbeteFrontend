@@ -60,7 +60,7 @@ function HomePage() {
 
  
 
-  //För att generera 3 random rätter
+  //För att generera random rätter
   const getRandomIndexes = (max: number, count: number) => {
     const indexes: number[] = [];
     while (indexes.length < count) {
