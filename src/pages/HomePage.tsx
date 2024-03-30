@@ -87,7 +87,8 @@ function HomePage() {
               </div>
                 <div className='bg-green-700 2xl:ml-10 2xl:mr-10 text-green-700'>.</div>
             <div className=''>
-          <img src="public/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
+          <img src="
+          /Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
         </div>
     </div>
   <div className='p-10'>
