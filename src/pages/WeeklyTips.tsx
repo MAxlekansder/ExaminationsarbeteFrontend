@@ -87,7 +87,7 @@ const WeeklyTips: React.FC = () => {
                     <img
                       src={recipe.imageUrl}
                       alt={recipe.title}
-                      className="w-full h-full object-cover transition-transform duration-200 ease-in-out hover:opacity-60"
+                      className="w-full h-full object-cover transition-transform duration-200 ease-in-out hover:scale-110"
                     />
                   </div>
                 </div>
