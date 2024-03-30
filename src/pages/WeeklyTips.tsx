@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import useRecipeState from '../State/indexState';
+import { useNavigate } from "react-router-dom";
 import NavBarComponent from '../components/NavBarComponent';
 import FooterComponent from '../components/Footer/FooterComponent';
 
@@ -9,6 +10,7 @@ const WeeklyTips: React.FC = () => {
   const { recipes } = useRecipeState();
   const [filteredRecipes, setFilteredRecipes] = useState<any[]>([]);
   const [currentRecommendation, setCurrentRecommendation] = useState('');
+  const navigate = useNavigate();
 
 
   const updateRecommendation = (day: string) => {
@@ -71,15 +73,15 @@ const WeeklyTips: React.FC = () => {
                 <button onClick={() => { FilterRecipes("Japanese"); updateRecommendation("Thursday"); }} className='bg-green-200 font-medium text-gray-700 px-4 py-2 rounded border border-green-600 shadow hover:bg-green-300 focus:outline-none focus:ring focus:border-green-300'>Thursday</button>
                 <button onClick={() => { FilterRecipes("Mexican"); updateRecommendation("Friday"); }} className='bg-green-200 font-medium text-gray-700 px-4 py-2 rounded border border-green-600 shadow hover:bg-green-300 focus:outline-none focus:ring focus:border-green-300 '>Friday</button>
                 <button onClick={() => { FilterRecipes("Italian"); updateRecommendation("Saturday"); }} className='bg-green-200 font-medium text-gray-700 px-4 py-2 rounded border border-green-600 shadow hover:bg-green-300 focus:outline-none focus:ring focus:border-green-300 '>Saturday</button>
-                <button onClick={() => { FilterRecipes("Swedish"); updateRecommendation("Sunday"); }} className='bg-green-200 font-medium text-gray-700 px-4 py-2 rounded border border-green-600 shadow hover:bg-green-300 focus:outline-none focus:ring focus:border-green-300 '>Sunday</button>
+                <button onClick={() => { FilterRecipes("Scandinavian"); updateRecommendation("Sunday"); }} className='bg-green-200 font-medium text-gray-700 px-4 py-2 rounded border border-green-600 shadow hover:bg-green-300 focus:outline-none focus:ring focus:border-green-300 '>Sunday</button>
               </div>
               <div className="text-center mt-4">
-                <p className="text-lg font-bold text-red-800">{currentRecommendation}</p>
+                <p className="text-lg font-bold text-red-800">{currentRecommendation || "Choose a day to view the recommendations"}</p>
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-4 p-4">
               {filteredRecipes.map((recipe, index) => (
-                <div key={index} className="w-60">
+                <div key={index} onClick={() => navigate(`/test/${recipe._id}`)} className="w-60 cursor-pointer">
                   <h2 className="text-lg font-semibold">{recipe.title}</h2>
                   <div className="h-48 w-full overflow-hidden rounded-lg">
                     <img
@@ -89,18 +91,13 @@ const WeeklyTips: React.FC = () => {
                     />
                   </div>
                 </div>
-              ))
-              }
+              ))}
             </div >
           </div >
         </div>
         <FooterComponent />
       </div>
-
     </div>
-
-
-
   );
 };
 
