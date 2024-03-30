@@ -24,7 +24,7 @@
     "ratings": 5,
     "imageUrl": "https://cdn.hemtrevligt.se/icakuriren/app/uploads/2023/05/media-smorgastarta-lax-rakor.png",
     "timeInMins": 90,
-    "categories": ["Appetizer", "Scandinavian", "Dessert", "Dinner"],
+    "categories": ["Appetizer", "Scandinavian", "Dinner"],
     "instructions": [
       "Prepare sandwich layers",
       "Add fillings",
@@ -1042,101 +1042,270 @@
       { "name": "Lemon wedges", "amount": null, "unit": "for serving" }
     ]
   },
-    {
-      "title": "Thai Basil Chicken Stir-Fry",
-      "description": "A flavorful and aromatic stir-fry dish featuring tender chicken, fresh basil, and Thai spices.",
-      "ratings": 4,
-      "imageUrl": "https://thewoksoflife.com/wp-content/uploads/2016/06/thai-basil-chicken-8.jpg",
-      "timeInMins": 30,
-      "categories": ["Thai", "Dinner", "Poultry"],
-      "instructions": [
-        "Heat oil in a wok or large skillet over high heat.",
-        "Add minced garlic and sliced chicken breast, stir-frying until chicken is cooked through.",
-        "Add chopped bell peppers, onions, and Thai basil leaves to the wok, stirring constantly.",
-        "Pour in a mixture of soy sauce, fish sauce, oyster sauce, and sugar.",
-        "Continue stir-frying until the vegetables are tender and the sauce has thickened.",
-        "Serve hot with steamed rice."
-      ],
-      "ingredients": [
-        { "name": "Chicken breast", "amount": 2, "unit": "pieces" },
-        { "name": "Garlic", "amount": 3, "unit": "cloves", "preparation": "minced" },
-        { "name": "Bell peppers", "amount": 1, "unit": "piece", "preparation": "chopped" },
-        { "name": "Onion", "amount": 1, "unit": "medium", "preparation": "chopped" },
-        { "name": "Thai basil leaves", "amount": 1, "unit": "cup", "preparation": "chopped" },
-        { "name": "Soy sauce", "amount": 2, "unit": "tablespoons" },
-        { "name": "Fish sauce", "amount": 1, "unit": "tablespoon" },
-        { "name": "Oyster sauce", "amount": 1, "unit": "tablespoon" },
-        { "name": "Sugar", "amount": 1, "unit": "teaspoon" },
-        { "name": "Oil", "amount": 2, "unit": "tablespoons" },
-        { "name": "Steamed rice", "amount": 2, "unit": "cups" }
-      ]
-    },
-    {
-      "title": "Italian Beef Lasagna",
-      "description": "A classic Italian pasta dish made with layers of lasagna noodles, savory beef sauce, and creamy cheese filling.",
-      "ratings": 5,
-      "imageUrl": "https://thelemonapron.com/wp-content/uploads/2017/01/Photo-2017-01-15-1-37-16-PM-e1485442231918.jpg",
-      "timeInMins": 60,
-      "categories": ["Meat", "Italian", "Dinner"],
-      "instructions": [
-        "Preheat the oven to 375°F (190°C).",
-        "Cook lasagna noodles according to package instructions until al dente. Drain and set aside.",
-        "In a large skillet, cook ground beef with diced onions and minced garlic until browned.",
-        "Add crushed tomatoes, tomato paste, Italian seasoning, salt, and pepper to the skillet. Simmer for 10-15 minutes.",
-        "In a separate bowl, mix together ricotta cheese, egg, grated Parmesan cheese, and chopped parsley.",
-        "Spread a layer of meat sauce on the bottom of a baking dish. Arrange a layer of cooked lasagna noodles on top.",
-        "Spread a layer of ricotta cheese mixture over the noodles, then add another layer of meat sauce. Repeat the layers.",
-        "Top the lasagna with shredded mozzarella cheese.",
-        "Cover the baking dish with aluminum foil and bake for 30 minutes. Remove the foil and bake for an additional 15 minutes or until bubbly and golden brown.",
-        "Let the lasagna cool for a few minutes before serving."
-      ],
-      "ingredients": [
-        { "name": "Lasagna noodles", "amount": 4, "unit": "kg" },
-        { "name": "Ground beef", "amount": 1, "unit": "kg" },
-        { "name": "Onion", "amount": 1, "unit": "medium"},
-        { "name": "Garlic", "amount": 3, "unit": "cloves"},
-        { "name": "Crushed tomatoes", "amount": 2, "unit": "kg" },
-        { "name": "Tomato paste", "amount": 2, "unit": "tablespoons" },
-        { "name": "Italian seasoning", "amount": 2, "unit": "teaspoons" },
-        { "name": "Salt", "amount": 1, "unit": "teaspoon" },
-        { "name": "Black pepper", "amount": 0.5, "unit": "teaspoon" },
-        { "name": "Ricotta cheese", "amount": 1, "unit": "kg" },
-        { "name": "Egg", "amount": 1, "unit": "piece" },
-        { "name": "Parmesan cheese", "amount": 0.5, "unit": "cup" },
-        { "name": "Fresh parsley", "amount": 0.25, "unit": "cup" },
-        { "name": "Mozzarella cheese", "amount": 2, "unit": "cups" }
-      ]
-    },
-    {
-      "title": "Scandinavian Meatballs",
-      "description": "Tender and flavorful meatballs made with a blend of ground meats and served with creamy lingonberry sauce.",
-      "ratings": 4,
-      "imageUrl": "https://www.skinnytaste.com/wp-content/uploads/2011/05/Swedish-Meatballs-5.jpg",
-      "timeInMins": 45,
-      "categories": ["Meat", "Scandinavian", "Dinner"],
-      "instructions": [
-        "In a large bowl, mix together ground beef, ground pork, breadcrumbs, minced onion, egg, salt, pepper, and allspice until well combined.",
-        "Shape the meat mixture into small meatballs, about 1 inch in diameter.",
-        "Heat oil in a large skillet over medium-high heat. Add the meatballs and brown on all sides.",
-        "Reduce the heat to medium and continue cooking until the meatballs are cooked through.",
-        "In a separate saucepan, heat lingonberry jam or lingonberry sauce until warmed through.",
-        "Serve the meatballs hot with lingonberry sauce and mashed potatoes or lingonberry sauce.",
-        "Garnish with chopped parsley, if desired."
-      ],
-      "ingredients": [
-        { "name": "Ground beef", "amount": 0.5, "unit": "kg" },
-        { "name": "Ground pork", "amount": 0.5, "unit": "kg" },
-        { "name": "Breadcrumbs", "amount": 0.5, "unit": "cup" },
-        { "name": "Onion", "amount": 1, "unit": "small" },
-        { "name": "Egg", "amount": 1, "unit": "piece" },
-        { "name": "Salt", "amount": 1, "unit": "teaspoon" },
-        { "name": "Black pepper", "amount": 0.5, "unit": "teaspoon" },
-        { "name": "Allspice", "amount": 0.5, "unit": "teaspoon" },
-        { "name": "Oil", "amount": 2, "unit": "tablespoons" },
-        { "name": "Lingonberry jam or sauce", "amount": "1/2", "unit": "cup" },
-        { "name": "Mashed potatoes", "amount": null, "unit": "for serving" },
-        { "name": "Fresh parsley", "amount": "1", "unit": "tablespoon" }
-      ]
-    }
-  
+  {
+    "title": "Thai Basil Chicken Stir-Fry",
+    "description": "A flavorful and aromatic stir-fry dish featuring tender chicken, fresh basil, and Thai spices.",
+    "ratings": 4,
+    "imageUrl": "https://thewoksoflife.com/wp-content/uploads/2016/06/thai-basil-chicken-8.jpg",
+    "timeInMins": 30,
+    "categories": ["Thai", "Dinner", "Poultry"],
+    "instructions": [
+      "Heat oil in a wok or large skillet over high heat.",
+      "Add minced garlic and sliced chicken breast, stir-frying until chicken is cooked through.",
+      "Add chopped bell peppers, onions, and Thai basil leaves to the wok, stirring constantly.",
+      "Pour in a mixture of soy sauce, fish sauce, oyster sauce, and sugar.",
+      "Continue stir-frying until the vegetables are tender and the sauce has thickened.",
+      "Serve hot with steamed rice."
+    ],
+    "ingredients": [
+      { "name": "Chicken breast", "amount": 2, "unit": "pieces" },
+      {
+        "name": "Garlic",
+        "amount": 3,
+        "unit": "cloves",
+        "preparation": "minced"
+      },
+      {
+        "name": "Bell peppers",
+        "amount": 1,
+        "unit": "piece",
+        "preparation": "chopped"
+      },
+      {
+        "name": "Onion",
+        "amount": 1,
+        "unit": "medium",
+        "preparation": "chopped"
+      },
+      {
+        "name": "Thai basil leaves",
+        "amount": 1,
+        "unit": "cup",
+        "preparation": "chopped"
+      },
+      { "name": "Soy sauce", "amount": 2, "unit": "tablespoons" },
+      { "name": "Fish sauce", "amount": 1, "unit": "tablespoon" },
+      { "name": "Oyster sauce", "amount": 1, "unit": "tablespoon" },
+      { "name": "Sugar", "amount": 1, "unit": "teaspoon" },
+      { "name": "Oil", "amount": 2, "unit": "tablespoons" },
+      { "name": "Steamed rice", "amount": 2, "unit": "cups" }
+    ]
+  },
+  {
+    "title": "Italian Beef Lasagna",
+    "description": "A classic Italian pasta dish made with layers of lasagna noodles, savory beef sauce, and creamy cheese filling.",
+    "ratings": 5,
+    "imageUrl": "https://thelemonapron.com/wp-content/uploads/2017/01/Photo-2017-01-15-1-37-16-PM-e1485442231918.jpg",
+    "timeInMins": 60,
+    "categories": ["Meat", "Italian", "Dinner"],
+    "instructions": [
+      "Preheat the oven to 375°F (190°C).",
+      "Cook lasagna noodles according to package instructions until al dente. Drain and set aside.",
+      "In a large skillet, cook ground beef with diced onions and minced garlic until browned.",
+      "Add crushed tomatoes, tomato paste, Italian seasoning, salt, and pepper to the skillet. Simmer for 10-15 minutes.",
+      "In a separate bowl, mix together ricotta cheese, egg, grated Parmesan cheese, and chopped parsley.",
+      "Spread a layer of meat sauce on the bottom of a baking dish. Arrange a layer of cooked lasagna noodles on top.",
+      "Spread a layer of ricotta cheese mixture over the noodles, then add another layer of meat sauce. Repeat the layers.",
+      "Top the lasagna with shredded mozzarella cheese.",
+      "Cover the baking dish with aluminum foil and bake for 30 minutes. Remove the foil and bake for an additional 15 minutes or until bubbly and golden brown.",
+      "Let the lasagna cool for a few minutes before serving."
+    ],
+    "ingredients": [
+      { "name": "Lasagna noodles", "amount": 4, "unit": "kg" },
+      { "name": "Ground beef", "amount": 1, "unit": "kg" },
+      { "name": "Onion", "amount": 1, "unit": "medium" },
+      { "name": "Garlic", "amount": 3, "unit": "cloves" },
+      { "name": "Crushed tomatoes", "amount": 2, "unit": "kg" },
+      { "name": "Tomato paste", "amount": 2, "unit": "tablespoons" },
+      { "name": "Italian seasoning", "amount": 2, "unit": "teaspoons" },
+      { "name": "Salt", "amount": 1, "unit": "teaspoon" },
+      { "name": "Black pepper", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Ricotta cheese", "amount": 1, "unit": "kg" },
+      { "name": "Egg", "amount": 1, "unit": "piece" },
+      { "name": "Parmesan cheese", "amount": 0.5, "unit": "cup" },
+      { "name": "Fresh parsley", "amount": 0.25, "unit": "cup" },
+      { "name": "Mozzarella cheese", "amount": 2, "unit": "cups" }
+    ]
+  },
+  {
+    "title": "Scandinavian Meatballs",
+    "description": "Tender and flavorful meatballs made with a blend of ground meats and served with creamy lingonberry sauce.",
+    "ratings": 4,
+    "imageUrl": "https://www.skinnytaste.com/wp-content/uploads/2011/05/Swedish-Meatballs-5.jpg",
+    "timeInMins": 45,
+    "categories": ["Meat", "Scandinavian", "Dinner"],
+    "instructions": [
+      "In a large bowl, mix together ground beef, ground pork, breadcrumbs, minced onion, egg, salt, pepper, and allspice until well combined.",
+      "Shape the meat mixture into small meatballs, about 1 inch in diameter.",
+      "Heat oil in a large skillet over medium-high heat. Add the meatballs and brown on all sides.",
+      "Reduce the heat to medium and continue cooking until the meatballs are cooked through.",
+      "In a separate saucepan, heat lingonberry jam or lingonberry sauce until warmed through.",
+      "Serve the meatballs hot with lingonberry sauce and mashed potatoes or lingonberry sauce.",
+      "Garnish with chopped parsley, if desired."
+    ],
+    "ingredients": [
+      { "name": "Ground beef", "amount": 0.5, "unit": "kg" },
+      { "name": "Ground pork", "amount": 0.5, "unit": "kg" },
+      { "name": "Breadcrumbs", "amount": 0.5, "unit": "cup" },
+      { "name": "Onion", "amount": 1, "unit": "small" },
+      { "name": "Egg", "amount": 1, "unit": "piece" },
+      { "name": "Salt", "amount": 1, "unit": "teaspoon" },
+      { "name": "Black pepper", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Allspice", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Oil", "amount": 2, "unit": "tablespoons" },
+      { "name": "Lingonberry jam or sauce", "amount": "1/2", "unit": "cup" },
+      { "name": "Mashed potatoes", "amount": null, "unit": "for serving" },
+      { "name": "Fresh parsley", "amount": "1", "unit": "tablespoon" }
+    ]
+  },
+  {
+    "title": "Chocolate Cake",
+    "description": "Decadent chocolate cake that melts in your mouth, perfect for satisfying your sweet tooth cravings.",
+    "ratings": 5,
+    "imageUrl": "https://www.handletheheat.com/wp-content/uploads/2013/04/Best-Chocolate-Cake-Square-1-of-1.jpg",
+    "timeInMins": 60,
+    "categories": ["Dessert", "American"],
+    "instructions": [
+      "Preheat the oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.",
+      "In a large mixing bowl, sift together flour, cocoa powder, baking powder, baking soda, and salt.",
+      "In another bowl, beat together eggs, sugar, and vanilla extract until creamy and well combined.",
+      "Gradually add melted butter and buttermilk to the egg mixture, mixing until smooth.",
+      "Add the wet ingredients to the dry ingredients and mix until just combined.",
+      "Divide the batter evenly between the prepared cake pans and smooth the tops with a spatula.",
+      "Bake in the preheated oven for 25-30 minutes, or until a toothpick inserted into the center comes out clean.",
+      "Remove the cakes from the oven and let them cool in the pans for 10 minutes before transferring them to a wire rack to cool completely.",
+      "Once cooled, frost the cake with your favorite chocolate frosting and serve."
+    ],
+    "ingredients": [
+      { "name": "All-purpose flour", "amount": 2, "unit": "cups" },
+      { "name": "Cocoa powder", "amount": 0.7, "unit": "cups" },
+      { "name": "Baking powder", "amount": 1, "unit": "teaspoon" },
+      { "name": "Baking soda", "amount": 1, "unit": "teaspoon" },
+      { "name": "Salt", "amount": 0.7, "unit": "teaspoon" },
+      { "name": "Eggs", "amount": 2, "unit": "large" },
+      { "name": "Granulated sugar", "amount": 2, "unit": "cups" },
+      { "name": "Vanilla extract", "amount": 2, "unit": "teaspoons" },
+      { "name": "Unsalted butter, melted", "amount": 0.5, "unit": "cups" },
+      { "name": "Buttermilk", "amount": 1, "unit": "cups" },
+      { "name": "Chocolate frosting", "amount": null, "unit": "" }
+    ]
+  },
+
+  {
+    "title": "Matcha Green Tea Ice Cream",
+    "description": "Creamy and refreshing ice cream with the delicate flavor of matcha green tea, perfect for hot summer days.",
+    "ratings": 4.5,
+    "imageUrl": "https://www.justonecookbook.com/wp-content/uploads/2021/08/Green-Tea-Ice-Cream-0120-II.jpg",
+    "timeInMins": 240,
+    "categories": ["Dessert", "Japanese"],
+    "instructions": [
+      "In a saucepan, heat heavy cream and milk over medium heat until it begins to simmer.",
+      "In a separate bowl, whisk together egg yolks and sugar until pale and creamy.",
+      "Slowly pour the hot cream mixture into the egg yolk mixture, whisking constantly to prevent curdling.",
+      "Return the mixture to the saucepan and cook over low heat, stirring constantly, until thickened enough to coat the back of a spoon.",
+      "Remove from heat and stir in matcha powder until fully combined.",
+      "Strain the mixture through a fine-mesh sieve into a clean bowl to remove any lumps.",
+      "Cover and refrigerate the mixture until completely chilled, preferably overnight.",
+      "Churn the chilled mixture in an ice cream maker according to the manufacturer's instructions.",
+      "Transfer the churned ice cream to a container and freeze for a few hours until firm.",
+      "Serve the matcha green tea ice cream garnished with whipped cream and a sprinkle of matcha powder, if desired."
+    ],
+    "ingredients": [
+      { "name": "Heavy cream", "amount": 1, "unit": "cup" },
+      { "name": "Whole milk", "amount": 1, "unit": "cup" },
+      { "name": "Egg yolks", "amount": 4, "unit": "large" },
+      { "name": "Granulated sugar", "amount": 0.5, "unit": "cup" },
+      { "name": "Matcha green tea powder", "amount": 2, "unit": "tablespoons" }
+    ]
+  },
+  {
+    "title": "Dorayaki",
+    "description": "Soft and fluffy pancakes filled with sweet red bean paste, a popular Japanese dessert often enjoyed with tea.",
+    "ratings": 4,
+    "imageUrl": "https://www.justonecookbook.com/wp-content/uploads/2020/08/Dorayaki-0041.jpg",
+    "timeInMins": 45,
+    "categories": ["Dessert", "Japanese"],
+    "instructions": [
+      "In a bowl, whisk together eggs, sugar, honey, and water until well combined.",
+      "Sift flour and baking powder into the egg mixture and whisk until smooth.",
+      "Heat a non-stick pan or griddle over medium heat and lightly grease with oil or butter.",
+      "Pour a small amount of batter onto the pan to form small pancakes, about 3 inches in diameter.",
+      "Cook until bubbles form on the surface, then flip and cook until golden brown on both sides.",
+      "Remove the pancakes from the pan and let them cool slightly.",
+      "Spread a dollop of sweet red bean paste onto one pancake, then sandwich with another pancake.",
+      "Repeat with the remaining pancakes and red bean paste.",
+      "Serve the dorayaki warm or at room temperature, and enjoy!"
+    ],
+    "ingredients": [
+      { "name": "Eggs", "amount": 2, "unit": "large" },
+      { "name": "Granulated sugar", "amount": 0.2, "unit": "cup" },
+      { "name": "Honey", "amount": 0.2, "unit": "cup" },
+      { "name": "Water", "amount": 2, "unit": "tablespoons" },
+      { "name": "All-purpose flour", "amount": 1, "unit": "cup" },
+      { "name": "Baking powder", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Sweet red bean paste", "amount": null, "unit": "for filling" }
+    ]
+  },
+  {
+    "title": "Taiyaki",
+    "description": "Taiyaki is a popular Japanese fish-shaped cake filled with sweet red bean paste. Crispy on the outside and fluffy on the inside, it's a delightful treat often enjoyed fresh off the griddle.",
+    "ratings": 4,
+    "imageUrl": "https://i0.wp.com/tokyotreatblog.wpcomstaging.com/wp-content/uploads/2023/07/five-taiyaki-spots-japan-thumbnail.png?fit=1024%2C683&ssl=1",
+    "timeInMins": 60,
+    "categories": ["Dessert", "Japanese"],
+    "instructions": [
+      "In a bowl, whisk together flour, baking powder, sugar, and salt.",
+      "In another bowl, whisk together eggs, milk, and vanilla extract.",
+      "Gradually add the wet ingredients to the dry ingredients, whisking until smooth.",
+      "Heat a taiyaki pan or waffle iron and grease the molds with oil or butter.",
+      "Pour the batter into the molds, filling them halfway.",
+      "Add a spoonful of sweet red bean paste into the center of each mold.",
+      "Cover the filling with more batter, filling the molds completely.",
+      "Close the pan and cook until golden brown on both sides.",
+      "Remove the taiyaki from the pan and let them cool slightly before serving.",
+      "Enjoy the taiyaki warm, and savor the crispy exterior and soft, flavorful interior!"
+    ],
+    "ingredients": [
+      { "name": "All-purpose flour", "amount": 1, "unit": "cup" },
+      { "name": "Baking powder", "amount": 1, "unit": "teaspoon" },
+      { "name": "Granulated sugar", "amount": 0.2, "unit": "cup" },
+      { "name": "Salt", "amount": 0.2, "unit": "teaspoon" },
+      { "name": "Eggs", "amount": 2, "unit": "large" },
+      { "name": "Milk", "amount": 1, "unit": "cup" },
+      { "name": "Vanilla extract", "amount": 1, "unit": "teaspoon" },
+      { "name": "Sweet red bean paste", "amount": null, "unit": "" }
+    ]
+  },
+  {
+    "title": "Japanese Cheesecake",
+    "description": "Japanese cheesecake is a light and fluffy dessert with a delicate flavor and silky texture. Made with cream cheese, eggs, and sugar, it's a delightful treat that melts in your mouth.",
+    "ratings": 4,
+    "imageUrl": "https://foodhub.scene7.com/is/image/woolworthsltdprod/1810-fluffy-japanese-cheesecake:Square-1300x1300",
+    "timeInMins": 90,
+    "categories": ["Dessert", "Japanese"],
+    "instructions": [
+      "Preheat the oven to 320°F (160°C). Grease and line a round cake pan with parchment paper.",
+      "In a heatproof bowl set over a pot of simmering water, melt cream cheese, butter, and milk, stirring until smooth.",
+      "Remove from heat and let the mixture cool slightly.",
+      "Whisk egg yolks and sugar together until pale and creamy.",
+      "Add the cream cheese mixture to the egg yolk mixture and whisk until well combined.",
+      "Sift in cake flour and cornstarch, and fold gently until smooth.",
+      "In a separate bowl, beat egg whites until foamy. Gradually add sugar and beat until stiff peaks form.",
+      "Fold the egg whites into the batter in three additions, being careful not to deflate the mixture.",
+      "Pour the batter into the prepared cake pan and smooth the top.",
+      "Bake in the preheated oven for about 1 hour or until the cake is set and golden brown.",
+      "Remove from the oven and let the cake cool in the pan for 10 minutes before transferring to a wire rack to cool completely.",
+      "Slice and serve the Japanese cheesecake, and enjoy its light and fluffy texture!"
+    ],
+    "ingredients": [
+      { "name": "Cream cheese", "amount": 8, "unit": "oz" },
+      { "name": "Unsalted butter", "amount": 0.2, "unit": "cup" },
+      { "name": "Whole milk", "amount": 0.2, "unit": "cup" },
+      { "name": "Egg yolks", "amount": 6, "unit": "large" },
+      { "name": "Granulated sugar", "amount": 0.2, "unit": "cup" },
+      { "name": "Cake flour", "amount": 0.2, "unit": "cup" },
+      { "name": "Cornstarch", "amount": 2, "unit": "tablespoons" },
+      { "name": "Egg whites", "amount": 6, "unit": "" }
+    ]
+  }
 ]
