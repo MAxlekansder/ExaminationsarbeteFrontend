@@ -14,19 +14,19 @@ import Categories from './pages/Categories.tsx';
 import WeeklyTips from './pages/WeeklyTips.tsx';
 import CocktailCategory from './components/Cocktails/CocktailCategory.tsx';
 import RecipeDetails from "./Views/Recipe/Recipe.tsx";
+import HomeCategory from './components/HomeRecipes/HomeCategory.tsx';
+
 //Simon flyttar ut koden i sprint 3!
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/main-page' element="null" />
         <Route path='/add' element={<HandleRequests />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/cocktails' element={<PresentCocktails />} />
+        <Route path='/home/:category' element={<HomeCategory />} />
         <Route path='/home/:id' element={<RecipeDetails />} />
-
-        <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
+        <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/cocktail:category' element={<CocktailCategory />} />
         <Route path='/test' element={<Test />} />

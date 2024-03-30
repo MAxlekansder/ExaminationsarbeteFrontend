@@ -1,3 +1,5 @@
+//Alexander och Sertan
+
 import React, { useEffect } from "react";
 import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
@@ -15,8 +17,14 @@ const Home = () => {
   }, [getRecipe]);
 
   const FilterHandler = (category: string) => {
-    return recipe.filter((recipe) => recipe.categories.includes(category));
+    const firstFilterRecipe =  recipe.filter((recipe) => recipe.categories.includes(category));
+    const randomRecipes = firstFilterRecipe.sort(() => Math.random() - 0.5)
+    return randomRecipes;
   };
+
+  const locateHandler = (category: string) => {
+    navigate(`/home/${category}`)
+  }
 
   return (
     <div>
@@ -48,11 +56,12 @@ const Home = () => {
           scrollbarWidth: "none",
         }}
       >
-        {FilterHandler("Dinner").map((recipe) => (
+        {FilterHandler("Dinner").slice(0,9).map((recipe) => (
+          
           <div
             key={recipe._id}
             onClick={() => navigate(`/home/${recipe._id}`)}
-            className="mx-0.5"
+            className="mx-0.5 "
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
               <div className="max-w-3xl">
@@ -105,7 +114,7 @@ const Home = () => {
           scrollbarWidth: "none",
         }}
       >
-        {FilterHandler("Dessert").map((recipe) => (
+        {FilterHandler("Dessert").slice(0,9).map((recipe) => (
           <div
             key={recipe._id}
             onClick={() => navigate(`/home/${recipe._id}`)}
@@ -147,13 +156,13 @@ const Home = () => {
             className="max-w-sm rounded overflow-hidden shadow-lg"
           >
             <img
-              className="w-full h-56 object-cover"
+              className="w-full h-60 object-cover"
               src={category.imageUrl}
               alt={category.name}
-              onClick={() => console.log(category.name)}
+              onClick={() => locateHandler(category.name)}
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{category.name}</div>
+              <div className="font-bold text-xl">{category.name}</div>
               <p className="text-gray-700 text-base">{category.description}</p>
             </div>
           </div>
