@@ -1,4 +1,5 @@
 // Kristian
+// Done, maybe some styling later
 
 import React, { useEffect, useState } from 'react';
 import useRecipeState from '../State/indexState';
@@ -87,7 +88,7 @@ const WeeklyTips: React.FC = () => {
                     <img
                       src={recipe.imageUrl}
                       alt={recipe.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-200 ease-in-out hover:scale-110"
                     />
                   </div>
                 </div>
