@@ -1,4 +1,5 @@
 // Kristian
+// Done, maybe some styling later
 
 import React, { useEffect, useState } from 'react';
 import useRecipeState from '../State/indexState';
