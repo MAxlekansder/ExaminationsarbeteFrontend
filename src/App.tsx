@@ -5,67 +5,45 @@ import RecipeSearch from './components/SearchRecipe/RecipeSearchProps';
 import NavBarComponent from './components/NavBarComponent'
 import useRecipeState from './State/indexState';
 import HomePage from './pages/HomePage';
-import DishComponent from './components/DishComponent';
-import { Route, Routes } from 'react-router-dom';
 import FooterComponent from './components/Footer/FooterComponent';
 import WeeklyTips from './pages/WeeklyTips';
+import HandleRequests from './components/AddRecipe/HandleRequest';
+import Home from './components/HomeRecipes/Home';
+import HomeCategory from './components/HomeRecipes/HomeCategory';
+import Categories from './pages/Categories';
+import About from './pages/About';
+import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail';
+import Test from './components/AddRecipe/Modal/TestPage';
+import CocktailCategory from './components/Cocktails/CocktailCategory';
+import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
+import RecipeDetails from './Views/Recipe/Recipe';
+import PresentCocktails from './components/Cocktails/Cocktails';
+import { Route, Routes } from "react-router-dom";
+
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const { recipes, fetchRecipe } = useRecipeState();
+ return (
+  <div >
+    <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/add' element={<HandleRequests />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/home/:category' element={<HomeCategory />} />
+        <Route path='/home/:id' element={<RecipeDetails />} />
+        <Route path='/cocktails' element={<PresentCocktails />} />
+        <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
+        <Route path='/cocktail:category' element={<CocktailCategory />} />
+        <Route path='/test' element={<Test />} />
+        <Route path='/test/:id' element={<DetailedTestComponent />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/categories' element={<Categories />} />
+        <Route path='/weeklytips' element={<WeeklyTips />} />
+      </Routes>
+    
+      
+  </div>
 
-
-  useEffect(() => {
-    fetchRecipe();
-
-  }, []);
-
-  const handleSearchChange = (term: string) => {
-    setSearchTerm(term);
-  };
-
-
-  return (
-    <>
-      <div>
-        <NavBarComponent />
-        <div className="food-header">
-          <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
-            Welcome to Not-Mathem!
-          </h1>
-        </div>
-        <div className="m-5 flex justify-center">
-          <RecipeSearch
-            recipesFromInterface={recipes}
-            searchTerm={searchTerm}
-            onSearchChange={handleSearchChange}
-          />
-        </div>
-      </div>
-      <div >
-        <Routes>
-          {/* <Route path="/dishes/:id" element={<DishDetailsPage />} /> */}
-          <Route path='/' element={<HomePage />} />
-          <Route path='/dishes' element={(
-            <div>
-              {recipes.map((dish, index) => (
-                <DishComponent
-                  id={dish._id}
-                  key={index}
-                  name={dish.name}
-                  image={dish.image}
-                  recipe={dish.recipe}
-                  description={dish.description}
-                  ingredients={dish.ingredients}
-                  onClick={() => console.log(dish.description)} // Eller annan logik för att visa receptet.
-                />
-              ))}
-            </div>
-          )} />
-        </Routes>
-      </div>
-      <FooterComponent />
-    </>
+  
 
   );
 }
