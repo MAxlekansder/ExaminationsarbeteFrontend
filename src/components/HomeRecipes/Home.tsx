@@ -5,6 +5,7 @@ import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
 import NavBarComponent from "../NavBarComponent.tsx";
 import { StaticCategories } from "../../data/StaticCategories.ts";
+import FooterComponent from "../Footer/FooterComponent.tsx";
 
 const Home = () => {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
@@ -14,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     getRecipe();
     console.log("Hej");
-  }, [getRecipe]);
+  }, []);
 
   const FilterHandler = (category: string) => {
     const firstFilterRecipe =  recipe.filter((recipe) => recipe.categories.includes(category));
@@ -23,8 +24,9 @@ const Home = () => {
   };
 
   const locateHandler = (category: string) => {
-    navigate(`/home/${category}`)
+    navigate(`/home/category/${category}`)
   }
+
 
   return (
     <div>
@@ -60,7 +62,7 @@ const Home = () => {
           
           <div
             key={recipe._id}
-            onClick={() => navigate(`/home/${recipe._id}`)}
+            onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
             className="mx-0.5 "
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
@@ -80,7 +82,8 @@ const Home = () => {
               </div>
               <div className="px-6 py-4">
                 <div className="font-bold text-lg mb-2">{recipe.title}</div>
-                <p className="text-gray-600 text-sm">{recipe.description}</p>
+                <p className="text-gray-600 text-sm">{recipe.description.length > 50 ? `${recipe.description.substring(0, 100)}...` : recipe.description}</p>
+
               </div>
             </div>
           </div>
@@ -117,7 +120,7 @@ const Home = () => {
         {FilterHandler("Dessert").slice(0,9).map((recipe) => (
           <div
             key={recipe._id}
-            onClick={() => navigate(`/home/${recipe._id}`)}
+            onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
             className="mx-0.5"
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
@@ -137,7 +140,7 @@ const Home = () => {
               </div>
               <div className="px-6 py-4">
                 <div className="font-bold text-lg mb-2">{recipe.title}</div>
-                <p className="text-gray-600 text-sm">{recipe.description}</p>
+                <p className="text-gray-600 text-sm">{recipe.description.length > 100 ? `${recipe.description.substring(0, 50)}...` : recipe.description}</p>
               </div>
             </div>
           </div>
@@ -156,7 +159,7 @@ const Home = () => {
             className="max-w-sm rounded overflow-hidden shadow-lg"
           >
             <img
-              className="w-full h-60 object-cover"
+              className="w-full h-64 object-cover"
               src={category.imageUrl}
               alt={category.name}
               onClick={() => locateHandler(category.name)}
@@ -172,7 +175,7 @@ const Home = () => {
         ... and so many{" "}
         <b
           className="cursor-pointer hover"
-          onClick={() => console.log("Clicked!")}
+          onClick={() => locateHandler("all categories")}
         >
           more
         </b>
@@ -196,7 +199,7 @@ const Home = () => {
         {FilterHandler("Vegetarian").map((recipe) => (
           <div
             key={recipe._id}
-            onClick={() => navigate(`/home/${recipe._id}`)}
+            onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
             className="mx-0.5"
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
@@ -216,7 +219,7 @@ const Home = () => {
               </div>
               <div className="px-6 py-4">
                 <div className="font-bold text-lg mb-2">{recipe.title}</div>
-                <p className="text-gray-600 text-sm">{recipe.description}</p>
+                <p className="text-gray-600 text-sm">{recipe.description.length > 10 ? `${recipe.description.substring(0, 100)}...` : recipe.description}</p>
               </div>
             </div>
           </div>
@@ -224,6 +227,9 @@ const Home = () => {
       </div>
       <div className="flex justify-center">
         <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
+      <div>
+        <FooterComponent/>  
       </div>
     </div>
   );

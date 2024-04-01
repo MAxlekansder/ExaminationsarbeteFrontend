@@ -24,8 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/' element={<App />} />
         <Route path='/add' element={<HandleRequests />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/home/:category' element={<HomeCategory />} />
-        <Route path='/home/:id' element={<RecipeDetails />} />
+        <Route path='/home/category/:category' element={<HomeCategory />} />
+        <Route path='/home/specificRecipe/:id' element={<RecipeDetails />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/cocktail:category' element={<CocktailCategory />} />
