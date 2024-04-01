@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import useRecipeState from '../../State/indexState'
 
-function SuggetsCocktail(){
+function SuggetsCocktail() {
     const fetchAllDrinks = useRecipeState((state) => state.fetchAllDrinks)
     const allDrinks = useRecipeState((state) => state.allDrinks);
     const [randomCocktail, setRandomCocktail] = useState(null);
@@ -16,7 +16,7 @@ function SuggetsCocktail(){
     useEffect(() => {
         const getRandomCocktail = () => {
             
-            if(allDrinks.length > 0){
+            if(allDrinks.length > 0) {
               const randomIndex = Math.floor(Math.random() * allDrinks.length)
               const generatedCocktail = allDrinks[randomIndex];
       
