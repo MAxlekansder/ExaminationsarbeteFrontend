@@ -46,7 +46,9 @@ const WeeklyTips: React.FC = () => {
 
   const FilterRecipes = (category: string) => {
 
-    setFilteredRecipes(recipes.filter((recipe) => recipe.categories.includes(category)).slice(0, 3));
+    setFilteredRecipes(recipes.filter((recipe) => recipe.categories.includes(category) &&
+      !recipe.categories.includes("Dessert")
+    ).slice(0, 3));
     console.log(setFilteredRecipes.length);
     return filteredRecipes;
   };
