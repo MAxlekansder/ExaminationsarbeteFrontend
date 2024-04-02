@@ -1,6 +1,6 @@
 //Alexander och Sertan
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
 import NavBarComponent from "../NavBarComponent.tsx";

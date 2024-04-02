@@ -39,12 +39,9 @@ const useRecipeState = create<recipeState>()((set) => ({
     detailedDrink: [],
     detailedRecipe: {},
     
-
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
-
     updateRecipes: (_id: string, updatedProperties: Partial<Recipe>) => set((state) => {
-    
         console.log("Updating recipe with ID:", _id);
         console.log("Updated properties:", updatedProperties);
     
@@ -67,7 +64,6 @@ const useRecipeState = create<recipeState>()((set) => ({
         return { recipes: updatedRecipes };
     }),
     
-    
     deleteRecipe: async (_id: string) => {
         try {
             const deleteResponse = await axios.delete(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${_id}`)
@@ -87,15 +83,13 @@ const useRecipeState = create<recipeState>()((set) => ({
         recipes: [...state.recipes, newRecipes],
     })),
 
-   
-
-    fetchRecipe: async () => { // for fetching whole api
+   fetchRecipe: async () => { // for fetching whole api
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
             
             if (response.status === 200) {
-
                 set({ recipes: response.data });
+
                 console.log(response.data);
 
             } else { console.log("Response error while fetching recipes: ", response.status) }
@@ -103,8 +97,6 @@ const useRecipeState = create<recipeState>()((set) => ({
         } catch (error) {console.log('Error fetching api/data', error);}
     },
 
-
-    
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
             const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
@@ -115,13 +107,11 @@ const useRecipeState = create<recipeState>()((set) => ({
                 set ({ drinks: drinksData });
 
                 console.log(drinksData);
+
             } else { console.log("Response error while fetcinh alcoholic: ", drinkResponse.status) }
            
         } catch (error) { console.log("error while fetching drinks ", error) }
     },
-
-
-
 
     fetchNonAlcoholicDrinks: async () => { // for fetching non-alcoholic drinks
         try {
@@ -141,14 +131,12 @@ const useRecipeState = create<recipeState>()((set) => ({
     },
 
 
-
     fetchAllDrinks: async () => {
         try {
             const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
             const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
             
             if (drinkResponse.status === 200 && nonDrinkResponse.status === 200) {
-
                 const nonDrinksData =  nonDrinkResponse.data.drinks; 
                 const drinksData =  drinkResponse.data.drinks;
     
@@ -168,11 +156,11 @@ const useRecipeState = create<recipeState>()((set) => ({
             const detailedDrink = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
             
             if ( detailedDrink.status === 200) {
-
                 const detailedDrinkData = detailedDrink.data.drinks;
                 set ({detailedDrink: detailedDrinkData})
 
                 console.log(detailedDrinkData)
+
             } else { console.log ("Response error: ", detailedDrink.status)}
  
         } catch (error) {console.log("error while fetching specific drink", error)}
@@ -180,15 +168,13 @@ const useRecipeState = create<recipeState>()((set) => ({
 
 
     fetchSpecificDrinkIngredient: async (ingredient: string) => {
-
         try {
             const detailedIngredient = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
             
             if ( detailedIngredient.status === 200) {
-                
                 const categoryDrink = detailedIngredient.data.drinks;
-        
                 set ({categoryDrinks: categoryDrink});
+         
                 console.log(categoryDrink, "test");
      
             } else {console.log("error while ingredient GET 200")}
@@ -197,31 +183,28 @@ const useRecipeState = create<recipeState>()((set) => ({
         
     },
 
-
     fetchSpecificRecipe: async (id: string) => {
         try {
             const detailedRecipe = await axios.get(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${id}`);
             
             if ( detailedRecipe.status === 200) {
+                set ({detailedRecipe: detailedRecipe.data});
 
                 console.log("test in 200");
                 console.log(detailedRecipe.data);
-                set ({detailedRecipe: detailedRecipe.data});
-
-     
+            
             } else { console.log ("Response error: ", detailedRecipe.status)}
  
         } catch (error) {console.log("error while fetching specific drink", error)}
     },
-
 
     fetchCategoriesRecipes: async (category: string) => {
         try {
             const categoriesRecipes = await axios.get(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${category}`);
 
             if (categoriesRecipes.status === 200) {
-
                 set ({recipes: categoriesRecipes.data})
+                
                 console.log(categoriesRecipes.data)
             }
              
