@@ -1,4 +1,4 @@
-//Gustav & Medi
+//Gustav & Mehdi
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -11,7 +11,7 @@ interface DishProps {
   name: string;
   image: string;
   recipe?: string;
-  ingredients?: string[];
+  ingredients: string[];
   description?: string;
 
 }
