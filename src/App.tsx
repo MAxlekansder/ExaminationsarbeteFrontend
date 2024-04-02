@@ -1,11 +1,6 @@
 import './Styling/App.css';
 import './Styling/Dishes.css';
-import { useState, useEffect, SetStateAction } from 'react';
-import RecipeSearch from './components/SearchRecipe/RecipeSearchProps';
-import NavBarComponent from './components/NavBarComponent'
-import useRecipeState from './State/indexState';
 import HomePage from './pages/HomePage';
-import FooterComponent from './components/Footer/FooterComponent';
 import WeeklyTips from './pages/WeeklyTips';
 import HandleRequests from './components/AddRecipe/HandleRequest';
 import Categories from './pages/Categories';
@@ -16,14 +11,15 @@ import CocktailCategory from './components/Cocktails/CocktailCategory';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
 import RecipeDetails from './Views/Recipe/Recipe';
 import PresentCocktails from './components/Cocktails/Cocktails';
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RecipeHome from './components/HomeRecipes/CategoryRecipe';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
 
-
 function App() {
+
  return (
-  <div >
+  <>
+  <BrowserRouter>
     <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/add' element={<HandleRequests />} />
