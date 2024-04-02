@@ -1,25 +1,33 @@
+//Gustav & Medi
 import DishComponent from '../components/DishComponent';
 import { Link } from 'react-router-dom';
 import useRecipeState from '../State/indexState';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useInView } from 'react-intersection-observer';
+import NavBarComponent from '../components/NavBarComponent';
+import RecipeSearch from '../components/SearchRecipe/RecipeSearchProps';
+import FooterComponent from '../components/Footer/FooterComponent';
 
 
 function HomePage() {
-  const { recipes } = useRecipeState();
-  
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const { recipes, fetchRecipe } = useRecipeState();
   const [randomLunch, setRandomLunch] = useState<any[]>([]);
   const [randomDinner, setRandomDinner] = useState<any[]>([]);
-  
-  const navigateToDish = useNavigate();
-  
   const [lunchCardRef, scrollPosLunch] = useInView({triggerOnce:true,});
   const [dinnerCardRef, scrollPosDinner] = useInView({triggerOnce: true,});
-  
+
   const lunchRef = useRef(null);
   const dinnerRef = useRef(null);
-  
+  const navigateToDish = useNavigate();
+
+
+  useEffect(() => {
+    fetchRecipe();
+
+  }, []);
+
 
   useEffect(() => {
     if (recipes.length > 0) {
@@ -48,19 +56,10 @@ function HomePage() {
     
     }
     
-    
   }, [scrollPosLunch,scrollPosDinner])
 
-  /*useEffect(()=>{
-    if(scrollPosDinner){
-      dinnerRef.current.classList.add('card-fade-in')
-    
-    }
-  }, [scrollPosDinner])*/
 
- 
-
-  //För att generera random rätter
+//För att generera random rätter
   const getRandomIndexes = (max: number, count: number) => {
     const indexes: number[] = [];
     while (indexes.length < count) {
@@ -72,8 +71,27 @@ function HomePage() {
     return indexes;
   };
 
+  const handleSearchChange = (term: string) => {
+    setSearchTerm(term);
+  };
+
   return (
   <>
+   <div>
+        <NavBarComponent />
+        <div className="food-header">
+          <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
+            Welcome to Not-Mathem!
+          </h1>
+        </div>
+        <div className="m-5 flex justify-center">
+          <RecipeSearch
+            recipesFromInterface={recipes}
+            searchTerm={searchTerm}
+            onSearchChange={handleSearchChange}
+          />
+        </div>
+      </div>
   <div className='flex w-2/5  ml-40 relative mt-20 mb-20'>
     <div className='pl-10'>
       <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl'>
@@ -87,7 +105,8 @@ function HomePage() {
               </div>
                 <div className='bg-green-700 2xl:ml-10 2xl:mr-10 text-green-700'>.</div>
             <div className=''>
-          <img src="public/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
+          <img src="
+          /Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
         </div>
     </div>
   <div className='p-10'>
@@ -165,6 +184,7 @@ function HomePage() {
     </div>
    <div className='mt-20 p-10'>
 </div>
+<FooterComponent />
 </>
 
 );}

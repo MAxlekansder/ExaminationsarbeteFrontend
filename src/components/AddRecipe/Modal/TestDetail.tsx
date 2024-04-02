@@ -1,12 +1,11 @@
 // Alexander
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useRecipeState from "../../../State/indexState";
 import { Recipe } from "../../../data/Recipes";
 import Modal from "./Modal";
 import RecipeRating from "../../SearchRecipe/RecipeRating.tsx";
-import SuggetsCocktail from "./SuggetsCocktail.tsx";
+import SuggetsCocktail from "../../Cocktails/SuggetsCocktail.tsx";
 
 
 
@@ -23,7 +22,6 @@ function DetailedTestComponent() {
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
   
-
   useEffect(() => {
     if (id) {
         fetchSpecificRecipe(id);
@@ -32,47 +30,40 @@ function DetailedTestComponent() {
   
   }, [fetchSpecificRecipe, id]);
   
-
-
   const openModal = (recipeId: string) => {
     setselectedRecipeId(recipeId);
     setIsModalOpe(true);
   };
 
-
   const closeModal = () => {
     setIsModalOpe(false);
   };
 
-
 return (
     <div>
         <h1>hej</h1>
-
-        <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
-            Change Recipe</button>
-        <Modal
-          recipeId={selectRecipeId}
-          isOpen={isModalOpen}
-          onCancel={closeModal}
-          imageUrl={detailedRecipe.imageUrl}
-          recipe={detailedRecipe}
-          />
-          <button onClick={()=>deleteRecipe(detailedRecipe._id)} className="border px-2">
+          <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
+              Change Recipe</button>
+                <Modal
+                  recipeId={selectRecipeId}
+                  isOpen={isModalOpen}
+                  onCancel={closeModal}
+                  imageUrl={detailedRecipe.imageUrl}
+                  recipe={detailedRecipe}
+                />
+              <button onClick={()=>deleteRecipe(detailedRecipe._id)} className="border px-2">
             Delete Recipe
           </button>
         <div>
             {detailedRecipe._id}
-            <img src={detailedRecipe.imageUrl} alt="" />
-            {detailedRecipe.title}  
-            {detailedRecipe.description}
-            <RecipeRating dishId={""} rating={null} setRating={function (rating: number): void {
-                throw new Error("Function not implemented.");
-            }} />
-            
-        </div>
-
-       <SuggetsCocktail/>
+              <img src={detailedRecipe.imageUrl} alt="" />
+                {detailedRecipe.title}  
+                  {detailedRecipe.description}
+                  <RecipeRating dishId={""} rating={null} setRating={function (rating: number): void {
+                    throw new Error("Function not implemented.");
+                    }} />
+            </div>
+        <SuggetsCocktail/>
     </div>
   )
 }

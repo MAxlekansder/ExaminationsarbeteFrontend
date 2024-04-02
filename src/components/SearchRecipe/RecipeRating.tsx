@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 interface RecipeRating {
   dishId: string;
-  rating: number | null;
+  //rating: number | null;
   setRating: (rating: number) => void;
 }
 
@@ -20,7 +20,7 @@ interface RecipeRating {
   };
 
   const handleMouseLeave = () => {
-    setHoverRating(null);
+   // setHoverRating(null);
   };
 
   const handleCommentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
