@@ -1307,5 +1307,86 @@
       { "name": "Cornstarch", "amount": 2, "unit": "tablespoons" },
       { "name": "Egg whites", "amount": 6, "unit": "" }
     ]
+  },
+  {
+    "title": "Baked Cod with Lemon and Herbs",
+    "description": "Baked cod with lemon and herbs is a light and flavorful dish that's easy to make and perfect for a healthy dinner. The cod fillets are seasoned with garlic, lemon zest, fresh herbs, and olive oil, then baked until tender and flaky.",
+    "ratings": 4,
+    "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Baked-cod-d8324c7.jpg?resize=768,574",
+    "timeInMins": 25,
+    "categories": ["Fish", "Baking"],
+    "instructions": [
+      "Preheat the oven to 400°F (200°C). Grease a baking dish with olive oil or cooking spray.",
+      "Place the cod fillets in the prepared baking dish, skin-side down.",
+      "In a small bowl, combine minced garlic, lemon zest, chopped parsley, salt, pepper, and olive oil. Mix well.",
+      "Spread the garlic and herb mixture evenly over the top of the cod fillets.",
+      "Bake the cod in the preheated oven for 15-20 minutes, or until the fish is opaque and flakes easily with a fork.",
+      "Remove the baked cod from the oven and serve hot, garnished with lemon wedges and additional chopped parsley, if desired."
+    ],
+    "ingredients": [
+      { "name": "Cod fillets", "amount": 4, "unit": "" },
+      { "name": "Garlic, minced", "amount": 2, "unit": "cloves" },
+      { "name": "Lemon zest", "amount": 1, "unit": "teaspoon" },
+      { "name": "Fresh parsley, chopped", "amount": 2, "unit": "tablespoons" },
+      { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Black pepper, freshly ground", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Olive oil", "amount": 2, "unit": "tablespoons" },
+      { "name": "Lemon wedges, for serving", "amount": 0, "unit": "" }
+    ]
+  },
+  {
+    "title": "Teriyaki Glazed Salmon",
+    "description": "Teriyaki glazed salmon is a delicious and flavorful dish that combines the sweetness of teriyaki sauce with the richness of salmon. The salmon fillets are marinated in a homemade teriyaki sauce, then grilled or baked to perfection.",
+    "ratings": 4,
+    "imageUrl": "https://www.mygfguide.com/wp-content/uploads/2020/01/00000IMG_00000_BURST20200131133521757_COVER-735x551.jpg",
+    "timeInMins": 30,
+    "categories": ["Fish", "Asian"],
+    "instructions": [
+      "In a small bowl, whisk together soy sauce, brown sugar, minced garlic, grated ginger, and sesame oil to make the teriyaki sauce.",
+      "Place the salmon fillets in a shallow dish and pour half of the teriyaki sauce over them. Reserve the remaining sauce for basting.",
+      "Cover the dish and marinate the salmon in the refrigerator for at least 30 minutes, or up to 1 hour.",
+      "Preheat the grill or oven to medium-high heat. Oil the grill grates or line a baking sheet with parchment paper.",
+      "Remove the salmon from the marinade and shake off any excess. Discard the marinade.",
+      "Grill or bake the salmon for 4-5 minutes per side, basting with the reserved teriyaki sauce, until the salmon is cooked through and caramelized on the outside.",
+      "Transfer the teriyaki glazed salmon to a serving platter and garnish with sliced green onions and sesame seeds. Serve hot."
+    ],
+    "ingredients": [
+      { "name": "Salmon fillets", "amount": 4, "unit": "" },
+      { "name": "Soy sauce", "amount": 0.5, "unit": "cup" },
+      { "name": "Brown sugar", "amount": 2, "unit": "tablespoons" },
+      { "name": "Garlic, minced", "amount": 2, "unit": "cloves" },
+      { "name": "Ginger, grated", "amount": 1, "unit": "teaspoon" },
+      { "name": "Sesame oil", "amount": 1, "unit": "teaspoon" },
+      { "name": "Green onions, sliced", "amount": 2, "unit": "tablespoons" },
+      { "name": "Sesame seeds", "amount": 1, "unit": "tablespoon" }
+    ]
+  },
+  {
+    "title": "Tuna Salad",
+    "description": "Tuna salad is a classic dish that's perfect for sandwiches, wraps, or serving over greens. It's made with canned tuna, crunchy vegetables, and a creamy dressing, and it comes together in minutes.",
+    "ratings": 4,
+    "imageUrl": "https://beatthebudget.com/wp-content/uploads/2022/08/Tuna-Pasta-Salad-Featured-image.jpg",
+    "timeInMins": 15,
+    "categories": ["Fish", "Salads"],
+    "instructions": [
+      "In a large bowl, combine canned tuna, diced celery, diced red onion, chopped dill pickles, mayonnaise, Dijon mustard, lemon juice, salt, and black pepper.",
+      "Mix all ingredients until well combined. Taste and adjust seasoning, if necessary.",
+      "Chill the tuna salad in the refrigerator for at least 30 minutes before serving to allow the flavors to meld together.",
+      "Serve the tuna salad on sandwiches, wraps, or over a bed of lettuce. Enjoy!"
+    ],
+    "ingredients": [
+      { "name": "Canned tuna, drained", "amount": 2, "unit": "cups" },
+      { "name": "Celery, diced", "amount": 0.5, "unit": "cup" },
+      { "name": "Red onion, diced", "amount": 0.5, "unit": "cup" },
+      { "name": "Dill pickles, chopped", "amount": 0.5, "unit": "cup" },
+      { "name": "Mayonnaise", "amount": 0.5, "unit": "cup" },
+      { "name": "Dijon mustard", "amount": 1, "unit": "tablespoon" },
+      { "name": "Lemon juice", "amount": 1, "unit": "tablespoon" },
+      { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
+      { "name": "Black pepper, freshly ground", "amount": 0.5, "unit": "teaspoon" }
+    ]
   }
+  
+  
+  
 ]
