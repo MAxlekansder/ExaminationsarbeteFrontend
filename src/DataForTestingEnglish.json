@@ -1385,7 +1385,88 @@
       { "name": "Salt", "amount": 0.5, "unit": "teaspoon" },
       { "name": "Black pepper, freshly ground", "amount": 0.5, "unit": "teaspoon" }
     ]
-  }
+  },
+    {
+      "title": "Chicken Tikka Masala",
+      "description": "A popular Indian dish consisting of marinated and grilled chicken chunks in a creamy tomato-based sauce.",
+      "ratings": 4,
+      "imageUrl": "https://i0.wp.com/www.nourishdeliciously.com/wp-content/uploads/2022/11/DSC_9207.jpg",
+      "timeInMins": 45,
+      "categories": ["Poultry", "Dinner"],
+      "instructions": [
+        "Marinate chicken chunks in yogurt, lemon juice, and spices for 30 minutes.",
+        "Grill marinated chicken until cooked through.",
+        "In a separate pan, sauté onions, garlic, ginger, and spices until fragrant.",
+        "Add tomato puree and cream to the pan, simmer until the sauce thickens.",
+        "Add grilled chicken to the sauce, simmer for another 10 minutes. Serve hot."
+      ],
+      "ingredients": [
+        { "name": "Chicken breast", "amount": 1, "unit": "pound" },
+        { "name": "Yogurt", "amount": 0.5, "unit": "cup" },
+        { "name": "Lemon juice", "amount": 2, "unit": "tablespoons" },
+        { "name": "Onion", "amount": 1, "unit": "large" },
+        { "name": "Garlic cloves", "amount": 3, "unit": "cloves" },
+        { "name": "Ginger", "amount": 1, "unit": "inch piece" },
+        { "name": "Tomato puree", "amount": 1, "unit": "cup" },
+        { "name": "Heavy cream", "amount": 0.5, "unit": "cup" },
+        { "name": "Spices (cumin, coriander, paprika, turmeric, garam masala)", "amount": "to taste", "unit": "" },
+        { "name": "Salt", "amount": "to taste", "unit": "" },
+        { "name": "Fresh cilantro", "amount": "for garnish", "unit": "" }
+      ]
+    },
+    {
+      "title": "Palak Paneer",
+      "description": "A nutritious Indian dish made with spinach and paneer (Indian cottage cheese) in a creamy sauce.",
+      "ratings": 4,
+      "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_159450/cf_259/palak_paneer_med_tomat_och_halloumi.jpg",
+      "timeInMins": 30,
+      "categories": ["Vegetarian", "Indian", "Lunch"],
+      "instructions": [
+        "Blanch spinach leaves in boiling water, then shock in ice water. Blend into a smooth paste.",
+        "Sauté onions, garlic, and ginger until golden brown.",
+        "Add spinach puree, spices, and cream. Simmer until flavors blend.",
+        "Add cubed paneer and cook until heated through. Serve hot."
+      ],
+      "ingredients": [
+        { "name": "Spinach", "amount": 2, "unit": "bunches" },
+        { "name": "Paneer", "amount": 200, "unit": "grams" },
+        { "name": "Onion", "amount": 1, "unit": "large" },
+        { "name": "Garlic cloves", "amount": 3, "unit": "cloves" },
+        { "name": "Ginger", "amount": 1, "unit": "inch piece" },
+        { "name": "Heavy cream", "amount": 0.5, "unit": "cup" },
+        { "name": "Spices (cumin, coriander, turmeric, garam masala)", "amount": "to taste", "unit": "" },
+        { "name": "Salt", "amount": "to taste", "unit": "" },
+        { "name": "Ghee", "amount": 2, "unit": "tablespoons" }
+      ]
+    },
+    {
+      "title": "Rogan Josh",
+      "description": "A flavorful Indian curry made with tender lamb cooked in a rich and aromatic sauce.",
+      "ratings": 4,
+      "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/rogan-josh-wide-1572547980.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
+      "timeInMins": 60,
+      "categories": ["Lamb", "Curry", "Dinner"],
+      "instructions": [
+        "Sauté onions, garlic, and ginger in ghee until golden brown.",
+        "Add lamb pieces and brown on all sides.",
+        "Add yogurt, tomato puree, and spices. Cook until lamb is tender.",
+        "Garnish with fresh cilantro and serve hot with rice or naan."
+      ],
+      "ingredients": [
+        { "name": "Lamb stew meat", "amount": 1, "unit": "pound" },
+        { "name": "Onion", "amount": 1, "unit": "large" },
+        { "name": "Garlic cloves", "amount": 4, "unit": "cloves" },
+        { "name": "Ginger", "amount": 1, "unit": "inch piece" },
+        { "name": "Yogurt", "amount": 0.5, "unit": "cup" },
+        { "name": "Tomato puree", "amount": 1, "unit": "cup" },
+        { "name": "Spices (cumin, coriander, paprika, turmeric, garam masala)", "amount": "to taste", "unit": "" },
+        { "name": "Salt", "amount": "to taste", "unit": "" },
+        { "name": "Fresh cilantro", "amount": "for garnish", "unit": "" },
+        { "name": "Ghee", "amount": 2, "unit": "tablespoons" }
+      ]
+    }
+  
+  
   
   
   
