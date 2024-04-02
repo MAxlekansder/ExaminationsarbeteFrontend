@@ -123,8 +123,7 @@ function HomePage() {
               name={dish.title}
               image={dish.imageUrl}
               description={dish.description}
-              onClick={() => navigateToDish(`/test/${dish._id}`)}
-                          />
+            />
           </Link>
         ))}
         <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
@@ -165,7 +164,7 @@ function HomePage() {
                 name={dish.title}
                 image={dish.imageUrl}
                 description={dish.description}
-                onClick={() => navigateToDish(`/test/${dish._id}`)}
+                
               />
             </Link>
           ))}

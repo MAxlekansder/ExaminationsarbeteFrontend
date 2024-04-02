@@ -1,7 +1,7 @@
 //Gustav
 
 import { Recipe } from "../../data/Recipes";
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import '../../Styling/App.css'
 
@@ -24,10 +24,10 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
     <ul>
       {filteredRecipes.map((recipe, index) => (
         <li key={index} className='recipe-text-on-search'>
-          <a href="" className='' onClick={() => navigateFromSearch(`/test/${recipe._id}`)}>{recipe.title},&nbsp;
+          <Link to={`/test/${recipe._id}`} className=''>{recipe.title},&nbsp;
             <span className='italic'>{recipe.description}
             </span>
-          </a>
+          </Link>
         </li>
 
       ))}
@@ -42,7 +42,7 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
           type="text"
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Sök recept"
+          placeholder="Search Recipes"
         />
       </div>
       <div className='search-recipes'>

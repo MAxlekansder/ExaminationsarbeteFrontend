@@ -4,8 +4,6 @@ import {create} from "zustand"
 import { Recipe } from "../data/Recipes"
 import axios from "axios";
 
-
-
 interface recipeState {
     recipes: Recipe[];
     drinks: any[];

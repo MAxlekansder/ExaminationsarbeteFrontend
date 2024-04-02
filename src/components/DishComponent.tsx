@@ -13,7 +13,7 @@ interface DishProps {
   recipe?: string;
   ingredients?: string[];
   description?: string;
-  onClick: () => void;
+
 }
 
 const DishComponent = ({ id, name, image, ingredients, description }: DishProps) => {

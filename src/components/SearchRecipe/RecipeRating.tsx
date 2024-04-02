@@ -7,7 +7,7 @@ interface RecipeRating {
 }
 
 
-  const RecipeRating: React.FC<RecipeRating> = ({ dishId, setRating }) => {
+const RecipeRating = ({ dishId, setRating }: RecipeRating) => {
   const [hoverRating, setHoverRating] = useState<number | null>(null);
   const [comment, setComment] = useState('');
 
