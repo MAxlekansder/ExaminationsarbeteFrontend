@@ -8,8 +8,8 @@ import HomePage from './pages/HomePage';
 import FooterComponent from './components/Footer/FooterComponent';
 import WeeklyTips from './pages/WeeklyTips';
 import HandleRequests from './components/AddRecipe/HandleRequest';
-import Home from './components/HomeRecipes/Home';
-import HomeCategory from './components/HomeRecipes/HomeCategory';
+import Home from './components/HomeRecipes/CategoryRecipe';
+import HomeCategory from './components/HomeRecipes/CategoryChoice';
 import Categories from './pages/Categories';
 import About from './pages/About';
 import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail';
@@ -27,9 +27,9 @@ function App() {
     <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/add' element={<HandleRequests />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/home/category/:category' element={<HomeCategory />} />
-        <Route path='/home/specificRecipe/:id' element={<RecipeDetails />} />
+        <Route path='/recipe' element={<Home />} />
+        <Route path='/recipe/category/:category' element={<HomeCategory />} />
+        <Route path='/recipe/specificRecipe/:id' element={<RecipeDetails />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
         <Route path='/cocktail:category' element={<CocktailCategory />} />

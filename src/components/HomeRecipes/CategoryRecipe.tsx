@@ -26,7 +26,7 @@ const Home = () => {
   };
 
   const locateHandler = (category: string) => {
-    navigate(`/home/category/${category}`);
+    navigate(`/recipe/category/${category}`);
   };
 
   return (
@@ -64,7 +64,7 @@ const Home = () => {
           .map((recipe) => (
             <div
               key={recipe._id}
-              onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
+              onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5 "
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
@@ -127,7 +127,7 @@ const Home = () => {
           .map((recipe) => (
             <div
               key={recipe._id}
-              onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
+              onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5"
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
@@ -208,7 +208,7 @@ const Home = () => {
         {FilterHandler("Vegetarian").map((recipe) => (
           <div
             key={recipe._id}
-            onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
+            onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
             className="mx-0.5"
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
