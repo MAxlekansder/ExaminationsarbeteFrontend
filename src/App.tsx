@@ -34,13 +34,9 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/weeklytips' element={<WeeklyTips />} />
-      </Routes>
-    
-      
-  </div>
-
-  
-
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
