@@ -14,6 +14,7 @@ import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
 import RecipeDetails from './Views/Recipe/Recipe';
 import PresentCocktails from './components/Cocktails/Cocktails';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Recipe from '../src/Views/Recipe/Recipe'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/weeklytips' element={<WeeklyTips />} />
+          <Route path='/recipe' element={<Recipe/>} />
         </Routes>
       </BrowserRouter>
     </>
