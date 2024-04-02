@@ -1,4 +1,4 @@
-import React, {useEffect, } from 'react'
+import {useEffect, } from 'react'
 import { useParams,} from "react-router-dom";
 import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
@@ -22,13 +22,12 @@ const RecipeDetails = () => {
 
 
     return (
-    <div>
-        <div className="Recipe-link relative">
-            <h1>{detailedRecipe.title}</h1>
-                <div className="Recipe flex">
-                    <img src={detailedRecipe.imageUrl} className="mr-4" />
-                    
-                <div className="">
+        <>
+        <div className="Recipe-link flex flex-col justify-center items-center m-12 ">
+            <div className="Recipe flex felx-col items-center relative">
+                <h1 className='absolute top-0 2xl:text-2xl'>{detailedRecipe.title}</h1>
+                    <img src={detailedRecipe.imageUrl} className="w-96 h-96 object-cover" />
+                <div className="m-12">
             <h2 className="2xl:text-2xl font-mono">Instructions step by step</h2>
         {detailedRecipe.instructions?.map((step, index) => (
     <div className="flex items-center mb-2 " key={index}>
@@ -49,20 +48,15 @@ const RecipeDetails = () => {
         ))}
       </div>
     </div>
-</div>
-            
-     
-
-           <div>
-            <h6>Ingredienser</h6>
+    <div>
+        <h6>Ingredienser</h6>
             {detailedRecipe.ingredients?.map(ingredient => (
                 <p>{ingredient.name}</p>
             ))}
             </div>
-          
-          
-        <p>{detailedRecipe.ratings}</p>
+          <p>{detailedRecipe.ratings}</p>
     </div>
+    </>
     )
 }
 
