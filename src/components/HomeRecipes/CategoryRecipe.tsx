@@ -7,7 +7,7 @@ import NavBarComponent from "../NavBarComponent.tsx";
 import { StaticCategories } from "../../data/StaticCategories.ts";
 import FooterComponent from "../Footer/FooterComponent.tsx";
 
-const Home = () => {
+function RecipeHome() {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
   const recipe = useRecipeState((state) => state.recipes);
   const navigate = useNavigate();
@@ -290,4 +290,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default RecipeHome;

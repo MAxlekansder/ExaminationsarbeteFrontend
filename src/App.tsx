@@ -8,8 +8,6 @@ import HomePage from './pages/HomePage';
 import FooterComponent from './components/Footer/FooterComponent';
 import WeeklyTips from './pages/WeeklyTips';
 import HandleRequests from './components/AddRecipe/HandleRequest';
-import Home from './components/HomeRecipes/CategoryRecipe';
-import HomeCategory from './components/HomeRecipes/CategoryChoice';
 import Categories from './pages/Categories';
 import About from './pages/About';
 import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail';
@@ -19,6 +17,8 @@ import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
 import RecipeDetails from './Views/Recipe/Recipe';
 import PresentCocktails from './components/Cocktails/Cocktails';
 import { Route, Routes } from "react-router-dom";
+import RecipeHome from './components/HomeRecipes/CategoryRecipe';
+import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
 
 
 function App() {
@@ -27,8 +27,8 @@ function App() {
     <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/add' element={<HandleRequests />} />
-        <Route path='/recipe' element={<Home />} />
-        <Route path='/recipe/category/:category' element={<HomeCategory />} />
+        <Route path='/recipe' element={<RecipeHome />} />
+        <Route path='/recipe/category/:category' element={<RecipeCategory />} />
         <Route path='/recipe/specificRecipe/:id' element={<RecipeDetails />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />

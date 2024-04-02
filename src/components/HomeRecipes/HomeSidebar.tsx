@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface DropdownMenuProps {
   category: string;
@@ -6,20 +6,22 @@ interface DropdownMenuProps {
   categoryHandler: (category: string) => void;
 }
 
-function sidebarMenu({category, options, categoryHandler}: DropdownMenuProps) {
+function SidebarMenu({ category, options, categoryHandler }: DropdownMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
-
-
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div>
       <button
-        onClick={() => categoryHandler(category)}
+        onClick={toggleMenu}
         className="cursor-pointer w-full py-2 text-left focus:outline-none"
       >
         {category}
       </button>
-      {options && (
+      {isOpen && options && (
         <ul className="left-0 mt-1 w-full z-10">
           {options.map((option) => (
             <li
@@ -38,4 +40,4 @@ function sidebarMenu({category, options, categoryHandler}: DropdownMenuProps) {
   );
 };
 
-export default sidebarMenu;
+export default SidebarMenu;
