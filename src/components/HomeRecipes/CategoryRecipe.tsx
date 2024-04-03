@@ -12,10 +12,13 @@ function RecipeHome() {
   const recipe = useRecipeState((state) => state.recipes);
   const navigate = useNavigate();
 
+
   useEffect(() => {
     getRecipe();
     console.log("Hej");
   }, []);
+
+  
 
   const FilterHandler = (category: string) => {
     const firstFilterRecipe = recipe.filter((recipe) =>
@@ -32,23 +35,24 @@ function RecipeHome() {
   return (
     <div>
       <NavBarComponent />
-      <div className="flex items-center pb-2 py-10 px-20">
-        <div className="w-1/2">
+      <div className="grid gap-8 px-10 py-10 md:grid-cols-2 md:items-center md:text-left">
+        <div className="">
           <h1 className="text-3xl font-bold">
             Explore our fantastic recipes and excellent design
           </h1>
           <p>the home of the best recipes and dry cleaning</p>
         </div>
-        <div className="w-1/2 ml-4">
+        <div className="w-full rounded-lg overflow-hidden">
           <img
             src="https://images.cdn.prd.api.discomax.com/2023/09/30/cbf6070c-53af-3219-9f4b-42005e408406.jpeg?f=jpg&q=75&w=1280&w=1200"
             alt=""
-            className="rounded-lg max-h-50"
+            className="rounded-lg max-w-full h-auto"
+            
           />
         </div>
       </div>
       <h2 className="text-xl pl-20">
-        Something spicy for <b>dinner</b>?
+        Something spicy for <b onClick={() => locateHandler("Dinner")}>dinner</b>?
       </h2>
       <div
         className="flex overflow-auto p-10"
@@ -94,15 +98,15 @@ function RecipeHome() {
             </div>
           ))}
       </div>
-      <div className="flex items-center justify-evenly pb-2 py-10 px-20">
-        <div className="w-1/2 ml-4">
+      <div className="grid gap-8 px-10 py-10 md:grid-cols-2 md:items-center md:text-left">
+        <div className="ml-4">
           <img
             src="https://www.universaldrycleaningsolutions.com.au/wp-content/uploads/Best-commercial-Dry-cleaning-Machine-Brands.jpg"
             alt=""
-            className="rounded-lg max-h-50"
+            className="rounded-lg max-w-full h-auto"
           />
         </div>
-        <div className="w-1/2 ml-4">
+        <div className="ml-4">
           <h2 className="text-3xl font-bold pl-10">
             You thought we where kidding?
           </h2>
@@ -160,12 +164,12 @@ function RecipeHome() {
       <div className="flex justify-center">
         <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
       </div>
-      <h1 className="text-3xl font-bold pl-10">Explore our categories</h1>
-      <div className="grid grid-cols-4 gap-2 p-10">
+      <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pl-10">Explore our categories</h1>
+      <div className="grid grid-cols-1 gap-4 w-full p-10 md:grid md:grid-cols-4 md:gap-2">
         {StaticCategories.map((category) => (
           <div
             key={category.name}
-            className="max-w-sm rounded overflow-hidden shadow-lg"
+            className="rounded overflow-hidden shadow-lg md:mb-0  md:w-full"
           >
             <img
               className="w-full h-64 object-cover"
@@ -260,12 +264,13 @@ function RecipeHome() {
                 >
                   <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
                     <div className="flex items-center space-x-6 lg:space-x-8">
-                      <div className="">
+                    <div className="hidden sm:block"> 
                         <div className="h-100 md:h-96 lg:h-120 w-full md:w-1/2 lg:w-full overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                           <img
                             src="https://www.wnyfamilymagazine.com/downloads/6195/download/Family%20Dinner%20Tips.jpg?cb=ec94adbc30dfdac90e11c6f2d62e45ee"
                             alt="Larger Image"
                             className="h-full w-full object-cover object-center"
+                          
                           />
                         </div>
                       </div>
