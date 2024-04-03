@@ -14,13 +14,14 @@ import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
 import RecipeDetails from './Views/Recipe/Recipe';
 import PresentCocktails from './components/Cocktails/Cocktails';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from './components/Cart';
 
 function App() {
 
- return (
-  <>
-  <BrowserRouter>
-    <Routes>
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/add' element={<HandleRequests />} />
           <Route path='/home' element={<Home />} />
@@ -34,10 +35,11 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/weeklytips' element={<WeeklyTips />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </>
-   )
+  )
 }
 
 export default App;

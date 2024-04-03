@@ -1,8 +1,18 @@
 // Kristian
+import React, { HtmlHTMLAttributes } from "react";
+import { TiShoppingCart } from "react-icons/ti";
+
+interface NavBarProps {
+    toggleCart: () => void;
+}
+
+function NavBarComponent({ toggleCart }: NavBarProps) {
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        event.preventDefault();
+        toggleCart();
+    }
 
 
-
-const NavBarComponent = () => {
     return (
         <header className="flex">
             <div className="py-1">
@@ -17,7 +27,8 @@ const NavBarComponent = () => {
                     <li><a href="/weeklytips" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Weekly Tips</a></li>
                     <li><a href="/cocktails" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Cocktails</a></li>
                     <li><a href="/about" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">About us</a></li>
-                    <li className="ml-auto"><a href="/add" className="px-5 py-2 bg-green-400 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:bg-green-600 rounded-lg shadow">Add recipe</a></li>
+                    <li className="ml-auto"><a href="/add" className="px-5 py-2 bg-green-400 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:bg-green-600 rounded-lg shadow mr-7">Add recipe</a></li>
+                    <li><a href="/cart" onClick={handleClick} className="text-2xl">< TiShoppingCart /></a></li>
                 </ul>
             </nav>
         </header>
