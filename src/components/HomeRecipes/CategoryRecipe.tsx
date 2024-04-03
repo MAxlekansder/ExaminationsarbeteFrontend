@@ -7,7 +7,7 @@ import NavBarComponent from "../NavBarComponent.tsx";
 import { StaticCategories } from "../../data/StaticCategories.ts";
 import FooterComponent from "../Footer/FooterComponent.tsx";
 
-const Home = () => {
+function RecipeHome() {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
   const recipe = useRecipeState((state) => state.recipes);
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const Home = () => {
   };
 
   const locateHandler = (category: string) => {
-    navigate(`/home/category/${category}`);
+    navigate(`/recipe/category/${category}`);
   };
 
   return (
@@ -64,7 +64,7 @@ const Home = () => {
           .map((recipe) => (
             <div
               key={recipe._id}
-              onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
+              onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5 "
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
@@ -127,7 +127,7 @@ const Home = () => {
           .map((recipe) => (
             <div
               key={recipe._id}
-              onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
+              onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5"
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
@@ -208,7 +208,7 @@ const Home = () => {
         {FilterHandler("Vegetarian").map((recipe) => (
           <div
             key={recipe._id}
-            onClick={() => navigate(`/home/specificRecipe/${recipe._id}`)}
+            onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
             className="mx-0.5"
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
@@ -290,4 +290,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default RecipeHome;
