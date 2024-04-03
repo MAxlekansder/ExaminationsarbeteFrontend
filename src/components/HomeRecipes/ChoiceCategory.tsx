@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useRecipeState from '../../State/indexState';
 import NavBarComponent from '../NavBarComponent';
-import SidebarMenu from './HomeSidebar';
+import SidebarMenu from './RecipeSidebar';
 
 function RecipeCategory() {
   const getRecipes = useRecipeState((state) => state.fetchRecipe);
@@ -50,7 +50,7 @@ function RecipeCategory() {
           <div className="text-lg font-bold">{handleCategory}</div>
         </div>
         <div className="flex">
-          <div className="w-1/6">
+          <div className="w-1/5">
             <h3 className="text-lg font-bold mb-4 pt-5">Categories</h3>
             <div className="text-lg cursor-pointer w-full py-2 text-left focus:outline-none" onClick={()=> categoryHandler("All categories")}>All categories</div>
             {dropdownMenus.map(({ category, options }) => (
@@ -63,7 +63,7 @@ function RecipeCategory() {
             ))}
           </div>
 
-          <div className="w-5/6 grid grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-3 gap-4 sm:grid-cols-1">
             {filterRecipe().map((recipe) => (
               <div
                 key={recipe._id}
