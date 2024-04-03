@@ -14,8 +14,11 @@ import PresentCocktails from './components/Cocktails/Cocktails';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RecipeHome from './components/HomeRecipes/CategoryRecipe';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
+import DrinkCategory from './components/Cocktails/CocktailsTest/CocktailsTest';
+
 
 function App() {
+
 
  return (
   <>
@@ -28,6 +31,7 @@ function App() {
         <Route path='/recipe/specificRecipe/:id' element={<RecipeDetails />} />
         <Route path='/cocktails' element={<PresentCocktails />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
+        <Route path='/cocktailsTest' element={<DrinkCategory />} />
         <Route path='/cocktail:category' element={<CocktailCategory />} />
         <Route path='/test' element={<Test />} />
         <Route path='/test/:id' element={<DetailedTestComponent />} />
