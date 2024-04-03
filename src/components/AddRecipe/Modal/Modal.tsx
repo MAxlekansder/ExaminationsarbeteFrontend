@@ -47,34 +47,50 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
    
   };
 
-  const handleIngredientChange = (index: number, property: string, newValue: string) => {
-    setUpdatedRecipe(updateRecipe => {
-      const updatedIngredients = [...updateRecipe.ingredients || []];
+  const handleIngredientChange = (index: number, property: string, newValue: string) => {  // to handle new ing value
+    setUpdatedRecipe(updateRecipe => {const updatedIngredients = [...(updateRecipe.ingredients || [])];
       updatedIngredients[index] = { ...updatedIngredients[index], [property]: newValue };
-      return { ...updateRecipe, ingredients: updatedIngredients };
+
+     return { ...updateRecipe, ingredients: updatedIngredients };
     });
   };
 
 
-  const handleInstructionChange = (index: number, newValue: string) => {
-    setUpdatedRecipe(updateRecipe => {
-      const updatedInstructions = [...(updateRecipe.instructions || [])]; // Provide a default empty array if instructions is undefined
-      updatedInstructions[index] = newValue;
+  const handleInstructionChange = (index: number, newValue: string) => {  // to handle new inst value
+    setUpdatedRecipe(updateRecipe => { const updatedInstructions = [...(updateRecipe.instructions || [])]; 
+
+    
+
+
       return { ...updateRecipe, instructions: updatedInstructions };
     });
   };
   
 
 
-  const handleRecipeUpdate = () => {
-    console.log("handle recipe update",updatedRecipe._id)
-    console.log("handle prop", updatedRecipe)
+  const handleRecipeUpdate = () => {   // basic update to update whole recipe
     getUpdate(updatedRecipe._id, updatedRecipe);
   };
 
 
-  const fixThis = () => {
-    console.log("fix this");
+  const deleteIngredient = (index: number) => {  // to handle deleting ing if needed
+    setUpdatedRecipe(updateRecipe => {const updatedIngredients = [...(updateRecipe.ingredients || [])];
+      updatedIngredients.splice(index, 1); 
+
+      getUpdate(updateRecipe._id, { ...updateRecipe, ingredients: updatedIngredients });
+
+      return { ...updateRecipe, ingredients: updatedIngredients };
+    });
+  };
+
+  const deleteInstruction = (index: number) => {  // to handle deleting inst if needed
+    setUpdatedRecipe(updateRecipe => { const updatedInstructions = [...(updateRecipe.instructions || [])];
+      updatedInstructions.splice(index, 1); 
+
+      getUpdate(updateRecipe._id, { ...updateRecipe, instructions: updatedInstructions });
+
+      return { ...updateRecipe, instructions: updatedInstructions };
+    });
   };
 
 
@@ -102,7 +118,6 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 type="text"
                 name="title"
                 placeholder={recipe.title}
-                // value={updatedRecipe.title}
                 onChange={handleUserInput} 
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
@@ -152,7 +167,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
           <div className="flex py-4 px-6">
             <div className="w-1/2" style={{ overflowY: 'auto', maxHeight: '350px' }}>
               <div>INGREDIENTS</div>
-              {recipe.ingredients?.map(
+              {updatedRecipe.ingredients?.map(
                 (ingredient: Ingredient, index: number) => (
                   <li key={index} className="flex">
                     <input
@@ -177,10 +192,10 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                       className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                     />
                     <button
-                      onClick={fixThis}
+                      onClick={() => deleteIngredient(index)}
                       className=" w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
                     >
-                      Ta bort
+                      Remove
                     </button>
                   </li>
                 )
@@ -188,7 +203,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
               </div>
               <div className="w-1/2" style={{ overflowY: 'auto', maxHeight: '350px' }}>
                 <div>INSTRUCTIONS</div>
-                {recipe.instructions?.map(
+                {updatedRecipe.instructions?.map(
                   (instruction: string, index: number) => (
                     <li key={index} className="flex">
                       <input
@@ -199,10 +214,10 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                         className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                       />
                       <button
-                        onClick={fixThis}
+                        onClick={() => deleteInstruction(index)}
                         className=" w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
                       >
-                        Ta bort
+                        Remove
                       </button>
                     </li>
                   )

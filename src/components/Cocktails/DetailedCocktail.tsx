@@ -2,7 +2,7 @@
 //Design by Gustav
 //Fixa Idag 2024-03-21!!!!
 
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
 import '../../Styling/Cocktail.css'

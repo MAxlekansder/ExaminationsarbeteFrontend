@@ -22,7 +22,8 @@ const typesOfMeasure = [
   "tablespoon",
   "teaspoon",
   "cup",
-  "Ounce"
+  "cups",
+  "ounce"
 ];
 
 function IngredientsList({ ingredient, setIngredient}: IngredientsListProps): JSX.Element {

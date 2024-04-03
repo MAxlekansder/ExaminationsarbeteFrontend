@@ -1,4 +1,4 @@
-//import React, { useEffect, useState } from 'react';
+//Gustav & Mehdi
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -11,9 +11,9 @@ interface DishProps {
   name: string;
   image: string;
   recipe?: string;
-  ingredients?: string[];
+  ingredients: string[];
   description?: string;
-  onClick: () => void;
+
 }
 
 const DishComponent = ({ id, name, image, ingredients, description }: DishProps) => {
@@ -43,11 +43,9 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
     );
   }
 
- 
-  return (
+ return (
     <div className='card-fade-in '>
       <div className="">
-      
         <Link to={`/test/${id}`}>
           <img
             src={image}
@@ -55,12 +53,11 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
             className="object-cover 2xl:h-96 2xl:w-96 xl:h-60 xl:w-60"
           />
         </Link>
-       
       </div>
-      <p className="mt-2 xl:font-semibold 2xl:text-2xl xl:text-xm md:text-sm ">{name}</p>
+    <p className="mt-2 xl:font-semibold 2xl:text-2xl xl:text-xm md:text-sm ">{name}</p>
       <div className='flex '>
         <p className="mt-2 w-40 2xl:text-xm xl:text-xs md:text-sm ">{description}</p>
-        </div>
+      </div>
     </div>
   );
 }

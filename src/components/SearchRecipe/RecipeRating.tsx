@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 
 interface RecipeRating {
   dishId: string;
+  rating: number | null;
   setRating: (rating: number) => void;
 }
 
@@ -19,6 +20,7 @@ interface MyComment {
       const [hoverRating, setHoverRating] = useState<number | null>(null);
       const [comments, setComments] = useState<MyComment[]>([]);
       const [newComment, setNewComment] = useState<string>('');
+
 
 
       const handleRatingChange = (newRating: number) => {

@@ -80,7 +80,7 @@
           <NavBarComponent />
         </div>
         
-        <div className="border border-gray-300 rounded p-6 border-img">
+        <div className=" rounded p-6 border-img">
           <div className="flex justify-center items-stretch h-screen">
             <div className="w-full max-w-3xl">
               <div className="flex flex-wrap -mx-3 mb-6">
@@ -180,8 +180,10 @@
    
              </div>
              <br />
+             <div className="pb-10">
              <button onClick={addRecipe} className="border px-1 py-1">
               Add your recipe</button>
+              </div>
             </div>
             
           </div>
