@@ -14,12 +14,11 @@ import PresentCocktails from './components/Cocktails/Cocktails';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RecipeHome from './components/HomeRecipes/CategoryRecipe';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
-import Cart from './components/Cart';
 
 function App() {
 
   return (
-  <>
+    <>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -35,28 +34,10 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/weeklytips' element={<WeeklyTips />} />
-          return (
-          <>
-            <BrowserRouter>
-              <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/add' element={<HandleRequests />} />
-                <Route path='/home' element={<Home />} />
-                <Route path='/home/category/:category' element={<HomeCategory />} />
-                <Route path='/home/specificRecipe/:id' element={<RecipeDetails />} />
-                <Route path='/cocktails' element={<PresentCocktails />} />
-                <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
-                <Route path='/cocktail:category' element={<CocktailCategory />} />
-                <Route path='/test' element={<Test />} />
-                <Route path='/test/:id' element={<DetailedTestComponent />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/categories' element={<Categories />} />
-                <Route path='/weeklytips' element={<WeeklyTips />} />
-                <Route path='/cart' element={<Cart />} />
-              </Routes>
-            </BrowserRouter>
-          </>
-          );
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-          export default App;
+export default App;
