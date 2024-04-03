@@ -19,7 +19,6 @@ import DrinkCategory from './components/Cocktails/CocktailsTest/CocktailsTest';
 
 function App() {
 
-
  return (
   <>
   <BrowserRouter>
@@ -38,8 +37,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/weeklytips' element={<WeeklyTips />} />
-        </Routes>
-      </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }

@@ -1,13 +1,13 @@
 // Kristian
 // Done, maybe some styling later
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useRecipeState from '../State/indexState';
 import { useNavigate } from "react-router-dom";
 import NavBarComponent from '../components/NavBarComponent';
 import FooterComponent from '../components/Footer/FooterComponent';
 
-const WeeklyTips: React.FC = () => {
+const WeeklyTips = () => {
   const { recipes } = useRecipeState();
   const [filteredRecipes, setFilteredRecipes] = useState<any[]>([]);
   const [currentRecommendation, setCurrentRecommendation] = useState('');
