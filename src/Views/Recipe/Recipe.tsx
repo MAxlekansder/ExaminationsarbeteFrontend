@@ -7,6 +7,7 @@ import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import AddToCart from '../../components/Cart/addToCart.tsx';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
+import FooterComponent from '../../components/Footer/FooterComponent.tsx';
 
 
 const RecipeDetails = () => {
@@ -49,14 +50,35 @@ const RecipeDetails = () => {
                   imageUrl={detailedRecipe.imageUrl}
                   recipe={detailedRecipe}
                 />
-        <div className="Recipe-link flex flex-col justify-center items-center m-12 ">
-            <div className="Recipe flex felx-col items-center relative">
-                <h1 className='absolute top-0 2xl:text-2xl'>{detailedRecipe.title}</h1>
-                    <img src={detailedRecipe.imageUrl} className="w-96 h-96 object-cover" />
+        <div className="
+              2xl:Recipe-link 2xl:flex 2xl:flex-col
+              xl:Recipe-link xl:flex xl:flex-col
+              lg:Recipe-link lg:flex lgflex-col
+              md:Recipe-link md:flex md:flex-col
+              sm:Recipe-link sm:flex sm:flex-col  
+              justify-center items-center m-12 
+              ">
+            <div className="
+              2xl:Recipe 2xl:flex 
+              xl:flex xlm:flex-row-reverse 
+              lg:flex lg:flex-row-reverse 
+              md:flex md:flex-row-reverse 
+              sm:flex 
+              felx-col items-center relative 
+            
+            ">
+                <h1 className='absolute top-0  xl:text-xl'>{detailedRecipe.title}</h1>
+                    <img src={detailedRecipe.imageUrl} className="2xl:w-96 2xl:h-96 object-cover" />
                 <div className="m-12">
-            <h2 className="2xl:text-2xl font-mono">Instructions step by step</h2>
+            <h2 className="xl:text-xl font-mono">Instructions step by step</h2>
         {detailedRecipe.instructions?.map((step, index) => (
-    <div className="flex items-center mb-2 " key={index}>
+    <div className="
+                  2xl:flex 2xl:items-center 2xl:mb-2
+                  xl:flex xl:items-center xl:mb-2
+                  lg:flex lg:items-center lg:mb-2
+                  md:flex md:items-center md:mb-2
+                  sm:flex sm:items-center sm:mb-2
+                    " key={index}>
 <input
     id={`bordered-checkbox-${index}`}
     type="checkbox"
@@ -75,14 +97,18 @@ const RecipeDetails = () => {
       </div>
     </div>
     <div>
-        <h6>Ingredienser</h6>
+        <h2 className='2xl:text-3xl xl:text-3xl sm:text-3xl'>Ingredienser</h2>
             {detailedRecipe.ingredients?.map(ingredient => (
                 <p>{ingredient.name}</p>
             ))}
             </div>
           <p>{detailedRecipe.ratings}</p>
+          <AddToCart />
+          
     </div>
-    <AddToCart />
+   <div className='mb-52'></div>{/*För att adda lite tom space*/}
+   <FooterComponent/>
+    
     </>
   );
 };
