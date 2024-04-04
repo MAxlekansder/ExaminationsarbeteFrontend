@@ -5,12 +5,18 @@ import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import AddToCart from '../../components/Cart/addToCart.tsx';
+import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
+import { useState } from 'react';
 
 
 const RecipeDetails = () => {
     const {id} = useParams<{ id: string }>()
     const getRecipe = useRecipeState((state) => state.fetchSpecificRecipe)
     const detailedRecipe = useRecipeState((state) => state.detailedRecipe as Recipe)
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isModalOpen, setIsModalOpe] = useState(false);
+    const [selectRecipeId, setselectedRecipeId] = useState("");
+  
 
     useEffect(() => {
         if (id) {
@@ -21,8 +27,27 @@ const RecipeDetails = () => {
     
 
 
+  const openModal = (recipeId: string) => {
+    setselectedRecipeId(recipeId);
+    setIsModalOpe(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpe(false);
+  };
+
+
     return (
         <>
+        <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
+              Change Recipe</button>
+                <Modal
+                  
+                  isOpen={isModalOpen}
+                  onCancel={closeModal}
+                  imageUrl={detailedRecipe.imageUrl}
+                  recipe={detailedRecipe}
+                />
         <div className="Recipe-link flex flex-col justify-center items-center m-12 ">
             <div className="Recipe flex felx-col items-center relative">
                 <h1 className='absolute top-0 2xl:text-2xl'>{detailedRecipe.title}</h1>
