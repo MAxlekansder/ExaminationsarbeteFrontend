@@ -45,7 +45,7 @@ return (
           <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
               Change Recipe</button>
                 <Modal
-                  recipeId={selectRecipeId}
+                  
                   isOpen={isModalOpen}
                   onCancel={closeModal}
                   imageUrl={detailedRecipe.imageUrl}

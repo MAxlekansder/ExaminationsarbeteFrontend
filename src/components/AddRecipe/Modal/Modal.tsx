@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Recipe, Ingredient } from "../../../data/Recipes";
 import useRecipeState from "../../../State/indexState";
-import CategorySelected from "../CategorySelect";
+
 
 interface ModalProps {
   recipe: Recipe;
@@ -18,6 +18,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
   const [displayNewUrl, setDisplayNewUrl] = useState("");
   const [newIngredient, setNewIngredient] = useState({ name: "", amount: "", unit: "", });
   const [newInstruction, setNewInstruction] = useState("");
+  const [newCategory, setNewCategory] = useState("");
 
   useEffect(() => {
     setUpdatedRecipe(recipe);
@@ -57,8 +58,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     });
   };
 
-  const handleInstructionChange = (index: number, newValue: string) => {
-    // to handle new inst value
+  const handleInstructionChange = (index: number, newValue: string) => { // to handle new inst value
     setUpdatedRecipe((updateRecipe) => {
       const updatedInstructions = [...(updateRecipe.instructions || [])];
 
@@ -66,9 +66,21 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     });
   };
 
+  const handleCategoryChange = (index: number, newValue: string) => {
+    setUpdatedRecipe((updateRecipe) => {
+      const updatedCategories = [...updateRecipe.categories]; 
+      updatedCategories[index] = newValue; 
+  
+      return { ...updateRecipe, categories: updatedCategories }; 
+    });
+  };
+  
+
+
   const handleRecipeUpdate = () => { // basic update to update whole recipe
     getUpdate(updatedRecipe._id, updatedRecipe);
   };
+
 
   const deleteIngredient = (index: number) => { // to handle deleting ing if needed
     setUpdatedRecipe((updateRecipe) => {
@@ -98,6 +110,21 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     });
   };
 
+  const deleteCategory = (index: number) => { // to handle deleting inst if needed
+    setUpdatedRecipe((updateRecipe) => {
+      const updatedCategories = [...(updateRecipe.categories || [])];
+      updatedCategories.splice(index, 1);
+
+      getUpdate(updateRecipe._id, {
+        ...updateRecipe,
+        categories: updatedCategories,
+      });
+
+      return { ...updateRecipe, categories: updatedCategories };
+    });
+  };
+
+
   const addIngredient = () => {  // with calling the state and using each parameter to add a new ingredient directly 
     setUpdatedRecipe((updateRecipe) => ({
       ...updateRecipe,
@@ -120,6 +147,15 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     }));
     setNewInstruction("");
   };
+
+  const addCategory = () => {
+    setUpdatedRecipe((updatedRecipe) => ({
+      ...updatedRecipe,
+      categories: [...(updatedRecipe.categories || []), newCategory], 
+    }));
+    setNewCategory(""); 
+  };
+  
 
   if (!isOpen) return null;
 
@@ -165,15 +201,6 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
               <input
-                id="categories"
-                type="text"
-                name="categories"
-                placeholder={recipe.categories.join(" ,")}
-                onChange={handleUserInput}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-
-              <input
                 id="timesInMins"
                 type="number"
                 name="timeInMins"
@@ -181,6 +208,45 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 onChange={handleUserInput}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
+              CATEGORIES
+              <div style={{ maxHeight: "150px", overflowY: "auto" }}>
+              {updatedRecipe.categories?.map(
+                (category: string, index: number) => (
+                  <li key={index} className="flex">
+                    <input
+                      id="instruction"
+                      type="text"
+                      placeholder={category}
+                      onChange={(e) =>
+                        handleCategoryChange(index, e.target.value)
+                      }
+                      className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    />
+                    <button
+                      onClick={() => deleteCategory(index)}
+                      className=" w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
+                    >
+                      Remove
+                    </button>
+                  </li>
+                )
+              )}
+              <li className="flex">
+                <input
+                  id="ingredientUnit"
+                  type="text"
+                  placeholder={""}
+                  onChange={(e) => setNewCategory(e.target.value)}
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                />
+                <button
+                  onClick={() => addCategory()}
+                  className=" w-1/5 bg-green-600 hover:bg-green-500 text-white font-bold py-0 px-2 border border-green-600 rounded h-8 w-15 text-xs"
+                >
+                  Add
+                </button>
+              </li>
+            </div>
             </div>
             <div className="py-2 px-2 w-1/2 w-500 h-350">
               <img
@@ -303,7 +369,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 <input
                   id="ingredientUnit"
                   type="text"
-                  placeholder={"da"}
+                  placeholder={""}
                   onChange={(e) => setNewInstruction(e.target.value)}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
@@ -332,12 +398,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
             >
               STÄNG
             </button>
-            <button
-              type="button"
-              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-200 text-base font-medium text-white hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              ADD NEW INSTRUCTION
-            </button>
+            
           </div>
         </div>
       </div>
