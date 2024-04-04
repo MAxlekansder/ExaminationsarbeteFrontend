@@ -8,7 +8,7 @@ interface NavBarProps {
     toggleCart: () => void;
 }
 
-function NavBarComponent({ }: NavBarProps) {
+function NavBarComponent() {
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     const handleCartToggle = () => {

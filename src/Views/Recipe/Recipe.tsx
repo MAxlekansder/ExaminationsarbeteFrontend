@@ -18,7 +18,8 @@ const RecipeDetails = () => {
             console.log(id);
         }
     }, [getRecipe, id]);
-    
+
+   
 
 
     return (
