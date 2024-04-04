@@ -1,3 +1,5 @@
+// Alexander
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useRecipeState from "../../../State/indexState";
@@ -76,7 +78,7 @@ function PresentCocktails() {
           ))}
         </div>
       </div>
-      <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-4 2xl:w-3/5 2xl:m-12 2xl:pt-10">
         {categoryDrinks &&
           categoryDrinks.map((drink) => (
             <div

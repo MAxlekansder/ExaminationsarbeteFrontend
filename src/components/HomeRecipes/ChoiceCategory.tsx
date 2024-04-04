@@ -74,7 +74,7 @@ function RecipeCategory() {
                   alt=""
                   className="w-full h-64 object-cover"
                   onClick={() =>
-                    navigate(`/home/specificRecipe/${recipe._id}`)
+                    navigate(`/recipe/specificRecipe/${recipe._id}`)
                   }
                 />
                 <div className="px-6 py-4">

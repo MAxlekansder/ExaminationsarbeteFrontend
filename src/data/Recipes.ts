@@ -9,12 +9,13 @@ export interface Recipe {
   _id: string;
   title: string;
   description: string;
-  ratings?: number[]; 
+  ratings?: number[];
   avgRating: number;
   imageUrl: string;
   timeInMins: number;
   categories: string[];
   instructions?: string[];
   ingredients?: Ingredient[];
+  comments?: string[];
 }
 

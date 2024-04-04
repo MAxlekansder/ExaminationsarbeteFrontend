@@ -4,10 +4,6 @@ import { TiShoppingCart } from "react-icons/ti";
 import { IoCloseSharp } from "react-icons/io5";
 
 
-interface NavBarProps {
-    toggleCart: () => void;
-}
-
 function NavBarComponent() {
     const [isCartOpen, setIsCartOpen] = useState(false);
 
