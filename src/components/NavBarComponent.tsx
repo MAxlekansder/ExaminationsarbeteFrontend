@@ -68,18 +68,20 @@ function NavBarComponent() {
 
                     {!isOrderConfirmed ? (
                         <>
-                            <div className="p-4 bg-slate-500 border rounded">
+                            <div className="p-4 bg-green-800 border rounded">
                                 <h2 className='text-xl font-semibold text-white p-4 text-center'>Shopping Cart</h2>
                                 <br />
 
                             </div>
                             <div className="px-2">
-                                <p className="text-red-400 font-semibold">Nissan GTR R35</p>
+                                <p className="text-red-400 font-semibold">Raggmunk recipe</p>
                                 <br />
-                                <p>Engine: 3.8L V6</p>
-                                <p>Power: 562 hp</p>
-                                <p>Transmission: 6-speed dual-clutch</p>
-                                <p>Made in: Japan</p>
+                                <p>Flour</p>
+                                <p>Milk</p>
+                                <p>Egg</p>
+                                <p>Potatoes</p>
+                                <p>Lingonberry jam</p>
+                                <br />
                             </div>
                             <div className="flex px-1">
                                 <button onClick={decrement}
@@ -94,7 +96,7 @@ function NavBarComponent() {
                                     +
                                 </button>
                             </div>
-                            <button onClick={confirmOrder} className="text-xl text-white rounded-lg bg-blue-500 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-2 left-5 right-5">Confirm Order</button>
+                            <button onClick={confirmOrder} className="text-xl text-white rounded-lg bg-green-900 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-2 left-5 right-5">Confirm Order</button>
                         </>
                     ) : (
                         <div className="text-center p-4 bg-slate-500">
