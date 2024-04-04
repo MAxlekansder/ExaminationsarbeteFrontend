@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Recipe, Ingredient } from "../../../data/Recipes";
 import useRecipeState from "../../../State/indexState";
-
+import { url } from "inspector";
 
 interface ModalProps {
   recipe: Recipe;
@@ -16,7 +16,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
   const getUpdate = useRecipeState((state) => state.updateRecipes);
   const [updatedRecipe, setUpdatedRecipe] = useState<Recipe>(recipe);
   const [displayNewUrl, setDisplayNewUrl] = useState("");
-  const [newIngredient, setNewIngredient] = useState({ name: "", amount: "", unit: "", });
+  const [newIngredient, setNewIngredient] = useState({ name: "", amount: "",unit: "",});
   const [newInstruction, setNewInstruction] = useState("");
   const [newCategory, setNewCategory] = useState("");
 
@@ -33,32 +33,33 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     return () => document.removeEventListener("keydown", handleKeyEvent);
   }, [isOpen, onCancel]);
 
-  const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    if (name === "imageUrl") {
-      setDisplayNewUrl(value);
+
+  
+
+  const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {  // does many things, first takes user care of user input
+    const { name, value } = e.target; // depending on the HTML element "name" changes the value
+
+    if (name === "imageUrl") {     
+        setDisplayNewUrl(value);
     }
-    setUpdatedRecipe((updateRecipe) => ({
-      ...updateRecipe,
-      [name]: value,
-    }));
+
+    setUpdatedRecipe((updateRecipe) => ({ ...updateRecipe, [name]: value,}));
   };
 
-  const handleIngredientChange = (
-    index: number,
-    property: string,
-    newValue: string
-  ) => {
-    // to handle new ing value
+
+  const handleIngredientChange = ( index: number, property: string, newValue: string) => { // to handle change in ing value
     setUpdatedRecipe((updateRecipe) => {
       const updatedIngredients = [...(updateRecipe.ingredients || [])];
-      updatedIngredients[index] = {...updatedIngredients[index], [property]: newValue,};
+      updatedIngredients[index] = {
+        ...updatedIngredients[index],
+        [property]: newValue,
+      };
 
       return { ...updateRecipe, ingredients: updatedIngredients };
     });
   };
 
-  const handleInstructionChange = (index: number, newValue: string) => { // to handle new inst value
+  const handleInstructionChange = (index: number, newValue: string) => { // to handle change in inst value
     setUpdatedRecipe((updateRecipe) => {
       const updatedInstructions = [...(updateRecipe.instructions || [])];
 
@@ -66,23 +67,22 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     });
   };
 
-  const handleCategoryChange = (index: number, newValue: string) => {
+  const handleCategoryChange = (index: number, newValue: string) => { // to handle change in cat value
     setUpdatedRecipe((updateRecipe) => {
-      const updatedCategories = [...updateRecipe.categories]; 
-      updatedCategories[index] = newValue; 
-  
-      return { ...updateRecipe, categories: updatedCategories }; 
+      const updatedCategories = [...updateRecipe.categories];
+      updatedCategories[index] = newValue;
+
+      return { ...updateRecipe, categories: updatedCategories };
     });
   };
-  
 
-
-  const handleRecipeUpdate = () => { // basic update to update whole recipe
+  const handleRecipeUpdate = () => { // basic update to update whole recipe which trigger on "OK" button
     getUpdate(updatedRecipe._id, updatedRecipe);
   };
 
 
-  const deleteIngredient = (index: number) => { // to handle deleting ing if needed
+  const deleteIngredient = (index: number) => { // logic to handle deletion of specific ing and if its needed
+    
     setUpdatedRecipe((updateRecipe) => {
       const updatedIngredients = [...(updateRecipe.ingredients || [])];
       updatedIngredients.splice(index, 1);
@@ -95,6 +95,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
       return { ...updateRecipe, ingredients: updatedIngredients };
     });
   };
+
 
   const deleteInstruction = (index: number) => { // to handle deleting inst if needed
     setUpdatedRecipe((updateRecipe) => {
@@ -110,7 +111,8 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     });
   };
 
-  const deleteCategory = (index: number) => { // to handle deleting inst if needed
+
+  const deleteCategory = (index: number) => { // to handle deleting categ if needed
     setUpdatedRecipe((updateRecipe) => {
       const updatedCategories = [...(updateRecipe.categories || [])];
       updatedCategories.splice(index, 1);
@@ -125,7 +127,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
   };
 
 
-  const addIngredient = () => {  // with calling the state and using each parameter to add a new ingredient directly 
+  const addIngredient = () => { // with calling the state and using each parameter to add a new ingredient directly
     setUpdatedRecipe((updateRecipe) => ({
       ...updateRecipe,
       ingredients: [
@@ -151,17 +153,16 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
   const addCategory = () => {
     setUpdatedRecipe((updatedRecipe) => ({
       ...updatedRecipe,
-      categories: [...(updatedRecipe.categories || []), newCategory], 
+      categories: [...(updatedRecipe.categories || []), newCategory],
     }));
-    setNewCategory(""); 
+    setNewCategory("");
   };
-  
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed z-10 inset-0 overflow-y-scroll">
-      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div className="flex items-center justify-center min-h-screen pt-2 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
@@ -182,7 +183,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 name="title"
                 placeholder={recipe.title}
                 onChange={handleUserInput}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-2 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
               <input
                 id="Description"
@@ -190,7 +191,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 name="description"
                 placeholder={recipe.description}
                 onChange={handleUserInput}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-2 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
               <input
                 id="imageUrl"
@@ -198,7 +199,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 name="imageUrl"
                 placeholder="Paste new URL here"
                 onChange={handleUserInput}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-3 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-2 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
               <input
                 id="timesInMins"
@@ -206,47 +207,47 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 name="timeInMins"
                 placeholder={recipe.timeInMins.toString()}
                 onChange={handleUserInput}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-2 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
               CATEGORIES
-              <div style={{ maxHeight: "150px", overflowY: "auto" }}>
-              {updatedRecipe.categories?.map(
-                (category: string, index: number) => (
-                  <li key={index} className="flex">
-                    <input
-                      id="instruction"
-                      type="text"
-                      placeholder={category}
-                      onChange={(e) =>
-                        handleCategoryChange(index, e.target.value)
-                      }
-                      className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    />
-                    <button
-                      onClick={() => deleteCategory(index)}
-                      className=" w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
-                    >
-                      Remove
-                    </button>
-                  </li>
-                )
-              )}
-              <li className="flex">
-                <input
-                  id="ingredientUnit"
-                  type="text"
-                  placeholder={""}
-                  onChange={(e) => setNewCategory(e.target.value)}
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
-                />
-                <button
-                  onClick={() => addCategory()}
-                  className=" w-1/5 bg-green-600 hover:bg-green-500 text-white font-bold py-0 px-2 border border-green-600 rounded h-8 w-15 text-xs"
-                >
-                  Add
-                </button>
-              </li>
-            </div>
+              <div style={{ maxHeight: "120px", overflowY: "auto" }}>
+                {updatedRecipe.categories?.map(
+                  (category: string, index: number) => (
+                    <li key={index} className="flex">
+                      <input
+                        id="instruction"
+                        type="text"
+                        placeholder={category}
+                        onChange={(e) =>
+                          handleCategoryChange(index, e.target.value)
+                        }
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                      />
+                      <button
+                        onClick={() => deleteCategory(index)}
+                        className=" w-1/5 bg-red-400 hover:bg-red-500 text-white font-bold py-0 px-2 border border-red-500 rounded h-8 w-15 text-xs"
+                      >
+                        Remove
+                      </button>
+                    </li>
+                  )
+                )}
+                <li className="flex">
+                  <input
+                    id="ingredientUnit"
+                    type="text"
+                    placeholder={"add a new category"}
+                    onChange={(e) => setNewCategory(e.target.value)}
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+                  <button
+                    onClick={() => addCategory()}
+                    className=" w-1/5 bg-green-600 hover:bg-green-500 text-white font-bold py-0 px-2 border border-green-600 rounded h-8 w-15 text-xs"
+                  >
+                    Add
+                  </button>
+                </li>
+              </div>
             </div>
             <div className="py-2 px-2 w-1/2 w-500 h-350">
               <img
@@ -305,32 +306,43 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 )
               )}
               <li className="flex">
-              <input
-                      id="ingredientAmount"
-                      type="text"
-                      placeholder={"new ingredient"}
-                      onChange={(e) => setNewIngredient((ingredient) =>  ({...ingredient, name: e.target.value}))}
-                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    />
-                    <input
-                      id="ingredientUnit"
-                      type="text"
-                      placeholder={"New unit"}
-                      onChange={(e) =>
-                        setNewIngredient((ingredient) => ({...ingredient, unit: e.target.value}))
-                      }
-                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    />
-                     <input
-                      id="ingredientUnit"
-                      type="text"
-                      placeholder={"New measurement"}
-                      onChange={(e) =>
-                        setNewIngredient((ingredient) => ({...ingredient, amount: e.target.value}))
-                      }
-                      className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    />
-                   <button
+                <input
+                  id="ingredientAmount"
+                  type="text"
+                  placeholder={"new ingredient"}
+                  onChange={(e) =>
+                    setNewIngredient((ingredient) => ({
+                      ...ingredient,
+                      name: e.target.value,
+                    }))
+                  }
+                  className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                />
+                <input
+                  id="ingredientUnit"
+                  type="text"
+                  placeholder={"New unit"}
+                  onChange={(e) =>
+                    setNewIngredient((ingredient) => ({
+                      ...ingredient,
+                      unit: e.target.value,
+                    }))
+                  }
+                  className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                />
+                <input
+                  id="ingredientUnit"
+                  type="text"
+                  placeholder={"New measurement"}
+                  onChange={(e) =>
+                    setNewIngredient((ingredient) => ({
+                      ...ingredient,
+                      amount: e.target.value,
+                    }))
+                  }
+                  className="appearance-none block w-1/4 bg-gray-200 text-gray-700 border py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
+                />
+                <button
                   onClick={() => addIngredient()}
                   className=" w-1/5 bg-green-600 hover:bg-green-500 text-white font-bold py-0 px-2 border border-green-600 rounded h-8 w-15 text-xs"
                 >
@@ -369,7 +381,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 <input
                   id="ingredientUnit"
                   type="text"
-                  placeholder={""}
+                  placeholder={"add a new instruction"}
                   onChange={(e) => setNewInstruction(e.target.value)}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-1 mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
@@ -398,7 +410,6 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
             >
               STÄNG
             </button>
-            
           </div>
         </div>
       </div>
