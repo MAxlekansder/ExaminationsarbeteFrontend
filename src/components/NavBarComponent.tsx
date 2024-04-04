@@ -6,16 +6,22 @@ import { IoCloseSharp } from "react-icons/io5";
 
 function NavBarComponent() {
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [count, setCount] = useState(0);
+    const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
+    const [orderNumber, setOrderNumber] = useState("");
 
     const handleCartToggle = () => {
         setIsCartOpen(!isCartOpen);
+        if (isOrderConfirmed) {
+            setIsOrderConfirmed(false);
+            setCount(0);
+        }
     };
 
     const closeCart = () => {
         setIsCartOpen(false);
     };
 
-    const [count, setCount] = useState(0);
 
     const increment = () => {
         setCount(prevCount => prevCount + 1);
@@ -25,7 +31,10 @@ function NavBarComponent() {
         setCount(prevCount => prevCount > 0 ? prevCount - 1 : 0);
     };
 
-
+    const confirmOrder = () => {
+        setIsOrderConfirmed(true);
+        setOrderNumber((Math.floor(Math.random() * 900000) + 100000).toString());
+    }
 
 
     return (
@@ -56,33 +65,43 @@ function NavBarComponent() {
                     <button onClick={closeCart} className=" text-2xl text-white absolute right-2 p-2 hover:shadow-md hover:bg-gray-300">
                         <IoCloseSharp />
                     </button>
-                    <div className="p-4 bg-green-800 border-b border-gray-300 border rounded">
-                        <h2 className='text-xl font-semibold text-white p-4 text-center'>Shopping Cart</h2>
-                        <br />
 
-                    </div>
-                    <div className="px-2">
-                        <p className="text-red-400 font-semibold">Nissan GTR R35</p>
-                        <br />
-                        <p>Engine: 3.8L V6</p>
-                        <p>Power: 562 hp</p>
-                        <p>Transmission: 6-speed dual-clutch</p>
-                        <p>Made in: Japan</p>
-                    </div>
-                    <div className="flex px-1">
-                        <button onClick={decrement}
-                            className="bg-green-800 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800 focus:outline-none">
-                            -
-                        </button>
-                        <span className="text-lg font-semibold px-4 py-1 rounded shadow">
-                            {count}
-                        </span>
-                        <button onClick={increment}
-                            className="bg-green-800 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800 focus:outline-none">
-                            +
-                        </button>
-                    </div>
-                    <button className="text-xl text-black rounded-lg bg-green-500 p-1 hover:text-blue-600 absolute bottom-2 left-5 right-5">Confirm Order</button>
+                    {!isOrderConfirmed ? (
+                        <>
+                            <div className="p-4 bg-slate-500 border rounded">
+                                <h2 className='text-xl font-semibold text-white p-4 text-center'>Shopping Cart</h2>
+                                <br />
+
+                            </div>
+                            <div className="px-2">
+                                <p className="text-red-400 font-semibold">Nissan GTR R35</p>
+                                <br />
+                                <p>Engine: 3.8L V6</p>
+                                <p>Power: 562 hp</p>
+                                <p>Transmission: 6-speed dual-clutch</p>
+                                <p>Made in: Japan</p>
+                            </div>
+                            <div className="flex px-1">
+                                <button onClick={decrement}
+                                    className="bg-slate-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800 focus:outline-none">
+                                    -
+                                </button>
+                                <span className="text-lg font-semibold px-4 py-1 rounded shadow">
+                                    {count}
+                                </span>
+                                <button onClick={increment}
+                                    className="bg-slate-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-800 focus:outline-none">
+                                    +
+                                </button>
+                            </div>
+                            <button onClick={confirmOrder} className="text-xl text-white rounded-lg bg-blue-500 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-2 left-5 right-5">Confirm Order</button>
+                        </>
+                    ) : (
+                        <div className="text-center p-4 bg-slate-500">
+                            <h2 className="text-lg font-semibold">Thank you for your order!</h2>
+                            <p>Your order number is #{orderNumber}</p>
+                        </div>
+                    )}
                 </div>
             )}
         </header>
