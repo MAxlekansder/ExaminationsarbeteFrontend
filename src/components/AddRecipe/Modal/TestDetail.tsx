@@ -1,4 +1,4 @@
-// Alexander
+// Alexander, Mehdi
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useRecipeState from "../../../State/indexState";
@@ -59,9 +59,8 @@ return (
               <img src={detailedRecipe.imageUrl} alt="" />
                 {detailedRecipe.title}  
                   {detailedRecipe.description}
-                  <RecipeRating dishId={""} rating={null} setRating={function (rating: number): void {
-                    throw new Error("Function not implemented.");
-                    }} />
+                 <RecipeRating dishId={detailedRecipe._id} rating={null} 
+                    />
             </div>
         <SuggetsCocktail/>
     </div>

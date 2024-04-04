@@ -37,7 +37,9 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        <RecipeRating dishId={id} rating={rating} setRating={setRating} />
+        <RecipeRating dishId={id} rating={rating} 
+        // setRating={setRating}
+          />
         
       </div>
     );
