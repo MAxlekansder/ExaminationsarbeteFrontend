@@ -16,7 +16,7 @@ interface MyComment {
 }
 
 
-  const RecipeRating: React.FC<RecipeRating> = ({ dishId, setRating }) => {
+  const RecipeRating = ({ dishId, setRating }: RecipeRating ) => {
       const [hoverRating, setHoverRating] = useState<number | null>(null);
       const [comments, setComments] = useState<MyComment[]>([]);
       const [newComment, setNewComment] = useState<string>('');
@@ -70,6 +70,7 @@ interface MyComment {
           </span>
         ))}
       </div>
+      
       <textarea
         placeholder="Enter your comment here.."
         value={newComment}
