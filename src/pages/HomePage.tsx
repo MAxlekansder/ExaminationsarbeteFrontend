@@ -116,7 +116,7 @@ function HomePage() {
           <div className='flex justify-center'ref={lunchRef}>
       <div className='bg-green-700 ml-10 mr-10 text-green-700'>.</div>
         {randomLunch.map((dish, index) => (
-          <Link to={`/dishes/${dish._id}`} key={index}>
+          <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent
               key={index}
               id={dish._id}
@@ -157,7 +157,7 @@ function HomePage() {
       <div className='flex justify-center' ref={dinnerRef}>
         <div className='bg-green-200 ml-10 mr-10 text-green-200'>.</div>
           {randomDinner.map((dish, index) => (
-            <Link to={`/dishes/${dish._id}`} key={index}>
+            <Link to={`/recipe/specificRecipe/${dish._id}`} key={index}>
               <DishComponent
                 key={index}
                 id={dish._id}

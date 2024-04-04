@@ -8,6 +8,7 @@ import AddToCart from '../../components/Cart/addToCart.tsx';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
 import FooterComponent from '../../components/Footer/FooterComponent.tsx';
+import SuggetsCocktail from '../../components/Cocktails/SuggetsCocktail.tsx';
 
 
 const RecipeDetails = () => {
@@ -60,15 +61,20 @@ const RecipeDetails = () => {
               ">
             <div className="
               2xl:Recipe 2xl:flex 
-              xl:flex xlm:flex-row-reverse 
-              lg:flex lg:flex-row-reverse 
-              md:flex md:flex-row-reverse 
+              xl:Recipe xl:flex
+              lg:Recipe lg:flex 
+              md:flex 
               sm:flex 
+              max-[480]:
               felx-col items-center relative 
             
             ">
                 <h1 className='absolute top-0  xl:text-xl'>{detailedRecipe.title}</h1>
-                    <img src={detailedRecipe.imageUrl} className="2xl:w-96 2xl:h-96 object-cover" />
+                    <img src={detailedRecipe.imageUrl} className="
+                              2xl:w-96 2xl:h-96 
+                              xl:w-80 :h-80
+                              lg:w-96 lg:h-96
+                              sm:w-96 sm:h-96 object-cover" />
                 <div className="m-12">
             <h2 className="xl:text-xl font-mono">Instructions step by step</h2>
         {detailedRecipe.instructions?.map((step, index) => (
@@ -96,15 +102,17 @@ const RecipeDetails = () => {
         ))}
       </div>
     </div>
-    <div>
-        <h2 className='2xl:text-3xl xl:text-3xl sm:text-3xl'>Ingredienser</h2>
+    <div className='flex flex-col align-middle mr-20'>
+        <h2 className='2xl:text-2xl xl:text-2xl lg:text-3xl md:text-3xl sm:text-2xl text-center'>Ingredienser</h2>
             {detailedRecipe.ingredients?.map(ingredient => (
-                <p>{ingredient.name}</p>
+                <p className='text-center text-smq'>{ingredient.name}</p>
             ))}
+            <AddToCart />
             </div>
-          <p>{detailedRecipe.ratings}</p>
-          <AddToCart />
-          
+          <p className=''>{detailedRecipe.ratings}</p>
+        </div>
+    <div>
+      <SuggetsCocktail/>
     </div>
    <div className='mb-52'></div>{/*För att adda lite tom space*/}
    <FooterComponent/>

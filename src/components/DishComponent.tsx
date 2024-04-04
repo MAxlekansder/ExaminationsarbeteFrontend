@@ -46,7 +46,7 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
  return (
     <div className='card-fade-in '>
       <div className="">
-        <Link to={`/test/${id}`}>
+        <Link to={`/recipe/specificRecipe/${id}`}>
           <img
             src={image}
             alt={name}
