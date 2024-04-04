@@ -4,7 +4,7 @@ import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
-
+import AddToCart from '../../components/Cart/addToCart.tsx';
 
 
 const RecipeDetails = () => {
@@ -56,8 +56,9 @@ const RecipeDetails = () => {
             </div>
           <p>{detailedRecipe.ratings}</p>
     </div>
+    <AddToCart />
     </>
-    )
-}
+  );
+};
 
 export default RecipeDetails
