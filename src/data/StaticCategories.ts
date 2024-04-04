@@ -2,12 +2,12 @@ export const StaticCategories = [
     {
       name: "Fish",
       imageUrl: "https://www.aqueon.com/-/media/project/oneweb/aqueon/us/blog/ways-to-know-your-fish-are-happy/fish-are-happy-and-healthy-1.png?h=66%25&w=100%25&hash=D8A0FDD1D6120B433A8F206753F1D10E",
-      description: "this is fish",
+      description: "Savory seafood",
     },
     {
       name: "Meat",
       imageUrl: "https://www.thecookierookie.com/wp-content/uploads/2023/12/sheet-pan-christmas-dinner-with-beef-tenderloin-recipe-2-edited.jpg",
-      description: "This is meat",
+      description: "Everything from chark to hot meals",
     },
     {
         name: "Poultry",
@@ -22,7 +22,7 @@ export const StaticCategories = [
     {
         name: "Italian",
         imageUrl: "https://www.visitstockholm.com/media/original_images/5eab8c064e2f4db4bb1c203e6b7f4d9c.jpg",
-        description: "im walking heeeere",
+        description: "Authenic italian delights",
     },
     {
         name: "Thai",
@@ -37,6 +37,6 @@ export const StaticCategories = [
     {
         name: "Scandinavian",
         imageUrl: "https://festligare.se/wp-content/uploads/2020/08/midsommarmat_linnea-1024x683.jpg",
-        description: "SKICKA NUBBEN DIN JÄVEL",
+        description: "Nordic cuisine delicacies",
     }
   ];

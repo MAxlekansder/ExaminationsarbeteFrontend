@@ -38,9 +38,9 @@ function RecipeHome() {
       <div className="grid gap-8 px-10 py-10 md:grid-cols-2 md:items-center md:text-left">
         <div className="">
           <h1 className="text-3xl font-bold">
-            Explore our fantastic recipes and excellent design
+            Explore our fantastic recipes and our wide array of option  
           </h1>
-          <p>the home of the best recipes and dry cleaning</p>
+          <p>the home of the best recipes and culinary experiences</p>
         </div>
         <div className="w-full rounded-lg overflow-hidden">
           <img
@@ -101,17 +101,53 @@ function RecipeHome() {
       <div className="grid gap-8 px-10 py-10 md:grid-cols-2 md:items-center md:text-left">
         <div className="ml-4">
           <img
-            src="https://www.universaldrycleaningsolutions.com.au/wp-content/uploads/Best-commercial-Dry-cleaning-Machine-Brands.jpg"
+            src="https://media.timeout.com/images/103577643/image.jpg"
             alt=""
             className="rounded-lg max-w-full h-auto"
           />
         </div>
         <div className="ml-4">
           <h2 className="text-3xl font-bold pl-10">
-            You thought we where kidding?
+            Master the recipes of the professionals
           </h2>
-          <p className="pl-10">best rated on google 5, two years in a row</p>
+          <p className="pl-10">Michelin-star chefs have left their best tips</p>
         </div>
+      </div>
+    
+      <div className="flex justify-center pt-10">
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
+      <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pl-10">Explore our categories</h1>
+      <div className="grid grid-cols-1 gap-4 w-full p-10 md:grid md:grid-cols-4 md:gap-2">
+        {StaticCategories.map((category) => (
+          <div
+            key={category.name}
+            className="rounded overflow-hidden shadow-lg md:mb-0  md:w-full"
+          >
+            <img
+              className="w-full h-72 object-cover"
+              src={category.imageUrl}
+              alt={category.name}
+              onClick={() => locateHandler(category.name)}
+            />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl">{category.name}</div>
+              <p className="text-gray-700 text-base">{category.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="pl-12 pt-2 pb-5">
+        ... and so many{" "}
+        <b
+          className="cursor-pointer hover"
+          onClick={() => locateHandler("All categories")}
+        >
+          more
+        </b>
+      </div>
+      <div className="flex justify-center">
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
       </div>
       <h2 className="text-xl pl-20 pt-10 ">
         Something <b onClick={() => locateHandler("Dessert")}>sweet</b> while waiting for your clothes?
@@ -161,39 +197,7 @@ function RecipeHome() {
             </div>
           ))}
       </div>
-      <div className="flex justify-center">
-        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
-      </div>
-      <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pl-10">Explore our categories</h1>
-      <div className="grid grid-cols-1 gap-4 w-full p-10 md:grid md:grid-cols-4 md:gap-2">
-        {StaticCategories.map((category) => (
-          <div
-            key={category.name}
-            className="rounded overflow-hidden shadow-lg md:mb-0  md:w-full"
-          >
-            <img
-              className="w-full h-64 object-cover"
-              src={category.imageUrl}
-              alt={category.name}
-              onClick={() => locateHandler(category.name)}
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl">{category.name}</div>
-              <p className="text-gray-700 text-base">{category.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="pl-12 pt-2 pb-5">
-        ... and so many{" "}
-        <b
-          className="cursor-pointer hover"
-          onClick={() => locateHandler("All categories")}
-        >
-          more
-        </b>
-      </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center pt-10">
         <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
       </div>
       <h2 className="text-xl pl-12">
