@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Recipe, Ingredient } from "../../../data/Recipes";
 import useRecipeState from "../../../State/indexState";
-import { url } from "inspector";
+
 
 interface ModalProps {
   recipe: Recipe;
@@ -35,7 +35,6 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
 
 
   
-
   const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {  // does many things, first takes user care of user input
     const { name, value } = e.target; // depending on the HTML element "name" changes the value
 
@@ -67,6 +66,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     });
   };
 
+
   const handleCategoryChange = (index: number, newValue: string) => { // to handle change in cat value
     setUpdatedRecipe((updateRecipe) => {
       const updatedCategories = [...updateRecipe.categories];
@@ -75,6 +75,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
       return { ...updateRecipe, categories: updatedCategories };
     });
   };
+
 
   const handleRecipeUpdate = () => { // basic update to update whole recipe which trigger on "OK" button
     getUpdate(updatedRecipe._id, updatedRecipe);
@@ -141,6 +142,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
     }));
     setNewIngredient({ name: "", amount: "", unit: "" });
   };
+
 
   const addInstruction = () => { // as instruction only is one line, this was easier to handle. one state to add a new string to array
     setUpdatedRecipe((updatedRecipe) => ({
