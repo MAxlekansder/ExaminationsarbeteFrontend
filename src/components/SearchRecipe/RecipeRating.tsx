@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 
 
 interface RecipeRating {
   dishId: string;
   rating: number | null;
-  setRating: (rating: number) => void;
+ // setRating: (rating: number) => void;
 }
 
+/*interface RatingResponse {
+  success: boolean;
+  message: string;
+}
+*/
 interface MyComment {
     id: number;
     dishId: string;
@@ -16,8 +22,8 @@ interface MyComment {
 }
 
 
-  const RecipeRating = ({ dishId, setRating }: RecipeRating ) => {
-      const [hoverRating, setHoverRating] = useState<number | null>(null);
+const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
+      const [hoverRating, setHoverRating] = useState<number | null>(rating);
       const [comments, setComments] = useState<MyComment[]>([]);
       const [newComment, setNewComment] = useState<string>('');
 
@@ -25,8 +31,26 @@ interface MyComment {
 
       const handleRatingChange = (newRating: number) => {
           console.log(`Rated dish ${dishId} with ${newRating} stars`);
-          setRating(newRating);
-      };
+         // setRating(newRating);
+        
+          axios.post(
+            `https://sti-java-grupp2-afmbgd.reky.se/recipes/${dishId}/ratings`,
+           {
+            "rating": newRating
+           }
+          )
+          .then((response) => {
+            console.log('Rating saved successfully:', response.data);
+           //if (response.data.success) {
+             // setRating(newRating);
+           // }
+          })
+          .catch((error) => {
+            console.error('Error saving rating:', error);
+          });
+       };
+      
+      
       const handleMouseEnter = (value: number) => {
           setHoverRating(value);
       };
