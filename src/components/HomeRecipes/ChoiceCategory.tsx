@@ -82,8 +82,8 @@ function RecipeCategory() {
                     <div className="font-bold text-lg mb-2">
                       {recipe.title}
                     </div>
-                    <p className="text-gray-600 text-sm">
-                      Rating {recipe.avgRating}
+                    <p className="text-gray-600 text-sm pt-1">
+                      Rating {Math.round(recipe.avgRating)}
                     </p>
                   </div>
                   <p>{recipe.categories.join(' ')}</p>
