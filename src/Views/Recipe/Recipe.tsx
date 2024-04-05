@@ -7,6 +7,7 @@ import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import AddToCart from '../../components/Cart/addToCart.tsx';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
+import NavBarComponent from '../../components/NavBarComponent.tsx';
 
 
 const RecipeDetails = () => {
@@ -39,6 +40,7 @@ const RecipeDetails = () => {
 
     return (
         <>
+        <NavBarComponent  />
         <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
               Change Recipe</button>
                 <Modal

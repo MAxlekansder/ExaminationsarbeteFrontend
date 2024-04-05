@@ -9,6 +9,7 @@
   import IngredientsList from "./HandleIngredients";
   import NavBarComponent from "../NavBarComponent";
   import '../../Styling/Dishes.css'
+  import { useNavigate } from "react-router-dom";
 
 
 
@@ -16,6 +17,7 @@
 
     const addRecipeState = useRecipeState((state) => state.addRecipe);
     const getApiKey = useRecipeState((state) => state.getApiKey);
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -56,7 +58,17 @@
         addRecipeState(addResponse.data); // dont need to check for response as we do try/catch
 
         console.log(addResponse.data); // for logging while developing
-        clearForm();
+        // clearForm();
+
+        console.log(addResponse.data._id)
+        const confirmation = window.confirm("Recipe added successfully. Do you want to add another recipe?");
+        if (confirmation) {
+          clearForm(); // Clear the form to add another recipe
+        } else {
+          console.log(addResponse.data.id)
+          navigate(`/recipe/specificRecipe/${addResponse.data._id}`); // Navigate to the details page recipe
+       
+        }
       } catch (error) {
         console.log("Error while adding new recipe to list: ", error);
       }

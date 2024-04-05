@@ -41,7 +41,9 @@ function RecipeHome() {
           <h1 className="text-3xl font-bold">
             Explore our fantastic recipes and our wide array of option  
           </h1>
-          <p>the home of the best recipes and culinary experiences</p>
+          <p>
+            the home of the best recipes and culinary experiences
+            </p>
         </div>
         <div className="w-full rounded-lg overflow-hidden">
           <img
