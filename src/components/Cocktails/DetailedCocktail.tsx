@@ -9,6 +9,7 @@ import '../../Styling/Cocktail.css'
 import NavBarComponent from "../NavBarComponent";
 import FooterComponent from "../Footer/FooterComponent";
 
+
 interface Drink {
     idDrink: string;
     strDrink: string;

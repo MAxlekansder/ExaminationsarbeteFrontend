@@ -9,6 +9,7 @@ interface recipeState {
     drinks: any[];
     allDrinks: any[];
     detailedDrink: any[];
+    letterDrinks: any[];
     detailedRecipe: object;
     categoryDishes: any[];
     categoryDrinks: any[];
@@ -25,6 +26,7 @@ interface recipeState {
     fetchSpecificRecipe: (id: string) => Promise<void>;
     updateRecipes: (recipeId: string, updatedProperties: Partial<Recipe>) => void;
     fetchSpecificDrinkIngredient: (ingredient: string) => Promise<void>;
+    fetchDrinkByLetter: (letter: string) => Promise<void>;
 }
 
 
@@ -32,6 +34,7 @@ const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
     categoryDishes:[],
     categoryDrinks: [],
+    letterDrinks: [],
     drinks: [],
     allDrinks: [],
     detailedDrink: [],
@@ -180,6 +183,28 @@ const useRecipeState = create<recipeState>()((set) => ({
         } catch (error) {console.log("hehe") }
         
     },
+
+
+    fetchDrinkByLetter: async (letter: string) => {
+
+        try {
+            const filterLetter = await axios.get(
+              `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
+            );
+        
+            if (filterLetter.status === 200) {
+              const drinkByLetter = filterLetter.data.drinks;
+              set({letterDrinks :drinkByLetter}); 
+              console.log("test");
+              console.log(drinkByLetter);
+            } else {
+              console.log("error while fetching by letter");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+    },
+
 
     fetchSpecificRecipe: async (id: string) => {
         try {

@@ -205,7 +205,15 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
                 id="timesInMins"
                 type="number"
                 name="timeInMins"
-                placeholder={recipe.timeInMins.toString()}
+                placeholder={`old time ${recipe.timeInMins.toString()}`}
+                onChange={handleUserInput}
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-2 mb-3 leading-tight focus:outline-none focus:bg-white"
+              />
+               <input
+                id="price"
+                type="number"
+                name="price"
+                placeholder={"add price here"}
                 onChange={handleUserInput}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-1 px-2 mb-3 leading-tight focus:outline-none focus:bg-white"
               />

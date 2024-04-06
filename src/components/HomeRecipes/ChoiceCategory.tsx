@@ -47,7 +47,7 @@ function RecipeCategory() {
       <NavBarComponent />
       <div>
         <div>
-          <div className="text-lg font-bold">{handleCategory}</div>
+          <div className="text-lg font-bold">Popular</div>
         </div>
         <div className="flex">
           <div className="w-1/5">
@@ -62,7 +62,7 @@ function RecipeCategory() {
               />
             ))}
           </div>
-
+         
           <div className="grid lg:grid-cols-3 gap-4 sm:grid-cols-1">
             {filterRecipe().map((recipe) => (
               <div
