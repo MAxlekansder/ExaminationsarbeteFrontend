@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import useRecipeState from "../../State/indexState";
+import useRecipeState from "../State/indexState";
 
 interface DrinkCategory {
     idDrink: string;

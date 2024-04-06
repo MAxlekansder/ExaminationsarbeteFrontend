@@ -40,3 +40,5 @@ export const StaticCategories = [
         description: "Nordic cuisine delicacies",
     }
   ];
+
+  

@@ -1,11 +1,11 @@
 //Alexander
 
 import React, { useEffect, useState } from "react";
-import useRecipeState from "../../State/indexState";
-import NavBarComponent from "../NavBarComponent";
+import useRecipeState from "../State/indexState";
+import NavBarComponent from "../components/NavBarComponent";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import FooterComponent from "../Footer/FooterComponent";
+import FooterComponent from "../components/Footer/FooterComponent";
 import '../../Styling/Cocktail.css'
 
 function PresentCocktails() {
