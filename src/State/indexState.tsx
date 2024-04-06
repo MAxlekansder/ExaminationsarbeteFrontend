@@ -13,6 +13,9 @@ interface recipeState {
     detailedRecipe: object;
     categoryDishes: any[];
     categoryDrinks: any[];
+    
+    cart: Recipe[];
+    addToCart: (recipe: Recipe) => void;
 
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => Promise<void>;
@@ -39,6 +42,7 @@ const useRecipeState = create<recipeState>()((set) => ({
     allDrinks: [],
     detailedDrink: [],
     detailedRecipe: {},
+    cart: [],
     
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
@@ -233,7 +237,11 @@ const useRecipeState = create<recipeState>()((set) => ({
              
         } catch (error) {console.log("error while fetcing categories")}
 
-    }
+    },
+    
+    addToCart: (recipe: Recipe) => set((state) => ({
+        cart: [...state.cart, recipe],
+    })),
 
 }));
 

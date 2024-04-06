@@ -4,9 +4,10 @@ import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
-import AddToCart from '../../components/Cart/addToCart.tsx';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
+import NavBarComponent from '../../components/NavBarComponent.tsx';
+
 
 
 const RecipeDetails = () => {
@@ -36,9 +37,16 @@ const RecipeDetails = () => {
     setIsModalOpe(false);
   };
 
+  const handleAddToCart = () => {
+        console.log('Recipe added to cart:', detailedRecipe);
+        useRecipeState.getState().addToCart(detailedRecipe);
+        console.log('Updated cart:', useRecipeState.getState().cart);
+    };
+
 
     return (
         <>
+        <NavBarComponent  />
         <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
               Change Recipe</button>
                 <Modal
@@ -81,7 +89,9 @@ const RecipeDetails = () => {
             </div>
           <p>{detailedRecipe.ratings}</p>
     </div>
-    <AddToCart />
+    <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
+                Add to Cart
+            </button>
     </>
   );
 };
