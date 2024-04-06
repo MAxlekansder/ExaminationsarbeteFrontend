@@ -65,7 +65,7 @@
         if (confirmation) {
           clearForm(); // Clear the form to add another recipe
         } else {
-          console.log(addResponse.data.id)
+          // console.log(addResponse.data._id)
           navigate(`/recipe/specificRecipe/${addResponse.data._id}`); // Navigate to the details page recipe
        
         }
