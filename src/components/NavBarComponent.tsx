@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoCloseSharp } from "react-icons/io5";
-import useRecipeState from "../State/indexState"; //Ddtta för att hämta datan som lagrats i cart från recipe.tsx
+import useRecipeState from "../State/indexState";
 import { Link } from "react-router-dom";
+
 
 
 function NavBarComponent() {
@@ -11,6 +12,7 @@ function NavBarComponent() {
     const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
     const [orderNumber, setOrderNumber] = useState("");
     const cart = useRecipeState(state => state.cart);
+    const removeFromCart = useRecipeState((state) => state.removeFromCart);
 
     const handleCartToggle = () => {
         setIsCartOpen(!isCartOpen);
@@ -45,16 +47,18 @@ function NavBarComponent() {
                     <li><Link to="/cocktails" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">Cocktails</Link></li>
                     <li><Link to="/about" className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500">About us</Link></li>
                     <li className="ml-auto"><Link to="/add" className="px-5 py-2 bg-green-400 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:bg-green-600 rounded-lg shadow mr-7">Add recipe</Link></li>
-                    <li> <button onClick={handleCartToggle} className="text-2xl">
+                    <li> <button onClick={handleCartToggle} className="text-2xl relative flex items-center justify-center w-12 h-12">
                         <TiShoppingCart />
-                        <p className="text-green-400 text-sm">Cart ({cart.length})</p>
+                        {cart.length > 0 && (
+                            <span className="absolute -right-2 -top-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">{cart.length}</span>
+                        )}
                     </button>
                     </li>
                 </ul>
             </nav>
 
             {isCartOpen && (
-                <div className='fixed top-0 right-0 h-full bg-gray-100 w-1/3 shadow-lg z-50 opacity-95 border rounded'>
+                <div className='fixed top-0 right-0 h-full bg-gray-100 w-1/3 shadow-lg z-50 opacity-100 border rounded'>
                     <button onClick={closeCart} className=" text-2xl text-white absolute right-2 p-2 hover:shadow-md hover:bg-gray-300">
                         <IoCloseSharp />
                     </button>
@@ -70,18 +74,22 @@ function NavBarComponent() {
                                 <div>
                                     {cart.map((recipe, index) => (
                                         <div key={index} className="flex items-center ">
+
                                             <div className="w-20 h-20 mg">
                                                 <img src={recipe.imageUrl} className="w-full h-full object-cover"></img>
                                             </div>
                                             <p className="text-red-400 font-bold px-4">{recipe.title}</p>
+                                            <button
+                                                onClick={() => removeFromCart(recipe._id)}
+                                                className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                            >
+                                                Delete
+                                            </button>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                             <div className="flex px-1 py-5">
-                                <span className="text-lg font-semibold px-4 py-1 rounded shadow">
-                                    Items in Cart: {cart.length}
-                                </span>
                             </div>
                             <button onClick={confirmOrder} className="text-xl text-white rounded-lg bg-green-900 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-2 left-5 right-5">Confirm Order</button>
                         </>

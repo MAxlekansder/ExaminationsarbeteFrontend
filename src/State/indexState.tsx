@@ -18,6 +18,8 @@ interface recipeState {
     cart: Recipe[];
     addToCart: (recipe: Recipe) => void;
     clearCart: () => void;
+    removeFromCart(_id: string): void;
+
 
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => Promise<void>;
@@ -244,7 +246,12 @@ const useRecipeState = create<recipeState>()((set) => ({
     addToCart: (recipe: Recipe) => set((state) => ({
         cart: [...state.cart, recipe],
     })),
+
     clearCart: () => set(() => ({ cart: [] })),
+
+    removeFromCart: (recipeId: string) => set((state) => ({
+        cart: state.cart.filter((recipe) => recipe._id !== recipeId),
+    })),
 
 }));
 
