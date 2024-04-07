@@ -46,19 +46,19 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
   }
 
  return (
-    <div className='card-fade-in '>
-      <div className="">
+    <div className='card-fade-in'>
+      <div className="sm:flex sm:items-center sm:align-center xl:ml-0 lg:ml-0 2xl:ml-0">
         <Link to={`/recipe/specificRecipe/${id}`}>
           <img
             src={image}
             alt={name}
-            className="object-cover 2xl:h-96 2xl:w-96 xl:h-60 xl:w-60"
+            className="object-cover 2xl:h-96 2xl:w-96 md:w-60 md:h-60 sm:w-80 sm:h-80 "
           />
         </Link>
       </div>
-    <p className="mt-2 xl:font-semibold 2xl:text-2xl xl:text-xm md:text-sm ">{name}</p>
-      <div className='flex '>
-        <p className="mt-2 w-40 2xl:text-xm xl:text-xs md:text-sm ">{description}</p>
+    <p className="mt-2 font-semibold 2xl:text-2xl xl:text-xm md:text-sm sm:text-2xl ">{name}</p>
+      <div className='xl:flex sm:align-middle sm:items-center'>
+        <p className="xl:mt-2 xl:w-40 xl:ml-0 2xl:mb-0  2xl:text-xm xl:text-xs md:text-sm sm:w-96 sm:mb-6">{description}</p>
       </div>
     </div>
   );

@@ -27,9 +27,6 @@ const RecipeDetails = () => {
         }
     }, [getRecipe, id]);
 
-   
-
-
   const openModal = (recipeId: string) => {
     setselectedRecipeId(recipeId);
     setIsModalOpe(true);
@@ -45,7 +42,6 @@ const RecipeDetails = () => {
         <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
               Change Recipe</button>
                 <Modal
-                  
                   isOpen={isModalOpen}
                   onCancel={closeModal}
                   imageUrl={detailedRecipe.imageUrl}

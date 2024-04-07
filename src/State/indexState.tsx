@@ -19,7 +19,7 @@ interface recipeState {
     fetchRecipe: () => void;
     fetchAlcoholicDrinks: () => Promise<void>;
     fetchNonAlcoholicDrinks: () => Promise<void>;
-  
+    
     fetchAllDrinks: () => Promise<void>;
     fetchSpecificDrink: (id: string) => Promise<void>;
     fetchSpecificRecipe: (id: string) => Promise<void>;
