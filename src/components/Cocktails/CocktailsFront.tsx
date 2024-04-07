@@ -34,10 +34,11 @@ function DrinkCategory() {
   ]);
 
   useEffect(() => {
-    fetchSpecificCategory(handleCategory);
+    fetchSpecificCategory(handleCategory); // for handling sidebar
+    fetchDrinkByLetter("a"); // for default loading
   }, [handleCategory]);
 
-  const fetchDrinkByLetter = async (letter: string) => {
+  const fetchDrinkByLetter = async (letter: string) => { // depending on the 
     try {
       await getDrinksByLetter(letter);
     } catch (error) {
@@ -62,9 +63,6 @@ function DrinkCategory() {
     navigate(`/cocktails/${id}`);
   };
 
-  // const toggleSidebar = () => {
-  //   setIsSidebarOpen(!isSidebarOpen);
-  // };
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
@@ -94,7 +92,7 @@ function DrinkCategory() {
             Filter by letter
           </p>
           <div className="flex justify-center gap-1">
-            {handleLetter.slice(0, 13).map((letter) => (
+            {handleLetter.slice(0, 12).map((letter) => (
               <button
                 key={letter.letter}
                 onClick={() => fetchDrinkByLetter(letter.letter)}
@@ -105,7 +103,7 @@ function DrinkCategory() {
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-1">
-            {handleLetter.slice(13).map((letter) => (
+            {handleLetter.slice(12).map((letter) => (
               <button
                 key={letter.letter}
                 onClick={() => fetchDrinkByLetter(letter.letter)}
@@ -119,28 +117,6 @@ function DrinkCategory() {
         <div className="flex justify-center pt-10">
           <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
         </div>
-        {/* <div>
-          <div className="grid lg:grid-cols-4 gap-4 sm:grid-cols-1">
-            {letterDrinks?.map((drink) => (
-              <div
-                key={drink.idDrink}
-                className="rounded overflow-hidden shadow-lg cursor-pointer"
-                onClick={() => navigate(`/cocktails/${drink.idDrink}`)}
-              >
-                <img
-                  src={drink.strDrinkThumb}
-                  alt={drink.strDrink}
-                  className="w-full h-40 object-cover"
-                />
-                <div className="px-6 py-4">
-                  <div className="font-bold text-lg mb-2">{drink.strDrink}</div>
-
-                  <p className="text-gray-600 text-sm"></p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
       </div>
       <div
         className="flex overflow-auto p-10"
@@ -157,9 +133,9 @@ function DrinkCategory() {
             onClick={() => navigate(`/cocktails/${drink.idDrink}`)}
             className="mx-0.5"
           >
-            <div className="rounded overflow-hidden shadow-lg h-46">
+            <div className="rounded overflow-hidden shadow-lg h-72">
               <div className="max-w-3xl">
-                <div style={{ width: "240px" }}>
+                <div style={{ width: "300px" }}>
                   <img
                     src={drink.strDrinkThumb}
                     alt={drink.strDrink}
@@ -173,15 +149,34 @@ function DrinkCategory() {
                 </div>
               </div>
               <div className="px-6 py-4">
-                <div className="font-bold text-lg mb-2">{drink.strDrink}</div>
+                <div className="flex justify-between">
+                  <div className="font-bold text-lg mb-2">
+                  {drink.strDrink.split(' ').length >= 3 ? 
+                    drink.strDrink.split(' ').slice(0, 2).join(' ').concat("...") : 
+                    drink.strDrink}
+                    </div>
+                  <div>
+                    <p className="text-gray-600 text-sm py-1">
+                      {drink.strIngredient1.split(' ').length >= 3 ? drink.strIngredient1.split(' ').slice(0,2).join(' ').concat("...") :
+                      drink.strIngredient1}
+                      </p>
+                  </div>
+                </div>
+                <div className="text-gray-600 text-sm">
+                  {drink.strInstructions
+                    .split(" ")
+                    .slice(0, 8)
+                    .join(" ")
+                    .concat("...")}
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
       <div className="flex justify-center pt-10">
-          <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
-        </div>
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
       <div className="w-1/4">
         <div className="mb-4">
           <h3 className="text-lg font-bold mb-2 pt-5">Categories</h3>

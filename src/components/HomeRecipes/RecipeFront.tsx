@@ -16,7 +16,6 @@ function RecipeHome() {
 
   useEffect(() => {
     getRecipe();
-    console.log("Hej");
   }, []);
 
   
