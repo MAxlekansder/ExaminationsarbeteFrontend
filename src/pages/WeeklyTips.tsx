@@ -84,7 +84,7 @@ const WeeklyTips = () => {
             </div>
             <div className="flex flex-wrap justify-center gap-4 p-4">
               {filteredRecipes.map((recipe, index) => (
-                <div key={index} onClick={() => navigate(`/test/${recipe._id}`)} className="w-60 cursor-pointer">
+                <div key={index} onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)} className="w-60 cursor-pointer">
                   <h2 className="text-lg font-semibold">{recipe.title}</h2>
                   <div className="h-48 w-full overflow-hidden rounded-lg">
                     <img
