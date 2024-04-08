@@ -7,14 +7,13 @@ import Categories from './pages/Categories';
 import About from './pages/About';
 import DetailedTestComponent from './components/AddRecipe/Modal/TestDetail';
 import Test from './components/AddRecipe/Modal/TestPage';
-import CocktailCategory from './components/Cocktails/CocktailCategory';
+import CocktailCategory from './NOT in use/CocktailCategory';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
 import RecipeDetails from './Views/Recipe/Recipe';
-// import PresentCocktails from './components/Cocktails/Cocktails';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import RecipeHome from './components/HomeRecipes/CategoryRecipe';
+import RecipeHome from './components/HomeRecipes/RecipeFront';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
-import DrinkCategory from './components/Cocktails/CocktailsTest/CocktailsTest';
+import DrinkCategory from './components/Cocktails/CocktailsFront';
 
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
         <Route path='/recipe/specificRecipe/:id' element={<RecipeDetails />} />
         <Route path='/cocktails' element={<DrinkCategory />} />
         <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
-        {/* <Route path='/cocktailsTest' element={<DrinkCategory />} /> */}
         <Route path='/cocktail:category' element={<CocktailCategory />} />
         <Route path='/test' element={<Test />} />
         <Route path='/test/:id' element={<DetailedTestComponent />} />

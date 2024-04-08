@@ -12,6 +12,7 @@ export interface Recipe {
   ratings?: number[];
   avgRating: number;
   imageUrl: string;
+  price: number;
   timeInMins: number;
   categories: string[];
   instructions?: string[];

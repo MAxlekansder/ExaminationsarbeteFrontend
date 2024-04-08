@@ -9,9 +9,13 @@ interface recipeState {
     drinks: any[];
     allDrinks: any[];
     detailedDrink: any[];
+    letterDrinks: any[];
     detailedRecipe: object;
     categoryDishes: any[];
     categoryDrinks: any[];
+    
+    cart: Recipe[];
+    addToCart: (recipe: Recipe) => void;
 
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => Promise<void>;
@@ -25,6 +29,7 @@ interface recipeState {
     fetchSpecificRecipe: (id: string) => Promise<void>;
     updateRecipes: (recipeId: string, updatedProperties: Partial<Recipe>) => void;
     fetchSpecificDrinkIngredient: (ingredient: string) => Promise<void>;
+    fetchDrinkByLetter: (letter: string) => Promise<void>;
 }
 
 
@@ -32,10 +37,12 @@ const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
     categoryDishes:[],
     categoryDrinks: [],
+    letterDrinks: [],
     drinks: [],
     allDrinks: [],
     detailedDrink: [],
     detailedRecipe: {},
+    cart: [],
     
     getApiKey: () =>  "https://sti-java-grupp2-afmbgd.reky.se/recipes",  // instead of initilazing API over and over
 
@@ -181,6 +188,28 @@ const useRecipeState = create<recipeState>()((set) => ({
         
     },
 
+
+    fetchDrinkByLetter: async (letter: string) => {
+
+        try {
+            const filterLetter = await axios.get(
+              `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
+            );
+        
+            if (filterLetter.status === 200) {
+              const drinkByLetter = filterLetter.data.drinks;
+              set({letterDrinks :drinkByLetter}); 
+              console.log("test");
+              console.log(drinkByLetter);
+            } else {
+              console.log("error while fetching by letter");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+    },
+
+
     fetchSpecificRecipe: async (id: string) => {
         try {
             const detailedRecipe = await axios.get(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${id}`);
@@ -208,7 +237,11 @@ const useRecipeState = create<recipeState>()((set) => ({
              
         } catch (error) {console.log("error while fetcing categories")}
 
-    }
+    },
+    
+    addToCart: (recipe: Recipe) => set((state) => ({
+        cart: [...state.cart, recipe],
+    })),
 
 }));
 

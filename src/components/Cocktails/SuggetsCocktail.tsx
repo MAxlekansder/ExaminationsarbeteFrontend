@@ -1,12 +1,16 @@
 //Gustav
+/*
+
 import { useEffect, useState } from 'react'
 import useRecipeState from '../../State/indexState'
 
-function SuggetsCocktail() {
+function SuggetsCocktail(detailedRecipe) {
     const fetchAllDrinks = useRecipeState((state) => state.fetchAllDrinks)
     const allDrinks = useRecipeState((state) => state.allDrinks);
     const [randomCocktail, setRandomCocktail] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+
+   
 
     useEffect(()=>{
         fetchAllDrinks();
@@ -19,8 +23,18 @@ function SuggetsCocktail() {
             if(allDrinks.length > 0) {
               const randomIndex = Math.floor(Math.random() * allDrinks.length)
               const generatedCocktail = allDrinks[randomIndex];
+              
+              switch(detailedRecipe){
+                case detailedRecipe.includes('Meat'):
+                    setRandomCocktail(generatedCocktail.includes('Gin'));
+                case detailedRecipe.includes('Fish'):
+                    setRandomCocktail(generatedCocktail.includes('Vodka'))
+                case detailedRecipe.includes('Vegitarian'):
+                    setRandomCocktail(generatedCocktail.str)       
+        
+            }
       
-              setRandomCocktail(generatedCocktail);
+              
               setIsLoading(false);
             }
           }
@@ -35,7 +49,7 @@ function SuggetsCocktail() {
                 <p>Loading...</p>
                     ) : randomCocktail ? (
                     <div>
-                <h2>{randomCocktail.strDrink}</h2>
+                <h2>{randomCocktail.strDrink {randomCocktail.strIn}h2>
             <img src={randomCocktail.strDrinkThumb} alt={randomCocktail.strDrink} />
         </div>
             ) : null}
@@ -43,4 +57,4 @@ function SuggetsCocktail() {
   )
 }
 
-export default SuggetsCocktail
+export default SuggetsCocktail*/

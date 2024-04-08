@@ -4,11 +4,12 @@ import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
-import AddToCart from '../../components/Cart/addToCart.tsx';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
-import FooterComponent from '../../components/Footer/FooterComponent.tsx';
+import NavBarComponent from '../../components/NavBarComponent.tsx';
 import SuggetsCocktail from '../../components/Cocktails/SuggetsCocktail.tsx';
+
+
 
 
 const RecipeDetails = () => {
@@ -36,9 +37,18 @@ const RecipeDetails = () => {
     setIsModalOpe(false);
   };
 
+  const handleAddToCart = () => {
+        console.log('Recipe added to cart:', detailedRecipe);
+        useRecipeState.getState().addToCart(detailedRecipe);
+        console.log('Updated cart:', useRecipeState.getState().cart);
+    };
+
+  
+
 
     return (
         <>
+        <NavBarComponent  />
         <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
               Change Recipe</button>
                 <Modal
@@ -103,16 +113,15 @@ const RecipeDetails = () => {
             {detailedRecipe.ingredients?.map(ingredient => (
                 <p className='text-center text-smq'>{ingredient.name}</p>
             ))}
-            <AddToCart />
+           
             </div>
           <p className=''>{detailedRecipe.ratings}</p>
         </div>
     <div>
-      <SuggetsCocktail/>
     </div>
-   <div className='mb-52'></div>{/*För att adda lite tom space*/}
-   <FooterComponent/>
-    
+    <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
+                Add to Cart
+            </button>
     </>
   );
 };
