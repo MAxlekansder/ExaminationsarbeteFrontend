@@ -22,8 +22,6 @@ const Comment: React.FC<Props> = (props) => { // Använda rätt variabel för pr
     }
 
 
-
-
     return (
         <div className="bg-green-400 font-bold bg-repeat m-2">
             <p>{comment.comment}</p>

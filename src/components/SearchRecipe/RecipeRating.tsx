@@ -9,7 +9,6 @@ interface RecipeRating {
     removeComment: (id: number) => Promise<void>;
 }
 
-
 const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
     const [hoverRating, setHoverRating] = useState<number | null>(rating);
     const [comments, setComments] = useState<CommentProps[]>([]);
