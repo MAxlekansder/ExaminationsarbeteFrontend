@@ -8,6 +8,7 @@ import Modal from '../../components/AddRecipe/ModalRecipe/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
 import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
+import RecipesComponent from '../../components/SearchRecipe/RecipesComponent.tsx';
 
 
 
@@ -108,6 +109,7 @@ const RecipeDetails = () => {
             {id && (
               <RecipeRating rating={5} dishId={id || ""} />
             )}
+            < RecipesComponent />
           </div>
         </div>
       </div>
