@@ -1,3 +1,4 @@
+
 import { useEffect, } from 'react'
 import { useParams, } from "react-router-dom";
 import Title from "./Components/Title/Title.tsx";
@@ -7,6 +8,7 @@ import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/ModalRecipe/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
+import RecipeRating from "../../components/SearchRecipe/RecipeRating.tsx";
 
 
 
@@ -93,9 +95,23 @@ const RecipeDetails = () => {
         </div>
         <p className='mt-4'>{detailedRecipe.ratings}</p>
       </div>
-      <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded font-semibold">
-        Add to Cart
-      </button>
+
+    </div>
+    <div>
+        <h6>Ingredienser</h6>
+            {detailedRecipe.ingredients?.map(ingredient => (
+                <p>{ingredient.name}</p>
+            ))}
+            </div>
+          <p>{detailedRecipe.ratings}</p>
+    </div>
+    <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
+                Add to Cart
+            </button>
+            {id && (
+                <RecipeRating rating={5} dishId={id || ""}/>
+            )}
+
     </>
   );
 };
