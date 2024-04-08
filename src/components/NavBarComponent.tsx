@@ -79,9 +79,10 @@ function NavBarComponent() {
                                                 <img src={recipe.imageUrl} className="w-full h-full object-cover"></img>
                                             </div>
                                             <p className="text-red-400 font-bold px-4">{recipe.title}</p>
+                                            <p className="text-black font-bold px-4">{recipe.price} kr</p>
                                             <button
                                                 onClick={() => removeFromCart(recipe._id)}
-                                                className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                                className="ml-4 bg-red-500 hover:bg-red-700 text-white font py-1.5 px-5 rounded-md"
                                             >
                                                 Delete
                                             </button>
