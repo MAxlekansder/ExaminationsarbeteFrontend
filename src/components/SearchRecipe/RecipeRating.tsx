@@ -9,24 +9,12 @@ interface RecipeRating {
     removeComment: (id: number) => Promise<void>;
 }
 
-/*interface RatingResponse {
-  success: boolean;
-  message: string;
-}
-*/
-interface MyComment {
-    id: number;
-    dishId: string;
-    text: string;
-    author: string;
-    createdAt: Date;
-}
-
 
 const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
     const [hoverRating, setHoverRating] = useState<number | null>(rating);
-    const [comments, setComments] = useState<MyComment[]>([]);
+    const [comments, setComments] = useState<CommentProps[]>([]);
     const [newComment, setNewComment] = useState<string>('');
+    const [name, setName] = useState<string>();
 
 
     const addComment = () => {
@@ -96,18 +84,13 @@ const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
 
     const handleSubmitComment = async () => {
         console.log(`Comment for dish ${dishId}: ${newComment}`);
+        addComment();
     }
 
-    const comment: MyComment = {
-        id: comments.length + 2,
-        dishId: dishId,
-        text: newComment,
-        author: "Anonym",
-        createdAt: new Date()
-    };
+    useEffect(() => {
+        loadComments();
+    }, []);
 
-    setComments([...comments, comment]);
-    setNewComment('');
 
     return (
         <div>
@@ -130,25 +113,21 @@ const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
                     placeholder="Enter your comment here.."
                     value={newComment}
                     onChange={handleCommentChange}
-                />
+                /><br/>
                 <input
                     className="bg-gray-300"
                     placeholder="Name"
                     value={name}
                     onChange={handleNameChange}
-                />
+                /><br/><br/>
             </div>
-            <button onClick={handleSubmitComment}>
-                Submit Comment
+            <button onClick={handleSubmitComment}
+                className=" ml-2 bg-red-700 hover:bg-green-800 text-white font-bold py-0.5 px-0.5 rounded"
+            > Submit Comment
             </button>
             <div>
                 {comments.map((commentItem) => (
-                    <div key={commentItem.id}>
-                        <p>{commentItem.text}</p>
-                        <p>Author: {commentItem.author}</p>
-                        <p>Created at: {commentItem.createdAt.toDateString()}</p>
-
-                    </div>
+                    <Comment comment={commentItem}/>
                 ))}
             </div>
         </div>

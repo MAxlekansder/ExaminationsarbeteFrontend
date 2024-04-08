@@ -1,10 +1,11 @@
-import {useEffect, } from 'react'
+import React, {useEffect, } from 'react'
 import { useParams,} from "react-router-dom";
 import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
+import RecipeRating from "../../components/SearchRecipe/RecipeRating.tsx";
 
 
 
@@ -90,6 +91,9 @@ const RecipeDetails = () => {
     <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
                 Add to Cart
             </button>
+            {id && (
+                <RecipeRating rating={5} dishId={id || ""}/>
+            )}
     </>
   );
 };
