@@ -1,4 +1,4 @@
-// Alexander & Gustav
+// Alexander & Gustav & Simon
 
 import { create } from "zustand"
 import { Recipe } from "../data/Recipes"
