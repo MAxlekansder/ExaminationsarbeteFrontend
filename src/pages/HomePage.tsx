@@ -90,12 +90,12 @@ function HomePage() {
           />
         </div>
       </div>
-  <div className='flex w-2/5 xl:ml-40 md:ml-40 lg:ml-40 relative mt-20 mb-20 '>
-    <div className='pl-10'>
-      <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl sm:w-80 '>
+  <div className='flex w-2/5 xl:ml-10- md:ml-40 lg:ml-40 relative mt-20 mb-20 sm:ml-40'>
+    <div className='pr-10 xl:pl-60'>
+      <h1 className='2xl:text-4xl font-mono absolute top-0 2xl:w-96 font-semibold md:text-3xl sm:text-xl sm:w-80 '>
             Do you want to give your lunch a refreshing twist? 
             </h1>
-                <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-xm sm:w-80  '>
+                <p className='2xl:text-2xl 2xl:w-96 mt-20 xl:pt-20 md:text-xl sm:text-xm sm:w-80  '>
                   Try today's lunch tips and discover new flavors that will 
                   brighten your day! Our collection of delicious recipes is 
                   carefully selected to offer you both tasty variety and simplicity 
@@ -104,7 +104,7 @@ function HomePage() {
               </div>
             <div className='bg-green-700 xl:ml-10 xl:mr-10 text-green-700'>.</div> 
           <div className=''>
-        <img src="/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img' />
+        <img src="/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img xl:block sm:hidden' />
       </div>
     </div>
   <div className='p-10'>
@@ -129,18 +129,19 @@ function HomePage() {
         <div className='bg-green-700 xl:ml-10 xl:mr-10 text-green-700'>.</div>
       </div>
     <div className='p-20'></div>{/*För att göra sidan lite luftig*/}
-  <div className='flex justify-end'>
+
+  <div className='flex justify-end sm:mr-40'>
       <div className='bg-green-200 xl:ml-10 xl:mr-10 text-green-200'>.</div>
         <div className='relative w-2/5 mt-20 mb-20 mr-40'>
            <div className=''>
               <img src="/Images/inteMathem.png" 
-                alt="" className='absolute object-cover secound-mainpage-img ' />
+                alt="" className='absolute object-cover secound-mainpage-img xl:block sm:hidden' />
             </div> 
           <div className='pl-10 '>
         <h1 className='2xl:text-4xl font-mono absolute top-0 font-semibold md:text-3xl sm:text-xl sm:w-80 '>
             Are you ready to spice up your evening meal? 
               </h1>
-                <p className='2xl:text-2xl mt-20 pt-10 md:text-xl sm:text-xm sm:w-80 '>
+                <p className='2xl:text-2xl mt-20 xl:pt-20 md:text-xl sm:text-xm sm:w-80 '>
                   Explore today's dinner tips and be inspired by a world of 
                   great flavors and simplicity on the plate! Our collection of 
                   tasty recipes are carefully selected to offer you an exciting journey 

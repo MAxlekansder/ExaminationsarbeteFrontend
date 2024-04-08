@@ -1,7 +1,7 @@
 //Gustav
-/*
 
-import { useEffect, useState } from 'react'
+
+/*import { useEffect, useState } from 'react'
 import useRecipeState from '../../State/indexState'
 
 function SuggetsCocktail(detailedRecipe) {
@@ -23,24 +23,31 @@ function SuggetsCocktail(detailedRecipe) {
             if(allDrinks.length > 0) {
               const randomIndex = Math.floor(Math.random() * allDrinks.length)
               const generatedCocktail = allDrinks[randomIndex];
-              
-              switch(detailedRecipe){
+
+              switch(true){
                 case detailedRecipe.includes('Meat'):
                     setRandomCocktail(generatedCocktail.includes('Gin'));
-                case detailedRecipe.includes('Fish'):
+                case detailedRecipe.categories.includes('Fish'):
                     setRandomCocktail(generatedCocktail.includes('Vodka'))
                 case detailedRecipe.includes('Vegitarian'):
                     setRandomCocktail(generatedCocktail.str)       
         
             }
+              
+          
       
               
               setIsLoading(false);
             }
+            
           }
           getRandomCocktail();
       
       }, [allDrinks]);
+
+      useEffect(() =>{
+
+      })
 
   return (
     <div>

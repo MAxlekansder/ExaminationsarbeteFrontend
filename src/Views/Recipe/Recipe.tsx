@@ -7,7 +7,7 @@ import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
-import SuggetsCocktail from '../../components/Cocktails/SuggetsCocktail.tsx';
+
 
 
 
@@ -19,7 +19,20 @@ const RecipeDetails = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [isModalOpen, setIsModalOpe] = useState(false);
     const [selectRecipeId, setselectedRecipeId] = useState("");
-  
+    const [suggestedCocktail, setSuggestedCocktail] = useState();
+    const fetchAllDrinks = useRecipeState((state) => state.fetchAllDrinks)
+    const allDrinks = useRecipeState((state) => state.detailedDrink)
+   
+
+
+    
+  useEffect(() =>{
+      fetchAllDrinks()
+     
+      
+    },[])
+
+
 
     useEffect(() => {
         if (id) {
@@ -43,6 +56,38 @@ const RecipeDetails = () => {
         console.log('Updated cart:', useRecipeState.getState().cart);
     };
 
+   
+  const filterdCocktail = () =>{ 
+    switch(true){
+      case detailedRecipe.categories.includes('Meat'):
+        console.log('VODKA')
+        
+        
+        break;
+
+      case detailedRecipe.categories.includes('Vegetarian'):
+      console.log('ALCOHOLFIRTT')
+        break;
+
+      case detailedRecipe.categories.includes('Fish'):
+        console.log('GIN')
+        break;
+
+      case detailedRecipe.categories.includes('Dinner'):
+        console.log('Vodka')
+        break;  
+
+        default:
+          console.log('Din mämä ä din päpäp')
+
+    
+    }  
+  
+  }  
+  
+   
+  const filterDrink = allDrinks.filter(drink => drink.strDrink.includes('A Day at the Beach'))
+  console.log(filterDrink, 'FilterdDrink')
   
 
 
@@ -81,8 +126,29 @@ const RecipeDetails = () => {
                               xl:w-80 :h-80
                               lg:w-96 lg:h-96
                               sm:w-96 sm:h-96 object-cover" />
-                <div className="m-12">
-            <h2 className="xl:text-xl font-mono">Instructions step by step</h2>
+                              <div>{}</div>
+                    <div className="m-12">
+                      
+         {/*INGRIDIENTS SECTION*/}
+         <div className='flex flex-col'>
+        <h2 className='2xl:text-3xl xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl text-center'>Ingredients</h2>
+            {detailedRecipe.ingredients?.map(ingredient => (
+                <p className=''>{ingredient.name}</p>
+
+            ))}
+            <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
+                Add to Cart
+            </button>
+           
+            </div>
+          <p className=''>{detailedRecipe.ratings}</p>
+      </div>
+    </div>
+   </div>
+
+   {/*INSTRUCTIONS SECTION*/}
+  <div className='flex align-middle flex-col items-center'>
+      <h2 className="xl:text-xl font-mono">Instructions step by step</h2>
         {detailedRecipe.instructions?.map((step, index) => (
     <div className="
                   2xl:flex 2xl:items-center 2xl:mb-2
@@ -91,37 +157,28 @@ const RecipeDetails = () => {
                   md:flex md:items-center md:mb-2
                   sm:flex sm:items-center sm:mb-2
                     " key={index}>
-<input
-    id={`bordered-checkbox-${index}`}
-    type="checkbox"
-    value=""
-    name="bordered-checkbox"
-    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            <input
+                id={`bordered-checkbox-${index}`}
+                type="checkbox"
+                value=""
+                name="bordered-checkbox"
+                className="w-4 h-4 text-blue-600
+                           bg-gray-100 border-gray-300 rounded 
+                           focus:ring-blue-500 dark:focus:ring-blue-600 
+                           dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 
+                           dark:border-gray-600"
     />
         <label
               htmlFor={`bordered-checkbox-${index}`}
-              className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-500 "
+              className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-500 w-96 "
                 >
                 {step}
             </label>
           </div>
+          
         ))}
-      </div>
     </div>
-    <div className='flex flex-col align-middle mr-20'>
-        <h2 className='2xl:text-2xl xl:text-2xl lg:text-3xl md:text-3xl sm:text-2xl text-center'>Ingredienser</h2>
-            {detailedRecipe.ingredients?.map(ingredient => (
-                <p className='text-center text-smq'>{ingredient.name}</p>
-            ))}
-           
-            </div>
-          <p className=''>{detailedRecipe.ratings}</p>
-        </div>
-    <div>
-    </div>
-    <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
-                Add to Cart
-            </button>
+   
     </>
   );
 };
