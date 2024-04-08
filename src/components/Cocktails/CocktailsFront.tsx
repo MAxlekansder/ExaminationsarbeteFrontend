@@ -191,7 +191,7 @@ function DrinkCategory() {
               className="w-full h-72 object-cover"
               src={category.imageUrl}
               alt={category.name}
-              onClick={() => console.log(category.name)}
+              onClick={() => categoryHandler(category.name)}
             />
             <div className="px-6 py-4">
               <div className="font-bold text-xl">{category.name}</div>
@@ -200,40 +200,53 @@ function DrinkCategory() {
           </div>
         ))}
       </div>
-      {/* <div className="w-1/4">
-        <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2 pt-5">Categories</h3>
-          {dropdownMenus.map(({ category, options }) => (
-            <DrinkSidebarMenu
-              key={category}
-              category={category}
-              options={options}
-              categoryHandler={categoryHandler}
-            />
-          ))}
-        </div>
-      </div> */}
-
-      {/* <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-4">
-        {categoryDrinks &&
-          categoryDrinks.map((drink) => (
-            <div
-              key={drink.idDrink}
-              className="rounded overflow-hidden shadow-lg cursor-pointer mb-4"
-              onClick={() => navigateCocktailId(drink.idDrink)}
-            >
-              <img
-                src={drink.strDrinkThumb}
-                alt={drink.strDrink}
-                className="w-full h-64 object-cover"
-              />
+      <div className="font text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl pl-10">
+      {handleCategory}
+      </div>
+      <div
+        className="flex overflow-auto p-10"
+        style={{
+          fontFamily: "Quattro Sans, sans-serif",
+          overflowX: "auto",
+          msOverflowStyle: "none",
+          scrollbarWidth: "none",
+        }}
+      >
+        {categoryDrinks?.map((drink) => (
+          <div
+            key={drink.idDrink}
+            onClick={() => navigate(`/cocktails/${drink.idDrink}`)}
+            className="mx-0.5"
+          >
+            <div className="rounded overflow-hidden shadow-lg h-54">
+              <div className="max-w-3xl">
+                <div style={{ width: "250px" }}>
+                  <img
+                    src={drink.strDrinkThumb}
+                    alt={drink.strDrink}
+                    style={{
+                      height: "170px",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    className="transition duration-200 hover:scale-110"
+                  />
+                </div>
+              </div>
               <div className="px-6 py-4">
-                <div className="font-bold text-lg mb-2">{drink.strDrink}</div>
-                <p className="text-gray-600 text-sm"></p>
+                <div className="flex justify-between">
+                  <div className="font-bold text-lg mb-2">
+                  {drink.strDrink.split(' ').length >= 3 ? 
+                    drink.strDrink.split(' ').slice(0, 2).join(' ').concat("...") : 
+                    drink.strDrink}
+                    </div>
+              
+                </div>
               </div>
             </div>
-          ))}
-      </div> */}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
