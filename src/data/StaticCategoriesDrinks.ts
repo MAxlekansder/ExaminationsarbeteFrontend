@@ -35,7 +35,7 @@ export const StaticCategoriesDrinks = [
         description: "",
     },
     {
-        name: "Red wine drinks",
+        name: "Red wine",
         imageUrl: "https://i.pinimg.com/564x/36/d9/e9/36d9e929453949089b373a0ebb5481c1.jpg",
         description: "",
     }

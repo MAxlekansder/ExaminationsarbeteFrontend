@@ -134,6 +134,7 @@ function RecipeHome() {
               src={category.imageUrl}
               alt={category.name}
               onClick={() => locateHandler(category.name)}
+              style={{ transformOrigin: 'center', cursor: 'pointer' }}
             />
             <div className="px-6 py-4">
               <div className="font-bold text-xl">{category.name}</div>

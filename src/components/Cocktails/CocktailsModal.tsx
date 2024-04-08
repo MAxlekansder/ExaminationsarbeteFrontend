@@ -1,3 +1,5 @@
+// alexander 
+
 import { useEffect, useState } from "react";
 
 interface CocktailsModalProps {
@@ -8,13 +10,7 @@ interface CocktailsModalProps {
   category: string;
 }
 
-function CocktailsModal({
-  isOpen,
-  closeModal,
-  categoryDrinks,
-  navigate,
-  category,
-}: CocktailsModalProps) {
+function CocktailsModal({ isOpen, closeModal, categoryDrinks, navigate,category,}: CocktailsModalProps) {
   const [currentPage, setCurrentPage] = useState(1); // pagination
   const itemsPerPage = 12;
   const lastItem = currentPage * itemsPerPage;
@@ -23,7 +19,7 @@ function CocktailsModal({
 
   const page = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  useEffect(() => {
+  useEffect(() => {  // closes modal when escape is hit
     const modalEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closeModal();
@@ -35,7 +31,7 @@ function CocktailsModal({
 
     return () => {
       window.removeEventListener("keydown", modalEscape);
-      setCurrentPage(1);
+      setCurrentPage(1); // used to reset pagination when closed <- reseting useState
     };
   }, [isOpen, closeModal]);
 
