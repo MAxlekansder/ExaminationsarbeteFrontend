@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
 import NavBarComponent from "../NavBarComponent.tsx";
-import { StaticCategories } from "../../data/StaticCategories.ts";
+import { StaticCategories } from "../../data/StaticCategoriesRecipe.ts";
 import FooterComponent from "../Footer/FooterComponent.tsx";
 
 function RecipeHome() {
@@ -16,7 +16,6 @@ function RecipeHome() {
 
   useEffect(() => {
     getRecipe();
-    console.log("Hej");
   }, []);
 
   
@@ -72,7 +71,7 @@ function RecipeHome() {
             <div
               key={recipe._id}
               onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
-              className="mx-0.5 "
+              className="mx-0.5 relative"
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
                 <div className="max-w-3xl">
@@ -90,12 +89,15 @@ function RecipeHome() {
                   </div>
                 </div>
                 <div className="px-6 py-4">
-                  <div className="font-bold text-lg mb-2">{recipe.title}</div>
+                  <div className="font-bold text-lg mb-2">{recipe.title.split(' ').length >= 3 ? recipe.title.split(' ').slice(0,2).join(' ').concat("...") : recipe.title}</div>
                   <p className="text-gray-600 text-sm">
-                    {recipe.description.length > 50
-                      ? `${recipe.description.substring(0, 100)}...`
+                    {recipe.description.split(' ').length > 15
+                      ? recipe.description.split(' ').slice(0, 15).join(" ").concat("...") 
                       : recipe.description}
                   </p>
+                </div>
+                <div>
+                <p className="absolute bottom-0 right-0 p-4">{recipe.price} kr</p>
                 </div>
               </div>
             </div>
@@ -171,7 +173,7 @@ function RecipeHome() {
             <div
               key={recipe._id}
               onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
-              className="mx-0.5"
+              className="mx-0.5 relative"
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
                 <div className="max-w-3xl">
@@ -195,6 +197,9 @@ function RecipeHome() {
                       ? `${recipe.description.substring(0, 50)}...`
                       : recipe.description}
                   </p>
+                </div>
+                <div>
+                <p className="absolute bottom-0 right-0 p-4">{recipe.price} kr</p>
                 </div>
               </div>
             </div>
@@ -220,7 +225,7 @@ function RecipeHome() {
           <div
             key={recipe._id}
             onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
-            className="mx-0.5"
+            className="mx-0.5 relative"
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
               <div className="max-w-3xl">
@@ -244,6 +249,9 @@ function RecipeHome() {
                     ? `${recipe.description.substring(0, 100)}...`
                     : recipe.description}
                 </p>
+              </div>
+              <div>
+              <p className="absolute bottom-0 right-0 p-4">{recipe.price} kr</p>
               </div>
             </div>
           </div>
