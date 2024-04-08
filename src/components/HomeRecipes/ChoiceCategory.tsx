@@ -64,38 +64,36 @@ function RecipeCategory() {
           </div>
          
           <div className="grid lg:grid-cols-3 gap-4 sm:grid-cols-1">
-            {filterRecipe().map((recipe) => (
-              <div
-                key={recipe._id}
-                className="rounded overflow-hidden shadow-lg"
-              >
-                <img
-                  src={recipe.imageUrl}
-                  alt=""
-                  className="w-full h-64 object-cover"
-                  onClick={() =>
-                    navigate(`/recipe/specificRecipe/${recipe._id}`)
-                  }
-                />
-                <div className="px-6 py-4">
-                  <div className="flex justify-between">
-                    <div className="font-bold text-lg mb-2">
-                      {recipe.title}
-                    </div>
-                    <p className="text-gray-600 text-sm pt-1">
-                      Rating {Math.round(recipe.avgRating)}
-                    </p>
-                  </div>
-                  <p>{recipe.categories.join(' ')}</p>
-                  <p className="text-gray-600 text-sm">
-                    {recipe.description.length > 50
-                      ? `${recipe.description.substring(0, 100)}...`
-                      : recipe.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+  {filterRecipe().map((recipe) => (
+    <div
+      key={recipe._id}
+      className="relative rounded overflow-hidden shadow-lg"
+    >
+      <img
+        src={recipe.imageUrl}
+        alt=""
+        className="w-full h-64 object-cover"
+        onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
+      />
+      <div className="px-6 py-4">
+        <div className="flex justify-between">
+          <div className="font-bold text-lg mb-2">{recipe.title}</div>
+          <p className="text-gray-600 text-sm pt-1">
+            Rating {Math.round(recipe.avgRating)}
+          </p>
+        </div>
+        <p>{recipe.categories.join(' ')}</p>
+        <p className="text-gray-600 text-sm pb-4">
+          {recipe.description.length > 50
+            ? `${recipe.description.substring(0, 100)}...`
+            : recipe.description}
+        </p>
+      </div>
+      <div className="absolute bottom-0 right-0 p-2">{recipe.price} kr</div>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </div>

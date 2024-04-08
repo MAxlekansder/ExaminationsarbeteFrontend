@@ -6,6 +6,7 @@ import useRecipeState from "../../State/indexState";
 import NavBarComponent from "../NavBarComponent";
 import DrinkSidebarMenu from "./DrinksSidebar";
 import { StaticLetters, Letter } from "../../data/StaticLetters";
+import { StaticCategoriesDrinks } from "../../data/StaticCategoriesDrinks";
 
 function DrinkCategory() {
   const getCategoryDrinks = useRecipeState(
@@ -177,7 +178,29 @@ function DrinkCategory() {
       <div className="flex justify-center pt-10">
         <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
       </div>
-      <div className="w-1/4">
+     
+      <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pl-10">
+        Drink categories</h1>
+      <div className="grid grid-cols-1 gap-4 w-full p-10 md:grid md:grid-cols-4 md:gap-2">
+        {StaticCategoriesDrinks.map((category) => (
+          <div
+            key={category.name}
+            className="rounded overflow-hidden shadow-lg md:mb-0  md:w-full"
+          >
+            <img
+              className="w-full h-72 object-cover"
+              src={category.imageUrl}
+              alt={category.name}
+              onClick={() => console.log(category.name)}
+            />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl">{category.name}</div>
+              <p className="text-gray-700 text-base">{category.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* <div className="w-1/4">
         <div className="mb-4">
           <h3 className="text-lg font-bold mb-2 pt-5">Categories</h3>
           {dropdownMenus.map(({ category, options }) => (
@@ -189,9 +212,9 @@ function DrinkCategory() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {categoryDrinks &&
           categoryDrinks.map((drink) => (
             <div
@@ -210,7 +233,7 @@ function DrinkCategory() {
               </div>
             </div>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 }
