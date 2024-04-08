@@ -1,9 +1,7 @@
 import {useEffect, } from 'react'
 import { useParams,} from "react-router-dom";
-import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
-import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
