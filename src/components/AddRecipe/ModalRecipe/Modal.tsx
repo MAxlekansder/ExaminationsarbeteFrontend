@@ -79,6 +79,7 @@ function Modal({ recipe, imageUrl, isOpen, onCancel }: ModalProps) {
 
   const handleRecipeUpdate = () => { // basic update to update whole recipe which trigger on "OK" button
     getUpdate(updatedRecipe._id, updatedRecipe);
+    onCancel();
   };
 
 

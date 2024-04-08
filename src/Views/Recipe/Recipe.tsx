@@ -4,7 +4,7 @@ import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import {Recipe} from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
-import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
+import Modal from '../../components/AddRecipe/ModalRecipe/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
 
