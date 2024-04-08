@@ -4,7 +4,7 @@ import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import { Recipe } from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
-import Modal from '../../components/AddRecipe/Modal/Modal.tsx';
+import Modal from '../../components/AddRecipe/ModalRecipe/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
 
@@ -47,8 +47,9 @@ const RecipeDetails = () => {
   return (
     <>
       <NavBarComponent />
-      <button onClick={() => openModal(detailedRecipe._id)} className="border  px-2">
-        Change Recipe</button>
+      <button onClick={() => openModal(detailedRecipe._id)} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded font-semibold">
+        Change Recipe
+      </button>
       <Modal
 
         isOpen={isModalOpen}
@@ -58,10 +59,11 @@ const RecipeDetails = () => {
       />
       <div className="Recipe-link flex flex-col justify-center items-center m-12 ">
         <div className="Recipe flex felx-col items-center relative">
-          <h1 className='absolute top-0 2xl:text-2xl'>{detailedRecipe.title}</h1>
+          <h1 className="absolute top-0 text-base font-semibold">{detailedRecipe.title}</h1>
+
           <img src={detailedRecipe.imageUrl} className="w-96 h-96 object-cover" />
           <div className="m-12">
-            <h2 className="2xl:text-2xl font-mono">Instructions step by step</h2>
+            <h2 className="text-lg font-bold mt-4">Instructions step by step</h2>
             {detailedRecipe.instructions?.map((step, index) => (
               <div className="flex items-center mb-2 " key={index}>
                 <input
@@ -82,14 +84,16 @@ const RecipeDetails = () => {
           </div>
         </div>
         <div>
-          <h6>Ingredienser</h6>
-          {detailedRecipe.ingredients?.map(ingredient => (
-            <p>{ingredient.name}</p>
+          <h6 className="text-lg font-bold mt-4" >Ingredienser</h6>
+          {detailedRecipe.ingredients?.map((ingredient, index) => (
+            <p key={index} className="text-base">
+              {ingredient.name}
+            </p>
           ))}
         </div>
-        <p>{detailedRecipe.ratings}</p>
+        <p className='mt-4'>{detailedRecipe.ratings}</p>
       </div>
-      <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded">
+      <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded font-semibold">
         Add to Cart
       </button>
     </>
