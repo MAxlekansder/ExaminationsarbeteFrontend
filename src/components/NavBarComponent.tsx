@@ -6,7 +6,6 @@ import useRecipeState from "../State/indexState";
 import { Link } from "react-router-dom";
 
 
-
 function NavBarComponent() {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
@@ -36,7 +35,7 @@ function NavBarComponent() {
         <header className="flex">
             <div className="py-1">
                 <a href="/">
-                    <img src="./Images/logo1.png" alt="Logo" className="h-10 absolute" />
+                    <img src="Images/logo1.png" alt="Logo" className="h-10 absolute" />
                 </a>
             </div>
             <nav className="flex-grow bg-white px-4 py-2 pb-4">
@@ -50,7 +49,7 @@ function NavBarComponent() {
                     <li> <button onClick={handleCartToggle} className="text-2xl relative flex items-center justify-center w-12 h-12">
                         <TiShoppingCart />
                         {cart.length > 0 && (
-                            <span className="absolute -right-2 -top-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">{cart.length}</span>
+                            <span className="absolute -right-2 -top-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-green-600 rounded-full">{cart.length}</span>
                         )}
                     </button>
                     </li>
@@ -104,6 +103,6 @@ function NavBarComponent() {
             )}
         </header>
     );
-}
+};
 
 export default NavBarComponent;
