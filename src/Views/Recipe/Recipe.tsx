@@ -7,6 +7,7 @@ import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/ModalRecipe/Modal.tsx';
 import { useState } from 'react';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
+import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
 
 
 
@@ -47,9 +48,6 @@ const RecipeDetails = () => {
   return (
     <>
       <NavBarComponent />
-      <button onClick={() => openModal(detailedRecipe._id)} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded font-semibold">
-        Change Recipe
-      </button>
       <Modal
 
         isOpen={isModalOpen}
@@ -57,47 +55,65 @@ const RecipeDetails = () => {
         imageUrl={detailedRecipe.imageUrl}
         recipe={detailedRecipe}
       />
-      <div className="Recipe-link flex flex-col justify-center items-center m-12 ">
-        <div className="Recipe flex felx-col items-center relative">
-          <h1 className="absolute top-0 text-base font-semibold">{detailedRecipe.title}</h1>
 
-          <img src={detailedRecipe.imageUrl} className="w-96 h-96 object-cover" />
-          <div className="m-12">
-            <h2 className="text-lg font-bold mt-4">Instructions step by step</h2>
-            {detailedRecipe.instructions?.map((step, index) => (
-              <div className="flex items-center mb-2 " key={index}>
-                <input
-                  id={`bordered-checkbox-${index}`}
-                  type="checkbox"
-                  value=""
-                  name="bordered-checkbox"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  htmlFor={`bordered-checkbox-${index}`}
-                  className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-500 "
-                >
-                  {step}
-                </label>
+      <div className="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="lg:col-span-1">
+            <img src={detailedRecipe.imageUrl} className="w-full max-w-md h-auto object-cover rounded mx-auto" alt="Recipe img" />
+          </div>
+          <div className="lg:col-span-2">
+            <div className="space-y-4">
+              <h1 className="text-2xl font-bold text-center lg:text-left">{detailedRecipe.title}</h1>
+              <div className="flex justify-center lg:justify-start space-x-2 mt-4">
+                <button onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
+                  Add to Cart
+                </button>
+                <button onClick={() => openModal(detailedRecipe._id)} className="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded transition duration-300">
+                  Change Recipe
+                </button>
               </div>
-            ))}
+            </div>
+
+            <div className="mt-8">
+              <h2 className="text-xl font-bold">Instructions</h2>
+              <div className="ml-4">
+                {detailedRecipe.instructions?.map((step, index) => (
+                  <div key={index} className="flex items-center mt-2">
+                    <input
+                      id={`checkbox-${index}`}
+                      type="checkbox"
+                      name={`checkbox-${index}`}
+                      className="w-4 h-4 text-green-600 rounded"
+                    />
+                    <label htmlFor={`checkbox-${index}`} className="ml-2 text-sm font-medium">
+                      {step}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h2 className="text-xl font-bold">Ingredients</h2>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {detailedRecipe.ingredients?.map((ingredient, index) => (
+                  <span key={index} className="px-3 py-1 bg-gray-200 text-gray-800 text-sm font-semibold rounded-full">
+                    {ingredient.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-4">{detailedRecipe.ratings}</p>
+            {id && (
+              <RecipeRating rating={5} dishId={id || ""} />
+            )}
           </div>
         </div>
-        <div>
-          <h6 className="text-lg font-bold mt-4" >Ingredienser</h6>
-          {detailedRecipe.ingredients?.map((ingredient, index) => (
-            <p key={index} className="text-base">
-              {ingredient.name}
-            </p>
-          ))}
-        </div>
-        <p className='mt-4'>{detailedRecipe.ratings}</p>
       </div>
-      <button onClick={handleAddToCart} className="bg-green-500 hover:bg-green-700 py-2 px-4 rounded font-semibold">
-        Add to Cart
-      </button>
     </>
   );
 };
+
 
 export default RecipeDetails
