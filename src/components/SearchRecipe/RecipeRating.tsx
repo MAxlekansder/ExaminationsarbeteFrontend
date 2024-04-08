@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import axios, {} from 'axios';
-import Comment, {CommentProps} from "./Comment.tsx";
+import React, { useEffect, useState } from 'react';
+import axios, { } from 'axios';
+import Comment, { CommentProps } from "./Comment.tsx";
 
 
 interface RecipeRating {
@@ -9,8 +9,7 @@ interface RecipeRating {
     removeComment: (id: number) => Promise<void>;
 }
 
-
-const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
+const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
     const [hoverRating, setHoverRating] = useState<number | null>(rating);
     const [comments, setComments] = useState<CommentProps[]>([]);
     const [newComment, setNewComment] = useState<string>('');
@@ -101,10 +100,10 @@ const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
                         onClick={() => handleRatingChange(value)}
                         onMouseEnter={() => handleMouseEnter(value)}
                         onMouseLeave={handleMouseLeave}
-                        style={{cursor: 'pointer'}}
+                        style={{ cursor: 'pointer' }}
                     >
-            {value <= (hoverRating || 0) ? '★' : '☆'}
-          </span>
+                        {value <= (hoverRating || 0) ? '★' : '☆'}
+                    </span>
                 ))}
             </div>
             <div>
@@ -113,13 +112,13 @@ const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
                     placeholder="Enter your comment here.."
                     value={newComment}
                     onChange={handleCommentChange}
-                /><br/>
+                /><br />
                 <input
                     className="bg-gray-300"
                     placeholder="Name"
                     value={name}
                     onChange={handleNameChange}
-                /><br/><br/>
+                /><br /><br />
             </div>
             <button onClick={handleSubmitComment}
                 className=" ml-2 bg-red-700 hover:bg-green-800 text-white font-bold py-0.5 px-0.5 rounded"
@@ -127,7 +126,7 @@ const RecipeRating: React.FC<RecipeRating> = ({dishId, rating}) => {
             </button>
             <div>
                 {comments.map((commentItem) => (
-                    <Comment comment={commentItem}/>
+                    <Comment comment={commentItem} />
                 ))}
             </div>
         </div>

@@ -1,5 +1,5 @@
 export interface CommentProps {
-    // id: string; denna måste finnas för att vi ska kunna radera en kommentar, be någon i såfall att lägga till detta i api:t för Hämta alla kommentarer för ett recept
+
     comment: number;
     name: string;
     createdAt: string;
@@ -12,16 +12,13 @@ export interface Props {
 }
 
 
-const Comment: React.FC<Props> = (props) => { // Använda rätt variabel för props
-    const { comment } = props; // Deklarera och destrukturera removeFromComment
+const Comment: React.FC<Props> = (props) => {
+    const { comment } = props;
 
-     const handleDelete = () => {
-        // call API for delete comment for specific recipe
-        // när du raderar en kommentar så kommer du att behöva skicka med ID:t på kommentaren till API:t
+    const handleDelete = () => {
+
         console.log("DELETE COMMENT (Not implemented)")
     }
-
-
 
 
     return (
@@ -30,7 +27,6 @@ const Comment: React.FC<Props> = (props) => { // Använda rätt variabel för pr
             <p>Created by: {comment.name}</p>
             <p>Created at: {comment.createdAt}</p>
             <p>Rating: {comment.rating}</p>
-
 
             <button
                 onClick={handleDelete}
@@ -44,4 +40,4 @@ const Comment: React.FC<Props> = (props) => { // Använda rätt variabel för pr
 };
 
 
-export default Comment;
+export default Comment; 
