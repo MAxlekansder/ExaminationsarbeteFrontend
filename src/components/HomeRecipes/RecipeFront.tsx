@@ -1,6 +1,6 @@
 //Alexander och Sertan
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
 import NavBarComponent from "../NavBarComponent.tsx";
@@ -11,7 +11,6 @@ function RecipeHome() {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
   const recipe = useRecipeState((state) => state.recipes);
   const navigate = useNavigate();
-  
 
 
   useEffect(() => {
@@ -21,8 +20,8 @@ function RecipeHome() {
   
 
   const FilterHandler = (category: string) => {
-    const firstFilterRecipe = recipe.filter((recipe) =>
-      recipe.categories.includes(category)
+  
+    const firstFilterRecipe = recipe.filter((recipe) => recipe.categories.includes(category)
     );
     const randomRecipes = firstFilterRecipe.sort(() => Math.random() - 0.5);
     return randomRecipes;
@@ -192,10 +191,10 @@ function RecipeHome() {
                   </div>
                 </div>
                 <div className="px-6 py-4">
-                  <div className="font-bold text-lg mb-2">{recipe.title}</div>
+                  <div className="font-bold text-lg mb-2">{recipe.title.split(' ').length >= 3 ? recipe.title.split(' ').slice(0,2).join(' ').concat("...") : recipe.title}</div>
                   <p className="text-gray-600 text-sm">
-                    {recipe.description.length > 100
-                      ? `${recipe.description.substring(0, 50)}...`
+                    {recipe.description.split(' ').length > 15
+                      ? recipe.description.split(' ').slice(0, 15).join(" ").concat("...") 
                       : recipe.description}
                   </p>
                 </div>
@@ -244,11 +243,11 @@ function RecipeHome() {
                 </div>
               </div>
               <div className="px-6 py-4">
-                <div className="font-bold text-lg mb-2">{recipe.title}</div>
+                <div className="font-bold text-lg mb-2">{recipe.title.split(' ').length >= 3 ? recipe.title.split(' ').slice(0,2).join(' ').concat("...") : recipe.title}</div>
                 <p className="text-gray-600 text-sm">
-                  {recipe.description.length > 10
-                    ? `${recipe.description.substring(0, 100)}...`
-                    : recipe.description}
+                  {recipe.description.split(' ').length > 12
+                      ? recipe.description.split(' ').slice(0, 12).join(" ").concat("...") 
+                      : recipe.description}
                 </p>
               </div>
               <div>

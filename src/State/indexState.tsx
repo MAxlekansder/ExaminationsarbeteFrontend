@@ -24,7 +24,7 @@ interface recipeState {
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => Promise<void>;
     getApiKey: () => string;
-    fetchRecipe: () => void;
+    fetchRecipe: () => Promise<void>;
     fetchAlcoholicDrinks: () => Promise<void>;
     fetchNonAlcoholicDrinks: () => Promise<void>;
 
@@ -92,6 +92,7 @@ const useRecipeState = create<recipeState>()((set) => ({
         recipes: [...state.recipes, newRecipes],
     })),
 
+
     fetchRecipe: async () => { // for fetching whole api
         try {
             const response = await axios.get("https://sti-java-grupp2-afmbgd.reky.se/recipes");
@@ -105,6 +106,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
         } catch (error) { console.log('Error fetching api/data', error); }
     },
+
 
     fetchAlcoholicDrinks: async () => { // for fetching alcoholic drinks
         try {
@@ -122,6 +124,7 @@ const useRecipeState = create<recipeState>()((set) => ({
         } catch (error) { console.log("error while fetching drinks ", error) }
     },
 
+    
     fetchNonAlcoholicDrinks: async () => { // for fetching non-alcoholic drinks
         try {
             const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");

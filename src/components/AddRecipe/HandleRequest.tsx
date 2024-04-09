@@ -1,7 +1,7 @@
 // Alexander
 
 import { useState } from "react";
-import { Recipe, Ingredient } from "../../data/Recipes";
+import { Ingredient } from "../../data/Recipes";
 import axios from "axios";
 import useRecipeState from "../../State/indexState";
 import CategorySelected from "./CategorySelect";
@@ -21,7 +21,7 @@ function HandleRequests() {
   const [ratings, setRating] = useState(0); // alternative a array,  no need for now
   const [imageUrl, setImageUrl] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
-  const [price, setPrie] = useState(0);
+  const [price, setPrice] = useState(0);
   const [categories, setCategories] = useState<string[]>([]);
   const [instructions, setInstructions] = useState<string[]>([]);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
@@ -82,6 +82,7 @@ function HandleRequests() {
     setRating(0);
     setImageUrl("");
     setTimeInMins(0);
+    setPrice(0);
     setCategories([]);
     setInstructions([]);
     setIngredients([]);
@@ -203,11 +204,11 @@ function HandleRequests() {
                 PRICE
               </label>
               <input
-                id="url-add"
-                type="text"
+                id="price"
+                type="number"
                 value={price == 0 ? "" : price}
                 onChange={(e) =>
-                  setPrie(e.target.value === "" ? 0 : Number(e.target.value))
+                  setPrice(e.target.value === "" ? 0 : Number(e.target.value))
                 }
                 className="appearance-none block w-96 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 placeholder=""
