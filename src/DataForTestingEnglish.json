@@ -1,3 +1,4 @@
+
 [
   {
     "title": "Pea Soup",
@@ -5,6 +6,7 @@
     "ratings": 4,
     "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/de4270d3-101a-42e9-bc66-a04a91768747?fit=crop&h=1137&w=1800&s=129692d79aca75d67396f7300faeaf7d3092d8b1",
     "timeInMins": 60,
+    "price": 89,
     "categories": ["dinner", "Appetizer", "Scandinavian", "Poultry"],
     "instructions": [
       "Soak peas overnight",
@@ -313,6 +315,7 @@
     "imageUrl": "https://images.arla.com/recordid/C22D75B0-BFB8-4FE3-B4E54ED6CCE2841E/enchiladas-med-biff.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,257,0,-437)",
     "timeInMins": 45,
     "categories": ["Dinner", "Mexican", "Meat"],
+    "price": 119,
     "instructions": [
       "Cook ground beef until browned and cooked through.",
       "Chop the onion and add it to the ground beef. Cook until the onion is soft and translucent.",

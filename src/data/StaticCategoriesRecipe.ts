@@ -1,3 +1,5 @@
+// alexander
+
 export const StaticCategories = [
     {
       name: "Fish",
@@ -41,4 +43,5 @@ export const StaticCategories = [
     }
   ];
 
+  
   

@@ -1,30 +1,27 @@
 // Alexander
 
-  import { useState } from "react";
-  import { Recipe, Ingredient } from "../../data/Recipes";
-  import axios from "axios";
-  import useRecipeState from "../../State/indexState";
-  import CategorySelected from "./CategorySelect";
-  import InstructionList from "./HandleInstructions";
-  import IngredientsList from "./HandleIngredients";
-  import NavBarComponent from "../NavBarComponent";
-  import '../../Styling/Dishes.css'
-  import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Ingredient } from "../../data/Recipes";
+import axios from "axios";
+import useRecipeState from "../../State/indexState";
+import CategorySelected from "./CategorySelect";
+import InstructionList from "./HandleInstructions";
+import IngredientsList from "./HandleIngredients";
+import NavBarComponent from "../NavBarComponent";
+import "../../Styling/Dishes.css";
+import { useNavigate } from "react-router-dom";
 
-
-
-  function HandleRequests() {
-
-    const addRecipeState = useRecipeState((state) => state.addRecipe);
-    const getApiKey = useRecipeState((state) => state.getApiKey);
-    const navigate = useNavigate();
+function HandleRequests() {
+  const addRecipeState = useRecipeState((state) => state.addRecipe);
+  const getApiKey = useRecipeState((state) => state.getApiKey);
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ratings, setRating] = useState(0); // alternative a array,  no need for now
   const [imageUrl, setImageUrl] = useState("");
   const [timeInMins, setTimeInMins] = useState(0);
-  const [price, setPrie] = useState(0);
+  const [price, setPrice] = useState(0);
   const [categories, setCategories] = useState<string[]>([]);
   const [instructions, setInstructions] = useState<string[]>([]);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
@@ -32,10 +29,14 @@
   const addRecipe = async () => {
     // title, desc nor url can't be empty
     try {
-      if (!title || !description || !imageUrl) {
-        // maybe create a modal here instead
+      if (!title || !description || !imageUrl) {  // maybe create a modal here instead     
         alert("You need to add a Title, Description and a image Url");
 
+        return;
+      }
+
+      if (timeInMins < 0 || price < 0) {  // making sure price and time isn't minus
+        alert("Time and price cannot be negative");
         return;
       }
 
@@ -47,7 +48,6 @@
         ratings: ratings,
         description: description,
         price: price,
-        // imageURL: imageURL?.map(({ file, url}) => ({ file: file ,url: url})), let this be for now
         imageUrl: imageUrl,
         timeInMins: timeInMins,
         categories: categories,
@@ -57,30 +57,32 @@
       console.log(imageUrl);
       addRecipeState(addResponse.data); // dont need to check for response as we do try/catch
 
-        console.log(addResponse.data); // for logging while developing
-        // clearForm();
+      console.log(addResponse.data); // for logging while developing
+      // clearForm();
 
-        console.log(addResponse.data._id)
-        const confirmation = window.confirm("Recipe added successfully. Do you want to add another recipe?");
-        if (confirmation) {
-          clearForm(); // Clear the form to add another recipe
-        } else {
-          // console.log(addResponse.data._id)
-          navigate(`/recipe/specificRecipe/${addResponse.data._id}`); // Navigate to the details page recipe
-       
-        }
-      } catch (error) {
-        console.log("Error while adding new recipe to list: ", error);
+      console.log(addResponse.data._id);
+      const confirmation = window.confirm(
+        "Recipe added successfully. Do you want to add another recipe?"
+      );
+      if (confirmation) {
+        clearForm(); // Clear the form to add another recipe
+      } else {
+        // console.log(addResponse.data._id)
+        navigate(`/recipe/specificRecipe/${addResponse.data._id}`); // Navigate to the details page recipe
       }
-    };
+    } catch (error) {
+      console.log("Error while adding new recipe to list: ", error);
+    }
+  };
 
   const clearForm = () => {
-    // resets the formula after commiting
+    // resets the form after commiting
     setTitle("");
     setDescription("");
     setRating(0);
     setImageUrl("");
     setTimeInMins(0);
+    setPrice(0);
     setCategories([]);
     setInstructions([]);
     setIngredients([]);
@@ -91,7 +93,6 @@
       <div>
         <NavBarComponent />
       </div>
-
       <div className=" rounded p-6 border-img">
         <div className="flex justify-center items-stretch h-screen">
           <div className="w-full max-w-3xl">
@@ -203,11 +204,11 @@
                 PRICE
               </label>
               <input
-                id="url-add"
-                type="text"
+                id="price"
+                type="number"
                 value={price == 0 ? "" : price}
                 onChange={(e) =>
-                  setPrie(e.target.value === "" ? 0 : Number(e.target.value))
+                  setPrice(e.target.value === "" ? 0 : Number(e.target.value))
                 }
                 className="appearance-none block w-96 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 placeholder=""
