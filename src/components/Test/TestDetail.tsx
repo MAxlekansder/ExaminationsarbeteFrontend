@@ -1,11 +1,11 @@
 // Alexander, Mehdi
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useRecipeState from "../../../State/indexState.tsx";
-import { Recipe } from "../../../data/Recipes.ts";
-import Modal from "./Modal.tsx";
-import RecipeRating from "../../SearchRecipe/RecipeRating.tsx";
-import SuggetsCocktail from "../../Cocktails/SuggetsCocktail.tsx";
+import useRecipeState from "../../State/indexState.tsx";
+import { Recipe } from "../../data/Recipes.ts";
+import Modal from "../AddRecipe/RecipeModal.tsx";
+import RecipeRating from "../SearchRecipe/RecipeRating.tsx";
+import SuggetsCocktail from "../Cocktails/SuggetsCocktail.tsx";
 
 
 
