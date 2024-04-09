@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios, { } from 'axios';
 import Comment, { CommentProps } from "./Comment.tsx";
+import { IoIosStar } from "react-icons/io";
+
 
 
 interface RecipeRating {
@@ -96,6 +98,7 @@ const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
             <div>
                 {[1, 2, 3, 4, 5].map((value) => (
                     <span
+                        className='text-yellow-400'
                         key={value}
                         onClick={() => handleRatingChange(value)}
                         onMouseEnter={() => handleMouseEnter(value)}

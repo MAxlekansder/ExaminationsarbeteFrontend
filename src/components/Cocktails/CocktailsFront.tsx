@@ -7,6 +7,8 @@ import NavBarComponent from "../NavBarComponent";
 import DrinkSidebarMenu from "./DrinksSidebar";
 import { StaticLetters, Letter } from "../../data/StaticLetters";
 import { StaticCategoriesDrinks } from "../../data/StaticCategoriesDrinks";
+import CocktailsModal from "./CocktailsModal";
+import FooterComponent from "../Footer/FooterComponent";
 
 function DrinkCategory() {
   const getCategoryDrinks = useRecipeState(
@@ -17,29 +19,15 @@ function DrinkCategory() {
   const categoryDrinks = useRecipeState((state) => state.categoryDrinks);
   const [handleCategory, setHandleCategory] = useState("Gin"); // Default category
   const [handleLetter, setHandleLetter] = useState<Letter[]>(StaticLetters);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const navigate = useNavigate();
-  const [dropdownMenus, setDropdownMenus] = useState([
-    {
-      category: "Alcoholic Drinks",
-      options: [
-        "Gin",
-        "Vodka",
-        "Tequila",
-        "Light rum",
-        "Dark rum",
-        "Champagne",
-        "Whiskey",
-      ],
-    },
-  ]);
-
+  
   useEffect(() => {
     fetchSpecificCategory(handleCategory); // for handling sidebar
     fetchDrinkByLetter("a"); // for default loading
   }, [handleCategory]);
 
-  const fetchDrinkByLetter = async (letter: string) => { // depending on the 
+  const fetchDrinkByLetter = async (letter: string) => { // fetching depending on the letter
     try {
       await getDrinksByLetter(letter);
     } catch (error) {
@@ -47,7 +35,7 @@ function DrinkCategory() {
     }
   };
 
-  const fetchSpecificCategory = async (category: string) => {
+  const fetchSpecificCategory = async (category: string) => {  // fetching depending on the category
     try {
       await getCategoryDrinks(category.toLowerCase());
     } catch (error) {
@@ -55,19 +43,18 @@ function DrinkCategory() {
     }
   };
 
-  const categoryHandler = (inputCategory: string) => {
+  const categoryHandler = (inputCategory: string) => {  // sets the category depending on what you click
     setHandleCategory(inputCategory);
-    closeSidebar();
   };
 
-  const navigateCocktailId = (id: string) => {
-    navigate(`/cocktails/${id}`);
-  };
+  const handleModal = () => {
+    setIsModalOpen(true)
+    console.log("open modal");
+  }
 
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  }
 
   return (
     <div>
@@ -90,7 +77,7 @@ function DrinkCategory() {
       <div>
         <div className="mt-4">
           <p className="text-2xl font-bold mb-2 text-center">
-            Filter by letter
+            Filter cocktails by letter
           </p>
           <div className="flex justify-center gap-1">
             {handleLetter.slice(0, 12).map((letter) => (
@@ -134,14 +121,14 @@ function DrinkCategory() {
             onClick={() => navigate(`/cocktails/${drink.idDrink}`)}
             className="mx-0.5"
           >
-            <div className="rounded overflow-hidden shadow-lg h-72">
+            <div className="rounded overflow-hidden shadow-lg h-80">
               <div className="max-w-3xl">
-                <div style={{ width: "300px" }}>
+                <div style={{ width: "320px" }}>
                   <img
                     src={drink.strDrinkThumb}
                     alt={drink.strDrink}
                     style={{
-                      height: "170px",
+                      height: "220px",
                       width: "100%",
                       objectFit: "cover",
                     }}
@@ -180,7 +167,7 @@ function DrinkCategory() {
       </div>
      
       <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pl-10">
-        Drink categories</h1>
+        Cocktails categories</h1>
       <div className="grid grid-cols-1 gap-4 w-full p-10 md:grid md:grid-cols-4 md:gap-2">
         {StaticCategoriesDrinks.map((category) => (
           <div
@@ -188,64 +175,32 @@ function DrinkCategory() {
             className="rounded overflow-hidden shadow-lg md:mb-0  md:w-full"
           >
             <img
-              className="w-full h-72 object-cover"
+              className="z-10 w-full h-72 object-cover"
               src={category.imageUrl}
               alt={category.name}
-              onClick={() => categoryHandler(category.name)}
+              onClick={() => {categoryHandler(category.name), handleModal()}}
+              style={{ transformOrigin: 'center', cursor: 'pointer' }}
             />
-            <div className="px-6 py-4">
+            <div className="z-0 px-6 py-4">
               <div className="font-bold text-xl">{category.name}</div>
               <p className="text-gray-700 text-base">{category.description}</p>
             </div>
           </div>
         ))}
       </div>
+      <CocktailsModal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        categoryDrinks={categoryDrinks}
+        navigate={navigate} 
+        category={handleCategory}/>
       <div className="font text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl pl-10">
-      {handleCategory}
       </div>
-      <div
-        className="flex overflow-auto p-10"
-        style={{
-          fontFamily: "Quattro Sans, sans-serif",
-          overflowX: "auto",
-          msOverflowStyle: "none",
-          scrollbarWidth: "none",
-        }}
-      >
-        {categoryDrinks?.map((drink) => (
-          <div
-            key={drink.idDrink}
-            onClick={() => navigate(`/cocktails/${drink.idDrink}`)}
-            className="mx-0.5"
-          >
-            <div className="rounded overflow-hidden shadow-lg h-54">
-              <div className="max-w-3xl">
-                <div style={{ width: "250px" }}>
-                  <img
-                    src={drink.strDrinkThumb}
-                    alt={drink.strDrink}
-                    style={{
-                      height: "170px",
-                      width: "100%",
-                      objectFit: "cover",
-                    }}
-                    className="transition duration-200 hover:scale-110"
-                  />
-                </div>
-              </div>
-              <div className="px-6 py-4">
-                <div className="flex justify-between">
-                  <div className="font-bold text-lg mb-2">
-                  {drink.strDrink.split(' ').length >= 3 ? 
-                    drink.strDrink.split(' ').slice(0, 2).join(' ').concat("...") : 
-                    drink.strDrink}
-                    </div>
-              
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="flex justify-center pt-10">
+        <div className="border-t mb-10 w-80%" style={{ width: "80%" }}></div>
+      </div>
+      <div>
+        <FooterComponent/>
       </div>
     </div>
   );

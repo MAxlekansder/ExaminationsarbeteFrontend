@@ -1,8 +1,8 @@
 // Alexander
 
 import React, { useEffect, useState } from "react";
-import { Recipe, Ingredient } from "../../../data/Recipes";
-import useRecipeState from "../../../State/indexState";
+import { Recipe, Ingredient } from "../../data/Recipes";
+import useRecipeState from "../../State/indexState";
 
 
 interface ModalProps {

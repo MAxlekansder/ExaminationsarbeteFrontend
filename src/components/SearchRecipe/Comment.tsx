@@ -22,7 +22,7 @@ const Comment: React.FC<Props> = (props) => {
 
 
     return (
-        <div className="bg-green-400 font-bold bg-repeat m-2">
+        <div className="bg-white border shadow-md font-bold bg-repeat m-2">
             <p>{comment.comment}</p>
             <p>Created by: {comment.name}</p>
             <p>Created at: {comment.createdAt}</p>
