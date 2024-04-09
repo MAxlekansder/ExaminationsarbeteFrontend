@@ -58,7 +58,7 @@ function NavBarComponent() {
 
 
   const totalPieces = cart.length;
-  const totalPrice = cart.length > 0 ? totalPieces * cart.reduce((total, item) => item.price, 0) : 0;
+  const totalPrice = cart.length > 0 ? cart.map((cartItem) => cartItem.price).reduce((total, price) => total + price, 0) : 0;
 
 
   return (
@@ -217,11 +217,11 @@ function NavBarComponent() {
                         >
                             +
                         </button>
-                        <div className="flex">
-                       
-                   
+                        <div className="">
+            
                         </div>
                       </div>
+                      
                     ))}
                   </div>
                   
@@ -230,8 +230,9 @@ function NavBarComponent() {
               
               <div className="flex px-1 py-5"></div>
               <div>
-                     total pce {totalPieces}
-                     total price {totalPrice}
+              total pce {totalPieces}
+              total price {totalPrice}
+                        
               </div>
               <button
                 onClick={confirmOrder}

@@ -334,8 +334,9 @@ const useRecipeState = create<recipeState>()((set) => ({
           quantity: existingItem.quantity + 1,
         };
         updatedCart.push(newItem); // Push the duplicated item into the cart
+      
       }
-
+      
       return { cart: updatedCart };
     }),
 }));
