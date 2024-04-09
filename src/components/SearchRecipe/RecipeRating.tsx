@@ -6,7 +6,7 @@ import Comment, { CommentProps } from "./Comment.tsx";
 interface RecipeRating {
     dishId: string;
     rating: number | null;
-    removeComment: (id: number) => Promise<void>;
+    // removeComment: (id: number) => Promise<void>;
 }
 
 const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {

@@ -1,6 +1,5 @@
 import { useEffect, } from 'react'
 import { useParams, } from "react-router-dom";
-import Title from "./Components/Title/Title.tsx";
 import useRecipeState from "../../State/indexState.tsx";
 import { Recipe } from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
@@ -103,7 +102,6 @@ const RecipeDetails = () => {
                 ))}
               </div>
             </div>
-
             <p className="mt-4">{detailedRecipe.ratings}</p>
             {id && (
               <RecipeRating rating={5} dishId={id || ""} />
