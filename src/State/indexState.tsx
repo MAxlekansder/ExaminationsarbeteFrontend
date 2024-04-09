@@ -15,16 +15,17 @@ interface recipeState {
     categoryDrinks: any[];
 
 
-    cart: Recipe[];
+    cart: any[];
     addToCart: (recipe: Recipe) => void;
     clearCart: () => void;
     removeFromCart(_id: string): void;
-
-
+    handleIncreaseCart(recipeId: string): void;
+    handleDecreaseCart(recipeId: string): void;
+  
     addRecipe: (newRecipes: Recipe) => void;
     deleteRecipe: (id: string) => Promise<void>;
     getApiKey: () => string;
-    fetchRecipe: () => Promise<void>;
+    fetchRecipe: () => void;
     fetchAlcoholicDrinks: () => Promise<void>;
     fetchNonAlcoholicDrinks: () => Promise<void>;
 
@@ -124,7 +125,7 @@ const useRecipeState = create<recipeState>()((set) => ({
         } catch (error) { console.log("error while fetching drinks ", error) }
     },
 
-    
+
     fetchNonAlcoholicDrinks: async () => { // for fetching non-alcoholic drinks
         try {
             const nonDrinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink");
@@ -246,6 +247,7 @@ const useRecipeState = create<recipeState>()((set) => ({
 
     },
 
+   
     addToCart: (recipe: Recipe) => set((state) => ({
         cart: [...state.cart, recipe],
     })),
@@ -256,6 +258,37 @@ const useRecipeState = create<recipeState>()((set) => ({
         cart: state.cart.filter((recipe) => recipe._id !== recipeId),
     })),
 
+    handleDecreaseCart: (recipeId: string) => set((state) => {
+        const updatedCart = [...state.cart];
+        const index = updatedCart.findIndex(item => item._id === recipeId); // to prevent removal of other recipes when decreasing
+
+        if (index !== -1) {
+            if (updatedCart[index].quantity > 1) {  // might not be needed as splice works pretty great to
+           
+            updatedCart[index].quantity -= 1;
+            } else {
+        
+            updatedCart.splice(index, 1);  // try out to just splice instead of evaluating the arrays size
+            }
+        }
+
+  return { cart: updatedCart };
+      }),
+    
+      
+    handleIncreaseCart: (recipeId: string) => set((state) => { // same functionality as decreaseCart <- see those comments
+            const updatedCart = [...state.cart];
+            const existingItemIndex = updatedCart.findIndex(item => item._id === recipeId);
+          
+            if (existingItemIndex !== -1) {
+              // Duplicate the existing item
+              const existingItem = updatedCart[existingItemIndex];
+              const newItem = { ...existingItem, quantity: existingItem.quantity + 1 };
+              updatedCart.push(newItem); // Push the duplicated item into the cart
+            }
+          
+            return { cart: updatedCart };
+          }),  
 }));
 
 
