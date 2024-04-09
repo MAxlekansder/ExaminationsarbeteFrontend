@@ -68,7 +68,7 @@ function DrinkCategory() {
         </div>
         <div className="w-full rounded-lg overflow-hidden">
           <img
-            src="https://media.glamourmagazine.co.uk/photos/6138a302236c41e831489e6c/16:9/w_2560%2Cc_limit/gettyimages-972654870_sf.jpg"
+            src="https://i.pinimg.com/originals/ce/ac/32/ceac328bf605cddbb08e1fc96229927d.jpg"
             alt=""
             className="rounded-lg max-w-full h-auto"
           />

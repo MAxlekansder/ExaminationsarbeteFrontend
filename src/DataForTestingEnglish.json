@@ -314,6 +314,7 @@
     "imageUrl": "https://images.arla.com/recordid/C22D75B0-BFB8-4FE3-B4E54ED6CCE2841E/enchiladas-med-biff.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,257,0,-437)",
     "timeInMins": 45,
     "categories": ["Dinner", "Mexican", "Meat"],
+    "price": 119,
     "instructions": [
       "Cook ground beef until browned and cooked through.",
       "Chop the onion and add it to the ground beef. Cook until the onion is soft and translucent.",
