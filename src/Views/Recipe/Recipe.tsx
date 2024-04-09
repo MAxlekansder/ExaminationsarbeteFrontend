@@ -57,7 +57,7 @@ const RecipeDetails = () => {
     };
 
    
-  const filterdCocktail = () =>{ 
+  const algon = () =>{ 
     switch(true){
       case detailedRecipe.categories.includes('Meat'):
         console.log('VODKA')
