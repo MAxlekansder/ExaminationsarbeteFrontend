@@ -18,6 +18,10 @@ const RecipeDetails = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
+  const getCategoryDrink = useRecipeState((state) => state.fetchSpecificDrinkIngredient)
+  const [selectedDrink, setSelectedDrink] = useState(null);
+
+ 
 
 
   useEffect(() => {
@@ -26,8 +30,6 @@ const RecipeDetails = () => {
       console.log(id);
     }
   }, [getRecipe, id]);
-
-
 
   const openModal = (recipeId: string) => {
     setselectedRecipeId(recipeId);
@@ -44,42 +46,65 @@ const RecipeDetails = () => {
     console.log('Updated cart:', useRecipeState.getState().cart);
   };
 
-   
-  const algon = () =>{ 
-    switch(true){
+  useEffect(() =>{
+    algoritmForCocktail();
+   }, [detailedRecipe])
+
+  const algoritmForCocktail = async () => {
+    switch(true) {
       case detailedRecipe.categories.includes('Meat'):
-        console.log('VODKA')
-        
-        
+        await getCategoryDrink('Red wine');
         break;
-
+        
       case detailedRecipe.categories.includes('Vegetarian'):
-      console.log('ALCOHOLFIRTT')
+        await getCategoryDrink('Gin');
         break;
-
+        
       case detailedRecipe.categories.includes('Fish'):
-        console.log('GIN')
+        await getCategoryDrink('Champagne');
         break;
-
-      case detailedRecipe.categories.includes('Dinner'):
-        console.log('Vodka')
-        break;  
-
-        default:
-          console.log('Din mämä ä din päpäp')
-
+        
+      case detailedRecipe.categories.includes('Poultry'):
+        await getCategoryDrink('Rum');
+        break;
+        
+      case detailedRecipe.categories.includes('Italian'):
+        await getCategoryDrink('Amaretto');
+        break;
+        
+      case detailedRecipe.categories.includes('Mediterranean'):
+        await getCategoryDrink('Scotch');
+        break;
+        
+      case detailedRecipe.categories.includes('Scandinavian'):
+        await getCategoryDrink('Gin');
+        break;
+        
+      case detailedRecipe.categories.includes('Thai'):
+        await getCategoryDrink('Rum');
+        break;
+        
+      default:
+        console.log('Unknown category');
+    }
     
-    }  
-  
-  }  
+    
+    const fetchedDrinks = useRecipeState.getState().categoryDrinks;
+    if (fetchedDrinks && fetchedDrinks.length > 0) {
+      const randomIndex = Math.floor(Math.random() * fetchedDrinks.length);
+      const randomDrink = fetchedDrinks[randomIndex];
+
+      setSelectedDrink(randomDrink)
+
+      console.log('Random drink:', randomDrink);
+      
+    } else {
+      console.log('FEL FEL FEL!!!!');
+    }
+  };
   
    
-  const filterDrink = allDrinks.filter(drink => drink.strDrink.includes('A Day at the Beach'))
-  console.log(filterDrink, 'FilterdDrink')
-  
-
-
-  return (
+return (
     <>
       <NavBarComponent />
       <Modal
@@ -148,8 +173,17 @@ const RecipeDetails = () => {
               <RecipeRating rating={5} dishId={id || ""} />
             )}
           </div>
+          {selectedDrink && (
+        <div className="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
+          <h2>Recommended drink to this Dish:</h2>
+          <p>{selectedDrink.strDrink}</p>
+          <img src={selectedDrink.strDrinkThumb} alt={selectedDrink.strDrink} className='w-80 h-80' />
+          
+        </div>
+      )}
         </div>
       </div>
+  
     </>
   );
 };
