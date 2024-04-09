@@ -49,22 +49,16 @@ function NavBarComponent() {
     handleIncreaseCart(recipeId);
   }
 
+
   const decreaseQuantity = (recipeId: string) => {
     console.log(recipeId)
     console.log("tst", cart)
     handleDecreaseCart(recipeId);
-
   }
 
+
   const totalPieces = cart.length;
-  const totalPrice = cart.length > 0 ? totalPieces * cart.reduce((total, item) => total + item.price, 0) : 0;
-
-  
-
-
-
-console.log(totalPrice)
-
+  const totalPrice = cart.length > 0 ? totalPieces * cart.reduce((total, item) => item.price, 0) : 0;
 
 
   return (
