@@ -1,4 +1,4 @@
-//Gustav
+//Gustav & Kristian
 
 import { Recipe } from "../../data/Recipes";
 import { Link, useNavigate } from 'react-router-dom';

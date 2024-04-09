@@ -1,3 +1,5 @@
+// Gustav & Kristian & Alexander
+
 import { useEffect, } from 'react'
 import { useParams, } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
@@ -104,7 +106,7 @@ const RecipeDetails = () => {
               <div className="flex flex-wrap gap-2 mt-2">
                 {detailedRecipe.ingredients?.map((ingredient, index) => (
                   <span key={index} className="px-3 py-1 bg-gray-200 text-gray-800 text-sm font-semibold rounded-full">
-                    {ingredient.name}
+                    {ingredient.name} {ingredient.amount} {ingredient.unit}
                   </span>
                 ))}
               </div>
