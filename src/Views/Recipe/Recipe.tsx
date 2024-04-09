@@ -1,6 +1,6 @@
 import { useEffect, } from 'react'
 import { useParams, } from "react-router-dom";
-import Title from "./Components/Title/Title.tsx";
+import { IoIosStar } from "react-icons/io";
 import useRecipeState from "../../State/indexState.tsx";
 import { Recipe } from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
@@ -63,7 +63,13 @@ const RecipeDetails = () => {
           </div>
           <div className="lg:col-span-2">
             <div className="space-y-4">
-              <h1 className="text-2xl font-bold text-center lg:text-left">{detailedRecipe.title}</h1>
+              <div className='flex'>
+                <h1 className="text-2xl font-bold text-center lg:text-left">{detailedRecipe.title}</h1>
+                <h1 className='flex text-xl font-semibold ml-10'> {detailedRecipe.avgRating}  </h1>
+                <span className='mt-1 ml-2 text-xl text-yellow-400'><IoIosStar /></span>
+                <span className='font ml-1'>Rating</span>
+              </div>
+              {detailedRecipe.price} kr
               <div className="flex justify-center lg:justify-start space-x-2 mt-4">
                 <button onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
                   Add to Cart
@@ -103,7 +109,6 @@ const RecipeDetails = () => {
                 ))}
               </div>
             </div>
-
             <p className="mt-4">{detailedRecipe.ratings}</p>
             {id && (
               <RecipeRating rating={5} dishId={id || ""} />
