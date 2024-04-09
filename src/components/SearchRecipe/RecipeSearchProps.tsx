@@ -24,7 +24,7 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
     <ul>
       {filteredRecipes.map((recipe, index) => (
         <li key={index} className='recipe-text-on-search'>
-          <Link to={`/test/${recipe._id}`} className=''>{recipe.title},&nbsp;
+          <Link to={`/recipe/specificRecipe/${recipe._id}`} className=''>{recipe.title},&nbsp;
             <span className='italic'>{recipe.description}
             </span>
           </Link>

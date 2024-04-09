@@ -44,7 +44,7 @@ function DetailedCocktailComponent() {
       
     </div>
       <div className="flex align-middle justify-center relative main-container">
-        <div className="bg-green-700 m-12 text-green-700">.</div>
+      
             {detailedDrink.map((drink) => (
               <div key={drink.idDrink}>
                 <h1 
@@ -53,12 +53,9 @@ function DetailedCocktailComponent() {
                       italic
                       text-center
                       mt-10
-                      bg-blue-200
                       p-10
                       rounded-lg
-                      titel-text
-                      
-                     ">
+                      ">
                         {drink.strDrink}
                   </h1>
               <div className="flex justify-center align-middle">
@@ -73,11 +70,22 @@ function DetailedCocktailComponent() {
                  <div className="flex alinge-middle justify-center">
                   <br />
                  <p className="instruction-text text-xl m-12">{drink.strInstructions}</p>
+                 
+                </div>
+                <div>
+                <h3>Ingridients</h3>
+                <ul>
+                <li>{drink.strIngredient1}</li>
+                <li>{drink.strIngredient2}</li>
+                <li>{drink.strIngredient3}</li>
+                <li>{drink.strIngredient4}</li>
+                <li>{drink.strIngredient5}</li>
+                </ul>
                 </div>
             </div>
             
           ))}
-            <div className="bg-green-700 m-12 text-green-700">.</div>
+            
         </div>
         <div className="m-20 p-20">
           

@@ -6,8 +6,9 @@ import { Recipe } from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/RecipeModal.tsx';
 import { useState } from 'react';
-import NavBarComponent from '../../components/NavBarComponent.tsx';
+
 import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
+import NavBarComponent from '../../components/NavBarComponent.tsx';
 
 
 
