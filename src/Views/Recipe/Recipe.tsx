@@ -1,7 +1,7 @@
 // Gustav & Kristian & Alexander
 
 import { useEffect, } from 'react'
-import { useParams, } from "react-router-dom";
+import { Link, useParams, } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
 import useRecipeState from "../../State/indexState.tsx";
@@ -9,8 +9,9 @@ import { Recipe } from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/RecipeModal.tsx';
 import { useState } from 'react';
-import NavBarComponent from '../../components/NavBarComponent.tsx';
 import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
+import NavBarComponent from '../../components/NavBarComponent.tsx';
+import SuggestCocktail from '../../components/Cocktails/SuggestCocktail.tsx';
 
 
 
@@ -21,8 +22,7 @@ const RecipeDetails = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
-  const getCategoryDrink = useRecipeState((state) => state.fetchSpecificDrinkIngredient)
-  const [selectedDrink, setSelectedDrink] = useState(null);
+
 
 
 
@@ -49,65 +49,7 @@ const RecipeDetails = () => {
     console.log('Updated cart:', useRecipeState.getState().cart);
   };
 
-  useEffect(() => {
-    algoritmForCocktail();
-  }, [detailedRecipe])
-
-  const algoritmForCocktail = async () => {
-    switch (true) {
-      case detailedRecipe.categories.includes('Meat'):
-        await getCategoryDrink('Red wine');
-        break;
-
-      case detailedRecipe.categories.includes('Vegetarian'):
-        await getCategoryDrink('Gin');
-        break;
-
-      case detailedRecipe.categories.includes('Fish'):
-        await getCategoryDrink('Champagne');
-        break;
-
-      case detailedRecipe.categories.includes('Poultry'):
-        await getCategoryDrink('Rum');
-        break;
-
-      case detailedRecipe.categories.includes('Italian'):
-        await getCategoryDrink('Amaretto');
-        break;
-
-      case detailedRecipe.categories.includes('Mediterranean'):
-        await getCategoryDrink('Scotch');
-        break;
-
-      case detailedRecipe.categories.includes('Scandinavian'):
-        await getCategoryDrink('Gin');
-        break;
-
-      case detailedRecipe.categories.includes('Thai'):
-        await getCategoryDrink('Rum');
-        break;
-
-      default:
-        console.log('Unknown category');
-    }
-
-
-    const fetchedDrinks = useRecipeState.getState().categoryDrinks;
-    if (fetchedDrinks && fetchedDrinks.length > 0) {
-      const randomIndex = Math.floor(Math.random() * fetchedDrinks.length);
-      const randomDrink = fetchedDrinks[randomIndex];
-
-      setSelectedDrink(randomDrink)
-
-      console.log('Random drink:', randomDrink);
-
-    } else {
-      console.log('FEL FEL FEL!!!!');
-    }
-  };
-
-
-  return (
+return (
     <>
       <NavBarComponent />
       <Modal
@@ -189,6 +131,7 @@ const RecipeDetails = () => {
           <RecipeRating rating={5} dishId={id || ""} />
         )}
       </div >
+      <SuggestCocktail detailedRecipe={detailedRecipe}/>
     </>
   );
 };

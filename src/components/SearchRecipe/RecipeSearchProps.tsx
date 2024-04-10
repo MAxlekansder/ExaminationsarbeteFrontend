@@ -11,14 +11,10 @@ interface RecipeSearchProps {
   onSearchChange: (term: string) => void;
 }
 
-
 function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: RecipeSearchProps) {
   const filteredRecipes = recipesFromInterface.filter(recipe => {
     return recipe && recipe.title && recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
-
-  const navigateFromSearch = useNavigate();
-
 
   const renderRecipes = searchTerm !== '' ? (
     <ul>
@@ -29,7 +25,6 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
             </span>
           </Link>
         </li>
-
       ))}
     </ul>
   ) : null;
@@ -38,18 +33,17 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
     <>
       <div className='input-wrapper'>
         <FaSearch id='searchIcon' className='search-icon' />
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Search Recipes"
-        />
-      </div>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder="Search Recipes"
+          />
+        </div>
       <div className='search-recipes'>
         {renderRecipes}
-      </div>
-
-    </>
+    </div>
+  </>
   );
 };
 
