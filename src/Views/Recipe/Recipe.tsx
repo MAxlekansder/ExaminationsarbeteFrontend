@@ -118,22 +118,28 @@ const RecipeDetails = () => {
         recipe={detailedRecipe}
       />
 
-      <div className="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
+      <div className="container mx-auto my-8 p-6 bg-orange-50 shadow-lg rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           <div>
-            <h1 className="text-4xl font-bold">{detailedRecipe.title}</h1>
-            <div className="flex items-center">
+            <div className="flex justify-between items-baseline mr-4">
+              <h1 className="text-4xl font-bold">{detailedRecipe.title}</h1>
+              <div className="flex items-center">
+                <MdOutlineTimer className='text-3xl' />
+                <span className='text-lg ml-2'>{detailedRecipe.timeInMins} min</span>
+              </div>
+              <span className='font-semibold text-lg'>{detailedRecipe.price} kr</span>
+            </div>
+            <div className="flex items-center mt-2">
               <span className="text-lg font-semibold ml-2">{detailedRecipe.avgRating}</span>
               <IoIosStar className="text-yellow-400 text-2xl ml-1" />
               <span className="ml-2 text-lg">Rating</span>
             </div>
-            <p className='font-semibold mt-5'>{detailedRecipe.price} kr</p>
             <p className="mt-4">{detailedRecipe.description}</p>
             <div className="flex space-x-2 mt-4">
               <button onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
                 Add to Cart
               </button>
-              <button onClick={() => openModal(detailedRecipe._id)} className="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded transition duration-300">
+              <button onClick={() => openModal(detailedRecipe._id)} className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded transition duration-300">
                 Change Recipe
               </button>
             </div>
@@ -145,18 +151,22 @@ const RecipeDetails = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
           <div>
-            <h2 className="text-xl font-bold">Ingredients</h2>
-            <div className="flex flex-wrap gap-2 mt-2">
+            <h2 className="text-2xl font-bold">Ingredients</h2>
+            <ul className="list-disc list-inside mt-2">
               {detailedRecipe.ingredients?.map((ingredient, index) => (
-                <span key={index} className="px-3 py-1 bg-gray-200 text-gray-800 text-sm font-semibold rounded-full">
-                  {ingredient.name} {ingredient.amount} {ingredient.unit}
-                </span>
+                <li key={index} className="mt-2 flex items-start p-2 bg-gray-50 border border-gray-200 rounded-md">
+                  <span className="font-semibold">
+                    {ingredient.amount} {ingredient.unit}
+                  </span>
+                  <span className='ml-2'>{ingredient.name}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
+
           <div className="mt-8">
-            <h2 className="text-2xl font-bold ml-4 mb-4">Method</h2>
+            <h2 className="text-2xl font-bold mb-4">Method</h2>
             <div className="space-y-2">
               {detailedRecipe.instructions?.map((step, index) => (
                 <div key={index} className="flex items-start p-3 bg-gray-50 border border-gray-200 rounded-md">
