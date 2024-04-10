@@ -36,15 +36,16 @@ const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
     };
 
     const loadComments = () => {
-        axios.get(
-            `https://sti-java-grupp2-afmbgd.reky.se/recipes/${dishId}/comments`
-        )
+        axios.get(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${dishId}/comments`)
             .then((response) => {
                 console.log('Loaded comments:', response.data);
-                setComments(response.data)
+                const sortedComments = response.data.sort((a: CommentProps, b: CommentProps) =>
+                    new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+                );
+                setComments(sortedComments);
             })
             .catch((error) => {
-                console.error('Error saving rating:', error);
+                console.error('Error loading comments:', error);
             });
     }
 

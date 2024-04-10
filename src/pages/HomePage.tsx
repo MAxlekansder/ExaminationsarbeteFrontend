@@ -15,8 +15,8 @@ function HomePage() {
   const { recipes, fetchRecipe } = useRecipeState();
   const [randomLunch, setRandomLunch] = useState<any[]>([]);
   const [randomDinner, setRandomDinner] = useState<any[]>([]);
-  const [lunchCardRef, scrollPosLunch] = useInView({triggerOnce:true,});
-  const [dinnerCardRef, scrollPosDinner] = useInView({triggerOnce: true,});
+  const [lunchCardRef, scrollPosLunch] = useInView({ triggerOnce: true, });
+  const [dinnerCardRef, scrollPosDinner] = useInView({ triggerOnce: true, });
 
   const lunchRef = useRef(null);
   const dinnerRef = useRef(null);
@@ -45,19 +45,19 @@ function HomePage() {
     }
   }, [recipes]);
 
-  useEffect(()=>{
-    if(scrollPosLunch){
+  useEffect(() => {
+    if (scrollPosLunch) {
       lunchRef.current.classList.add('card-fade-in')
-      
+
     }
-    if(scrollPosDinner){
+    if (scrollPosDinner) {
       dinnerRef.current.classList.add('card-fade-in')
-    
+
     }
-  }, [scrollPosLunch,scrollPosDinner])
+  }, [scrollPosLunch, scrollPosDinner])
 
 
-//För att generera random rätter
+  //För att generera random rätter
   const getRandomIndexes = (max: number, count: number) => {
     const indexes: number[] = [];
     while (indexes.length < count) {
@@ -74,9 +74,9 @@ function HomePage() {
   };
 
   return (
-  <>
-   <div>
-      <NavBarComponent />
+    <>
+      <div>
+        <NavBarComponent />
         <div className="food-header">
           <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
             Welcome to Not-Mathem!
@@ -153,13 +153,13 @@ function HomePage() {
             </div>
           </div>
         </div>
-    <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10'>
-        <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl sm:text-2xl'ref={dinnerCardRef}>
-              Todays Dinner Suggestions!
-              </h1>
-          </div>
-      <div className='xl:flex justify-center md:flex max-[600]:felx-col' ref={dinnerRef}>
-        <div className='bg-green-200 xl:ml-10 xl:mr-10 text-green-200 sm:mb-10'>.</div>
+        <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10'>
+          <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl sm:text-2xl' ref={dinnerCardRef}>
+            Todays Dinner Suggestions!
+          </h1>
+        </div>
+        <div className='xl:flex justify-center md:flex max-[600]:felx-col' ref={dinnerRef}>
+          <div className='bg-green-200 xl:ml-10 xl:mr-10 text-green-200 sm:mb-10'>.</div>
           {randomDinner.map((dish, index) => (
             <Link to={`/recipe/specificRecipe/${dish._id}`} key={index}>
               <DishComponent
@@ -168,18 +168,19 @@ function HomePage() {
                 name={dish.title}
                 image={dish.imageUrl}
                 description={dish.description}
-                
+
               />
             </Link>
           ))}
           <div className='bg-green-200 xl:ml-10 xl:mr-10 text-green-200'>.</div>
-       </div>
+        </div>
       </div>
-    <div className='mt-20 p-10'>
-  </div>
-<FooterComponent />
-</>
+      <div className='mt-20 p-10'>
+      </div>
+      <FooterComponent />
+    </>
 
-);}
+  );
+}
 
 export default HomePage;
