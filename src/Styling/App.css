@@ -11,7 +11,7 @@
 
 .food-header {
     padding: 13vw;
-    background-image: url(./Images/food-header.jpg);
+    background-image: url(/Images/food-header.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.9;
