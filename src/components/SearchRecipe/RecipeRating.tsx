@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios, { } from 'axios';
 import Comment, { CommentProps } from "./Comment.tsx";
-import { IoIosStar } from "react-icons/io";
 
 
 
