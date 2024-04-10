@@ -23,6 +23,7 @@ function NavBarComponent() {
   const addToCart = useRecipeState((state) => state.addToCart);
   const handleIncreaseCart = useRecipeState((state) => state.handleIncreaseCart);
   const handleDecreaseCart = useRecipeState((state) => state.handleDecreaseCart);
+  const clearCart = useRecipeState((state) => state.clearCart)
 
 
   const handleCartToggle = () => {
@@ -232,8 +233,15 @@ function NavBarComponent() {
               <div>
                 total pce {totalPieces}
                 total price {totalPrice}
+         
 
               </div>
+              <button 
+                    onClick={clearCart}
+                    className="text-xl text-white rounded-lg bg-red-500 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-12 left-5 right-5"
+          >
+                    Clear cart
+                    </button>
               <button
                 onClick={confirmOrder}
                 className="text-xl text-white rounded-lg bg-green-900 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-2 left-5 right-5"
