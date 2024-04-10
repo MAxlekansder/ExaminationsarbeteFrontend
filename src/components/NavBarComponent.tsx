@@ -193,46 +193,46 @@ function NavBarComponent() {
                             alt=""
                           />
                         </div>
-                        
+
                         <p className="text-red-400 text-sm font-bold px-4">
                           {item.title}
                         </p>
-                    
+
                         <p className="flex text-black px-4 text-sm">
                           {item.price * item.quantity} kr
                         </p>
                         <p className=" text-black px-4 text-sm">
                           {item.quantity} pce
                         </p>
-                    
-                          <button
-                            onClick={() => decreaseQuantity(item._id)}
-                            className="ml-4 bg-red-500 hover:bg-red-700 text-white font  px-1 rounded-l-md"
+
+                        <button
+                          onClick={() => decreaseQuantity(item._id)}
+                          className="ml-4 bg-red-500 hover:bg-red-700 text-white font  px-1 rounded-l-md"
                         >
-                            -
+                          -
                         </button>
                         <button
-                            onClick={() => increaseQuantity(item._id)}
-                            className="bg-green-500 hover:bg-green-700 text-white font  px-1 rounded-r-md"
+                          onClick={() => increaseQuantity(item._id)}
+                          className="bg-green-500 hover:bg-green-700 text-white font  px-1 rounded-r-md"
                         >
-                            +
+                          +
                         </button>
                         <div className="">
-            
+
                         </div>
                       </div>
-                      
+
                     ))}
                   </div>
-                  
+
                 </div>
               </div>
-              
+
               <div className="flex px-1 py-5"></div>
               <div>
-              total pce {totalPieces}
-              total price {totalPrice}
-                        
+                total pce {totalPieces}
+                total price {totalPrice}
+
               </div>
               <button
                 onClick={confirmOrder}
