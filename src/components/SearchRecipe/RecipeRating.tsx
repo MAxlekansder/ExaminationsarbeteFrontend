@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios, { } from 'axios';
 import Comment, { CommentProps } from "./Comment.tsx";
-import { IoIosStar } from "react-icons/io";
 
 
 
@@ -109,22 +108,22 @@ const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
                     </span>
                 ))}
             </div>
-            <div>
+            <div className="space-y-4 p-4 bg-gray-50 rounded-lg shadow">
                 <textarea
-                    className="bg-gray-300"
+                    className="w-full p-2 text-sm text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-green-500"
                     placeholder="Enter your comment here.."
                     value={newComment}
                     onChange={handleCommentChange}
                 /><br />
                 <input
-                    className="bg-gray-300"
+                    className="w-1/2 p-2 text-sm text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-green-500"
                     placeholder="Name"
                     value={name}
                     onChange={handleNameChange}
                 /><br /><br />
             </div>
             <button onClick={handleSubmitComment}
-                className=" ml-2 bg-red-700 hover:bg-green-800 text-white font-bold py-0.5 px-0.5 rounded"
+                className="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700"
             > Submit Comment
             </button>
             <div>

@@ -1,6 +1,9 @@
+// Gustav & Kristian & Alexander
+
 import { useEffect, } from 'react'
 import { useParams, } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
+import { MdOutlineTimer } from "react-icons/md";
 import useRecipeState from "../../State/indexState.tsx";
 import { Recipe } from "../../data/Recipes";
 import { LiaBlenderPhoneSolid } from 'react-icons/lia';
@@ -22,7 +25,7 @@ const RecipeDetails = () => {
   const getCategoryDrink = useRecipeState((state) => state.fetchSpecificDrinkIngredient)
   const [selectedDrink, setSelectedDrink] = useState(null);
 
- 
+
 
 
   useEffect(() => {
@@ -47,49 +50,49 @@ const RecipeDetails = () => {
     console.log('Updated cart:', useRecipeState.getState().cart);
   };
 
-  useEffect(() =>{
+  useEffect(() => {
     algoritmForCocktail();
-   }, [detailedRecipe])
+  }, [detailedRecipe])
 
   const algoritmForCocktail = async () => {
-    switch(true) {
+    switch (true) {
       case detailedRecipe.categories.includes('Meat'):
         await getCategoryDrink('Red wine');
         break;
-        
+
       case detailedRecipe.categories.includes('Vegetarian'):
         await getCategoryDrink('Gin');
         break;
-        
+
       case detailedRecipe.categories.includes('Fish'):
         await getCategoryDrink('Champagne');
         break;
-        
+
       case detailedRecipe.categories.includes('Poultry'):
         await getCategoryDrink('Rum');
         break;
-        
+
       case detailedRecipe.categories.includes('Italian'):
         await getCategoryDrink('Amaretto');
         break;
-        
+
       case detailedRecipe.categories.includes('Mediterranean'):
         await getCategoryDrink('Scotch');
         break;
-        
+
       case detailedRecipe.categories.includes('Scandinavian'):
         await getCategoryDrink('Gin');
         break;
-        
+
       case detailedRecipe.categories.includes('Thai'):
         await getCategoryDrink('Rum');
         break;
-        
+
       default:
         console.log('Unknown category');
     }
-    
-    
+
+
     const fetchedDrinks = useRecipeState.getState().categoryDrinks;
     if (fetchedDrinks && fetchedDrinks.length > 0) {
       const randomIndex = Math.floor(Math.random() * fetchedDrinks.length);
@@ -98,14 +101,14 @@ const RecipeDetails = () => {
       setSelectedDrink(randomDrink)
 
       console.log('Random drink:', randomDrink);
-      
+
     } else {
       console.log('FEL FEL FEL!!!!');
     }
   };
-  
-   
-return (
+
+
+  return (
     <>
       <NavBarComponent />
       <Modal
@@ -116,75 +119,77 @@ return (
         recipe={detailedRecipe}
       />
 
-      <div className="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="lg:col-span-1">
-            <img src={detailedRecipe.imageUrl} className="w-full max-w-md h-auto object-cover rounded mx-auto" alt="Recipe img" />
+      <div className="container mx-auto my-8 p-6 bg-orange-50 shadow-lg rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+          <div>
+            <div className="flex justify-between items-baseline mr-4">
+              <h1 className="text-4xl font-bold">{detailedRecipe.title}</h1>
+              <div className="flex items-center">
+                <MdOutlineTimer className='text-3xl' />
+                <span className='text-lg ml-2'>{detailedRecipe.timeInMins} min</span>
+              </div>
+              <span className='font-semibold text-lg'>{detailedRecipe.price} kr</span>
+            </div>
+            <div className="flex items-center mt-2">
+              <span className="text-lg font-semibold ml-2">{detailedRecipe.avgRating}</span>
+              <IoIosStar className="text-yellow-400 text-2xl ml-1" />
+              <span className="ml-2 text-lg">Rating</span>
+            </div>
+            <p className="mt-4">{detailedRecipe.description}</p>
+            <div className="flex space-x-2 mt-4">
+              <button onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
+                Add to Cart
+              </button>
+              <button onClick={() => openModal(detailedRecipe._id)} className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded transition duration-300">
+                Change Recipe
+              </button>
+            </div>
           </div>
-          <div className="lg:col-span-2">
-            <div className="space-y-4">
-              <div className='flex'>
-                <h1 className="text-2xl font-bold text-center lg:text-left">{detailedRecipe.title}</h1>
-                <h1 className='flex text-xl font-semibold ml-10'> {detailedRecipe.avgRating}  </h1>
-                <span className='mt-1 ml-2 text-xl text-yellow-400'><IoIosStar /></span>
-                <span className='font ml-1'>Rating</span>
-              </div>
-              {detailedRecipe.price} kr
-              <div className="flex justify-center lg:justify-start space-x-2 mt-4">
-                <button onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
-                  Add to Cart
-                </button>
-                <button onClick={() => openModal(detailedRecipe._id)} className="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded transition duration-300">
-                  Change Recipe
-                </button>
-              </div>
-            </div>
+          <div>
+            <img src={detailedRecipe.imageUrl} className="w-full h-auto object-cover rounded" alt="Recipe" />
+          </div>
+        </div>
 
-            <div className="mt-8">
-              <h2 className="text-xl font-bold">Instructions</h2>
-              <div className="ml-4">
-                {detailedRecipe.instructions?.map((step, index) => (
-                  <div key={index} className="flex items-center mt-2">
-                    <input
-                      id={`checkbox-${index}`}
-                      type="checkbox"
-                      name={`checkbox-${index}`}
-                      className="w-4 h-4 text-green-600 rounded"
-                    />
-                    <label htmlFor={`checkbox-${index}`} className="ml-2 text-sm font-medium">
-                      {step}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h2 className="text-xl font-bold">Ingredients</h2>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {detailedRecipe.ingredients?.map((ingredient, index) => (
-                  <span key={index} className="px-3 py-1 bg-gray-200 text-gray-800 text-sm font-semibold rounded-full">
-                    {ingredient.name}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div>
+            <h2 className="text-2xl font-bold">Ingredients</h2>
+            <ul className="list-disc list-inside mt-2">
+              {detailedRecipe.ingredients?.map((ingredient, index) => (
+                <li key={index} className="mt-2 flex items-start p-2 bg-gray-50 border border-gray-200 rounded-md">
+                  <span className="font-semibold">
+                    {ingredient.amount} {ingredient.unit}
                   </span>
-                ))}
-              </div>
-            </div>
-            <p className="mt-4">{detailedRecipe.ratings}</p>
-            {id && (
-              <RecipeRating rating={5} dishId={id || ""} />
-            )}
+                  <span className='ml-2'>{ingredient.name}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          {selectedDrink && (
-        <div className="container mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
-          <h2>Recommended drink to this Dish:</h2>
-          <p>{selectedDrink.strDrink}</p>
-          <img src={selectedDrink.strDrinkThumb} alt={selectedDrink.strDrink} className='w-80 h-80' />
-          
+
+
+          <div className="mt-8">
+            <h2 className="text-2xl font-bold mb-4">Method</h2>
+            <div className="space-y-2">
+              {detailedRecipe.instructions?.map((step, index) => (
+                <div key={index} className="flex items-start p-3 bg-gray-50 border border-gray-200 rounded-md">
+                  <input
+                    id={`checkbox-${index}`}
+                    type="checkbox"
+                    name={`checkbox-${index}`}
+                    className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+                  />
+                  <label htmlFor={`checkbox-${index}`} className="ml-3 text-md font-medium text-gray-700">
+                    {step}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      )}
-        </div>
-      </div>
-  
+        <p className="mt-4">{detailedRecipe.ratings}</p>
+        {id && (
+          <RecipeRating rating={5} dishId={id || ""} />
+        )}
+      </div >
     </>
   );
 };
