@@ -306,8 +306,7 @@ const useRecipeState = create<recipeState>()((set) => ({
       const index = updatedCart.findIndex((item) => item._id === recipeId); // to prevent removal of other recipes when decreasing
 
       if (index !== -1) {
-        if (updatedCart[index].quantity > 1) {
-          // might not be needed as splice works pretty great to
+        if (updatedCart[index].quantity > 1) {  // might not be needed as splice works pretty good to
 
           updatedCart[index].quantity -= 1;
         } else {
@@ -318,16 +317,15 @@ const useRecipeState = create<recipeState>()((set) => ({
       return { cart: updatedCart };
     }),
 
-  handleIncreaseCart: (recipeId: string) =>
-    set((state) => {
-      // same functionality as decreaseCart <- see those comments
+  handleIncreaseCart: (recipeId: string) => set((state) => {// same functionality as decreaseCart <- see those comments
+      
       const updatedCart = [...state.cart];
       const existingItemIndex = updatedCart.findIndex(
         (item) => item._id === recipeId
       );
 
-      if (existingItemIndex !== -1) {
-        // Duplicate the existing item
+      if (existingItemIndex !== -1) {  // Duplicate the existing item
+       
         const existingItem = updatedCart[existingItemIndex];
         const newItem = {
           ...existingItem,
