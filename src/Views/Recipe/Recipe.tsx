@@ -17,9 +17,14 @@ const RecipeDetails = () => {
   const { id } = useParams<{ id: string }>()
   const getRecipe = useRecipeState((state) => state.fetchSpecificRecipe)
   const detailedRecipe = useRecipeState((state) => state.detailedRecipe as Recipe)
-  const [checkedStates, setCheckedStates] = useState<boolean[]>(new Array(detailedRecipe.instructions?.length).fill(false))
+  const [checkedStates, setCheckedStates] = useState<boolean[]>([]);
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
+
+
+  useEffect(() => {
+    setCheckedStates(new Array(detailedRecipe.instructions?.length).fill(false));
+  }, [detailedRecipe.instructions]);
 
   const handleCheckboxChange = (index: number): void => {
     const updatedCheckedStates = [...checkedStates];
@@ -129,7 +134,7 @@ const RecipeDetails = () => {
                   />
                   <label
                     htmlFor={`checkbox-${index}`}
-                    className={`ml-3 text-md font-medium text-gray-700 ${checkedStates[index] ? 'text-gray-400' : ''}`}
+                    className={`ml-3 text-md font-medium ${checkedStates[index] ? 'text-gray-400' : 'text-gray-700'}`}
                   >
                     {step}
                   </label>
