@@ -69,6 +69,18 @@ function RecipeHome() {
           .map((recipe) => (
             <div
               key={recipe._id}
+              onKeyDown={(e) => {
+                if (e.key === 'Tab' && !e.shiftKey) {
+                  // Move focus to the next card element
+ 
+                }
+
+                if (e.key === "Enter" && !e.shiftKey) {
+                  navigate(`/recipe/specificRecipe/${recipe._id}`)
+                }
+              }}
+
+              tabIndex={0} 
               onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5 relative"
             >
@@ -126,6 +138,18 @@ function RecipeHome() {
         {StaticCategories.map((category) => (
           <div
             key={category.name}
+            onKeyDown={(e) => {
+              if (e.key === 'Tab' && !e.shiftKey) {
+                // Move focus to the next card element
+
+              }
+
+              if (e.key === "Enter" && !e.shiftKey) {
+                locateHandler(category.name)
+              }
+            }}
+
+            tabIndex={0} 
             className="rounded overflow-hidden shadow-lg md:mb-0  md:w-full"
           >
             <img
@@ -174,6 +198,18 @@ function RecipeHome() {
               key={recipe._id}
               onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5 relative"
+              onKeyDown={(e) => {
+                if (e.key === 'Tab' && !e.shiftKey) {
+                  // Move focus to the next card element
+ 
+                }
+
+                if (e.key === "Enter" && !e.shiftKey) {
+                  navigate(`/recipe/specificRecipe/${recipe._id}`)
+                }
+              }}
+
+              tabIndex={0} 
             >
               <div className="rounded overflow-hidden shadow-lg h-80">
                 <div className="max-w-3xl">
@@ -226,6 +262,18 @@ function RecipeHome() {
             key={recipe._id}
             onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
             className="mx-0.5 relative"
+            onKeyDown={(e) => {
+              if (e.key === 'Tab' && !e.shiftKey) {
+                // Move focus to the next card element
+
+              }
+
+              if (e.key === "Enter" && !e.shiftKey) {
+                navigate(`/recipe/specificRecipe/${recipe._id}`)
+              }
+            }}
+
+            tabIndex={0} 
           >
             <div className="rounded overflow-hidden shadow-lg h-80">
               <div className="max-w-3xl">
