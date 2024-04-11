@@ -77,12 +77,12 @@ const SuggestCocktail = ({ detailedRecipe }: { detailedRecipe: Recipe }) => {
 
   return (
     <>
+      <h2 className="text-2xl font-bold mt-6 ml-16">Matching drink:</h2>
       {selectedDrink && (
-        <div className="container mx-auto my-8 max-w-xs bg-orange p-4 text-center ml-4">
-          <h2 className="text-xl font-bold mb-4">Recommended drink to this Dish:</h2>
-          <p>{selectedDrink.strDrink}</p>
+        <div className="container mx-auto my-8 bg-white p-4 text-center rounded-lg shadow-xl w-1/2 max-w-lg ml-0 mr-auto">
           <Link to={`/cocktails/${selectedDrink.idDrink}`}>
-            <img src={selectedDrink.strDrinkThumb} alt={selectedDrink.strDrink} className='mx-auto w-auto max-w-full h-auto' />
+            <p className="mb-8 font-semibold text-xl">{selectedDrink.strDrink}</p>
+            <img src={selectedDrink.strDrinkThumb} alt={selectedDrink.strDrink} className='mx-auto w-auto max-h-40 h-auto rounded' />
           </Link>
         </div>
       )}

@@ -1,13 +1,12 @@
 // Gustav & Kristian & Alexander
 
-import { useEffect, } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams, } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
 import useRecipeState from "../../State/indexState.tsx";
 import { Recipe } from "../../data/Recipes";
 import Modal from '../../components/AddRecipe/RecipeModal.tsx';
-import { useState } from 'react';
 import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
 import NavBarComponent from '../../components/NavBarComponent.tsx';
 import SuggestCocktail from '../../components/Cocktails/SuggestCocktail.tsx';
@@ -18,11 +17,15 @@ const RecipeDetails = () => {
   const { id } = useParams<{ id: string }>()
   const getRecipe = useRecipeState((state) => state.fetchSpecificRecipe)
   const detailedRecipe = useRecipeState((state) => state.detailedRecipe as Recipe)
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [checkedStates, setCheckedStates] = useState<boolean[]>(new Array(detailedRecipe.instructions?.length).fill(false))
   const [isModalOpen, setIsModalOpe] = useState(false);
   const [selectRecipeId, setselectedRecipeId] = useState("");
 
-
+  const handleCheckboxChange = (index: number): void => {
+    const updatedCheckedStates = [...checkedStates];
+    updatedCheckedStates[index] = !updatedCheckedStates[index];
+    setCheckedStates(updatedCheckedStates)
+  }
 
 
 
@@ -115,14 +118,19 @@ const RecipeDetails = () => {
             <h2 className="text-2xl font-bold">Method</h2>
             <div className="space-y-2">
               {detailedRecipe.instructions?.map((step, index) => (
-                <div key={index} className="flex items-start p-3 bg-white border border-gray-200 rounded-md">
+                <div key={index} className="mt-2 flex items-start p-2 bg-white border border-gray-200 rounded-md">
                   <input
                     id={`checkbox-${index}`}
                     type="checkbox"
                     name={`checkbox-${index}`}
                     className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+                    checked={checkedStates[index]}
+                    onChange={() => handleCheckboxChange(index)}
                   />
-                  <label htmlFor={`checkbox-${index}`} className="ml-3 text-md font-medium text-gray-700">
+                  <label
+                    htmlFor={`checkbox-${index}`}
+                    className={`ml-3 text-md font-medium text-gray-700 ${checkedStates[index] ? 'text-gray-400' : ''}`}
+                  >
                     {step}
                   </label>
                 </div>
