@@ -49,7 +49,7 @@ const RecipeDetails = () => {
     console.log('Updated cart:', useRecipeState.getState().cart);
   };
 
-return (
+  return (
     <>
       <NavBarComponent />
       <Modal
@@ -60,7 +60,7 @@ return (
         recipe={detailedRecipe}
       />
 
-      <div className="container mx-auto my-8 p-6 bg-orange-50 shadow-lg rounded-lg">
+      <div className="container mx-auto my-8 p-6 bg-gray-50 shadow-lg rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           <div>
             <div className="flex justify-between items-baseline mr-4">
@@ -85,6 +85,7 @@ return (
                 Change Recipe
               </button>
             </div>
+            <SuggestCocktail detailedRecipe={detailedRecipe} />
           </div>
           <div>
             <img src={detailedRecipe.imageUrl} className="w-full h-auto object-cover rounded" alt="Recipe" />
@@ -96,7 +97,7 @@ return (
             <h2 className="text-2xl font-bold">Ingredients</h2>
             <ul className="list-disc list-inside mt-2">
               {detailedRecipe.ingredients?.map((ingredient, index) => (
-                <li key={index} className="mt-2 flex items-start p-2 bg-gray-50 border border-gray-200 rounded-md">
+                <li key={index} className="mt-2 flex items-start p-2 bg-white border border-gray-200 rounded-md">
                   <span className="font-semibold">
                     {ingredient.amount} {ingredient.unit}
                   </span>
@@ -111,7 +112,7 @@ return (
             <h2 className="text-2xl font-bold mb-4">Method</h2>
             <div className="space-y-2">
               {detailedRecipe.instructions?.map((step, index) => (
-                <div key={index} className="flex items-start p-3 bg-gray-50 border border-gray-200 rounded-md">
+                <div key={index} className="flex items-start p-3 bg-white border border-gray-200 rounded-md">
                   <input
                     id={`checkbox-${index}`}
                     type="checkbox"
@@ -126,12 +127,12 @@ return (
             </div>
           </div>
         </div>
-        <p className="mt-4">{detailedRecipe.ratings}</p>
+        <p className='mt-4'>Rate this dish and let us know what you think!</p>
+        <p className="mt-1">{detailedRecipe.ratings}</p>
         {id && (
           <RecipeRating rating={5} dishId={id || ""} />
         )}
       </div >
-      <SuggestCocktail detailedRecipe={detailedRecipe}/>
     </>
   );
 };
