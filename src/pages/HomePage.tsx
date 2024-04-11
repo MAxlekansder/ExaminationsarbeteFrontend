@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import NavBarComponent from '../components/NavBarComponent';
 import RecipeSearch from '../components/SearchRecipe/RecipeSearchProps';
 import FooterComponent from '../components/Footer/FooterComponent';
+import NavBarTest from '../components/Test/NavBarTest';
 
 
 function HomePage() {
@@ -76,7 +77,10 @@ function HomePage() {
   return (
     <>
       <div>
-        <NavBarComponent />
+       
+       
+        <NavBarComponent/>
+        
         <div className="food-header">
           <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
             Welcome to Not-Mathem!

@@ -5,6 +5,9 @@ import { IoCloseSharp } from "react-icons/io5";
 import useRecipeState from "../State/indexState";
 import { Link } from "react-router-dom";
 import { Recipe } from "../data/Recipes";
+import { MutableRefObject, useRef } from "react"
+import { FaBars, FaTimes } from "react-icons/fa"
+import './Test/NavBarTestStyle.css'
 
 interface CartItem {
   _id: string;
@@ -24,6 +27,12 @@ function NavBarComponent() {
   const handleIncreaseCart = useRecipeState((state) => state.handleIncreaseCart);
   const handleDecreaseCart = useRecipeState((state) => state.handleDecreaseCart);
   const clearCart = useRecipeState((state) => state.clearCart)
+  const navRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  
+
+  const showNavBar = () => {
+      navRef.current?.classList.toggle("responsive_nav")
+  }
 
 
   const handleCartToggle = () => {
@@ -66,60 +75,60 @@ function NavBarComponent() {
     <header className="flex">
       <div className="py-1">
         <Link to="/">
-          <img src="Images/logo1.png" alt="Logo" className="h-10 absolute" />
+          <img src="Images/logo1.png" alt="Logo" className="h-10 absolute xl:block sm:hidden" />
         </Link>
       </div>
-      <nav className="flex-grow bg-white px-4 py-2 pb-4">
-        <ul className="flex w-full list-none p-0 m-0 items-center sm:pl-10 xl:pl-4">
-          <li>
+      <nav className="flex-grow bg-white xl:px-4 xl:py-2 xl:pb-4 xl:m-0 2xl:m-0 " ref={navRef}>
+        <ul className="xl:flex xl:w-full 2xl:flex 2xl:w-full sm:mt-10 list-none 2xl:p-0 2xl:m-0 items-center sm:pl-10 xl:pl-4">
+          <li className="sm:pt-10 2xl:pt-0 xl:pt-0 ">
             <Link
               to="/"
-              className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
+              className="xl:px-5 xl:py-2 2xl:px-5 2xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
               Home
             </Link>
           </li>
-          <li>
+          <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
               to="/recipe"
-              className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
+              className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
               Categories
             </Link>
           </li>
-          <li>
+          <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
               to="/weeklytips"
-              className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
+              className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
               Weekly Tips
             </Link>
           </li>
-          <li>
+          <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
               to="/cocktails"
-              className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
+              className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
               Cocktails
             </Link>
           </li>
-          <li>
+          <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
               to="/about"
-              className="px-5 py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
+              className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
               About us
             </Link>
           </li>
-          <li className="ml-auto">
+          <li className="xl:ml-auto 2xl:ml-auto sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
               to="/add"
-              className="px-5 py-2 bg-green-400 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:bg-green-600 rounded-lg shadow mr-7"
+              className="xl:px-5 xl:py-2 2xl:px-5 2xl:py-2 2xl:bg-green-400 xl:bg-green-400 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:bg-green-600 rounded-lg shadow mr-7"
             >
               Add recipe
             </Link>
           </li>
-          <li>
+          <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             {" "}
             <button
               onClick={handleCartToggle}
@@ -134,6 +143,9 @@ function NavBarComponent() {
             </button>
           </li>
         </ul>
+        <button className="nav-btn nav-clos-btn" onClick={showNavBar}>
+            <FaTimes/>
+            </button>
       </nav>
 
       {isCartOpen && (
@@ -259,6 +271,9 @@ function NavBarComponent() {
           )}
         </div>
       )}
+       <button className="nav-btn" onClick={showNavBar}>
+            <FaBars/>
+        </button>
     </header>
   );
 }
