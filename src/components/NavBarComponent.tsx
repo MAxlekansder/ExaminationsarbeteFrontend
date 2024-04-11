@@ -75,7 +75,7 @@ function NavBarComponent() {
     <header className="flex">
       <div className="py-1">
         <Link to="/">
-          <img src="Images/logo1.png" alt="Logo" className="h-10 absolute xl:block sm:hidden" />
+          <img src="Images/logo1.jpg" alt="Logo" className="h-10 absolute xl:block sm:hidden" />
         </Link>
       </div>
       <nav className="flex-grow bg-white xl:px-4 xl:py-2 xl:pb-4 xl:m-0 2xl:m-0 " ref={navRef}>
