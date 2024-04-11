@@ -27,6 +27,18 @@ function SidebarMenu({ category, options, categoryHandler }: DropdownMenuProps) 
         <ul className="left-0 mt-1 w-full z-10">
           {options.map((option) => (
             <li
+            onKeyDown={(e) => {
+              if (e.key === 'Tab' && !e.shiftKey) {
+                // Move focus to the next card element
+
+              }
+
+              if (e.key === "Enter" && !e.shiftKey) {
+                categoryHandler(option)
+              }
+            }}
+
+            tabIndex={0} 
               key={option}
               onClick={() => categoryHandler(option)}
               className={`cursor-pointer py-2 px-4 ${

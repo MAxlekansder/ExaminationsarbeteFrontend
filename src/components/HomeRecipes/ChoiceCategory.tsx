@@ -108,6 +108,18 @@ function RecipeCategory() {
             {filterRecipe().map((recipe) => (
               <div
                 key={recipe._id}
+                onKeyDown={(e) => {
+                  if (e.key === 'Tab' && !e.shiftKey) {
+                    // Move focus to the next card element
+   
+                  }
+  
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    navigate(`/recipe/specificRecipe/${recipe._id}`)
+                  }
+                }}
+  
+                tabIndex={0} 
                 className="relative rounded overflow-hidden shadow-lg"
               >
                 <img
