@@ -119,18 +119,19 @@ const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
                 ))}
             </div>
             <div className="space-y-4 p-4 bg-gray-50 rounded-lg shadow">
-                <textarea
-                    className="w-full p-2 text-sm text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-green-500"
-                    placeholder="Enter your comment here.."
-                    value={newComment}
-                    onChange={handleCommentChange}
-                /><br />
                 <input
                     className="w-1/2 p-2 text-sm text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-green-500"
                     placeholder="Name"
                     value={name}
                     onChange={handleNameChange}
                 /><br /><br />
+                <textarea
+                    className="w-full p-2 text-sm text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-green-500"
+                    placeholder="Enter your comment here.."
+                    value={newComment}
+                    onChange={handleCommentChange}
+                /><br />
+
             </div>
             <button onClick={handleSubmitComment}
                 className="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700"
