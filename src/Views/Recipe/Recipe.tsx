@@ -6,7 +6,6 @@ import { IoIosStar } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
 import useRecipeState from "../../State/indexState.tsx";
 import { Recipe } from "../../data/Recipes";
-import { LiaBlenderPhoneSolid } from 'react-icons/lia';
 import Modal from '../../components/AddRecipe/RecipeModal.tsx';
 import { useState } from 'react';
 import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
@@ -49,7 +48,7 @@ const RecipeDetails = () => {
     console.log('Updated cart:', useRecipeState.getState().cart);
   };
 
-return (
+  return (
     <>
       <NavBarComponent />
       <Modal
@@ -60,16 +59,16 @@ return (
         recipe={detailedRecipe}
       />
 
-      <div className="container mx-auto my-8 p-6 bg-orange-50 shadow-lg rounded-lg">
+      <div className="container mx-auto my-8 p-6 bg-green-50 shadow-lg rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           <div>
-            <div className="flex justify-between items-baseline mr-4">
-              <h1 className="text-4xl font-bold">{detailedRecipe.title}</h1>
+            <div className="flex justify-between items-center mr-4">
+              <h1 className="text-4xl font-bold break-words flex-grow">{detailedRecipe.title}</h1>
               <div className="flex items-center">
                 <MdOutlineTimer className='text-3xl' />
                 <span className='text-lg ml-2'>{detailedRecipe.timeInMins} min</span>
+                <span className='font-semibold text-lg ml-4'>{detailedRecipe.price} kr</span>
               </div>
-              <span className='font-semibold text-lg'>{detailedRecipe.price} kr</span>
             </div>
             <div className="flex items-center mt-2">
               <span className="text-lg font-semibold ml-2">{detailedRecipe.avgRating}</span>
@@ -85,18 +84,23 @@ return (
                 Change Recipe
               </button>
             </div>
+            <SuggestCocktail detailedRecipe={detailedRecipe} />
           </div>
-          <div>
-            <img src={detailedRecipe.imageUrl} className="w-full h-auto object-cover rounded" alt="Recipe" />
+          <div className="w-full h-4/5 overflow-hidden rounded">
+            <img
+              src={detailedRecipe.imageUrl}
+              alt="Recipe"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-          <div>
+        <div className="flex flex-col md:flex-row gap-4 mt-8">
+          <div className='flex-1'>
             <h2 className="text-2xl font-bold">Ingredients</h2>
             <ul className="list-disc list-inside mt-2">
               {detailedRecipe.ingredients?.map((ingredient, index) => (
-                <li key={index} className="mt-2 flex items-start p-2 bg-gray-50 border border-gray-200 rounded-md">
+                <li key={index} className="mt-2 flex items-start p-2 bg-white border border-gray-200 rounded-md">
                   <span className="font-semibold">
                     {ingredient.amount} {ingredient.unit}
                   </span>
@@ -107,11 +111,11 @@ return (
           </div>
 
 
-          <div className="mt-8">
-            <h2 className="text-2xl font-bold mb-4">Method</h2>
+          <div className="flex-1 mt-8 md:mt-0">
+            <h2 className="text-2xl font-bold">Method</h2>
             <div className="space-y-2">
               {detailedRecipe.instructions?.map((step, index) => (
-                <div key={index} className="flex items-start p-3 bg-gray-50 border border-gray-200 rounded-md">
+                <div key={index} className="flex items-start p-3 bg-white border border-gray-200 rounded-md">
                   <input
                     id={`checkbox-${index}`}
                     type="checkbox"
@@ -126,12 +130,12 @@ return (
             </div>
           </div>
         </div>
-        <p className="mt-4">{detailedRecipe.ratings}</p>
+        <p className='mt-4'>Rate this dish and let us know what you think!</p>
+        <p className="mt-1">{detailedRecipe.ratings}</p>
         {id && (
           <RecipeRating rating={5} dishId={id || ""} />
         )}
       </div >
-      <SuggestCocktail detailedRecipe={detailedRecipe}/>
     </>
   );
 };

@@ -7,32 +7,35 @@ import Comment, { CommentProps } from "./Comment.tsx";
 interface RecipeRating {
     dishId: string;
     rating: number | null;
-    // removeComment: (id: number) => Promise<void>;
 }
 
 const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
     const [hoverRating, setHoverRating] = useState<number | null>(rating);
     const [comments, setComments] = useState<CommentProps[]>([]);
     const [newComment, setNewComment] = useState<string>('');
-    const [name, setName] = useState<string>();
+    const [name, setName] = useState<string>('');
 
 
     const addComment = () => {
-        axios.post(
-            `https://sti-java-grupp2-afmbgd.reky.se/recipes/${dishId}/comments`,
-            {
-                comment: newComment,
-                name: name,
-            }
-        )
+
+        if (!newComment.trim() || !name.trim()) {
+            console.log("You must enter both a name and a comment.");
+            return;
+        }
+
+        axios.post(`https://sti-java-grupp2-afmbgd.reky.se/recipes/${dishId}/comments`, {
+            comment: newComment,
+            name: name,
+        })
             .then((response) => {
                 console.log('Comment saved successfully:', response.data);
-                loadComments()
+                loadComments();
+                setNewComment('');
+                setName('');
             })
             .catch((error) => {
-                console.error('Error saving rating:', error);
+                console.error('Error saving comment:', error);
             });
-
     };
 
     const loadComments = () => {
@@ -84,6 +87,12 @@ const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
     };
 
     const handleSubmitComment = async () => {
+
+        if (!newComment.trim() || !name.trim()) {
+            console.log("Both name and comment must be provided.");
+            return;
+        }
+
         console.log(`Comment for dish ${dishId}: ${newComment}`);
         addComment();
     }
