@@ -22,16 +22,14 @@ function NavBarComponent() {
   const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
   const [orderNumber, setOrderNumber] = useState("");
   const cart = useRecipeState((state) => state.cart);
-  const removeFromCart = useRecipeState((state) => state.removeFromCart);
-  const addToCart = useRecipeState((state) => state.addToCart);
   const handleIncreaseCart = useRecipeState((state) => state.handleIncreaseCart);
   const handleDecreaseCart = useRecipeState((state) => state.handleDecreaseCart);
   const clearCart = useRecipeState((state) => state.clearCart)
   const navRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
-  
+
 
   const showNavBar = () => {
-      navRef.current?.classList.toggle("responsive_nav")
+    navRef.current?.classList.toggle("responsive_nav")
   }
 
 
@@ -127,7 +125,7 @@ function NavBarComponent() {
             {" "}
             <button
               onClick={handleCartToggle}
-              className="text-2xl relative flex items-center justify-center w-12 h-12"
+              className="text-2xl relative flex items-center justify-center w-12 h-12 "
             >
               <TiShoppingCart />
               {cart.length > 0 && (
@@ -144,41 +142,21 @@ function NavBarComponent() {
       </nav>
 
       {isCartOpen && (
-        <div className="fixed top-0 right-0 h-full bg-gray-100 w-1/3 shadow-lg z-50 opacity-100 border rounded">
+        <div className="fixed top-0 right-0 h-full bg-white w-1/3 shadow-lg z-50 opacity-100 border rounded overflow-hidden sm:w-full md:w-1/3 ">
           <button
             onClick={closeCart}
-            className=" text-2xl text-white absolute right-2 p-2 hover:shadow-md hover:bg-gray-300"
+            className="text-2xl text-slate-400 absolute right-2 p-2 mt-1.5 hover:shadow-md hover:bg-gray-300"
           >
             <IoCloseSharp />
           </button>
-
           {!isOrderConfirmed ? (
             <>
-              <div className="p-4 bg-green-800 border rounded">
-                <h2 className="text-xl font-semibold text-white p-4 text-center">
-                  Shopping Cart
-                </h2>
-                <br />
+              <div className="p-4 bg-white border rounded">
+                <h2 className="text-xl font-semibold text-black p-4 text-center">Shopping Cart</h2>
               </div>
-              <div className="px-2">
+              <div className="px-2 overflow-y-auto" style={{ maxHeight: 'calc(100% - 200px)' }}>
                 <div>
-                  {/* {cart.map((recipe, index) => (
-                                        <div key={index} className="flex items-center ">
 
-                                            <div className="w-20 h-20 mg">
-                                                <img src={recipe.imageUrl} className="w-full h-full object-cover"></img>
-                                            </div>
-                                            <p className="text-red-400 font-bold px-4">{recipe.title}</p>
-                                            <p className="text-black font-bold px-4">{recipe.price} kr</p>
-                                            <button
-                                                onClick={() => removeFromCart(recipe._id)}
-                                                className="ml-4 bg-red-500 hover:bg-red-700 text-white font py-1.5 px-5 rounded-md"
-                                            >
-                                                Delete
-                                            </button>
-                                        </div>
-                                    ))} */}
-                  {/* // acc as accumulated */}
                   <div>
                     {Object.values<CartItem>(
                       cart.reduce(
@@ -193,68 +171,56 @@ function NavBarComponent() {
                         {}
                       )
                     ).map((item: CartItem, index) => (
-                      <div key={index} className="flex items-center">
-                        <div className="w-20 h-20 mg">
-                          <img
-                            src={item.imageUrl}
-                            className="w-full h-full object-cover"
-                            alt=""
-                          />
+                      <div key={index} className="flex items-center my-2">
+                        <div className="w-20 h-20">
+                          <img src={item.imageUrl} className="w-full h-full object-cover" alt={item.title} />
                         </div>
-
-                        <p className="text-red-400 text-sm font-bold px-4">
-                          {item.title}
-                        </p>
-
-                        <p className="flex text-black px-4 text-sm">
-                          {item.price * item.quantity} kr
-                        </p>
-                        <p className=" text-black px-4 text-sm">
-                          {item.quantity} pce
-                        </p>
-
-                        <button
-                          onClick={() => decreaseQuantity(item._id)}
-                          className="ml-4 bg-red-500 hover:bg-red-700 text-white font  px-1 rounded-l-md"
-                        >
-                          -
-                        </button>
-                        <button
-                          onClick={() => increaseQuantity(item._id)}
-                          className="bg-green-500 hover:bg-green-700 text-white font  px-1 rounded-r-md"
-                        >
-                          +
-                        </button>
-                        <div className="">
-
+                        <div className="flex-grow pl-4">
+                          <p className="text-red-400 text-sm font-bold">{item.title}</p>
+                          <div className="flex items-baseline">
+                            <p className="text-black text-sm font-bold">
+                              {item.price * item.quantity} kr
+                            </p>
+                            <p className="text-black text-sm ml-4" style={{ minWidth: '3rem' }}>
+                              {item.quantity} pcs
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <button
+                            onClick={() => decreaseQuantity(item._id)}
+                            className="bg-white text-black hover:bg-gray-300 px-3 h-8 border shadow-md rounded-l-md"
+                          >
+                            -
+                          </button>
+                          <button
+                            onClick={() => increaseQuantity(item._id)}
+                            className="bg-white hover:bg-gray-300 text-black px-3 h-8 border shadow-md rounded-r-md"
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
-
                     ))}
                   </div>
-
                 </div>
               </div>
 
-              <div className="flex px-1 py-5"></div>
-              <div>
-                total pce {totalPieces}
-                total price {totalPrice}
-         
+              <div className="p-4 bg-white absolute bottom-0 w-full">
+                <div className="flex justify-end">
+                  <button onClick={clearCart} className=" w-1/4 font-semibold border border-green-700 text-green-800 mt-4 py-2 rounded hover:bg-green-600 hover:text-white">Clear Cart</button>
+                </div>
 
+                <div className="flex justify-between items-center font-bold">
+                  <span>Total Pieces:</span>
+                  <span>{totalPieces}</span>
+                </div>
+                <div className="flex justify-between items-center font-bold mt-2">
+                  <span>Total Price:</span>
+                  <span>{totalPrice} kr</span>
+                </div>
+                <button onClick={confirmOrder} className="w-full font-semibold bg-green-600 text-white mt-2 py-2 rounded hover:bg-green-800">Confirm Order</button>
               </div>
-              <button 
-                    onClick={clearCart}
-                    className="text-xl text-white rounded-lg bg-red-500 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-12 left-5 right-5"
-          >
-                    Clear cart
-                    </button>
-              <button
-                onClick={confirmOrder}
-                className="text-xl text-white rounded-lg bg-green-900 p-1 hover:bg-gray-800 focus:outline-none absolute bottom-2 left-5 right-5"
-              >
-                Confirm Order
-              </button>
             </>
           ) : (
             <div className="text-center p-4 bg-slate-500">

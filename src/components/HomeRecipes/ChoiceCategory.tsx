@@ -9,6 +9,7 @@ import SidebarMenu from "./RecipeSidebar";
 function RecipeCategory() {
   const getRecipes = useRecipeState((state) => state.fetchRecipe);
   const recipes = useRecipeState((state) => state.recipes);
+  const [focusedOption, setFocusedOption] = useState("");
   const { category } = useParams();
   const [handleCategory, setHandleCategory] = useState(
     category || "All categories"
@@ -65,7 +66,6 @@ function RecipeCategory() {
         recipe.categories.includes(handleCategory || "")
       );
     } else {
-      console.log(recipes, handleCategory);
       return recipes;
     }
   };
@@ -89,11 +89,12 @@ function RecipeCategory() {
           <div className="w-1/5">
             <h3 className="text-lg font-bold mb-4 pt-5">Categories</h3>
             <div
-              className="text-lg cursor-pointer w-full py-2 text-left focus:outline-none"
+              className="text-lg cursor-pointer w-full py-2 text-left focus:outline-none hover:underline"
               onClick={() => categoryHandler("All categories")}
             >
               All categories
             </div>
+            <div>
             {dropdownMenus.map(({ category, options }) => (
               <SidebarMenu
                 key={category}
@@ -101,13 +102,27 @@ function RecipeCategory() {
                 options={options}
                 categoryHandler={categoryHandler}
               />
-            ))}
+              
+            ))} 
+          </div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-4 sm:grid-cols-1">
             {filterRecipe().map((recipe) => (
               <div
                 key={recipe._id}
+                onKeyDown={(e) => {
+                  if (e.key === 'Tab' && !e.shiftKey) {
+                    // Move focus to the next card element
+   
+                  }
+  
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    navigate(`/recipe/specificRecipe/${recipe._id}`)
+                  }
+                }}
+  
+                tabIndex={0} 
                 className="relative rounded overflow-hidden shadow-lg"
               >
                 <img

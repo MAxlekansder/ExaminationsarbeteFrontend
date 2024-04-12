@@ -38,10 +38,6 @@ function DetailedCocktailComponent() {
     <>
     <NavBarComponent />
     <div className="relative">
-      <button className="absolute">
-           hej
-        </button>
-      
     </div>
       <div className="flex align-middle justify-center relative main-container">
       

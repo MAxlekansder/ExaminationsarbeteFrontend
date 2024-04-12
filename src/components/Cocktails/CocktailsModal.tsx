@@ -100,6 +100,18 @@ function CocktailsModal({ isOpen, closeModal, categoryDrinks, navigate,category,
                   key={drink.idDrink}
                   onClick={() => navigate(`/cocktails/${drink.idDrink}`)}
                   className="mx-0.5"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Tab' && !e.shiftKey) {
+                      // Move focus to the next card element
+      
+                    }
+      
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      navigate(`/cocktails/${drink.idDrink}`)
+                    }
+                  }}
+      
+                  tabIndex={0} 
                 >
                   <div className="rounded overflow-hidden shadow-lg h-54">
                     <div className="max-w-3xl">
