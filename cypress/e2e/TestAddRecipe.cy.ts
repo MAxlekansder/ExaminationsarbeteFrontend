@@ -23,7 +23,7 @@ describe('Add Recipe Page', () => {
     cy.get('#title-input').type('Test Recipe');
     cy.get('#description').type('This is a test recipe description');
     cy.get('#time-in-mins').type('30');
-    cy.get('#url-add').type('https://example.com/image.jpg');
+    cy.get('#url-add').type('https://as2.ftcdn.net/v2/jpg/00/49/22/63/1000_F_49226343_zrW0Mlu6hqxzgN2gUBwW8EGaHmD5GZU6.jpg');
     cy.get('#price').type('10');
 
     // Submit the form
