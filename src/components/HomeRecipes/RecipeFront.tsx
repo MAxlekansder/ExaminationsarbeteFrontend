@@ -67,7 +67,7 @@ function RecipeHome() {
         {FilterHandler("Dinner")
           .slice(0, 9)
           .map((recipe) => (
-            <div
+            <div data-testid="cardtest"
               key={recipe._id}
               onKeyDown={(e) => {
                 if (e.key === 'Tab' && !e.shiftKey) {

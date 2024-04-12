@@ -70,7 +70,7 @@ function NavBarComponent() {
 
 
   return (
-    <header className="flex">
+    <header className="flex" data-testid="navbar">
       <div className="py-1">
         <Link to="/">
           <img src="Images/logo1.png" alt="Logo" className="h-10 absolute xl:block sm:hidden" />
