@@ -16,6 +16,8 @@ import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
 import DrinkCategory from './components/Cocktails/CocktailsFront';
 import NavBarComponent from './components/NavBarComponent';
 import FooterComponent from './components/Footer/FooterComponent';
+import Navbar from './components/Test/NavBar';
+
 
 
 
@@ -23,7 +25,7 @@ function App() {
   return (
   <>
   <BrowserRouter>
-  <NavBarComponent/>
+  <Navbar/>
     <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/add' element={<HandleRequests />} />

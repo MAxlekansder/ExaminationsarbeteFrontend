@@ -89,11 +89,7 @@ function HandleRequests() {
   };
 
   return (
-    <div>
-      <div>
-        <NavBarComponent />
-      </div>
-      <div className=" rounded p-6 border-img">
+    <div className=" rounded p-6 border-img">
         <div className="flex justify-center items-stretch h-screen">
           <div className="w-full max-w-3xl">
             <div className="flex flex-wrap -mx-3 mb-6">
@@ -223,7 +219,7 @@ function HandleRequests() {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 
