@@ -111,7 +111,7 @@ function HomePage() {
               </div>
             <div className='bg-green-700 xl:ml-10 xl:mr-10 lg:ml-0 lg:mr-0 text-green-700'>.</div> 
           <div className=''>
-        <img src="/Images/inteMathem.png" alt="" className='absolute object-cover first-mainpage-img xl:block lg:block sm:hidden' />
+        <img src="/Images/inteMathem.jpg" alt="" className='absolute object-cover first-mainpage-img xl:block lg:block sm:hidden' />
       </div>
     </div>
   <div className='xl:p-10'>
@@ -141,7 +141,7 @@ function HomePage() {
       <div className='bg-green-200 xl:ml-10 xl:mr-10 text-green-200'>.</div>
         <div className='relative w-2/5 mt-20 mb-20 mr-40'>
            <div className=''>
-              <img src="/Images/inteMathem.png" 
+              <img src="/Images/inteMathem.jpg" 
                 alt="" className='absolute object-cover secound-mainpage-img xl:block lg:block sm:hidden ' />
             </div> 
           <div className='xl:pl-10 '>
