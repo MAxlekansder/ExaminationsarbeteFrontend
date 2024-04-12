@@ -143,7 +143,7 @@ function NavBarComponent() {
             </button>
           </li>
         </ul>
-        <button className="nav-btn nav-clos-btn" onClick={showNavBar}>
+        <button className="nav-btn nav-clos-btn xl:hidden sm:block" onClick={showNavBar}>
             <FaTimes/>
             </button>
       </nav>
@@ -271,7 +271,7 @@ function NavBarComponent() {
           )}
         </div>
       )}
-       <button className="nav-btn" onClick={showNavBar}>
+       <button className="nav-btn xl:hidden sm:block" onClick={showNavBar}>
             <FaBars/>
         </button>
     </header>

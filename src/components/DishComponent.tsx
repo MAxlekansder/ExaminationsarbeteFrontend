@@ -53,7 +53,7 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
           <img
             src={image}
             alt={name}
-            className="object-cover 2xl:h-96 2xl:w-96 md:w-60 md:h-60 sm:w-80 sm:h-80 2xl:ml-0 sm:ml-40 lg:w-60 lg:h-60 "
+            className="object-cover 2xl:h-96 2xl:w-96 md:w-60 md:h-60 sm:w-80 sm:h-80 2xl:ml-0 sm:ml-40 xl:m-0 lg:w-60 lg:h-60 "
           />
         </Link>
       </div>
