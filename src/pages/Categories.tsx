@@ -78,7 +78,7 @@ const Categories = () => {
   
     return (
       <>
-      <NavBarComponent />
+     
       <div>
         <h1 className='text-4xl mb-10'>Våra kategorier</h1>
         <div>
@@ -178,7 +178,7 @@ const Categories = () => {
           </ul>
         </div>
       </div>
-      <FooterComponent />
+      
     </>
   );
 };

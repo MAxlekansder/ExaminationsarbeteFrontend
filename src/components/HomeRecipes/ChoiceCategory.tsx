@@ -80,7 +80,7 @@ function RecipeCategory() {
 
   return (
     <div>
-      <NavBarComponent />
+     
       <div>
         <div>
           <div className="text-lg font-bold">Popular</div>

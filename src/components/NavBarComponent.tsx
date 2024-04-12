@@ -73,12 +73,7 @@ function NavBarComponent() {
 
   return (
     <header className="flex">
-      <div className="py-1">
-        <Link to="/">
-          <img src="Images/logo1.png" alt="Logo" className="h-10 absolute xl:block sm:hidden" />
-        </Link>
-      </div>
-      <nav className="flex-grow bg-white xl:px-4 xl:py-2 xl:pb-4 xl:m-0 2xl:m-0 " ref={navRef}>
+     <nav className="flex-grow bg-white xl:pb-4 xl:m-0 " ref={navRef}>
         <ul className="xl:flex xl:w-full 2xl:flex 2xl:w-full sm:mt-10 list-none 2xl:p-0 2xl:m-0 items-center sm:pl-10 xl:pl-4">
           <li className="sm:pt-10 2xl:pt-0 xl:pt-0 ">
             <Link

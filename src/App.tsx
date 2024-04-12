@@ -14,12 +14,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RecipeHome from './components/HomeRecipes/RecipeFront';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
 import DrinkCategory from './components/Cocktails/CocktailsFront';
+import NavBarComponent from './components/NavBarComponent';
+import FooterComponent from './components/Footer/FooterComponent';
+
 
 
 function App() {
   return (
   <>
   <BrowserRouter>
+  <NavBarComponent/>
     <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/add' element={<HandleRequests />} />
@@ -35,6 +39,7 @@ function App() {
         <Route path='/categories' element={<Categories />} />
         <Route path='/weeklytips' element={<WeeklyTips />} />
       </Routes>
+      <FooterComponent/>
     </BrowserRouter>
     </>
   );

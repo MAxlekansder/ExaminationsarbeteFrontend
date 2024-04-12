@@ -79,7 +79,7 @@ function HomePage() {
       <div>
        
        
-        <NavBarComponent/>
+     
         
         <div className="food-header">
           <h1 className='welcome-text-header text-center font-bold text-7xl text-white opacity-90'>
@@ -181,7 +181,7 @@ function HomePage() {
       </div>
       <div className='mt-20 p-10'>
       </div>
-      <FooterComponent />
+      
     </>
 
   );

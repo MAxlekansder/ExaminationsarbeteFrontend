@@ -9,7 +9,7 @@ const About = () => {
     return (
         <>
         <div className="bg-white">
-            <NavBarComponent />
+            
             <div className="container mx-auto py-8">
                 <h2 className="text-4xl font-bold mb-4">Our Company Values</h2>
                 <div className="flex flex-wrap -mx-4 mb-4">
@@ -58,7 +58,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-        <FooterComponent/>
+        
         </>
     );
 };

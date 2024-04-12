@@ -27,7 +27,7 @@ const NavBarTest = () => {
             <FaTimes/>
             </button>
         </nav>
-        <button className="p-1 cursor-pointer" onClick={showNavBar}>
+        <button className="nav-btn" onClick={showNavBar}>
             <FaBars/>
         </button>
     </header>

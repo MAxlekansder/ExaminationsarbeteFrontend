@@ -51,7 +51,7 @@ const RecipeDetails = () => {
 
 return (
     <>
-      <NavBarComponent />
+   
       <Modal
 
         isOpen={isModalOpen}
