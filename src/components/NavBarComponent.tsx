@@ -130,7 +130,7 @@ function NavBarComponent() {
             {" "}
             <button
               onClick={handleCartToggle}
-              className="text-2xl relative flex items-center justify-center w-12 h-12"
+              className="text-2xl relative flex items-center justify-center w-12 h-12 "
             >
               <TiShoppingCart />
               {cart.length > 0 && (
@@ -147,7 +147,7 @@ function NavBarComponent() {
       </nav>
 
       {isCartOpen && (
-        <div className="fixed top-0 right-0 h-full bg-white w-1/3 shadow-lg z-50 opacity-100 border rounded overflow-hidden">
+        <div className="fixed top-0 right-0 h-full bg-white w-1/3 shadow-lg z-50 opacity-100 border rounded overflow-hidden sm:w-full md:w-1/3 ">
           <button
             onClick={closeCart}
             className="text-2xl text-slate-400 absolute right-2 p-2 mt-1.5 hover:shadow-md hover:bg-gray-300"
