@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import { Recipe } from "../../data/Recipes";
 
 
-
-
 const SuggestCocktail = ({ detailedRecipe }: { detailedRecipe: Recipe }) => {
-  const [selectedDrink, setSelectedDrink] = useState(null);
+  const [selectedDrink, setSelectedDrink] = useState<any>(null);
   const getCategoryDrink = useRecipeState((state) => state.fetchSpecificDrinkIngredient)
 
   useEffect(() => {
@@ -79,11 +77,13 @@ const SuggestCocktail = ({ detailedRecipe }: { detailedRecipe: Recipe }) => {
     <>
       <h2 className="text-2xl font-bold mt-6 ml-16">Matching drink:</h2>
       {selectedDrink && (
+        <div key={selectedDrink.idDrink}>
         <div className="container mx-auto my-8 bg-white p-4 text-center rounded-lg shadow-xl w-1/2 max-w-lg ml-0 mr-auto">
           <Link to={`/cocktails/${selectedDrink.idDrink}`}>
             <p className="mb-8 font-semibold text-xl">{selectedDrink.strDrink}</p>
             <img src={selectedDrink.strDrinkThumb} alt={selectedDrink.strDrink} className='mx-auto w-auto max-h-40 h-auto rounded' />
           </Link>
+        </div>
         </div>
       )}
     </>

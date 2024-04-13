@@ -83,6 +83,7 @@ function NavBarComponent() {
           </li>
           <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
+              id="recipe"
               to="/recipe"
               className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
@@ -91,6 +92,7 @@ function NavBarComponent() {
           </li>
           <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
+            id="weeklyTips"
               to="/weeklytips"
               className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
@@ -99,6 +101,7 @@ function NavBarComponent() {
           </li>
           <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
+              id="cocktails"
               to="/cocktails"
               className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
@@ -125,6 +128,7 @@ function NavBarComponent() {
             {" "}
             <button
               onClick={handleCartToggle}
+              id="cartOpen"
               className="text-2xl relative flex items-center justify-center w-12 h-12 "
             >
               <TiShoppingCart />
@@ -157,7 +161,7 @@ function NavBarComponent() {
               <div className="px-2 overflow-y-auto" style={{ maxHeight: 'calc(100% - 200px)' }}>
                 <div>
 
-                  <div>
+                  <div id="cart-item">
                     {Object.values<CartItem>(
                       cart.reduce(
                         (acc: { [key: string]: CartItem }, recipe) => {
@@ -194,6 +198,7 @@ function NavBarComponent() {
                             -
                           </button>
                           <button
+                            id="addMoreOfSame"
                             onClick={() => increaseQuantity(item._id)}
                             className="bg-white hover:bg-gray-300 text-black px-3 h-8 border shadow-md rounded-r-md"
                           >
@@ -219,7 +224,7 @@ function NavBarComponent() {
                   <span>Total Price:</span>
                   <span>{totalPrice} kr</span>
                 </div>
-                <button onClick={confirmOrder} className="w-full font-semibold bg-green-600 text-white mt-2 py-2 rounded hover:bg-green-800">Confirm Order</button>
+                <button id="confirmOrder" onClick={confirmOrder} className="w-full font-semibold bg-green-600 text-white mt-2 py-2 rounded hover:bg-green-800">Confirm Order</button>
               </div>
             </>
           ) : (
