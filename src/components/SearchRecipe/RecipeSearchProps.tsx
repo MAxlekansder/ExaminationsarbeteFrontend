@@ -31,7 +31,7 @@ function RecipeSearch({ recipesFromInterface, searchTerm, onSearchChange }: Reci
 
   return (
     <>
-      <div className='input-wrapper'>
+      <div className='input-wrapper max-sm:top-3 max-md:top-3'>
         <FaSearch id='searchIcon' className='search-icon' />
           <input
             type="text"

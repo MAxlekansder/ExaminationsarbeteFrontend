@@ -92,7 +92,7 @@ function HomePage() {
       </div>
 
       {/**LUNCH TEXT */}
-  <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row'>
+  <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row mt-10'>
     <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80'>
             Do you want to give your lunch a refreshing twist? 
@@ -109,12 +109,12 @@ function HomePage() {
 
     {/*LUNCH GRID*/}
   
-      <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10 lg:pt-0 lg:mt-0'ref={lunchCardRef}>
+      <div className='2xl:mt-5 2xl:pt-5 xl:mt-10 xl:pt-10 'ref={lunchCardRef}>
         <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl sm:text-2xl'>
           Todays Lunch Suggestions!
           </h1>
             </div>
-        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 max-sm:grid sm:grid-flow-row'ref={lunchRef}>
+        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 max-md:grid max-sm:grid sm:grid-flow-row'ref={lunchRef}>
         {randomLunch.map((dish, index) => (
           <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent
@@ -129,7 +129,7 @@ function HomePage() {
       </div>
       <div className='mt-10'></div>
     {/**DINNER TEXT*/}
-    <div className='xl:flex 2xl:flex lg:flex  align-middle justify-center  sm:grid sm:grid-flow-row'>
+    <div className='xl:flex 2xl:flex lg:flex  align-middle justify-center  sm:grid sm:grid-flow-row mt-40'>
     <img src="/Images/inteMathem.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80 '>
@@ -148,12 +148,12 @@ function HomePage() {
  
 
          {/*DINNER GRID*/}
-         <div className='2xl:mt-20 2xl:pt-20 xl:mt-10 xl:pt-10 lg:pt-0 lg:mt-0'ref={dinnerCardRef}>
+         <div className='2xl:mt-5 2xl:pt-5 xl:mt-10 xl:pt-10'ref={dinnerCardRef}>
         <h1 className='text-center font-semibold m-5 2xl:text-5xl p-12 font-mono md:text-3xl sm:text-2xl'>
           Todays Dinner Suggestions!
           </h1>
             </div>
-        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10  max-sm:grid sm:grid-flow-row'ref={dinnerRef}>
+        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 max-md:grid  max-sm:grid sm:grid-flow-row'ref={dinnerRef}>
         {randomDinner.map((dish, index) => (
           <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent
@@ -166,7 +166,7 @@ function HomePage() {
           </Link>
         ))}
       </div>
-      <div className='mt-10'></div>
+      <div className='mt-40'></div>
       </>
 
   );

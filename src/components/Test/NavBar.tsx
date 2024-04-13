@@ -80,12 +80,13 @@ const Navbar = () => {
                     </div>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <Link to="/" className="text-gray-600 hover:text-gray-800">Home</Link>
-                            <Link to="/recipe" className="text-gray-600 hover:text-gray-800">Categories</Link>
-                            <Link to="/weeklytips" className="text-gray-600 hover:text-gray-800">Weekly Tips</Link>
-                            <Link to="/about" className="text-gray-600 hover:text-gray-800">About us</Link>
-                            <Link to="/cocktails" className="text-gray-600 hover:text-gray-800">Cocktails</Link>
-                            <Link to="/add" className="text-gray-600 hover:text-gray-800">Add recipe</Link>
+                            <Link to="/" className="text-gray-600 hover:text-green-300">Home</Link>
+                            <Link to="/recipe" className="text-gray-600 hover:text-green-300">Categories</Link>
+                            <Link to="/weeklytips" className="text-gray-600 hover:text-green-300">Weekly Tips</Link>
+                            <Link to="/about" className="text-gray-600 hover:text-green-300">About us</Link>
+                            <Link to="/cocktails" className="text-gray-600 hover:text-green-300">Cocktails</Link>
+                            <Link to="/add" className="text-gray-600 hover:text-white pt-2 pb-2 pl-3 pr-3 bg-green-400 rounded-lg
+                                                      hover:bg-green-300 ">Add recipe</Link>
                             {" "}
                             <button
                                 onClick={handleCartToggle}
@@ -203,18 +204,18 @@ const Navbar = () => {
                 </div>
             </div>
             {isOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link to="/" className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Home</Link>
-                        <Link to="/recipe" className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Categories</Link>
-                        <Link to="/weeklytips" className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Weekly Tips</Link>
-                        <Link to="/about" className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">About us</Link>
-                        <Link to="/cocktails" className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Cocktails</Link>
-                        <Link to="/add" className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">Add recipe</Link>
-                        <button onClick={handleCartToggle} className="text-gray-600 hover:text-gray-800 block px-3 py-2 rounded-md text-base font-medium">
+                <div className="md:hidden ">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 z-50">
+                        <Link to="/" className="text-gray-600 hover:text-green-300 block px-3 py-2 rounded-md text-base font-medium">Home</Link>
+                        <Link to="/recipe" className="text-gray-600 hover:text-green-300  block px-3 py-2 rounded-md text-base font-medium">Categories</Link>
+                        <Link to="/weeklytips" className="text-gray-600 hover:text-green-300  block px-3 py-2 rounded-md text-base font-medium">Weekly Tips</Link>
+                        <Link to="/about" className="text-gray-600 hover:text-green-300  block px-3 py-2 rounded-md text-base font-medium">About us</Link>
+                        <Link to="/cocktails" className="text-gray-600 hover:text-green-300  block px-3 py-2 rounded-md text-base font-medium">Cocktails</Link>
+                        <Link to="/add" className="text-gray-600 hover:text-green-300  block px-3 py-2 rounded-md text-base font-medium">Add recipe</Link>
+                        <button onClick={handleCartToggle} className="text-gray-600 hover:text-green-300 block px-3 py-2 rounded-md text-base font-medium">
                         <TiShoppingCart />
                                 {cart.length > 0 && (
-                                <span className="absolute -right-2 -top-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-green-600 rounded-full">
+                                <span className="absolute -right-2 -top-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-green-600 rounded-xl">
                                 {cart.length}
                                 </span>
                                   )}
