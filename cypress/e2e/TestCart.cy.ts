@@ -54,6 +54,7 @@ describe('add item to cart and navigate', () => {
         }
 
         cy.wait(2000)
+        
         cy.get('#clearCart').click();  // removes the one item
 
         cy.wait(2000);
