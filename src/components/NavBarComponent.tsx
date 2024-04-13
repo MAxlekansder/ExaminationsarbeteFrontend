@@ -192,6 +192,7 @@ function NavBarComponent() {
                         </div>
                         <div className="flex items-center">
                           <button
+                          id="decreaseMoreOfSame"
                             onClick={() => decreaseQuantity(item._id)}
                             className="bg-white text-black hover:bg-gray-300 px-3 h-8 border shadow-md rounded-l-md"
                           >
@@ -213,7 +214,7 @@ function NavBarComponent() {
 
               <div className="p-4 bg-white absolute bottom-0 w-full">
                 <div className="flex justify-end">
-                  <button onClick={clearCart} className=" w-1/4 font-semibold border border-green-700 text-green-800 mt-4 py-2 rounded hover:bg-green-600 hover:text-white">Clear Cart</button>
+                  <button id="clearCart" onClick={clearCart} className=" w-1/4 font-semibold border border-green-700 text-green-800 mt-4 py-2 rounded hover:bg-green-600 hover:text-white">Clear Cart</button>
                 </div>
 
                 <div className="flex justify-between items-center font-bold">
