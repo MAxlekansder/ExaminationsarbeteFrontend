@@ -1,10 +1,10 @@
 import './Styling/App.css';
 import './Styling/Dishes.css';
-import HomePage from './pages/HomePage';
-import WeeklyTips from './pages/WeeklyTips';
+import HomePage from './NOT in use/pages/HomePage';
+import WeeklyTips from './NOT in use/pages/WeeklyTips';
 import HandleRequests from './components/AddRecipe/HandleRequest';
-import Categories from './pages/Categories';
-import About from './pages/About';
+import Categories from './NOT in use/pages/Categories';
+import About from './NOT in use/pages/About';
 import DetailedTestComponent from './components/Test/TestDetail';
 import Test from './components/Test/TestPage';
 import CocktailCategory from './NOT in use/CocktailCategory';
