@@ -9,7 +9,7 @@ import DetailedTestComponent from './components/Test/TestDetail';
 import Test from './components/Test/TestPage';
 import CocktailCategory from './NOT in use/CocktailCategory';
 import DetailedCocktailComponent from './components/Cocktails/DetailedCocktail';
-import RecipeDetails from './Views/Recipe/Recipe';
+import RecipeDetails from './components/HomeRecipes/DetailedRecipe';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RecipeHome from './components/HomeRecipes/RecipeFront';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
