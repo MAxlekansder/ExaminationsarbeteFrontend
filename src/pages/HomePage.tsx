@@ -105,7 +105,7 @@ function HomePage() {
                 </p>
 
           </div>
-          <img src="/Images/inteMathem.png" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
+          <img src="./public/Images/inteMathem.jpg" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       </div>
 
     {/*LUNCH GRID*/}
@@ -131,7 +131,7 @@ function HomePage() {
       <div className='mt-10'></div>
     {/**DINNER TEXT*/}
     <div className='xl:flex 2xl:flex lg:flex  align-middle justify-center  sm:grid sm:grid-flow-row mt-40'>
-    <img src="/Images/inteMathem.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
+    <img src="./public/Images/inteMathem.jpg" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80 '>
             Do you want to give your lunch a refreshing twist? 
