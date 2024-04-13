@@ -33,7 +33,7 @@ function RecipeHome() {
 
   return (
     <div>
-      <NavBarComponent />
+     
       <div className="grid gap-8 px-10 py-10 md:grid-cols-2 md:items-center md:text-left">
         <div className="">
           <h1 className="text-3xl font-bold">

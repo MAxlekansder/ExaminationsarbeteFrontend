@@ -64,7 +64,7 @@ const WeeklyTips = () => {
 
     <div>
       <div className="flex flex-col min-h-screen">
-        <NavBarComponent />
+        
         <div className="flex-grow bg-orange-50">
           <div className="max-w-7xl mx-auto my-0 p-4">
             <div className="bg-white p-4" >
@@ -98,7 +98,7 @@ const WeeklyTips = () => {
             </div >
           </div >
         </div>
-        <FooterComponent />
+       
       </div>
     </div>
   );
