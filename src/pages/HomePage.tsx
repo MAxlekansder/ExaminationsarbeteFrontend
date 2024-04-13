@@ -103,6 +103,7 @@ function HomePage() {
                   carefully selected to offer you both tasty variety and simplicity 
                   in everyday life.
                 </p>
+
           </div>
           <img src="/Images/inteMathem.png" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       </div>

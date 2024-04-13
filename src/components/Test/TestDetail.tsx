@@ -61,7 +61,7 @@ return (
                  <RecipeRating dishId={detailedRecipe._id} rating={null} 
                     />
             </div>
-        <SuggetsCocktail/>
+    
     </div>
   )
 }

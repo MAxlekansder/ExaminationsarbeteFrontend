@@ -67,14 +67,10 @@ function RecipeHome() {
         {FilterHandler("Dinner")
           .slice(0, 9)
           .map((recipe) => (
-            <div
+            <div data-testid="cardtest"
               key={recipe._id}
               onKeyDown={(e) => {
-                if (e.key === 'Tab' && !e.shiftKey) {
-                  // Move focus to the next card element
- 
-                }
-
+               
                 if (e.key === "Enter" && !e.shiftKey) {
                   navigate(`/recipe/specificRecipe/${recipe._id}`)
                 }
@@ -139,11 +135,7 @@ function RecipeHome() {
           <div
             key={category.name}
             onKeyDown={(e) => {
-              if (e.key === 'Tab' && !e.shiftKey) {
-                // Move focus to the next card element
-
-              }
-
+             
               if (e.key === "Enter" && !e.shiftKey) {
                 locateHandler(category.name)
               }
@@ -199,11 +191,6 @@ function RecipeHome() {
               onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
               className="mx-0.5 relative"
               onKeyDown={(e) => {
-                if (e.key === 'Tab' && !e.shiftKey) {
-                  // Move focus to the next card element
- 
-                }
-
                 if (e.key === "Enter" && !e.shiftKey) {
                   navigate(`/recipe/specificRecipe/${recipe._id}`)
                 }
@@ -263,11 +250,7 @@ function RecipeHome() {
             onClick={() => navigate(`/recipe/specificRecipe/${recipe._id}`)}
             className="mx-0.5 relative"
             onKeyDown={(e) => {
-              if (e.key === 'Tab' && !e.shiftKey) {
-                // Move focus to the next card element
-
-              }
-
+            
               if (e.key === "Enter" && !e.shiftKey) {
                 navigate(`/recipe/specificRecipe/${recipe._id}`)
               }

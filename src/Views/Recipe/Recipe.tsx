@@ -85,7 +85,7 @@ const RecipeDetails = () => {
             </div>
             <p className="mt-4">{detailedRecipe.description}</p>
             <div className="flex space-x-2 mt-4">
-              <button onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
+              <button id="addButtonToCart" onClick={handleAddToCart} className="bg-green-600 hover:bg-green-800 text-white py-2 px-4 rounded transition duration-300">
                 Add to Cart
               </button>
               <button onClick={() => openModal(detailedRecipe._id)} className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded transition duration-300">
