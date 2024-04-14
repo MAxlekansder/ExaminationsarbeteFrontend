@@ -92,7 +92,7 @@ function NavBarComponent() {
           </li>
           <li className="sm:pt-5 2xl:pt-0 xl:pt-0">
             <Link
-            id="weeklyTips"
+              id="weeklyTips"
               to="/weeklytips"
               className="xl:px-5 xl:py-2 text-black no-underline font-bold text-medium transition-colors duration-200 ease-in-out hover:text-green-500"
             >
