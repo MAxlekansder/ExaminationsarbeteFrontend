@@ -92,7 +92,7 @@ function HomePage() {
       </div>
 
       {/**LUNCH TEXT */}
-  <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row mt-10'>
+  <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'>
     <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80'>
             Do you want to give your lunch a refreshing twist? 
@@ -105,7 +105,7 @@ function HomePage() {
                 </p>
 
           </div>
-          <img src="./public/Images/inteMathem.jpg" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
+          <img src="./public/Images/inteMathem.png" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       </div>
 
     {/*LUNCH GRID*/}
@@ -115,7 +115,7 @@ function HomePage() {
           Todays Lunch Suggestions!
           </h1>
             </div>
-        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 max-md:grid max-sm:grid sm:grid-flow-row'ref={lunchRef}>
+        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={lunchRef}>
         {randomLunch.map((dish, index) => (
           <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent
@@ -130,17 +130,17 @@ function HomePage() {
       </div>
       <div className='mt-10'></div>
     {/**DINNER TEXT*/}
-    <div className='xl:flex 2xl:flex lg:flex  align-middle justify-center  sm:grid sm:grid-flow-row mt-40'>
-    <img src="./public/Images/inteMathem.jpg" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
+    <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'>
+    <img src="./public/Images/mathemNatt.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80 '>
-            Do you want to give your lunch a refreshing twist? 
+            Are you ready to spice up your evening meal? 
             </h1>
                 <p className='font-mono w-96 text-justify max-sm:w-80'>
-                  Try today's lunch tips and discover new flavors that will 
-                  brighten your day! Our collection of delicious recipes is 
-                  carefully selected to offer you both tasty variety and simplicity 
-                  in everyday life.
+                Explore today's dinner tips and be inspired by a world of 
+                  great flavors and simplicity on the plate! Our collection of 
+                  tasty recipes are carefully selected to offer you an exciting journey 
+                  to new culinary heights.
                 </p>
               
           </div>
@@ -154,7 +154,7 @@ function HomePage() {
           Todays Dinner Suggestions!
           </h1>
             </div>
-        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 max-md:grid  max-sm:grid sm:grid-flow-row'ref={dinnerRef}>
+        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={dinnerRef}>
         {randomDinner.map((dish, index) => (
           <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent

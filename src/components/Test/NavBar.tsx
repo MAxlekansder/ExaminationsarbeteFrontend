@@ -72,19 +72,19 @@ const Navbar = () => {
     
 
     return (
-        <nav className="bg-white shadow">
+        <nav className="bg-gradient-to-r from-green-300 shadow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
-                        <a href="#" className="font-bold text-xl italic">Not-Mathem</a>
-                    </div>
+                        <a href="/" className="font-bold text-xl italic">Not-Mathem</a>
+                      </div>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <Link to="/" className="text-gray-600 hover:text-green-300">Home</Link>
-                            <Link to="/recipe" className="text-gray-600 hover:text-green-300">Categories</Link>
-                            <Link to="/weeklytips" className="text-gray-600 hover:text-green-300">Weekly Tips</Link>
-                            <Link to="/about" className="text-gray-600 hover:text-green-300">About us</Link>
-                            <Link to="/cocktails" className="text-gray-600 hover:text-green-300">Cocktails</Link>
+                            <Link to="/" className="text-gray-600 hover:text-white">Home</Link>
+                            <Link to="/recipe" className="text-gray-600 hover:text-white">Categories</Link>
+                            <Link to="/weeklytips" className="text-gray-600 hover:text-white">Weekly Tips</Link>
+                            <Link to="/about" className="text-gray-600 hover:text-white">About us</Link>
+                            <Link to="/cocktails" className="text-gray-600 hover:text-white">Cocktails</Link>
                             <Link to="/add" className="text-gray-600 hover:text-white pt-2 pb-2 pl-3 pr-3 bg-green-400 rounded-lg
                                                       hover:bg-green-300 ">Add recipe</Link>
                             {" "}

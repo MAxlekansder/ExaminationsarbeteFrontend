@@ -14,7 +14,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RecipeHome from './components/HomeRecipes/RecipeFront';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
 import DrinkCategory from './components/Cocktails/CocktailsFront';
-import NavBarComponent from './components/NavBarComponent';
 import FooterComponent from './components/Footer/FooterComponent';
 import Navbar from './components/Test/NavBar';
 
