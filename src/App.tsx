@@ -18,31 +18,29 @@ import FooterComponent from './components/Footer/FooterComponent';
 import Navbar from './components/Test/NavBar';
 
 
-
-
 function App() {
   return (
   <>
-  <BrowserRouter>
-  <Navbar/>
-    <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/add' element={<HandleRequests />} />
-        <Route path='/recipe' element={<RecipeHome />} />
-        <Route path='/recipe/category/:category' element={<RecipeCategory />} />
-        <Route path='/recipe/specificRecipe/:id' element={<RecipeDetails />} />
-        <Route path='/cocktails' element={<DrinkCategory />} />
-        <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
-        <Route path='/cocktail:category' element={<CocktailCategory />} />
-        <Route path='/test' element={<Test />} />
-        <Route path='/test/:id' element={<DetailedTestComponent />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/categories' element={<Categories />} />
-        <Route path='/weeklytips' element={<WeeklyTips />} />
-      </Routes>
+    <BrowserRouter>
+      <Navbar/>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/add' element={<HandleRequests />} />
+            <Route path='/recipe' element={<RecipeHome />} />
+            <Route path='/recipe/category/:category' element={<RecipeCategory />} />
+            <Route path='/recipe/specificRecipe/:id' element={<RecipeDetails />} />
+            <Route path='/cocktails' element={<DrinkCategory />} />
+            <Route path='/cocktails/:id' element={<DetailedCocktailComponent />} />
+            <Route path='/cocktail:category' element={<CocktailCategory />} />
+            <Route path='/test' element={<Test />} />
+            <Route path='/test/:id' element={<DetailedTestComponent />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/categories' element={<Categories />} />
+            <Route path='/weeklytips' element={<WeeklyTips />} />
+          </Routes>
       <FooterComponent/>
     </BrowserRouter>
-    </>
+  </>
   );
 }
 

@@ -3,12 +3,8 @@ import DishComponent from '../components/DishComponent';
 import { Link } from 'react-router-dom';
 import useRecipeState from '../State/indexState';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import { useInView } from 'react-intersection-observer';
-import NavBarComponent from '../components/NavBarComponent';
 import RecipeSearch from '../components/SearchRecipe/RecipeSearchProps';
-import FooterComponent from '../components/Footer/FooterComponent';
-import NavBarTest from '../components/Test/NavBar';
 
 
 function HomePage() {
@@ -18,11 +14,14 @@ function HomePage() {
   const [randomDinner, setRandomDinner] = useState<any[]>([]);
   const [lunchCardRef, scrollPosLunch] = useInView({ triggerOnce: true, });
   const [dinnerCardRef, scrollPosDinner] = useInView({ triggerOnce: true, });
+  const [textRef, scrollPosDinnerText] = useInView({ triggerOnce: true, });
+  
 
-  const lunchRef = useRef(null);
-  const dinnerRef = useRef(null);
+  const lunchRef = useRef<any>(null);
+  const dinnerRef = useRef<any>(null);
+  const dinnerTextRef = useRef<any>(null)
  
-
+ 
 
   useEffect(() => {
     fetchRecipe();
@@ -55,7 +54,15 @@ function HomePage() {
       dinnerRef.current.classList.add('card-fade-in')
 
     }
+  
   }, [scrollPosLunch, scrollPosDinner])
+
+  useEffect(() =>{
+    if(scrollPosDinnerText){
+      dinnerTextRef.current.classList.add('card-fade-in')
+    }
+
+  },[scrollPosDinnerText])
 
 
   //För att generera random rätter
@@ -109,13 +116,12 @@ function HomePage() {
       </div>
 
     {/*LUNCH GRID*/}
-  
-      <div className='2xl:mt-5 2xl:pt-5 xl:mt-10 xl:pt-10 'ref={lunchCardRef}>
+    <div className='2xl:mt-5 2xl:pt-5 xl:mt-10 xl:pt-10 'ref={lunchCardRef}>
         <h1 className='text-center font-semibold  m-5 2xl:text-5xl p-12 font-mono md:text-3xl sm:text-2xl'>
           Todays Lunch Suggestions!
           </h1>
             </div>
-        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={lunchRef}>
+        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-lg:grid max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={lunchRef}>
         {randomLunch.map((dish, index) => (
           <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent
@@ -128,9 +134,11 @@ function HomePage() {
           </Link>
         ))}
       </div>
-      <div className='mt-10'></div>
+      <div className='mt-10' ref={textRef}></div>
+
     {/**DINNER TEXT*/}
-    <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'>
+    <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'
+     ref={dinnerTextRef }>
     <img src="./public/Images/mathemNatt.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80 '>
@@ -142,10 +150,8 @@ function HomePage() {
                   tasty recipes are carefully selected to offer you an exciting journey 
                   to new culinary heights.
                 </p>
-              
-          </div>
-          
-      </div>
+            </div>
+        </div>
  
 
          {/*DINNER GRID*/}
@@ -154,23 +160,22 @@ function HomePage() {
           Todays Dinner Suggestions!
           </h1>
             </div>
-        <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={dinnerRef}>
-        {randomDinner.map((dish, index) => (
-          <Link to={`/recipe/${dish._id}`} key={index}>
-            <DishComponent
-              key={index}
-              id={dish._id}
-              name={dish.title}
-              image={dish.imageUrl}
-              description={dish.description}
-            />
-          </Link>
-        ))}
-      </div>
+              <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-lg:grid max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={dinnerRef}>
+                {randomDinner.map((dish, index) => (
+              <Link to={`/recipe/${dish._id}`} key={index}>
+                <DishComponent
+                  key={index}
+                  id={dish._id}
+                  name={dish.title}
+                  image={dish.imageUrl}
+                  description={dish.description}
+              />
+            </Link>
+           ))}
+        </div>
       <div className='mt-40'></div>
       </>
-
-  );
-}
+      );
+    }
 
 export default HomePage;
