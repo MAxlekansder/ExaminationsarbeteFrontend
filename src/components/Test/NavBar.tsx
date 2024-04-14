@@ -29,11 +29,7 @@ const Navbar = () => {
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
     };
-
-    const showNavBar = () => {
-        navRef.current?.classList.toggle("responsive_nav")
-      }
-    
+  
     
       const handleCartToggle = () => {
         setIsCartOpen(!isCartOpen);
@@ -81,15 +77,16 @@ const Navbar = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             <Link to="/" className="text-gray-600 hover:text-white">Home</Link>
-                            <Link to="/recipe" className="text-gray-600 hover:text-white">Categories</Link>
-                            <Link to="/weeklytips" className="text-gray-600 hover:text-white">Weekly Tips</Link>
+                            <Link id="recipe" to="/recipe" className="text-gray-600 hover:text-white">Categories</Link>
+                            <Link id="weeklyTips" to="/weeklytips" className="text-gray-600 hover:text-white">Weekly Tips</Link>
                             <Link to="/about" className="text-gray-600 hover:text-white">About us</Link>
-                            <Link to="/cocktails" className="text-gray-600 hover:text-white">Cocktails</Link>
+                            <Link id="cocktails" to="/cocktails" className="text-gray-600 hover:text-white">Cocktails</Link>
                             <Link to="/add" className="text-gray-600 hover:text-white pt-2 pb-2 pl-3 pr-3 bg-green-400 rounded-lg
                                                       hover:bg-green-300 ">Add recipe</Link>
                             {" "}
                             <button
                                 onClick={handleCartToggle}
+                                id="cartOpen"
                                 className="text-2xl relative flex items-center justify-center w-12 h-12 "
                                 >
                             <TiShoppingCart />
@@ -105,6 +102,7 @@ const Navbar = () => {
       {isCartOpen && (
         <div className="fixed top-0 right-0 h-full bg-white w-1/3 shadow-lg z-50 opacity-100 border rounded overflow-hidden max-sm:w-full max-md:w-full ">
           <button
+            
             onClick={closeCart}
             className="text-2xl text-slate-400 absolute right-2 p-2 mt-1.5 hover:shadow-md hover:bg-gray-300"
           >
@@ -149,12 +147,14 @@ const Navbar = () => {
                         </div>
                         <div className="flex items-center">
                           <button
+                            id="decreaseMoreOfSame"
                             onClick={() => decreaseQuantity(item._id)}
                             className="bg-white text-black hover:bg-gray-300 px-3 h-8 border shadow-md rounded-l-md"
                           >
                             -
                           </button>
                           <button
+                            id="addMoreOfSame"
                             onClick={() => increaseQuantity(item._id)}
                             className="bg-white hover:bg-gray-300 text-black px-3 h-8 border shadow-md rounded-r-md"
                           >
@@ -169,7 +169,7 @@ const Navbar = () => {
 
               <div className="p-4 bg-white absolute bottom-0 w-full">
                 <div className="flex justify-end">
-                  <button onClick={clearCart} className=" w-1/4 font-semibold border border-green-700 text-green-800 mt-4 py-2 rounded hover:bg-green-600 hover:text-white">Clear Cart</button>
+                  <button id="clearCart" onClick={clearCart} className=" w-1/4 font-semibold border border-green-700 text-green-800 mt-4 py-2 rounded hover:bg-green-600 hover:text-white">Clear Cart</button>
                 </div>
 
                 <div className="flex justify-between items-center font-bold">
@@ -180,7 +180,7 @@ const Navbar = () => {
                   <span>Total Price:</span>
                   <span>{totalPrice} kr</span>
                 </div>
-                <button onClick={confirmOrder} className="w-full font-semibold bg-green-600 text-white mt-2 py-2 rounded hover:bg-green-800">Confirm Order</button>
+                <button id="confirmOrder" onClick={confirmOrder} className="w-full font-semibold bg-green-600 text-white mt-2 py-2 rounded hover:bg-green-800">Confirm Order</button>
               </div>
             </>
           ) : (
