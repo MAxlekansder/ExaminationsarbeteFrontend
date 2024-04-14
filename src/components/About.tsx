@@ -1,8 +1,8 @@
 //simon
 
 import React from 'react';
-import NavBarComponent from '../../components/NavBarComponent';
-import FooterComponent from '../../components/Footer/FooterComponent';
+import NavBarComponent from '../NOT in use/NavBarComponent';
+import FooterComponent from './Footer/FooterComponent';
 
 
 const About = () => {

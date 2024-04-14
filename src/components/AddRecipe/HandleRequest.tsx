@@ -7,7 +7,7 @@ import useRecipeState from "../../State/indexState";
 import CategorySelected from "./CategorySelect";
 import InstructionList from "./HandleInstructions";
 import IngredientsList from "./HandleIngredients";
-import NavBarComponent from "../NavBarComponent";
+import NavBarComponent from "../../NOT in use/NavBarComponent";
 import "../../Styling/Dishes.css";
 import { useNavigate } from "react-router-dom";
 

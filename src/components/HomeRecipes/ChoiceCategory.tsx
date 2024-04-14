@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
-import NavBarComponent from "../NavBarComponent";
+import NavBarComponent from "../../NOT in use/NavBarComponent";
 import SidebarMenu from "./RecipeSidebar";
 
 function RecipeCategory() {

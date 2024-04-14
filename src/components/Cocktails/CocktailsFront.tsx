@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
-import NavBarComponent from "../NavBarComponent";
+import NavBarComponent from "../../NOT in use/NavBarComponent";
 import { StaticLetters, Letter } from "../../data/StaticLetters";
 import { StaticCategoriesDrinks } from "../../data/StaticCategoriesDrinks";
 import CocktailsModal from "./CocktailsModal";

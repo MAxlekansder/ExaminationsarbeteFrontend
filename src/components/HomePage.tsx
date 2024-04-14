@@ -1,18 +1,18 @@
 //Gustav & Medi
-import DishComponent from '../../components/DishComponent';
+
 import { Link } from 'react-router-dom';
-import useRecipeState from '../../State/indexState';
+import useRecipeState from '../State/indexState';
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import RecipeSearch from '../../components/SearchRecipe/RecipeSearchProps';
-
+import RecipeSearch from './SearchRecipe/RecipeSearchProps';
+import DishComponent from './DishComponent';
 
 
 function HomePage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const { recipes, fetchRecipe } = useRecipeState();
-  const [randomLunch, setRandomLunch] = useState<any[]>([]);
-  const [randomDinner, setRandomDinner] = useState<any[]>([]);
+  const [randomLunch, setRandomLunch] = useState<any>([]);
+  const [randomDinner, setRandomDinner] = useState<any>([]);
   const [lunchCardRef, scrollPosLunch] = useInView({ triggerOnce: true, });
   const [dinnerCardRef, scrollPosDinner] = useInView({ triggerOnce: true, });
   const [textRef, scrollPosDinnerText] = useInView({ triggerOnce: true, });
@@ -113,7 +113,7 @@ function HomePage() {
                 </p>
 
           </div>
-          <img src="./public/Images/inteMathem.png" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
+          <img src="./Images/inteMathem.png" alt="" className='w-96 h-80 ml-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       </div>
 
     {/*LUNCH GRID*/}
@@ -123,7 +123,7 @@ function HomePage() {
           </h1>
             </div>
         <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-lg:grid max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={lunchRef}>
-        {randomLunch.map((dish, index) => (
+        {randomLunch.map((dish : any, index: number) => (
           <Link to={`/recipe/${dish._id}`} key={index}>
             <DishComponent
               key={index}
@@ -140,7 +140,7 @@ function HomePage() {
     {/**DINNER TEXT*/}
     <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'
      ref={dinnerTextRef }>
-    <img src="./public/Images/mathemNatt.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
+    <img src="./Images/mathemNatt.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80 '>
             Are you ready to spice up your evening meal? 
@@ -162,7 +162,7 @@ function HomePage() {
           </h1>
             </div>
               <div className='xl:flex 2xl:flex lg:flex align-middle justify-center mr-10 ml-10 p-10 max-lg:grid max-md:grid max-sm:grid sm:grid-flow-row border rounded-xl shadow-xl'ref={dinnerRef}>
-                {randomDinner.map((dish, index) => (
+                {randomDinner.map((dish: any, index:any) => (
               <Link to={`/recipe/${dish._id}`} key={index}>
                 <DishComponent
                   key={index}

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Recipe } from "../data/Recipes";
 import { MutableRefObject, useRef } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
-import './Test/NavBarTestStyle.css'
+
 
 interface CartItem {
   _id: string;

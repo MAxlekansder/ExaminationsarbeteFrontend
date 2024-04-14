@@ -1,10 +1,10 @@
 import './Styling/App.css';
 import './Styling/Dishes.css';
-import HomePage from './NOT in use/pages/HomePage';
-import WeeklyTips from './NOT in use/pages/WeeklyTips';
+import HomePage from './components/HomePage';
+import WeeklyTips from './components/WeeklyTips';
 import HandleRequests from './components/AddRecipe/HandleRequest';
-import Categories from './NOT in use/pages/Categories';
-import About from './NOT in use/pages/About';
+import Categories from './components/Categories';
+import About from './components/About';
 import DetailedTestComponent from './components/Test/TestDetail';
 import Test from './components/Test/TestPage';
 import CocktailCategory from './NOT in use/CocktailCategory';
@@ -15,7 +15,7 @@ import RecipeHome from './components/HomeRecipes/RecipeFront';
 import RecipeCategory from './components/HomeRecipes/ChoiceCategory';
 import DrinkCategory from './components/Cocktails/CocktailsFront';
 import FooterComponent from './components/Footer/FooterComponent';
-import Navbar from './components/Test/NavBar';
+import Navbar from './components/NavBar';
 
 
 function App() {

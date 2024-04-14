@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
-import NavBarComponent from "../NavBarComponent";
-import FooterComponent from "../Footer/FooterComponent";
 import '../../Styling/Dishes.css'
 import '../../Styling/Cocktail.css'
 
@@ -23,7 +21,7 @@ function Test() {
 
   return (
    <>
-   <NavBarComponent/>
+
    <button className="border bg-red-500 text-white"
    onClick={clearDatabase}
    >Delete all recipes</button>
@@ -47,7 +45,7 @@ function Test() {
               </div>
             ))}
     </div>
-        <FooterComponent/>
+       
     </>
   );
 }

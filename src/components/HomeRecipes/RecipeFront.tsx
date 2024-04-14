@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import useRecipeState from "../../State/indexState.tsx";
 import { useNavigate } from "react-router-dom";
-import NavBarComponent from "../NavBarComponent.tsx";
+import NavBarComponent from "../../NOT in use/NavBarComponent.tsx";
 import { StaticCategories } from "../../data/StaticCategoriesRecipe.ts";
 import FooterComponent from "../Footer/FooterComponent.tsx";
 
