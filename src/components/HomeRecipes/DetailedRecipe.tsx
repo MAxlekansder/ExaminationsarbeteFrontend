@@ -5,11 +5,11 @@ import { Link, useParams, } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
 import useRecipeState from "../../State/indexState.tsx";
-import { Recipe } from "../../data/Recipes";
-import Modal from '../../components/AddRecipe/RecipeModal.tsx';
-import RecipeRating from '../../components/SearchRecipe/RecipeRating.tsx';
-import NavBarComponent from '../../components/NavBarComponent.tsx';
-import SuggestCocktail from '../../components/Cocktails/SuggestCocktail.tsx';
+import { Recipe } from "../../data/Recipes.ts";
+import Modal from '../AddRecipe/RecipeModal.tsx';
+import RecipeRating from '../SearchRecipe/RecipeRating.tsx';
+import NavBarComponent from '../NavBarComponent.tsx';
+import SuggestCocktail from '../Cocktails/SuggestCocktail.tsx';
 
 
 
@@ -79,7 +79,7 @@ const RecipeDetails = () => {
               </div>
             </div>
             <div className="flex items-center mt-2">
-              <span className="text-lg font-semibold ml-2">{detailedRecipe.avgRating}</span>
+              <span className="text-lg font-semibold ml-2">{Math.round(detailedRecipe.avgRating)}</span>
               <IoIosStar className="text-yellow-400 text-2xl ml-1" />
               <span className="ml-2 text-lg">Rating</span>
             </div>

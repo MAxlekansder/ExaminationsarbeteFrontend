@@ -12,6 +12,8 @@ import '../../Styling/Cocktail.css'
 function Test() {
   const getRecipe = useRecipeState((state) => state.fetchRecipe);
   const recipe = useRecipeState((state) => state.recipes);
+  const addAllrecipes = useRecipeState((state) => state.addAllRecipesToDatabase);
+  const clearDatabase = useRecipeState((state) => state.clearAllRecipes);
 
   const navigate = useNavigate();
 
@@ -22,6 +24,12 @@ function Test() {
   return (
    <>
    <NavBarComponent/>
+   <button className="border bg-red-500 text-white"
+   onClick={clearDatabase}
+   >Delete all recipes</button>
+   <button
+   className="border bg-red-500 text-white"
+    onClick={(addAllrecipes)}>Add all recipes</button>
    <div className="background-img bg-slate-50i" 
         style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 

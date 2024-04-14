@@ -1,14 +1,14 @@
 //Gustav & Medi
-import DishComponent from '../components/DishComponent';
+import DishComponent from '../../components/DishComponent';
 import { Link } from 'react-router-dom';
-import useRecipeState from '../State/indexState';
+import useRecipeState from '../../State/indexState';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useInView } from 'react-intersection-observer';
-import NavBarComponent from '../components/NavBarComponent';
-import RecipeSearch from '../components/SearchRecipe/RecipeSearchProps';
-import FooterComponent from '../components/Footer/FooterComponent';
-import NavBarTest from '../components/Test/NavBar';
+import NavBarComponent from '../../components/NavBarComponent';
+import RecipeSearch from '../../components/SearchRecipe/RecipeSearchProps';
+import FooterComponent from '../../components/Footer/FooterComponent';
+import NavBarTest from '../../components/Test/NavBar';
 
 
 function HomePage() {

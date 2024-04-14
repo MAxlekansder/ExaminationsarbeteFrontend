@@ -3,6 +3,8 @@
 import { create } from "zustand";
 import { Recipe } from "../data/Recipes";
 import axios from "axios";
+import { recipes } from '../dataForTestingBulk'; 
+
 
 interface recipeState {
     recipes: Recipe[];
@@ -33,8 +35,11 @@ interface recipeState {
     fetchSpecificRecipe: (id: string) => Promise<void>;
     updateRecipes: (recipeId: string, updatedProperties: Partial<Recipe>) => void;
     fetchSpecificDrinkIngredient: (ingredient: string) => Promise<void>;
+    addAllRecipesToDatabase: () => void;
     fetchDrinkByLetter: (letter: string) => Promise<void>;
+    clearAllRecipes: () => void;
 }
+
 
 const useRecipeState = create<recipeState>()((set) => ({
     recipes: [],
@@ -95,6 +100,33 @@ const useRecipeState = create<recipeState>()((set) => ({
             console.log("Recipe was not deleted ", error);
         }
     },
+
+    clearAllRecipes: async () => {
+        try {
+            const response = await axios.get('https://sti-java-grupp2-afmbgd.reky.se/clear')
+            if (response.status === 200) {
+                console.log('database flushed')
+            } else {console.log('bad response: ', response.status)}
+        } catch (error) {console.log('failed to clear the database on reqeust')}
+    },
+
+    addAllRecipesToDatabase: async () => {
+        try { 
+            for (let recipe of recipes) {
+                const response = await axios.post('https://sti-java-grupp2-afmbgd.reky.se/recipes', recipe);
+                if (response.status === 200) {
+                    console.log(`Recipe "${recipe.title}" added successfully.`)
+                } else {
+                    console.log(`Recipe "${recipe.title}" failed to be added.`)
+                }
+            }
+            console.log('Bulk loading complete');
+    
+        } catch (error) {
+            console.error('Error during bulk loading:', error);
+        }
+    },
+    
 
     addRecipe: (newRecipes: Recipe) =>
         set((state) => ({
