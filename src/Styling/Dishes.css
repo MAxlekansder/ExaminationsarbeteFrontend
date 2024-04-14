@@ -14,15 +14,7 @@
     animation: fadeIn 1.5s ease-in-out;
   }
 
-  .card-fade-in:hover {
-    padding-left: 2vw;
-    padding-right: 2vw;
-    transition: padding 0.4s ease-in-out;
-    opacity: 0.7;
-    cursor: pointer;
-    
-  }
-
+  
   .background-img {
     background-image: url('https://burst.shopifycdn.com/photos/flatlay-iron-skillet-with-meat-and-other-food.jpg?width=1000&format=pjpg&exif=0&iptc=0');
     margin-top: 5px;

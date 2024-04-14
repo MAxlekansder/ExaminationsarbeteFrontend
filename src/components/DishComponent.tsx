@@ -11,7 +11,7 @@ interface DishProps {
   name: string;
   image: string;
   recipe?: string;
-  ingredients: string[];
+  ingredients?: string[];
   description?: string;
 
 }
@@ -33,7 +33,7 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
         <p>{description}</p>
         <img src={image} alt={name} />
         <ul>
-          {ingredients.map((ingredient, index) => (
+          {ingredients?.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
@@ -46,7 +46,7 @@ const DishComponent = ({ id, name, image, ingredients, description }: DishProps)
   }
 
  return (
-    <div className='card-fade-in'>
+    <div className='card-fade-in hover:scale-75 hover:cursor-pointer transition-transform duration-300 ease-in-out'>
       
         <Link to={`/recipe/specificRecipe/${id}`}>
           <img
