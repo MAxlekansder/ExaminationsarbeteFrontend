@@ -4,9 +4,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { IoCloseSharp } from "react-icons/io5";
 import useRecipeState from "../State/indexState"
 import { Link } from "react-router-dom";
-import { Recipe } from "../data/Recipes";
-import { MutableRefObject, useRef } from "react"
-import { FaBars, FaTimes } from "react-icons/fa"
+
 
 interface CartItem {
     _id: string;
