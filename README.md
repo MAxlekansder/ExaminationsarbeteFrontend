@@ -1,4 +1,4 @@
-This is the group project for examination in frontend
+This is the group project for examination in frontend development
 
 
 Dependencies as for now:
