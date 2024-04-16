@@ -100,7 +100,7 @@ function HomePage() {
       </div>
 
       {/**LUNCH TEXT */}
-  <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'>
+  <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-100 rounded-lg shadow-xl'>
     <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
       <h1 className='font-bold font-mono w-96 text-2xl mb-1 max-sm:w-80'>
             Do you want to give your lunch a refreshing twist? 
@@ -138,7 +138,7 @@ function HomePage() {
       <div className='mt-10' ref={textRef}></div>
 
     {/**DINNER TEXT*/}
-    <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-50 rounded-lg shadow-xl'
+    <div className='xl:flex 2xl:flex lg:flex align-middle justify-center sm:grid sm:grid-flow-row m-10 pt-20 pb-20 border bg-gradient-to-r from-green-100 rounded-lg shadow-xl'
      ref={dinnerTextRef }>
     <img src="./Images/mathemNatt.png" alt="" className='w-96 h-80 mr-10 object-cover xl:block lg:block 2xl:block sm:hidden md:hidden max-sm:hidden rounded-xl' />
       <div className='grid grid-flow-row sm:flex sm:flex-col max-sm:justify-center max-sm:align-middle'>
