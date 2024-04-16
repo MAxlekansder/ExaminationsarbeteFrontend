@@ -336,7 +336,7 @@ function RecipeHome() {
         </div>
       </div>
       <div>
-        <FooterComponent />
+  
       </div>
     </div>
   );
