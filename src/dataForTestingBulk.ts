@@ -967,7 +967,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "title": "Tom Yum Soup",
   "description": "A spicy and sour Thai soup flavored with lemongrass, kaffir lime leaves, and galangal.",
   "ratings": 5,
-  "imageUrl": "https://www.eatingthaifood.com/wp-content/uploads/2014/06/thai-food-pictures-1.jpg",
+  "imageUrl": "https://diethood.com/wp-content/uploads/2023/06/tom-yum-noodle-soup-2.jpg",
   "timeInMins": 25,
   "categories": ["Thai", "Soup", "Poultry", "Meat", "Seafood"],
   "instructions": [
@@ -1166,7 +1166,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "title": "Chocolate Cake",
   "description": "Decadent chocolate cake that melts in your mouth, perfect for satisfying your sweet tooth cravings.",
   "ratings": 5,
-  "imageUrl": "https://www.handletheheat.com/wp-content/uploads/2013/04/Best-Chocolate-Cake-Square-1-of-1.jpg",
+  "imageUrl": "https://www.giverecipe.com/wp-content/uploads/2020/06/Chocolate-Strawberry-Cake.jpg",
   "timeInMins": 60,
   "categories": ["Dessert", "American"],
   "instructions": [
@@ -1226,7 +1226,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "title": "Dorayaki",
   "description": "Soft and fluffy pancakes filled with sweet red bean paste, a popular Japanese dessert often enjoyed with tea.",
   "ratings": 4,
-  "imageUrl": "https://www.justonecookbook.com/wp-content/uploads/2020/08/Dorayaki-0041.jpg",
+  "imageUrl": "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2022/02/vegan-dorayaki-platter-800x1200.jpg",
   "timeInMins": 45,
   "categories": ["Dessert", "Japanese"],
   "instructions": [
