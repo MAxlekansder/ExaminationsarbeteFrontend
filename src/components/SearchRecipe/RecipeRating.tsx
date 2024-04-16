@@ -12,8 +12,8 @@ interface RecipeRating {
 const RecipeRating: React.FC<RecipeRating> = ({ dishId, rating }) => {
     const [hoverRating, setHoverRating] = useState<number | null>(rating);
     const [comments, setComments] = useState<CommentProps[]>([]);
-    const [newComment, setNewComment] = useState<string>('');
-    const [name, setName] = useState<string>('');
+    const [newComment, setNewComment] = useState('');
+    const [name, setName] = useState('');
 
 
     const addComment = () => {

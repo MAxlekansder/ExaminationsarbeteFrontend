@@ -15,6 +15,7 @@ interface Drink {
   strDrink: string;
   strDrinkThumb: string;
   strIngredient1: string;
+  strIngredient2: string;
   strGlass: string;
 
 }
@@ -48,12 +49,14 @@ function DetailedCocktailComponent() {
                       mt-10">
               {drink.strDrink}
             </h1>
+      
             <div className="flex justify-center align-middle">
               <img
                 src={drink.strDrinkThumb}
                 alt=""
                 className=" m-12 rounded-lg cocktail-img"/>
             </div>
+ 
             <div className="flex alinge-middle justify-center">
               <p className="text-xl m-12">{drink.strInstructions}</p>
             </div>
