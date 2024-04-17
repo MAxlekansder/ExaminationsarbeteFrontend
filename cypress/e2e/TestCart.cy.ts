@@ -37,7 +37,7 @@ describe('add item to cart and navigate', () => {
         });
 
   
-        cy.visit('http://localhost:5173/recipe/specificRecipe/66150f975d2cfae26cf6083e');
+        cy.visit('http://localhost:5173/recipe/specificRecipe/661f87445d2cfae26cd4df1c');
 
         cy.wait(2000);
 

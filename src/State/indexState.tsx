@@ -257,7 +257,7 @@ const useRecipeState = create<recipeState>()((set) => ({
                 const categoryDrink = detailedIngredient.data.drinks;
                 set({ categoryDrinks: categoryDrink });
 
-                console.log(categoryDrink, "test");
+              
             } else {
                 console.log("error while ingredient GET 200");
             }
@@ -275,8 +275,7 @@ const useRecipeState = create<recipeState>()((set) => ({
             if (filterLetter.status === 200) {
                 const drinkByLetter = filterLetter.data.drinks;
                 set({ letterDrinks: drinkByLetter });
-                console.log("test");
-                console.log(drinkByLetter);
+        
             } else {
                 console.log("error while fetching by letter");
             }
@@ -294,7 +293,6 @@ const useRecipeState = create<recipeState>()((set) => ({
             if (detailedRecipe.status === 200) {
                 set({ detailedRecipe: detailedRecipe.data });
 
-                console.log("test in 200");
                 console.log(detailedRecipe.data);
             } else {
                 console.log("Response error: ", detailedRecipe.status);
