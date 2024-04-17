@@ -1,6 +1,6 @@
-import NavBarComponent from '../../components/NavBarComponent';
-import FooterComponent from '../../components/Footer/FooterComponent';
-import useRecipeState from '../../State/indexState';
+import NavBarComponent from '../components/NavBarComponent';
+import FooterComponent from '../components/Footer/FooterComponent';
+import useRecipeState from '../State/indexState';
 import { useEffect, useState } from 'react';
 
 
