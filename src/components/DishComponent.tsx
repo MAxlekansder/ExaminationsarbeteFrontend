@@ -18,8 +18,8 @@ interface DishProps {
 
 const DishComponent = ({ id, name, image, ingredients, description }: DishProps) => {
   const { dishId } = useParams<{ dishId: string }>(); //Fetching dishId from URL
-  
   const [rating, setRating] = useState<number | null>(null);
+
 
   useEffect(() => {
     console.log('DishComponent har monterats');

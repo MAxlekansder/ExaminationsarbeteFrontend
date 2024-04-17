@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRecipeState from "../../State/indexState";
 import '../../Styling/Cocktail.css'
-import NavBarComponent from "../../NOT in use/NavBarComponent";
-import FooterComponent from "../Footer/FooterComponent";
 
 
 interface Drink {

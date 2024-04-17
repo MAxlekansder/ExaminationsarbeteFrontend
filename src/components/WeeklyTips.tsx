@@ -4,8 +4,7 @@
 import { useEffect, useState } from 'react';
 import useRecipeState from '../State/indexState';
 import { useNavigate } from "react-router-dom";
-import NavBarComponent from '../NOT in use/NavBarComponent';
-import FooterComponent from './Footer/FooterComponent';
+
 
 const WeeklyTips = () => {
   const { recipes } = useRecipeState();
