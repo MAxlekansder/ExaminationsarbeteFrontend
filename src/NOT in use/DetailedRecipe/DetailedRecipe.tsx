@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams, } from "react-router-dom";
 import axios from "axios";
-import Description from "../../NOT in use/Views/Recipe/Components/Description/Description.tsx";
-import Title from "../../NOT in use/Views/Recipe/Components/Title/Title.tsx";
+import Description from "../Views/Recipe/Components/Description/Description.tsx";
+import Title from "../Views/Recipe/Components/Title/Title.tsx";
 
 
 const DetailedRecipe = () => {

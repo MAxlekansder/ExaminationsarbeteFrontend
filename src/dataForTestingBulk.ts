@@ -27,6 +27,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://cdn.hemtrevligt.se/icakuriren/app/uploads/2023/05/media-smorgastarta-lax-rakor.png",
   "timeInMins": 90,
+  "price": 129,
   "categories": ["Appetizer", "Scandinavian", "Dinner"],
   "instructions": [
     "Prepare sandwich layers",
@@ -46,6 +47,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://img.koket.se/standard-mega/saftigaste-kanelbullarna.jpg.webp",
   "timeInMins": 120,
+  "price": 49,
   "categories": ["Dessert", "Scandinavian", "American", "Snack"],
   "instructions": [
     "Prepare dough",
@@ -65,6 +67,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://static.cdn-expressen.se/images/6d/e9/6de9080386b74412b7564098c48e241f/16x9/1000@40.jpg",
   "timeInMins": 45,
+  "price": 109,
   "categories": ["Dinner", "Lunch", "Scandinavian"],
   "instructions": [
     "Grate potatoes",
@@ -84,6 +87,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_155149/cf_259/hemgjord_blabarssoppa.jpg",
   "timeInMins": 30,
+  "price": 39,
   "categories": ["Dessert", "Scandinavian"],
   "instructions": [
     "Boil blueberries with sugar",
@@ -103,6 +107,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d22c924a-1b57-41f8-b325-2499c029e76f?fit=crop&h=613&w=1000&s=32cae29106972a1038ec31745de85554c1dd5e5a",
   "timeInMins": 45,
+  "price": 189,
   "categories": ["Dinner", "Italian", "Meat"],
   "instructions": [
     "Fry onion and garlic",
@@ -122,6 +127,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://vivavinomat.se/wp-content/uploads/recept_croissant_skagen.jpg",
   "timeInMins": 180,
+  "price": 39,
   "categories": ["Dessert", "Breakfast", "French"],
   "instructions": [
     "Mix dough",
@@ -140,6 +146,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://www.zeta.nu/app/uploads/2016/03/Paella_med_musslor_och_r%C3%A4kor_li-2048x1365.jpg",
   "timeInMins": 60,
+  "price": 220,
   "categories": ["Diner", "Spanish"],
   "instructions": [
     "Sear chicken and seafood",
@@ -159,6 +166,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.kitchensanctuary.com/wp-content/uploads/2020/01/Chicken-Parmesan-square-FS-38.jpg",
   "timeInMins": 30,
+  "price": 149,
   "categories": ["Diner", "Italian"],
   "instructions": [
     "Cook fettuccine pasta",
@@ -179,6 +187,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://images.arla.com/recordid/6CCC0216-F0D5-4B04-A711D1C83CFBC48B/california-rolls.jpg?format=jpg&width=1269&height=715&mode=crop&crop=(0,59,0,-89)",
   "timeInMins": 45,
+  "price": 129,
   "categories": ["Dinner", "Japanese", "Lunch"],
   "instructions": [
     "Prepare sushi rice",
@@ -200,6 +209,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/f4e01807-a003-457e-8b9f-2cde324c2c88?fit=crop&h=750&w=1000&s=7821a62375d2b58a8c192911cec4bde62f3fe057",
   "timeInMins": 25,
+  "price": 89,
   "categories": ["Appetizer", "American"],
   "instructions": [
     "Grill chicken and slice",
@@ -219,6 +229,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://i0.wp.com/beyondsweetandsavory.com/wp-content/uploads/2021/05/Instant-Pot-mango-sticky-rice-Vy-Tran-5-of-6-853x1280-1.jpg?w=853&ssl=1",
   "timeInMins": 60,
+  "price": 79,
   "categories": ["Dessert", "Thai"],
   "instructions": [
     "Cook sticky rice with coconut milk",
@@ -238,6 +249,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.vinia.se/blogg/vin-och-vanner/wp-content/uploads/sites/2/2020/09/BiffochBroccoliWok.jpg",
   "timeInMins": 30,
+  "price": 199,
   "categories": ["Dinner", "Chinese", "Meat"],
   "instructions": [
     "Slice beef and marinate",
@@ -257,6 +269,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2019/08/Caprese-Salad-6.jpg",
   "timeInMins": 15,
+  "price": 129,
   "categories": ["Appetizer", "Italian", "Lunch"],
   "instructions": [
     "Slice mozzarella and tomatoes",
@@ -276,6 +289,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/32205408-c5c2-49d4-a1ed-8dce5ac8dea5?fit=crop&h=750&w=1000&s=f31dc38dc19d2cf69f6778f77001c8b1e9531b19",
   "timeInMins": 120,
+  "price": 55,
   "categories": ["Dessert", "Dairy"],
   "instructions": [
     "Melt chocolate and let cool",
@@ -296,6 +310,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_243403/cf_259/guacamole_med_apple.jpg",
   "timeInMins": 15,
+  "price": 79,
   "categories": ["Appetizer", "Mexican", "Vegetarian"],
   "instructions": [
     "Mash avocado",
@@ -342,6 +357,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Espaguetis_carbonara.jpg",
   "timeInMins": 30,
+  "price": 119,
   "categories": ["Dinner", "Italian", "Poultry"],
   "instructions": [
     "Cook the pasta according to the package instructions.",
@@ -365,6 +381,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
   "timeInMins": 20,
+  "price": 109,
   "categories": ["Dinner", "Italian", "Vegetarian"],
   "instructions": [
     "Roll out pizza dough on a baking sheet and spread tomato sauce evenly over the dough.",
@@ -387,6 +404,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.flavoursholidays.co.uk/wp-content/uploads/2020/07/Tiramisu.jpg.webp",
   "timeInMins": 60,
+  "price": 89,
   "categories": ["Dessert", "Italian", "Dairy"],
   "instructions": [
     "Mix coffee and marsala wine in a bowl.",
@@ -414,6 +432,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/1776727224/0ec3cb10-58e6-4a3f-99de-193e9c1e5bb9.jpg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
   "timeInMins": 15,
+  "price": 119,
   "categories": ["Appetizer", "Mediterranean", "Vegetarian", "Lunch"],
   "instructions": [
     "Dice or slice tomatoes, cucumber, bell pepper, and onion.",
@@ -443,6 +462,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/10/Hummus-8.jpg",
   "timeInMins": 15,
+  "price": 89,
   "categories": ["Appetizer", "Mediterranean", "Vegetarian", "lunch"],
   "instructions": [
     "Rinse chickpeas and blend in a food processor until smooth.",
@@ -469,6 +489,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://axwwgrkdco.cloudimg.io/v7/__gmpics__/2f58d646832c45eaa9c721d366c2dc6a?width=1000",
   "timeInMins": 45,
+  "price": 129,
   "categories": ["Appetizer", "Chinese", "Meat", "Seafood", "Tofu"],
   "instructions": [
     "Prepare a variety of fillings which may include meat, shrimp, vegetables, or tofu.",
@@ -495,6 +516,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://static.cdn-expressen.se/images/af/b9/afb9b67d566d432db4bd632cdc2a44b6/16x9/1920@80.jpg",
   "timeInMins": 20,
+  "price": 89,
   "categories": ["Appetizer", "Swedish", "Seafood", "Lunch"],
   "instructions": [
     "Peel and chop the shrimp",
@@ -522,6 +544,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://i0.wp.com/media.zeinaskitchen.se/2017/05/kabsa_1_Fotor.jpg?fit=3000%2C1907&ssl=1",
   "timeInMins": 45,
+  "price": 189,
   "categories": ["Dinner", "Mediterranean", "Meat"],
   "instructions": [
     "Marinate the lamb in olive oil, garlic, rosemary, lemon juice, salt, and pepper for at least 2 hours.",
@@ -554,6 +577,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://res.cloudinary.com/coopsverige/image/upload/f_auto,fl_progressive,q_90,g_center,h_800,w_800/v1669883242/cloud/268064.jpg",
   "timeInMins": 30,
+  "price": 159,
   "categories": ["Dinner", "Italian", "Pork"],
   "instructions": [
     "Cook the pasta al dente according to the package instructions.",
@@ -582,6 +606,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.simplyrecipes.com/thmb/LLhiA8KZ7JZ5ZI0g-1bF1eg-gGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__10__HT-Make-an-Omelet-LEAD-HORIZONTAL-17cd2e469c4a4ccbbd1273a7cae6425c.jpg",
   "timeInMins": 20,
+  "price": 110,
   "categories": ["Breakfast", "Vegetarian", "American"],
   "instructions": [
     "Heat a non-stick pan over medium heat",
@@ -608,6 +633,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://thewoodenskillet.com/wp-content/uploads/2023/05/greek-yogurt-parfait-recipe-1.jpg",
   "timeInMins": 10,
+  "price": 129,
   "categories": ["Breakfast", "Dairy", "Vegetarian", "Scandinavian"],
   "instructions": [
     "In a glass or bowl, layer Greek yogurt, granola, and fresh berries.",
@@ -631,6 +657,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://www.lecreuset.se/on/demandware.static/-/Library-Sites-lc-sharedLibrary/default/dw36c1d3fc/images/recipe/HD_PNG_LC_20200430_DK_RC_CI_r0000000000561_DAN.png",
   "timeInMins": 180,
+  "price": 199,
   "categories": ["Meat", "French", "Dinner"],
   "instructions": [
     "In a large pot, cook the chopped bacon until crisp. Remove and set aside.",
@@ -660,6 +687,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://www.jocooks.com/wp-content/uploads/2011/06/sole-meuniere-1-640x750.jpg",
   "timeInMins": 20,
+  "price": 210,
   "categories": ["Fish", "French", "Seafood", "Dinner", "Lunch"],
   "instructions": [
     "Season sole fillets with salt and pepper.",
@@ -689,6 +717,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwDVmOpQJZmcF38Bg3XYLnBm069sKgI5UQBB2hziL1Q&s",
   "timeInMins": 60,
+  "price": 149,
   "categories": ["Vegetarian", "French", "Stew"],
   "instructions": [
     "Heat olive oil in a large skillet over medium heat.",
@@ -749,6 +778,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://simply-delicious-food.com/wp-content/uploads/2021/08/Thai-red-curry-fish-4.jpg",
   "timeInMins": 45,
+  "price": 110,
   "categories": ["Fish", "Thai", "Dinner"],
   "instructions": [
     "In a large pan, heat coconut milk over medium heat.",
@@ -780,6 +810,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://www.thecookierookie.com/wp-content/uploads/2023/05/featured-grilled-salmon-recipe.jpg",
   "timeInMins": 30,
+  "price": 189,
   "categories": ["Fish", "Scandinavian", "Dinner"],
   "instructions": [
     "In a bowl, mix together olive oil, lemon juice, dill, and garlic.",
@@ -818,6 +849,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/fish-tacos-index-64ca974954d47.jpg?crop=0.7503703703703705xw:1xh;center,top&resize=1200:*",
   "timeInMins": 40,
+  "price": 99,
   "categories": ["Fish", "Mexican", "Dinner"],
   "instructions": [
     "Prepare the fish by seasoning with spices and dredging in flour.",
@@ -847,6 +879,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://s23209.pcdn.co/wp-content/uploads/2023/05/230125_DD_Grilled-Teriyaki-Chicken_478.jpg",
   "timeInMins": 45,
+  "price": 135,
   "categories": ["Japanese", "Chicken", "Dinner"],
   "instructions": [
     "In a bowl, mix soy sauce, mirin, brown sugar, minced garlic, and minced ginger to make the teriyaki sauce.",
@@ -886,6 +919,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.simplejoy.com/wp-content/uploads/2020/07/Chicken-wrap.jpg",
   "timeInMins": 20,
+  "price": 89,
   "categories": ["Poultry", "Lunch"],
   "instructions": [
     "Grill chicken breasts until fully cooked.",
@@ -909,6 +943,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://www.recipetineats.com/wp-content/uploads/2021/03/My-Favourite-Quinoa-Salad-5-SQ.jpg",
   "timeInMins": 30,
+  "price": 99,
   "categories": ["Vegetarian", "Lunch"],
   "instructions": [
     "Cook quinoa according to package instructions and let it cool.",
@@ -936,6 +971,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://inquiringchef.com/wp-content/uploads/2023/02/Authentic-Pad-Thai_square-1908.jpg",
   "timeInMins": 30,
+  "price": 109,
   "categories": ["Thai", "Dinner", "Meat", "Seafood", "Tofu"],
   "instructions": [
     "Soak the rice noodles in warm water until they are pliable but still slightly firm. Drain and set aside.",
@@ -969,6 +1005,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://diethood.com/wp-content/uploads/2023/06/tom-yum-noodle-soup-2.jpg",
   "timeInMins": 25,
+  "price": 119,
   "categories": ["Thai", "Soup", "Poultry", "Meat", "Seafood"],
   "instructions": [
     "Bring chicken or vegetable broth to a boil in a pot.",
@@ -1002,6 +1039,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://i0.wp.com/www.valerieskeepers.com/wp-content/uploads/2017/01/green-curry-chicken-6-1-sur-1.jpg?resize=5184%2C3456&ssl=1",
   "timeInMins": 40,
+  "price": 179,
   "categories": ["Thai", "Dinner", "Poultry", "Lunch"],
   "instructions": [
     "Heat green curry paste in a pan until fragrant.",
@@ -1030,6 +1068,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://diethood.com/wp-content/uploads/2022/02/lemon-butter-grilled-salmon-8.jpg",
   "timeInMins": 20,
+  "price": 169,
   "categories": ["Fish", "Dinner", "Scandinavian"],
   "instructions": [
     "Preheat the grill to medium-high heat.",
@@ -1052,6 +1091,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://thewoksoflife.com/wp-content/uploads/2016/06/thai-basil-chicken-8.jpg",
   "timeInMins": 30,
+  "price": 199,
   "categories": ["Thai", "Dinner", "Poultry"],
   "instructions": [
     "Heat oil in a wok or large skillet over high heat.",
@@ -1101,6 +1141,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://thelemonapron.com/wp-content/uploads/2017/01/Photo-2017-01-15-1-37-16-PM-e1485442231918.jpg",
   "timeInMins": 60,
+  "price": 139,
   "categories": ["Meat", "Italian", "Dinner"],
   "instructions": [
     "Preheat the oven to 375°F (190°C).",
@@ -1137,6 +1178,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.skinnytaste.com/wp-content/uploads/2011/05/Swedish-Meatballs-5.jpg",
   "timeInMins": 45,
+  "price": 189,
   "categories": ["Meat", "Scandinavian", "Dinner"],
   "instructions": [
     "In a large bowl, mix together ground beef, ground pork, breadcrumbs, minced onion, egg, salt, pepper, and allspice until well combined.",
@@ -1168,6 +1210,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 5,
   "imageUrl": "https://www.giverecipe.com/wp-content/uploads/2020/06/Chocolate-Strawberry-Cake.jpg",
   "timeInMins": 60,
+  "price": 49,
   "categories": ["Dessert", "American"],
   "instructions": [
     "Preheat the oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.",
@@ -1201,6 +1244,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4.5,
   "imageUrl": "https://www.justonecookbook.com/wp-content/uploads/2021/08/Green-Tea-Ice-Cream-0120-II.jpg",
   "timeInMins": 240,
+  "price": 45,
   "categories": ["Dessert", "Japanese"],
   "instructions": [
     "In a saucepan, heat heavy cream and milk over medium heat until it begins to simmer.",
@@ -1228,6 +1272,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2022/02/vegan-dorayaki-platter-800x1200.jpg",
   "timeInMins": 45,
+  "price": 39,
   "categories": ["Dessert", "Japanese"],
   "instructions": [
     "In a bowl, whisk together eggs, sugar, honey, and water until well combined.",
@@ -1256,6 +1301,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://i0.wp.com/tokyotreatblog.wpcomstaging.com/wp-content/uploads/2023/07/five-taiyaki-spots-japan-thumbnail.png?fit=1024%2C683&ssl=1",
   "timeInMins": 60,
+  "price": 35,
   "categories": ["Dessert", "Japanese"],
   "instructions": [
     "In a bowl, whisk together flour, baking powder, sugar, and salt.",
@@ -1286,6 +1332,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://foodhub.scene7.com/is/image/woolworthsltdprod/1810-fluffy-japanese-cheesecake:Square-1300x1300",
   "timeInMins": 90,
+  "price": 59,
   "categories": ["Dessert", "Japanese"],
   "instructions": [
     "Preheat the oven to 320°F (160°C). Grease and line a round cake pan with parchment paper.",
@@ -1318,6 +1365,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Baked-cod-d8324c7.jpg?resize=768,574",
   "timeInMins": 25,
+  "price": 109,
   "categories": ["Fish", "Baking"],
   "instructions": [
     "Preheat the oven to 400°F (200°C). Grease a baking dish with olive oil or cooking spray.",
@@ -1344,6 +1392,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://www.mygfguide.com/wp-content/uploads/2020/01/00000IMG_00000_BURST20200131133521757_COVER-735x551.jpg",
   "timeInMins": 30,
+  "price": 89,
   "categories": ["Fish", "Asian"],
   "instructions": [
     "In a small bowl, whisk together soy sauce, brown sugar, minced garlic, grated ginger, and sesame oil to make the teriyaki sauce.",
@@ -1371,6 +1420,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
   "ratings": 4,
   "imageUrl": "https://beatthebudget.com/wp-content/uploads/2022/08/Tuna-Pasta-Salad-Featured-image.jpg",
   "timeInMins": 15,
+  "price": 89,
   "categories": ["Fish", "Salads"],
   "instructions": [
     "In a large bowl, combine canned tuna, diced celery, diced red onion, chopped dill pickles, mayonnaise, Dijon mustard, lemon juice, salt, and black pepper.",
@@ -1396,6 +1446,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
     "ratings": 4,
     "imageUrl": "https://i0.wp.com/www.nourishdeliciously.com/wp-content/uploads/2022/11/DSC_9207.jpg",
     "timeInMins": 45,
+    "price": 169,
     "categories": ["Poultry", "Dinner"],
     "instructions": [
       "Marinate chicken chunks in yogurt, lemon juice, and spices for 30 minutes.",
@@ -1424,6 +1475,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
     "ratings": 4,
     "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_159450/cf_259/palak_paneer_med_tomat_och_halloumi.jpg",
     "timeInMins": 30,
+    "price": 179,
     "categories": ["Vegetarian", "Indian", "Lunch"],
     "instructions": [
       "Blanch spinach leaves in boiling water, then shock in ice water. Blend into a smooth paste.",
@@ -1449,6 +1501,7 @@ export const recipes = [  // make sure that you copy the data from dataforTestin
     "ratings": 4,
     "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/rogan-josh-wide-1572547980.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
     "timeInMins": 60,
+    "price": 149,
     "categories": ["Lamb", "Curry", "Dinner"],
     "instructions": [
       "Sauté onions, garlic, and ginger in ghee until golden brown.",
