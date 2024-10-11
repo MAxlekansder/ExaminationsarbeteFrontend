@@ -1,10 +1,10 @@
 //Gustav & Medi
-import DishComponent from '../../components/DishComponent';
+import DishComponent from '../components/DishComponent';
 import { Link } from 'react-router-dom';
-import useRecipeState from '../../State/indexState';
+import useRecipeState from '../State/indexState';
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import RecipeSearch from '../../components/SearchRecipe/RecipeSearchProps';
+import RecipeSearch from '../components/SearchRecipe/RecipeSearchProps';
 
 
 
